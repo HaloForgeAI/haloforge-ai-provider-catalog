@@ -1,0 +1,35 @@
+{
+  "id": "google-vertex",
+  "name": "Google Vertex AI",
+  "description": "Vertex AI Gemini catalog reference. Direct desktop auth requires enterprise/cloud credential plumbing.",
+  "category": "official",
+  "iconProvider": "google",
+  "modelOwner": "google",
+  "modelOwnerLabel": "Google",
+  "websiteUrl": "https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/inference",
+  "baseUrl": "https://{location}-aiplatform.googleapis.com/v1",
+  "apiCompatibility": "google",
+  "authType": "bearer",
+  "modelsListPath": "/publishers/google/models",
+  "models": [
+    {
+      "id": "gemini-3.5-flash",
+      "displayName": "Gemini 3.5 Flash on Vertex AI",
+      "contextWindow": 1048576,
+      "maxTokens": 65535,
+      "status": "restricted",
+      "disabledByDefault": true,
+      "source": "litellm-model-catalog"
+    },
+    {
+      "id": "gemini-3-pro-preview",
+      "displayName": "Gemini 3 Pro Preview on Vertex AI",
+      "contextWindow": 1048576,
+      "maxTokens": 65535,
+      "status": "restricted",
+      "disabledByDefault": true,
+      "source": "litellm-model-catalog"
+    }
+  ],
+  "agentGateways": []
+}

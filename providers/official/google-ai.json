@@ -1,0 +1,60 @@
+{
+  "id": "google-ai",
+  "name": "Google Gemini API",
+  "description": "Gemini Developer API with Google-native authentication and model lifecycle metadata.",
+  "category": "official",
+  "iconProvider": "google",
+  "modelOwner": "google",
+  "modelOwnerLabel": "Google",
+  "websiteUrl": "https://ai.google.dev/gemini-api",
+  "apiKeyUrl": "https://aistudio.google.com/apikey",
+  "baseUrl": "https://generativelanguage.googleapis.com/v1beta",
+  "apiCompatibility": "google",
+  "authType": "x-goog-api-key",
+  "modelsListPath": "/models",
+  "models": [
+    {
+      "id": "gemini-3.5-flash",
+      "displayName": "Gemini 3.5 Flash",
+      "contextWindow": 1048576,
+      "maxTokens": 65535,
+      "status": "available",
+      "source": "gemini-docs"
+    },
+    {
+      "id": "gemini-3-pro-preview",
+      "displayName": "Gemini 3 Pro Preview",
+      "contextWindow": 1048576,
+      "maxTokens": 65535,
+      "status": "preview",
+      "source": "litellm-model-catalog"
+    },
+    {
+      "id": "gemini-3-flash-preview",
+      "displayName": "Gemini 3 Flash Preview",
+      "contextWindow": 1048576,
+      "maxTokens": 65535,
+      "status": "preview",
+      "source": "gemini-changelog"
+    },
+    {
+      "id": "gemini-2.5-flash",
+      "displayName": "Gemini 2.5 Flash",
+      "contextWindow": 1048576,
+      "maxTokens": 65535,
+      "status": "available",
+      "source": "litellm-model-catalog"
+    },
+    {
+      "id": "gemini-2.0-flash",
+      "displayName": "Gemini 2.0 Flash",
+      "contextWindow": 1048576,
+      "maxTokens": 8192,
+      "status": "deprecated",
+      "deprecationDate": "2026-06-01",
+      "fallbackModelId": "gemini-2.5-flash",
+      "source": "litellm-model-catalog"
+    }
+  ],
+  "agentGateways": []
+}

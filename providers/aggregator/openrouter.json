@@ -1,7 +1,7 @@
 {
   "id": "openrouter",
   "name": "OpenRouter",
-  "description": "Aggregator endpoint for many model providers.",
+  "description": "Aggregator endpoint for hundreds of model/provider combinations.",
   "category": "aggregator",
   "iconProvider": "openrouter",
   "modelOwner": "openrouter",
@@ -14,36 +14,89 @@
   "modelsListPath": "/models",
   "models": [
     {
-      "id": "openai/gpt-5.4",
-      "displayName": "openai/gpt-5.4",
-      "contextWindow": 200000
+      "id": "openai/gpt-5.5-pro",
+      "displayName": "OpenAI GPT-5.5 Pro via OpenRouter",
+      "contextWindow": 1050000,
+      "status": "available",
+      "source": "openrouter-models"
     },
     {
-      "id": "anthropic/claude-sonnet-4.6",
-      "displayName": "anthropic/claude-sonnet-4.6",
-      "contextWindow": 200000
+      "id": "anthropic/claude-fable-5",
+      "displayName": "Claude Fable 5 via OpenRouter",
+      "contextWindow": 1000000,
+      "status": "disabled",
+      "disabledByDefault": true,
+      "fallbackModelId": "anthropic/claude-opus-4.8",
+      "source": "anthropic-fable-access"
+    },
+    {
+      "id": "deepseek/deepseek-v4-pro",
+      "displayName": "DeepSeek V4 Pro via OpenRouter",
+      "contextWindow": 1048576,
+      "status": "available",
+      "source": "openrouter-models"
+    },
+    {
+      "id": "qwen/qwen3-max-thinking",
+      "displayName": "Qwen3 Max Thinking via OpenRouter",
+      "contextWindow": 262144,
+      "status": "available",
+      "source": "openrouter-models"
+    },
+    {
+      "id": "moonshotai/kimi-k2.5",
+      "displayName": "Kimi K2.5 via OpenRouter",
+      "contextWindow": 262144,
+      "status": "available",
+      "source": "openrouter-models"
+    },
+    {
+      "id": "minimax/minimax-m3",
+      "displayName": "MiniMax M3 via OpenRouter",
+      "contextWindow": 1048576,
+      "status": "available",
+      "source": "openrouter-models"
     }
   ],
   "agentGateways": [
     {
+      "id": "openrouter-opencode-gpt-5-5-pro",
+      "displayName": "OpenRouter GPT-5.5 Pro for OpenCode",
       "target": "opencode",
       "routeMode": "config_only",
       "baseUrl": "https://openrouter.ai/api/v1",
       "apiCompatibility": "openai",
-      "modelId": "openai/gpt-5.4",
-      "contextWindow": 200000,
-      "maxTokens": 64000,
-      "effortLevel": "high"
+      "modelId": "openai/gpt-5.5-pro",
+      "contextWindow": 1050000,
+      "maxTokens": 128000,
+      "effortLevel": "xhigh",
+      "source": "openrouter-models"
     },
     {
+      "id": "openrouter-codex-deepseek-v4-pro",
+      "displayName": "OpenRouter DeepSeek V4 Pro for Codex",
+      "target": "codex",
+      "routeMode": "config_only",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "apiCompatibility": "openai",
+      "modelId": "deepseek/deepseek-v4-pro",
+      "contextWindow": 1048576,
+      "maxTokens": 128000,
+      "effortLevel": "high",
+      "source": "openrouter-models"
+    },
+    {
+      "id": "openrouter-copilot-qwen3-max",
+      "displayName": "OpenRouter Qwen3 Max for Copilot BYOK",
       "target": "copilot",
       "routeMode": "config_only",
       "baseUrl": "https://openrouter.ai/api/v1",
       "apiCompatibility": "openai",
-      "modelId": "openai/gpt-5.4",
-      "contextWindow": 200000,
-      "maxTokens": 64000,
-      "effortLevel": "high"
+      "modelId": "qwen/qwen3-max-thinking",
+      "contextWindow": 262144,
+      "maxTokens": 65536,
+      "effortLevel": "high",
+      "source": "openrouter-models"
     }
   ]
 }

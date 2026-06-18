@@ -1,8 +1,31 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-06-18T00:00:00.000Z",
+  "updatedAt": "2026-06-18T16:45:00.000Z",
   "source": "haloforge-ai-provider-catalog",
   "repository": "https://github.com/HaloForgeAI/haloforge-ai-provider-catalog",
+  "upstreamSources": [
+    {
+      "id": "litellm-model-catalog",
+      "name": "LiteLLM model catalog",
+      "url": "https://api.litellm.ai/model_catalog",
+      "kind": "open_source",
+      "notes": "Reference for context windows, pricing metadata, capabilities, and deprecation dates."
+    },
+    {
+      "id": "openrouter-models",
+      "name": "OpenRouter models API",
+      "url": "https://openrouter.ai/api/v1/models",
+      "kind": "aggregator",
+      "notes": "Reference for aggregator-visible model ids and context lengths."
+    },
+    {
+      "id": "vercel-ai-gateway-models",
+      "name": "Vercel AI Gateway model endpoint",
+      "url": "https://ai-gateway.vercel.sh/v1/models",
+      "kind": "aggregator",
+      "notes": "Reference for AI Gateway model/provider ids, pricing, and context windows."
+    }
+  ],
   "providers": [
     {
       "id": "openai",
@@ -23,23 +46,39 @@
           "id": "gpt-5.5",
           "displayName": "GPT-5.5",
           "contextWindow": 1000000,
-          "maxTokens": 128000
+          "maxTokens": 128000,
+          "status": "available",
+          "source": "openai-docs"
         },
         {
           "id": "gpt-5.4",
           "displayName": "GPT-5.4",
           "contextWindow": 1000000,
-          "maxTokens": 128000
+          "maxTokens": 128000,
+          "status": "available",
+          "source": "openai-docs"
         },
         {
           "id": "gpt-5.4-mini",
           "displayName": "GPT-5.4 mini",
           "contextWindow": 400000,
-          "maxTokens": 128000
+          "maxTokens": 128000,
+          "status": "available",
+          "source": "openai-docs"
+        },
+        {
+          "id": "gpt-5.4-nano",
+          "displayName": "GPT-5.4 nano",
+          "contextWindow": 400000,
+          "maxTokens": 128000,
+          "status": "available",
+          "source": "openai-docs"
         }
       ],
       "agentGateways": [
         {
+          "id": "openai-codex-gpt-5.5",
+          "displayName": "OpenAI gpt-5.5 for Codex",
           "target": "codex",
           "routeMode": "config_only",
           "baseUrl": "https://api.openai.com/v1",
@@ -47,9 +86,38 @@
           "modelId": "gpt-5.5",
           "contextWindow": 1000000,
           "maxTokens": 128000,
-          "effortLevel": "high"
+          "effortLevel": "xhigh",
+          "source": "openai-docs"
         },
         {
+          "id": "openai-codex-gpt-5.4",
+          "displayName": "OpenAI gpt-5.4 for Codex",
+          "target": "codex",
+          "routeMode": "config_only",
+          "baseUrl": "https://api.openai.com/v1",
+          "apiCompatibility": "openai",
+          "modelId": "gpt-5.4",
+          "contextWindow": 1000000,
+          "maxTokens": 128000,
+          "effortLevel": "high",
+          "source": "openai-docs"
+        },
+        {
+          "id": "openai-codex-gpt-5.4-mini",
+          "displayName": "OpenAI gpt-5.4-mini for Codex",
+          "target": "codex",
+          "routeMode": "config_only",
+          "baseUrl": "https://api.openai.com/v1",
+          "apiCompatibility": "openai",
+          "modelId": "gpt-5.4-mini",
+          "contextWindow": 400000,
+          "maxTokens": 128000,
+          "effortLevel": "high",
+          "source": "openai-docs"
+        },
+        {
+          "id": "openai-copilot-gpt-5.5",
+          "displayName": "OpenAI gpt-5.5 for Copilot BYOK",
           "target": "copilot",
           "routeMode": "config_only",
           "baseUrl": "https://api.openai.com/v1",
@@ -57,7 +125,34 @@
           "modelId": "gpt-5.5",
           "contextWindow": 1000000,
           "maxTokens": 128000,
-          "effortLevel": "high"
+          "effortLevel": "xhigh",
+          "source": "openai-docs"
+        },
+        {
+          "id": "openai-copilot-gpt-5.4",
+          "displayName": "OpenAI gpt-5.4 for Copilot BYOK",
+          "target": "copilot",
+          "routeMode": "config_only",
+          "baseUrl": "https://api.openai.com/v1",
+          "apiCompatibility": "openai",
+          "modelId": "gpt-5.4",
+          "contextWindow": 1000000,
+          "maxTokens": 128000,
+          "effortLevel": "high",
+          "source": "openai-docs"
+        },
+        {
+          "id": "openai-copilot-gpt-5.4-mini",
+          "displayName": "OpenAI gpt-5.4-mini for Copilot BYOK",
+          "target": "copilot",
+          "routeMode": "config_only",
+          "baseUrl": "https://api.openai.com/v1",
+          "apiCompatibility": "openai",
+          "modelId": "gpt-5.4-mini",
+          "contextWindow": 400000,
+          "maxTokens": 128000,
+          "effortLevel": "high",
+          "source": "openai-docs"
         }
       ]
     },
@@ -80,37 +175,332 @@
       },
       "models": [
         {
+          "id": "claude-fable-5",
+          "displayName": "Claude Fable 5",
+          "contextWindow": 1000000,
+          "maxTokens": 300000,
+          "status": "disabled",
+          "disabledByDefault": true,
+          "fallbackModelId": "claude-opus-4-8",
+          "source": "anthropic-fable-access"
+        },
+        {
+          "id": "claude-opus-4-8",
+          "displayName": "Claude Opus 4.8",
+          "contextWindow": 200000,
+          "maxTokens": 300000,
+          "status": "available",
+          "source": "anthropic-docs"
+        },
+        {
+          "id": "claude-opus-4-7",
+          "displayName": "Claude Opus 4.7",
+          "contextWindow": 200000,
+          "maxTokens": 300000,
+          "status": "available",
+          "source": "anthropic-docs"
+        },
+        {
           "id": "claude-opus-4-6",
           "displayName": "Claude Opus 4.6",
-          "contextWindow": 200000
+          "contextWindow": 200000,
+          "maxTokens": 300000,
+          "status": "available",
+          "source": "anthropic-docs"
         },
         {
           "id": "claude-sonnet-4-6",
           "displayName": "Claude Sonnet 4.6",
-          "contextWindow": 200000
+          "contextWindow": 200000,
+          "maxTokens": 300000,
+          "status": "available",
+          "source": "anthropic-docs"
         },
         {
           "id": "claude-haiku-4-5-20251001",
           "displayName": "Claude Haiku 4.5",
-          "contextWindow": 200000
+          "contextWindow": 200000,
+          "maxTokens": 64000,
+          "status": "available",
+          "source": "anthropic-docs"
         }
       ],
       "agentGateways": [
         {
+          "id": "anthropic-claude-code-sonnet-4-6",
+          "displayName": "Claude Sonnet 4.6 for Claude Code",
           "target": "claude_code",
           "routeMode": "direct",
           "baseUrl": "https://api.anthropic.com",
           "apiCompatibility": "anthropic",
           "modelId": "claude-sonnet-4-6",
           "contextWindow": 200000,
-          "maxTokens": 64000,
+          "maxTokens": 300000,
           "effortLevel": "high",
           "roleModels": {
             "haiku": "claude-haiku-4-5-20251001",
             "sonnet": "claude-sonnet-4-6",
-            "opus": "claude-opus-4-6",
+            "opus": "claude-opus-4-8",
             "subagent": "claude-haiku-4-5-20251001"
-          }
+          },
+          "source": "anthropic-docs"
+        },
+        {
+          "id": "anthropic-claude-code-opus-4-8",
+          "displayName": "Claude Opus 4.8 for Claude Code",
+          "target": "claude_code",
+          "routeMode": "direct",
+          "baseUrl": "https://api.anthropic.com",
+          "apiCompatibility": "anthropic",
+          "modelId": "claude-opus-4-8",
+          "contextWindow": 200000,
+          "maxTokens": 300000,
+          "effortLevel": "xhigh",
+          "roleModels": {
+            "haiku": "claude-haiku-4-5-20251001",
+            "sonnet": "claude-sonnet-4-6",
+            "opus": "claude-opus-4-8",
+            "subagent": "claude-haiku-4-5-20251001"
+          },
+          "source": "anthropic-docs"
+        },
+        {
+          "id": "anthropic-claude-code-fable-5",
+          "displayName": "Claude Fable 5 for Claude Code (restricted)",
+          "target": "claude_code",
+          "routeMode": "direct",
+          "baseUrl": "https://api.anthropic.com",
+          "apiCompatibility": "anthropic",
+          "modelId": "claude-fable-5",
+          "contextWindow": 1000000,
+          "maxTokens": 300000,
+          "effortLevel": "xhigh",
+          "status": "disabled",
+          "disabledByDefault": true,
+          "fallbackModelId": "claude-opus-4-8",
+          "roleModels": {
+            "haiku": "claude-haiku-4-5-20251001",
+            "sonnet": "claude-sonnet-4-6",
+            "opus": "claude-opus-4-8",
+            "subagent": "claude-haiku-4-5-20251001"
+          },
+          "source": "anthropic-fable-access"
+        }
+      ]
+    },
+    {
+      "id": "google-ai",
+      "name": "Google Gemini API",
+      "description": "Gemini Developer API with Google-native authentication and model lifecycle metadata.",
+      "category": "official",
+      "iconProvider": "google",
+      "modelOwner": "google",
+      "modelOwnerLabel": "Google",
+      "websiteUrl": "https://ai.google.dev/gemini-api",
+      "apiKeyUrl": "https://aistudio.google.com/apikey",
+      "baseUrl": "https://generativelanguage.googleapis.com/v1beta",
+      "apiCompatibility": "google",
+      "authType": "x-goog-api-key",
+      "modelsListPath": "/models",
+      "models": [
+        {
+          "id": "gemini-3.5-flash",
+          "displayName": "Gemini 3.5 Flash",
+          "contextWindow": 1048576,
+          "maxTokens": 65535,
+          "status": "available",
+          "source": "gemini-docs"
+        },
+        {
+          "id": "gemini-3-pro-preview",
+          "displayName": "Gemini 3 Pro Preview",
+          "contextWindow": 1048576,
+          "maxTokens": 65535,
+          "status": "preview",
+          "source": "litellm-model-catalog"
+        },
+        {
+          "id": "gemini-3-flash-preview",
+          "displayName": "Gemini 3 Flash Preview",
+          "contextWindow": 1048576,
+          "maxTokens": 65535,
+          "status": "preview",
+          "source": "gemini-changelog"
+        },
+        {
+          "id": "gemini-2.5-flash",
+          "displayName": "Gemini 2.5 Flash",
+          "contextWindow": 1048576,
+          "maxTokens": 65535,
+          "status": "available",
+          "source": "litellm-model-catalog"
+        },
+        {
+          "id": "gemini-2.0-flash",
+          "displayName": "Gemini 2.0 Flash",
+          "contextWindow": 1048576,
+          "maxTokens": 8192,
+          "status": "deprecated",
+          "deprecationDate": "2026-06-01",
+          "fallbackModelId": "gemini-2.5-flash",
+          "source": "litellm-model-catalog"
+        }
+      ],
+      "agentGateways": []
+    },
+    {
+      "id": "google-vertex",
+      "name": "Google Vertex AI",
+      "description": "Vertex AI Gemini catalog reference. Direct desktop auth requires enterprise/cloud credential plumbing.",
+      "category": "official",
+      "iconProvider": "google",
+      "modelOwner": "google",
+      "modelOwnerLabel": "Google",
+      "websiteUrl": "https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/inference",
+      "baseUrl": "https://{location}-aiplatform.googleapis.com/v1",
+      "apiCompatibility": "google",
+      "authType": "bearer",
+      "modelsListPath": "/publishers/google/models",
+      "models": [
+        {
+          "id": "gemini-3.5-flash",
+          "displayName": "Gemini 3.5 Flash on Vertex AI",
+          "contextWindow": 1048576,
+          "maxTokens": 65535,
+          "status": "restricted",
+          "disabledByDefault": true,
+          "source": "litellm-model-catalog"
+        },
+        {
+          "id": "gemini-3-pro-preview",
+          "displayName": "Gemini 3 Pro Preview on Vertex AI",
+          "contextWindow": 1048576,
+          "maxTokens": 65535,
+          "status": "restricted",
+          "disabledByDefault": true,
+          "source": "litellm-model-catalog"
+        }
+      ],
+      "agentGateways": []
+    },
+    {
+      "id": "azure-openai",
+      "name": "Azure OpenAI",
+      "description": "Azure OpenAI v1-compatible endpoint. Replace {resource} with your Azure OpenAI resource name.",
+      "category": "official",
+      "iconProvider": "azure",
+      "modelOwner": "openai",
+      "modelOwnerLabel": "OpenAI on Azure",
+      "websiteUrl": "https://learn.microsoft.com/azure/ai-foundry/openai/",
+      "apiKeyUrl": "https://portal.azure.com",
+      "baseUrl": "https://{resource}.openai.azure.com/openai/v1",
+      "apiCompatibility": "openai",
+      "authType": "header-api-key",
+      "modelsListPath": "/models",
+      "models": [
+        {
+          "id": "gpt-5.5",
+          "displayName": "GPT-5.5 deployment",
+          "contextWindow": 1000000,
+          "maxTokens": 128000,
+          "status": "available",
+          "source": "openai-docs"
+        },
+        {
+          "id": "gpt-5.4",
+          "displayName": "GPT-5.4 deployment",
+          "contextWindow": 1000000,
+          "maxTokens": 128000,
+          "status": "available",
+          "source": "openai-docs"
+        },
+        {
+          "id": "gpt-4o-2024-08-06",
+          "displayName": "GPT-4o 2024-08-06 deployment",
+          "contextWindow": 128000,
+          "maxTokens": 16384,
+          "status": "shutdown",
+          "shutdownDate": "2026-02-27",
+          "fallbackModelId": "gpt-5.4",
+          "disabledByDefault": true,
+          "source": "litellm-model-catalog"
+        }
+      ],
+      "agentGateways": [
+        {
+          "id": "azure-codex-gpt-5-5",
+          "displayName": "Azure GPT-5.5 for Codex",
+          "target": "codex",
+          "routeMode": "config_only",
+          "baseUrl": "https://{resource}.openai.azure.com/openai/v1",
+          "apiCompatibility": "openai",
+          "modelId": "gpt-5.5",
+          "contextWindow": 1000000,
+          "maxTokens": 128000,
+          "effortLevel": "xhigh"
+        },
+        {
+          "id": "azure-opencode-gpt-5-4",
+          "displayName": "Azure GPT-5.4 for OpenCode",
+          "target": "opencode",
+          "routeMode": "config_only",
+          "baseUrl": "https://{resource}.openai.azure.com/openai/v1",
+          "apiCompatibility": "openai",
+          "modelId": "gpt-5.4",
+          "contextWindow": 1000000,
+          "maxTokens": 128000,
+          "effortLevel": "high"
+        }
+      ]
+    },
+    {
+      "id": "amazon-bedrock",
+      "name": "Amazon Bedrock",
+      "description": "Amazon Bedrock catalog reference. Direct invocation requires SigV4/Bedrock transport or an enterprise gateway.",
+      "category": "official",
+      "iconProvider": "aws",
+      "modelOwner": "amazon-bedrock",
+      "modelOwnerLabel": "Amazon Bedrock",
+      "websiteUrl": "https://aws.amazon.com/bedrock/",
+      "baseUrl": "https://bedrock-runtime.{region}.amazonaws.com",
+      "apiCompatibility": "anthropic",
+      "authType": "bearer",
+      "modelsListPath": "/foundation-models",
+      "models": [
+        {
+          "id": "anthropic.claude-fable-5",
+          "displayName": "Claude Fable 5 on Bedrock",
+          "contextWindow": 1000000,
+          "maxTokens": 300000,
+          "status": "restricted",
+          "disabledByDefault": true,
+          "fallbackModelId": "anthropic.claude-opus-4-8",
+          "source": "anthropic-fable-access"
+        },
+        {
+          "id": "anthropic.claude-opus-4-8",
+          "displayName": "Claude Opus 4.8 on Bedrock",
+          "contextWindow": 200000,
+          "maxTokens": 300000,
+          "status": "restricted",
+          "disabledByDefault": true,
+          "source": "anthropic-docs"
+        }
+      ],
+      "agentGateways": [
+        {
+          "id": "bedrock-claude-enterprise-gateway",
+          "displayName": "Bedrock Claude via enterprise gateway",
+          "target": "claude_code",
+          "routeMode": "config_only",
+          "baseUrl": "https://enterprise.example.com/v1/agent/gateway/bedrock/anthropic",
+          "apiCompatibility": "anthropic",
+          "modelId": "anthropic.claude-opus-4-8",
+          "contextWindow": 200000,
+          "maxTokens": 300000,
+          "status": "restricted",
+          "disabledByDefault": true,
+          "source": "anthropic-docs"
         }
       ]
     },
@@ -131,55 +521,650 @@
       "models": [
         {
           "id": "deepseek-v4-flash",
-          "displayName": "DeepSeek V4 Fast",
-          "contextWindow": 128000
+          "displayName": "DeepSeek V4 Flash",
+          "contextWindow": 1000000,
+          "maxTokens": 384000,
+          "status": "available",
+          "source": "deepseek-docs"
         },
         {
           "id": "deepseek-v4-pro",
           "displayName": "DeepSeek V4 Pro",
-          "contextWindow": 128000
+          "contextWindow": 1000000,
+          "maxTokens": 384000,
+          "status": "available",
+          "source": "deepseek-docs"
         },
         {
-          "id": "deepseek-v4-pro[1m]",
-          "displayName": "DeepSeek V4 Pro 1M",
-          "contextWindow": 1000000
+          "id": "deepseek-chat",
+          "displayName": "DeepSeek Chat legacy alias",
+          "contextWindow": 1000000,
+          "maxTokens": 384000,
+          "status": "deprecated",
+          "shutdownDate": "2026-07-24T15:59:00Z",
+          "fallbackModelId": "deepseek-v4-flash",
+          "disabledByDefault": true,
+          "source": "deepseek-docs"
+        },
+        {
+          "id": "deepseek-reasoner",
+          "displayName": "DeepSeek Reasoner legacy alias",
+          "contextWindow": 1000000,
+          "maxTokens": 384000,
+          "status": "deprecated",
+          "shutdownDate": "2026-07-24T15:59:00Z",
+          "fallbackModelId": "deepseek-v4-pro",
+          "disabledByDefault": true,
+          "source": "deepseek-docs"
         }
       ],
       "agentGateways": [
         {
+          "id": "deepseek-claude-code-v4-pro",
+          "displayName": "DeepSeek V4 Pro for Claude Code",
           "target": "claude_code",
           "routeMode": "model_mapping",
           "baseUrl": "https://api.deepseek.com/anthropic",
           "apiCompatibility": "anthropic",
-          "modelId": "deepseek-v4-pro[1m]",
+          "modelId": "deepseek-v4-pro",
           "contextWindow": 1000000,
-          "maxTokens": 32000,
+          "maxTokens": 384000,
           "temperature": 0.2,
           "effortLevel": "max",
           "roleModels": {
             "haiku": "deepseek-v4-flash",
-            "sonnet": "deepseek-v4-pro[1m]",
-            "opus": "deepseek-v4-pro[1m]",
+            "sonnet": "deepseek-v4-pro",
+            "opus": "deepseek-v4-pro",
             "subagent": "deepseek-v4-flash"
-          }
+          },
+          "source": "deepseek-docs"
         },
         {
+          "id": "deepseek-claude-code-v4-flash",
+          "displayName": "DeepSeek V4 Flash for Claude Code",
+          "target": "claude_code",
+          "routeMode": "model_mapping",
+          "baseUrl": "https://api.deepseek.com/anthropic",
+          "apiCompatibility": "anthropic",
+          "modelId": "deepseek-v4-flash",
+          "contextWindow": 1000000,
+          "maxTokens": 384000,
+          "temperature": 0.2,
+          "effortLevel": "high",
+          "roleModels": {
+            "haiku": "deepseek-v4-flash",
+            "sonnet": "deepseek-v4-flash",
+            "opus": "deepseek-v4-pro",
+            "subagent": "deepseek-v4-flash"
+          },
+          "source": "deepseek-docs"
+        },
+        {
+          "id": "deepseek-opencode-v4-pro",
+          "displayName": "DeepSeek V4 Pro for OpenCode",
           "target": "opencode",
           "routeMode": "config_only",
           "baseUrl": "https://api.deepseek.com",
           "apiCompatibility": "openai",
           "modelId": "deepseek-v4-pro",
+          "contextWindow": 1000000,
+          "maxTokens": 384000,
+          "temperature": 0.2,
+          "effortLevel": "high",
+          "source": "deepseek-docs"
+        },
+        {
+          "id": "deepseek-codex-v4-pro",
+          "displayName": "DeepSeek V4 Pro for Codex",
+          "target": "codex",
+          "routeMode": "config_only",
+          "baseUrl": "https://api.deepseek.com",
+          "apiCompatibility": "openai",
+          "modelId": "deepseek-v4-pro",
+          "contextWindow": 1000000,
+          "maxTokens": 384000,
+          "temperature": 0.2,
+          "effortLevel": "high",
+          "source": "deepseek-docs"
+        }
+      ]
+    },
+    {
+      "id": "qwen",
+      "name": "Alibaba Cloud Model Studio / Qwen",
+      "description": "Qwen models through Alibaba Cloud Model Studio OpenAI-compatible endpoints.",
+      "category": "third_party",
+      "iconProvider": "qwen",
+      "modelOwner": "qwen",
+      "modelOwnerLabel": "Qwen",
+      "websiteUrl": "https://www.alibabacloud.com/help/en/model-studio/models",
+      "apiKeyUrl": "https://bailian.console.aliyun.com",
+      "baseUrl": "https://dashscope-intl.aliyuncs.com/compatible-mode/v1",
+      "apiCompatibility": "openai",
+      "authType": "bearer",
+      "modelsListPath": "/models",
+      "models": [
+        {
+          "id": "qwen3-max",
+          "displayName": "Qwen3 Max",
+          "contextWindow": 262144,
+          "status": "available",
+          "source": "alibaba-docs"
+        },
+        {
+          "id": "qwen3-max-preview",
+          "displayName": "Qwen3 Max Preview",
+          "contextWindow": 262144,
+          "status": "preview",
+          "source": "alibaba-docs"
+        },
+        {
+          "id": "qwen3-coder-plus",
+          "displayName": "Qwen3 Coder Plus",
+          "contextWindow": 262144,
+          "status": "available",
+          "source": "alibaba-docs"
+        },
+        {
+          "id": "qwen3.5-plus",
+          "displayName": "Qwen3.5 Plus",
+          "contextWindow": 240000,
+          "status": "available",
+          "source": "alibaba-docs"
+        },
+        {
+          "id": "qwen3.5-flash",
+          "displayName": "Qwen3.5 Flash",
+          "contextWindow": 240000,
+          "status": "available",
+          "source": "alibaba-docs"
+        },
+        {
+          "id": "qwen2.5-14b-instruct-1m",
+          "displayName": "Qwen2.5 14B Instruct 1M",
+          "contextWindow": 1000000,
+          "status": "available",
+          "source": "alibaba-docs"
+        }
+      ],
+      "agentGateways": [
+        {
+          "id": "qwen-codex-qwen3-max",
+          "displayName": "Qwen3 Max for Codex",
+          "target": "codex",
+          "routeMode": "config_only",
+          "baseUrl": "https://dashscope-intl.aliyuncs.com/compatible-mode/v1",
+          "apiCompatibility": "openai",
+          "modelId": "qwen3-max",
+          "contextWindow": 262144,
+          "maxTokens": 65536,
+          "effortLevel": "high",
+          "source": "alibaba-docs"
+        },
+        {
+          "id": "qwen-opencode-qwen3-coder-plus",
+          "displayName": "Qwen3 Coder Plus for OpenCode",
+          "target": "opencode",
+          "routeMode": "config_only",
+          "baseUrl": "https://dashscope-intl.aliyuncs.com/compatible-mode/v1",
+          "apiCompatibility": "openai",
+          "modelId": "qwen3-coder-plus",
+          "contextWindow": 262144,
+          "maxTokens": 65536,
+          "effortLevel": "high",
+          "source": "alibaba-docs"
+        },
+        {
+          "id": "qwen-copilot-qwen3-max",
+          "displayName": "Qwen3 Max for Copilot BYOK",
+          "target": "copilot",
+          "routeMode": "config_only",
+          "baseUrl": "https://dashscope-intl.aliyuncs.com/compatible-mode/v1",
+          "apiCompatibility": "openai",
+          "modelId": "qwen3-max",
+          "contextWindow": 262144,
+          "maxTokens": 65536,
+          "effortLevel": "high",
+          "source": "alibaba-docs"
+        }
+      ]
+    },
+    {
+      "id": "z-ai",
+      "name": "Z.AI / GLM",
+      "description": "Zhipu/Z.AI GLM models, including reasoning and coding models exposed through compatible gateway integrations.",
+      "category": "third_party",
+      "iconProvider": "zai",
+      "modelOwner": "zai",
+      "modelOwnerLabel": "Z.AI",
+      "websiteUrl": "https://docs.z.ai",
+      "apiKeyUrl": "https://docs.z.ai",
+      "baseUrl": "https://api.z.ai/api/paas/v4",
+      "apiCompatibility": "openai",
+      "authType": "bearer",
+      "modelsListPath": "/models",
+      "models": [
+        {
+          "id": "glm-5",
+          "displayName": "GLM 5",
+          "contextWindow": 200000,
+          "maxTokens": 128000,
+          "status": "available",
+          "source": "litellm-model-catalog"
+        },
+        {
+          "id": "glm-5-code",
+          "displayName": "GLM 5 Code",
+          "contextWindow": 200000,
+          "maxTokens": 128000,
+          "status": "available",
+          "source": "litellm-model-catalog"
+        },
+        {
+          "id": "glm-4.7",
+          "displayName": "GLM 4.7",
+          "contextWindow": 200000,
+          "maxTokens": 128000,
+          "status": "available",
+          "source": "litellm-model-catalog"
+        },
+        {
+          "id": "glm-4.6",
+          "displayName": "GLM 4.6",
+          "contextWindow": 200000,
+          "maxTokens": 128000,
+          "status": "available",
+          "source": "litellm-model-catalog"
+        },
+        {
+          "id": "glm-4.5",
+          "displayName": "GLM 4.5",
           "contextWindow": 128000,
           "maxTokens": 32000,
-          "temperature": 0.2,
-          "effortLevel": "high"
+          "status": "available",
+          "source": "litellm-model-catalog"
+        }
+      ],
+      "agentGateways": [
+        {
+          "id": "zai-codex-glm-5-code",
+          "displayName": "GLM 5 Code for Codex",
+          "target": "codex",
+          "routeMode": "config_only",
+          "baseUrl": "https://api.z.ai/api/paas/v4",
+          "apiCompatibility": "openai",
+          "modelId": "glm-5-code",
+          "contextWindow": 200000,
+          "maxTokens": 128000,
+          "effortLevel": "high",
+          "source": "litellm-model-catalog"
+        },
+        {
+          "id": "zai-opencode-glm-4-7",
+          "displayName": "GLM 4.7 for OpenCode",
+          "target": "opencode",
+          "routeMode": "config_only",
+          "baseUrl": "https://api.z.ai/api/paas/v4",
+          "apiCompatibility": "openai",
+          "modelId": "glm-4.7",
+          "contextWindow": 200000,
+          "maxTokens": 128000,
+          "effortLevel": "high",
+          "source": "litellm-model-catalog"
+        }
+      ]
+    },
+    {
+      "id": "minimax",
+      "name": "MiniMax",
+      "description": "MiniMax OpenAI-compatible and Anthropic-compatible text models.",
+      "category": "third_party",
+      "iconProvider": "minimax",
+      "modelOwner": "minimax",
+      "modelOwnerLabel": "MiniMax",
+      "websiteUrl": "https://platform.minimax.io/docs",
+      "apiKeyUrl": "https://platform.minimax.io",
+      "baseUrl": "https://api.minimax.io/v1",
+      "apiCompatibility": "openai",
+      "authType": "bearer",
+      "modelsListPath": "/models",
+      "models": [
+        {
+          "id": "MiniMax-M3",
+          "displayName": "MiniMax M3",
+          "contextWindow": 1000000,
+          "status": "available",
+          "source": "minimax-docs"
+        },
+        {
+          "id": "MiniMax-M2.7",
+          "displayName": "MiniMax M2.7",
+          "contextWindow": 204800,
+          "status": "available",
+          "source": "minimax-docs"
+        },
+        {
+          "id": "MiniMax-M2.7-highspeed",
+          "displayName": "MiniMax M2.7 Highspeed",
+          "contextWindow": 204800,
+          "status": "available",
+          "source": "minimax-docs"
+        },
+        {
+          "id": "MiniMax-M2.5",
+          "displayName": "MiniMax M2.5",
+          "contextWindow": 204800,
+          "status": "available",
+          "source": "minimax-docs"
+        }
+      ],
+      "agentGateways": [
+        {
+          "id": "minimax-claude-code-m3",
+          "displayName": "MiniMax M3 for Claude Code",
+          "target": "claude_code",
+          "routeMode": "model_mapping",
+          "baseUrl": "https://api.minimax.io/v1/anthropic",
+          "apiCompatibility": "anthropic",
+          "modelId": "MiniMax-M3",
+          "contextWindow": 1000000,
+          "maxTokens": 128000,
+          "effortLevel": "high",
+          "roleModels": {
+            "haiku": "MiniMax-M2.7-highspeed",
+            "sonnet": "MiniMax-M3",
+            "opus": "MiniMax-M3",
+            "subagent": "MiniMax-M2.7-highspeed"
+          },
+          "source": "minimax-docs"
+        },
+        {
+          "id": "minimax-opencode-m3",
+          "displayName": "MiniMax M3 for OpenCode",
+          "target": "opencode",
+          "routeMode": "config_only",
+          "baseUrl": "https://api.minimax.io/v1",
+          "apiCompatibility": "openai",
+          "modelId": "MiniMax-M3",
+          "contextWindow": 1000000,
+          "maxTokens": 128000,
+          "effortLevel": "high",
+          "source": "minimax-docs"
+        },
+        {
+          "id": "minimax-codex-m3",
+          "displayName": "MiniMax M3 for Codex",
+          "target": "codex",
+          "routeMode": "config_only",
+          "baseUrl": "https://api.minimax.io/v1",
+          "apiCompatibility": "openai",
+          "modelId": "MiniMax-M3",
+          "contextWindow": 1000000,
+          "maxTokens": 128000,
+          "effortLevel": "high",
+          "source": "minimax-docs"
+        }
+      ]
+    },
+    {
+      "id": "moonshot",
+      "name": "Moonshot AI / Kimi",
+      "description": "Moonshot Kimi OpenAI-compatible and Anthropic-compatible API.",
+      "category": "third_party",
+      "iconProvider": "moonshot",
+      "modelOwner": "moonshot",
+      "modelOwnerLabel": "Moonshot AI",
+      "websiteUrl": "https://platform.kimi.ai",
+      "apiKeyUrl": "https://platform.kimi.ai",
+      "baseUrl": "https://api.moonshot.ai/v1",
+      "apiCompatibility": "openai",
+      "authType": "bearer",
+      "modelsListPath": "/models",
+      "models": [
+        {
+          "id": "kimi-k2.6",
+          "displayName": "Kimi K2.6",
+          "contextWindow": 262144,
+          "maxTokens": 262144,
+          "status": "available",
+          "source": "litellm-model-catalog"
+        },
+        {
+          "id": "kimi-k2.5",
+          "displayName": "Kimi K2.5",
+          "contextWindow": 262144,
+          "maxTokens": 262144,
+          "status": "available",
+          "source": "litellm-model-catalog"
+        },
+        {
+          "id": "kimi-k2-turbo-preview",
+          "displayName": "Kimi K2 Turbo Preview",
+          "contextWindow": 262144,
+          "maxTokens": 262144,
+          "status": "shutdown",
+          "shutdownDate": "2026-05-25",
+          "fallbackModelId": "kimi-k2.5",
+          "disabledByDefault": true,
+          "source": "litellm-model-catalog"
+        }
+      ],
+      "agentGateways": [
+        {
+          "id": "moonshot-claude-code-kimi-k2-6",
+          "displayName": "Kimi K2.6 for Claude Code",
+          "target": "claude_code",
+          "routeMode": "model_mapping",
+          "baseUrl": "https://api.moonshot.ai/anthropic",
+          "apiCompatibility": "anthropic",
+          "modelId": "kimi-k2.6",
+          "contextWindow": 262144,
+          "maxTokens": 262144,
+          "effortLevel": "high",
+          "roleModels": {
+            "haiku": "kimi-k2.5",
+            "sonnet": "kimi-k2.6",
+            "opus": "kimi-k2.6",
+            "subagent": "kimi-k2.5"
+          },
+          "source": "moonshot-kimi-k2"
+        },
+        {
+          "id": "moonshot-opencode-kimi-k2-6",
+          "displayName": "Kimi K2.6 for OpenCode",
+          "target": "opencode",
+          "routeMode": "config_only",
+          "baseUrl": "https://api.moonshot.ai/v1",
+          "apiCompatibility": "openai",
+          "modelId": "kimi-k2.6",
+          "contextWindow": 262144,
+          "maxTokens": 262144,
+          "effortLevel": "high",
+          "source": "litellm-model-catalog"
+        },
+        {
+          "id": "moonshot-codex-kimi-k2-6",
+          "displayName": "Kimi K2.6 for Codex",
+          "target": "codex",
+          "routeMode": "config_only",
+          "baseUrl": "https://api.moonshot.ai/v1",
+          "apiCompatibility": "openai",
+          "modelId": "kimi-k2.6",
+          "contextWindow": 262144,
+          "maxTokens": 262144,
+          "effortLevel": "high",
+          "source": "litellm-model-catalog"
+        }
+      ]
+    },
+    {
+      "id": "xai",
+      "name": "xAI",
+      "description": "xAI OpenAI-compatible API for Grok models.",
+      "category": "third_party",
+      "iconProvider": "xai",
+      "modelOwner": "xai",
+      "modelOwnerLabel": "xAI",
+      "websiteUrl": "https://docs.x.ai",
+      "apiKeyUrl": "https://console.x.ai",
+      "baseUrl": "https://api.x.ai/v1",
+      "apiCompatibility": "openai",
+      "authType": "bearer",
+      "modelsListPath": "/models",
+      "models": [
+        {
+          "id": "grok-code-fast-1",
+          "displayName": "Grok Code Fast 1",
+          "contextWindow": 256000,
+          "status": "available",
+          "source": "vercel-ai-gateway-models"
+        },
+        {
+          "id": "grok-4",
+          "displayName": "Grok 4",
+          "contextWindow": 256000,
+          "status": "available",
+          "source": "openrouter-models"
+        }
+      ],
+      "agentGateways": [
+        {
+          "id": "xai-codex-grok-code-fast-1",
+          "displayName": "Grok Code Fast 1 for Codex",
+          "target": "codex",
+          "routeMode": "config_only",
+          "baseUrl": "https://api.x.ai/v1",
+          "apiCompatibility": "openai",
+          "modelId": "grok-code-fast-1",
+          "contextWindow": 256000,
+          "maxTokens": 65536,
+          "effortLevel": "high",
+          "source": "vercel-ai-gateway-models"
+        },
+        {
+          "id": "xai-opencode-grok-code-fast-1",
+          "displayName": "Grok Code Fast 1 for OpenCode",
+          "target": "opencode",
+          "routeMode": "config_only",
+          "baseUrl": "https://api.x.ai/v1",
+          "apiCompatibility": "openai",
+          "modelId": "grok-code-fast-1",
+          "contextWindow": 256000,
+          "maxTokens": 65536,
+          "effortLevel": "high",
+          "source": "vercel-ai-gateway-models"
+        }
+      ]
+    },
+    {
+      "id": "mistral",
+      "name": "Mistral AI",
+      "description": "Mistral AI OpenAI-compatible chat models.",
+      "category": "third_party",
+      "iconProvider": "mistral",
+      "modelOwner": "mistral",
+      "modelOwnerLabel": "Mistral AI",
+      "websiteUrl": "https://docs.mistral.ai",
+      "apiKeyUrl": "https://console.mistral.ai",
+      "baseUrl": "https://api.mistral.ai/v1",
+      "apiCompatibility": "openai",
+      "authType": "bearer",
+      "modelsListPath": "/models",
+      "models": [
+        {
+          "id": "mistral-large-latest",
+          "displayName": "Mistral Large Latest",
+          "contextWindow": 128000,
+          "status": "available",
+          "source": "litellm-model-catalog"
+        },
+        {
+          "id": "codestral-latest",
+          "displayName": "Codestral Latest",
+          "contextWindow": 256000,
+          "status": "available",
+          "source": "litellm-model-catalog"
+        }
+      ],
+      "agentGateways": [
+        {
+          "id": "mistral-opencode-codestral",
+          "displayName": "Codestral for OpenCode",
+          "target": "opencode",
+          "routeMode": "config_only",
+          "baseUrl": "https://api.mistral.ai/v1",
+          "apiCompatibility": "openai",
+          "modelId": "codestral-latest",
+          "contextWindow": 256000,
+          "maxTokens": 65536,
+          "effortLevel": "high",
+          "source": "litellm-model-catalog"
+        },
+        {
+          "id": "mistral-codex-codestral",
+          "displayName": "Codestral for Codex",
+          "target": "codex",
+          "routeMode": "config_only",
+          "baseUrl": "https://api.mistral.ai/v1",
+          "apiCompatibility": "openai",
+          "modelId": "codestral-latest",
+          "contextWindow": 256000,
+          "maxTokens": 65536,
+          "effortLevel": "high",
+          "source": "litellm-model-catalog"
+        }
+      ]
+    },
+    {
+      "id": "perplexity",
+      "name": "Perplexity",
+      "description": "Perplexity Sonar models with OpenAI-compatible API.",
+      "category": "third_party",
+      "iconProvider": "perplexity",
+      "modelOwner": "perplexity",
+      "modelOwnerLabel": "Perplexity",
+      "websiteUrl": "https://docs.perplexity.ai",
+      "apiKeyUrl": "https://www.perplexity.ai/settings/api",
+      "baseUrl": "https://api.perplexity.ai",
+      "apiCompatibility": "openai",
+      "authType": "bearer",
+      "modelsListPath": "/models",
+      "models": [
+        {
+          "id": "sonar-pro",
+          "displayName": "Sonar Pro",
+          "contextWindow": 200000,
+          "status": "available",
+          "source": "litellm-model-catalog"
+        },
+        {
+          "id": "sonar-deep-research",
+          "displayName": "Sonar Deep Research",
+          "contextWindow": 200000,
+          "status": "available",
+          "source": "litellm-model-catalog"
+        }
+      ],
+      "agentGateways": [
+        {
+          "id": "perplexity-opencode-sonar-pro",
+          "displayName": "Sonar Pro for OpenCode",
+          "target": "opencode",
+          "routeMode": "config_only",
+          "baseUrl": "https://api.perplexity.ai",
+          "apiCompatibility": "openai",
+          "modelId": "sonar-pro",
+          "contextWindow": 200000,
+          "maxTokens": 65536,
+          "effortLevel": "medium",
+          "source": "litellm-model-catalog"
         }
       ]
     },
     {
       "id": "openrouter",
       "name": "OpenRouter",
-      "description": "Aggregator endpoint for many model providers.",
+      "description": "Aggregator endpoint for hundreds of model/provider combinations.",
       "category": "aggregator",
       "iconProvider": "openrouter",
       "modelOwner": "openrouter",
@@ -192,36 +1177,89 @@
       "modelsListPath": "/models",
       "models": [
         {
-          "id": "openai/gpt-5.4",
-          "displayName": "openai/gpt-5.4",
-          "contextWindow": 200000
+          "id": "openai/gpt-5.5-pro",
+          "displayName": "OpenAI GPT-5.5 Pro via OpenRouter",
+          "contextWindow": 1050000,
+          "status": "available",
+          "source": "openrouter-models"
         },
         {
-          "id": "anthropic/claude-sonnet-4.6",
-          "displayName": "anthropic/claude-sonnet-4.6",
-          "contextWindow": 200000
+          "id": "anthropic/claude-fable-5",
+          "displayName": "Claude Fable 5 via OpenRouter",
+          "contextWindow": 1000000,
+          "status": "disabled",
+          "disabledByDefault": true,
+          "fallbackModelId": "anthropic/claude-opus-4.8",
+          "source": "anthropic-fable-access"
+        },
+        {
+          "id": "deepseek/deepseek-v4-pro",
+          "displayName": "DeepSeek V4 Pro via OpenRouter",
+          "contextWindow": 1048576,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "qwen/qwen3-max-thinking",
+          "displayName": "Qwen3 Max Thinking via OpenRouter",
+          "contextWindow": 262144,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "moonshotai/kimi-k2.5",
+          "displayName": "Kimi K2.5 via OpenRouter",
+          "contextWindow": 262144,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "minimax/minimax-m3",
+          "displayName": "MiniMax M3 via OpenRouter",
+          "contextWindow": 1048576,
+          "status": "available",
+          "source": "openrouter-models"
         }
       ],
       "agentGateways": [
         {
+          "id": "openrouter-opencode-gpt-5-5-pro",
+          "displayName": "OpenRouter GPT-5.5 Pro for OpenCode",
           "target": "opencode",
           "routeMode": "config_only",
           "baseUrl": "https://openrouter.ai/api/v1",
           "apiCompatibility": "openai",
-          "modelId": "openai/gpt-5.4",
-          "contextWindow": 200000,
-          "maxTokens": 64000,
-          "effortLevel": "high"
+          "modelId": "openai/gpt-5.5-pro",
+          "contextWindow": 1050000,
+          "maxTokens": 128000,
+          "effortLevel": "xhigh",
+          "source": "openrouter-models"
         },
         {
+          "id": "openrouter-codex-deepseek-v4-pro",
+          "displayName": "OpenRouter DeepSeek V4 Pro for Codex",
+          "target": "codex",
+          "routeMode": "config_only",
+          "baseUrl": "https://openrouter.ai/api/v1",
+          "apiCompatibility": "openai",
+          "modelId": "deepseek/deepseek-v4-pro",
+          "contextWindow": 1048576,
+          "maxTokens": 128000,
+          "effortLevel": "high",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "openrouter-copilot-qwen3-max",
+          "displayName": "OpenRouter Qwen3 Max for Copilot BYOK",
           "target": "copilot",
           "routeMode": "config_only",
           "baseUrl": "https://openrouter.ai/api/v1",
           "apiCompatibility": "openai",
-          "modelId": "openai/gpt-5.4",
-          "contextWindow": 200000,
-          "maxTokens": 64000,
-          "effortLevel": "high"
+          "modelId": "qwen/qwen3-max-thinking",
+          "contextWindow": 262144,
+          "maxTokens": 65536,
+          "effortLevel": "high",
+          "source": "openrouter-models"
         }
       ]
     },

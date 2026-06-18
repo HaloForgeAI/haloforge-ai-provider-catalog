@@ -17,37 +17,116 @@
   },
   "models": [
     {
+      "id": "claude-fable-5",
+      "displayName": "Claude Fable 5",
+      "contextWindow": 1000000,
+      "maxTokens": 300000,
+      "status": "disabled",
+      "disabledByDefault": true,
+      "fallbackModelId": "claude-opus-4-8",
+      "source": "anthropic-fable-access"
+    },
+    {
+      "id": "claude-opus-4-8",
+      "displayName": "Claude Opus 4.8",
+      "contextWindow": 200000,
+      "maxTokens": 300000,
+      "status": "available",
+      "source": "anthropic-docs"
+    },
+    {
+      "id": "claude-opus-4-7",
+      "displayName": "Claude Opus 4.7",
+      "contextWindow": 200000,
+      "maxTokens": 300000,
+      "status": "available",
+      "source": "anthropic-docs"
+    },
+    {
       "id": "claude-opus-4-6",
       "displayName": "Claude Opus 4.6",
-      "contextWindow": 200000
+      "contextWindow": 200000,
+      "maxTokens": 300000,
+      "status": "available",
+      "source": "anthropic-docs"
     },
     {
       "id": "claude-sonnet-4-6",
       "displayName": "Claude Sonnet 4.6",
-      "contextWindow": 200000
+      "contextWindow": 200000,
+      "maxTokens": 300000,
+      "status": "available",
+      "source": "anthropic-docs"
     },
     {
       "id": "claude-haiku-4-5-20251001",
       "displayName": "Claude Haiku 4.5",
-      "contextWindow": 200000
+      "contextWindow": 200000,
+      "maxTokens": 64000,
+      "status": "available",
+      "source": "anthropic-docs"
     }
   ],
   "agentGateways": [
     {
+      "id": "anthropic-claude-code-sonnet-4-6",
+      "displayName": "Claude Sonnet 4.6 for Claude Code",
       "target": "claude_code",
       "routeMode": "direct",
       "baseUrl": "https://api.anthropic.com",
       "apiCompatibility": "anthropic",
       "modelId": "claude-sonnet-4-6",
       "contextWindow": 200000,
-      "maxTokens": 64000,
+      "maxTokens": 300000,
       "effortLevel": "high",
       "roleModels": {
         "haiku": "claude-haiku-4-5-20251001",
         "sonnet": "claude-sonnet-4-6",
-        "opus": "claude-opus-4-6",
+        "opus": "claude-opus-4-8",
         "subagent": "claude-haiku-4-5-20251001"
-      }
+      },
+      "source": "anthropic-docs"
+    },
+    {
+      "id": "anthropic-claude-code-opus-4-8",
+      "displayName": "Claude Opus 4.8 for Claude Code",
+      "target": "claude_code",
+      "routeMode": "direct",
+      "baseUrl": "https://api.anthropic.com",
+      "apiCompatibility": "anthropic",
+      "modelId": "claude-opus-4-8",
+      "contextWindow": 200000,
+      "maxTokens": 300000,
+      "effortLevel": "xhigh",
+      "roleModels": {
+        "haiku": "claude-haiku-4-5-20251001",
+        "sonnet": "claude-sonnet-4-6",
+        "opus": "claude-opus-4-8",
+        "subagent": "claude-haiku-4-5-20251001"
+      },
+      "source": "anthropic-docs"
+    },
+    {
+      "id": "anthropic-claude-code-fable-5",
+      "displayName": "Claude Fable 5 for Claude Code (restricted)",
+      "target": "claude_code",
+      "routeMode": "direct",
+      "baseUrl": "https://api.anthropic.com",
+      "apiCompatibility": "anthropic",
+      "modelId": "claude-fable-5",
+      "contextWindow": 1000000,
+      "maxTokens": 300000,
+      "effortLevel": "xhigh",
+      "status": "disabled",
+      "disabledByDefault": true,
+      "fallbackModelId": "claude-opus-4-8",
+      "roleModels": {
+        "haiku": "claude-haiku-4-5-20251001",
+        "sonnet": "claude-sonnet-4-6",
+        "opus": "claude-opus-4-8",
+        "subagent": "claude-haiku-4-5-20251001"
+      },
+      "source": "anthropic-fable-access"
     }
   ]
 }

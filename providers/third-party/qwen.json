@@ -1,0 +1,100 @@
+{
+  "id": "qwen",
+  "name": "Alibaba Cloud Model Studio / Qwen",
+  "description": "Qwen models through Alibaba Cloud Model Studio OpenAI-compatible endpoints.",
+  "category": "third_party",
+  "iconProvider": "qwen",
+  "modelOwner": "qwen",
+  "modelOwnerLabel": "Qwen",
+  "websiteUrl": "https://www.alibabacloud.com/help/en/model-studio/models",
+  "apiKeyUrl": "https://bailian.console.aliyun.com",
+  "baseUrl": "https://dashscope-intl.aliyuncs.com/compatible-mode/v1",
+  "apiCompatibility": "openai",
+  "authType": "bearer",
+  "modelsListPath": "/models",
+  "models": [
+    {
+      "id": "qwen3-max",
+      "displayName": "Qwen3 Max",
+      "contextWindow": 262144,
+      "status": "available",
+      "source": "alibaba-docs"
+    },
+    {
+      "id": "qwen3-max-preview",
+      "displayName": "Qwen3 Max Preview",
+      "contextWindow": 262144,
+      "status": "preview",
+      "source": "alibaba-docs"
+    },
+    {
+      "id": "qwen3-coder-plus",
+      "displayName": "Qwen3 Coder Plus",
+      "contextWindow": 262144,
+      "status": "available",
+      "source": "alibaba-docs"
+    },
+    {
+      "id": "qwen3.5-plus",
+      "displayName": "Qwen3.5 Plus",
+      "contextWindow": 240000,
+      "status": "available",
+      "source": "alibaba-docs"
+    },
+    {
+      "id": "qwen3.5-flash",
+      "displayName": "Qwen3.5 Flash",
+      "contextWindow": 240000,
+      "status": "available",
+      "source": "alibaba-docs"
+    },
+    {
+      "id": "qwen2.5-14b-instruct-1m",
+      "displayName": "Qwen2.5 14B Instruct 1M",
+      "contextWindow": 1000000,
+      "status": "available",
+      "source": "alibaba-docs"
+    }
+  ],
+  "agentGateways": [
+    {
+      "id": "qwen-codex-qwen3-max",
+      "displayName": "Qwen3 Max for Codex",
+      "target": "codex",
+      "routeMode": "config_only",
+      "baseUrl": "https://dashscope-intl.aliyuncs.com/compatible-mode/v1",
+      "apiCompatibility": "openai",
+      "modelId": "qwen3-max",
+      "contextWindow": 262144,
+      "maxTokens": 65536,
+      "effortLevel": "high",
+      "source": "alibaba-docs"
+    },
+    {
+      "id": "qwen-opencode-qwen3-coder-plus",
+      "displayName": "Qwen3 Coder Plus for OpenCode",
+      "target": "opencode",
+      "routeMode": "config_only",
+      "baseUrl": "https://dashscope-intl.aliyuncs.com/compatible-mode/v1",
+      "apiCompatibility": "openai",
+      "modelId": "qwen3-coder-plus",
+      "contextWindow": 262144,
+      "maxTokens": 65536,
+      "effortLevel": "high",
+      "source": "alibaba-docs"
+    },
+    {
+      "id": "qwen-copilot-qwen3-max",
+      "displayName": "Qwen3 Max for Copilot BYOK",
+      "target": "copilot",
+      "routeMode": "config_only",
+      "baseUrl": "https://dashscope-intl.aliyuncs.com/compatible-mode/v1",
+      "apiCompatibility": "openai",
+      "modelId": "qwen3-max",
+      "contextWindow": 262144,
+      "maxTokens": 65536,
+      "effortLevel": "high",
+      "source": "alibaba-docs"
+    }
+  ]
+}

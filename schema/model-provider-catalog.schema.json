@@ -9,12 +9,30 @@
     "updatedAt": { "type": "string" },
     "source": { "type": "string" },
     "repository": { "type": "string" },
+    "upstreamSources": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/upstreamSource" }
+    },
     "providers": {
       "type": "array",
       "items": { "$ref": "#/$defs/provider" }
     }
   },
   "$defs": {
+    "upstreamSource": {
+      "type": "object",
+      "required": ["id", "name", "url"],
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "url": { "type": "string" },
+        "kind": {
+          "enum": ["official", "aggregator", "open_source", "community"]
+        },
+        "notes": { "type": "string" }
+      },
+      "additionalProperties": true
+    },
     "provider": {
       "type": "object",
       "required": [
@@ -39,7 +57,9 @@
         "apiKeyUrl": { "type": "string" },
         "baseUrl": { "type": "string" },
         "apiCompatibility": { "type": "string" },
-        "authType": { "type": "string" },
+        "authType": {
+          "enum": ["bearer", "api-key", "header-api-key", "x-goog-api-key"]
+        },
         "modelsListPath": { "type": "string" },
         "extraHeaders": { "type": "object" },
         "models": {
@@ -60,7 +80,13 @@
         "id": { "type": "string" },
         "displayName": { "type": "string" },
         "contextWindow": { "type": "integer" },
-        "maxTokens": { "type": "integer" }
+        "maxTokens": { "type": "integer" },
+        "status": { "$ref": "#/$defs/lifecycleStatus" },
+        "deprecationDate": { "type": "string" },
+        "shutdownDate": { "type": "string" },
+        "fallbackModelId": { "type": "string" },
+        "disabledByDefault": { "type": "boolean" },
+        "source": { "type": "string" }
       },
       "additionalProperties": true
     },
@@ -68,6 +94,9 @@
       "type": "object",
       "required": ["target", "routeMode"],
       "properties": {
+        "id": { "type": "string" },
+        "displayName": { "type": "string" },
+        "description": { "type": "string" },
         "target": {
           "enum": ["claude_code", "codex", "opencode", "copilot"]
         },
@@ -81,9 +110,26 @@
         "maxTokens": { "type": "integer" },
         "temperature": { "type": "number" },
         "effortLevel": { "type": "string" },
-        "roleModels": { "type": "object" }
+        "roleModels": { "type": "object" },
+        "status": { "$ref": "#/$defs/lifecycleStatus" },
+        "deprecationDate": { "type": "string" },
+        "shutdownDate": { "type": "string" },
+        "fallbackModelId": { "type": "string" },
+        "disabledByDefault": { "type": "boolean" },
+        "source": { "type": "string" }
       },
       "additionalProperties": true
+    },
+    "lifecycleStatus": {
+      "enum": [
+        "available",
+        "preview",
+        "experimental",
+        "deprecated",
+        "shutdown",
+        "restricted",
+        "disabled"
+      ]
     }
   }
 }

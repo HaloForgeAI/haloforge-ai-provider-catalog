@@ -1,0 +1,91 @@
+{
+  "id": "moonshot",
+  "name": "Moonshot AI / Kimi",
+  "description": "Moonshot Kimi OpenAI-compatible and Anthropic-compatible API.",
+  "category": "third_party",
+  "iconProvider": "moonshot",
+  "modelOwner": "moonshot",
+  "modelOwnerLabel": "Moonshot AI",
+  "websiteUrl": "https://platform.kimi.ai",
+  "apiKeyUrl": "https://platform.kimi.ai",
+  "baseUrl": "https://api.moonshot.ai/v1",
+  "apiCompatibility": "openai",
+  "authType": "bearer",
+  "modelsListPath": "/models",
+  "models": [
+    {
+      "id": "kimi-k2.6",
+      "displayName": "Kimi K2.6",
+      "contextWindow": 262144,
+      "maxTokens": 262144,
+      "status": "available",
+      "source": "litellm-model-catalog"
+    },
+    {
+      "id": "kimi-k2.5",
+      "displayName": "Kimi K2.5",
+      "contextWindow": 262144,
+      "maxTokens": 262144,
+      "status": "available",
+      "source": "litellm-model-catalog"
+    },
+    {
+      "id": "kimi-k2-turbo-preview",
+      "displayName": "Kimi K2 Turbo Preview",
+      "contextWindow": 262144,
+      "maxTokens": 262144,
+      "status": "shutdown",
+      "shutdownDate": "2026-05-25",
+      "fallbackModelId": "kimi-k2.5",
+      "disabledByDefault": true,
+      "source": "litellm-model-catalog"
+    }
+  ],
+  "agentGateways": [
+    {
+      "id": "moonshot-claude-code-kimi-k2-6",
+      "displayName": "Kimi K2.6 for Claude Code",
+      "target": "claude_code",
+      "routeMode": "model_mapping",
+      "baseUrl": "https://api.moonshot.ai/anthropic",
+      "apiCompatibility": "anthropic",
+      "modelId": "kimi-k2.6",
+      "contextWindow": 262144,
+      "maxTokens": 262144,
+      "effortLevel": "high",
+      "roleModels": {
+        "haiku": "kimi-k2.5",
+        "sonnet": "kimi-k2.6",
+        "opus": "kimi-k2.6",
+        "subagent": "kimi-k2.5"
+      },
+      "source": "moonshot-kimi-k2"
+    },
+    {
+      "id": "moonshot-opencode-kimi-k2-6",
+      "displayName": "Kimi K2.6 for OpenCode",
+      "target": "opencode",
+      "routeMode": "config_only",
+      "baseUrl": "https://api.moonshot.ai/v1",
+      "apiCompatibility": "openai",
+      "modelId": "kimi-k2.6",
+      "contextWindow": 262144,
+      "maxTokens": 262144,
+      "effortLevel": "high",
+      "source": "litellm-model-catalog"
+    },
+    {
+      "id": "moonshot-codex-kimi-k2-6",
+      "displayName": "Kimi K2.6 for Codex",
+      "target": "codex",
+      "routeMode": "config_only",
+      "baseUrl": "https://api.moonshot.ai/v1",
+      "apiCompatibility": "openai",
+      "modelId": "kimi-k2.6",
+      "contextWindow": 262144,
+      "maxTokens": 262144,
+      "effortLevel": "high",
+      "source": "litellm-model-catalog"
+    }
+  ]
+}

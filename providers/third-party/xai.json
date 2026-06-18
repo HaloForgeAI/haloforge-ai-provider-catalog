@@ -1,0 +1,59 @@
+{
+  "id": "xai",
+  "name": "xAI",
+  "description": "xAI OpenAI-compatible API for Grok models.",
+  "category": "third_party",
+  "iconProvider": "xai",
+  "modelOwner": "xai",
+  "modelOwnerLabel": "xAI",
+  "websiteUrl": "https://docs.x.ai",
+  "apiKeyUrl": "https://console.x.ai",
+  "baseUrl": "https://api.x.ai/v1",
+  "apiCompatibility": "openai",
+  "authType": "bearer",
+  "modelsListPath": "/models",
+  "models": [
+    {
+      "id": "grok-code-fast-1",
+      "displayName": "Grok Code Fast 1",
+      "contextWindow": 256000,
+      "status": "available",
+      "source": "vercel-ai-gateway-models"
+    },
+    {
+      "id": "grok-4",
+      "displayName": "Grok 4",
+      "contextWindow": 256000,
+      "status": "available",
+      "source": "openrouter-models"
+    }
+  ],
+  "agentGateways": [
+    {
+      "id": "xai-codex-grok-code-fast-1",
+      "displayName": "Grok Code Fast 1 for Codex",
+      "target": "codex",
+      "routeMode": "config_only",
+      "baseUrl": "https://api.x.ai/v1",
+      "apiCompatibility": "openai",
+      "modelId": "grok-code-fast-1",
+      "contextWindow": 256000,
+      "maxTokens": 65536,
+      "effortLevel": "high",
+      "source": "vercel-ai-gateway-models"
+    },
+    {
+      "id": "xai-opencode-grok-code-fast-1",
+      "displayName": "Grok Code Fast 1 for OpenCode",
+      "target": "opencode",
+      "routeMode": "config_only",
+      "baseUrl": "https://api.x.ai/v1",
+      "apiCompatibility": "openai",
+      "modelId": "grok-code-fast-1",
+      "contextWindow": 256000,
+      "maxTokens": 65536,
+      "effortLevel": "high",
+      "source": "vercel-ai-gateway-models"
+    }
+  ]
+}

@@ -1,13 +1,47 @@
 {
   "$schema": "../schema/model-provider-catalog.schema.json",
   "schemaVersion": 1,
-  "updatedAt": "2026-06-18T00:00:00.000Z",
+  "updatedAt": "2026-06-18T16:45:00.000Z",
   "source": "haloforge-ai-provider-catalog",
   "repository": "https://github.com/HaloForgeAI/haloforge-ai-provider-catalog",
+  "upstreamSources": [
+    {
+      "id": "litellm-model-catalog",
+      "name": "LiteLLM model catalog",
+      "url": "https://api.litellm.ai/model_catalog",
+      "kind": "open_source",
+      "notes": "Reference for context windows, pricing metadata, capabilities, and deprecation dates."
+    },
+    {
+      "id": "openrouter-models",
+      "name": "OpenRouter models API",
+      "url": "https://openrouter.ai/api/v1/models",
+      "kind": "aggregator",
+      "notes": "Reference for aggregator-visible model ids and context lengths."
+    },
+    {
+      "id": "vercel-ai-gateway-models",
+      "name": "Vercel AI Gateway model endpoint",
+      "url": "https://ai-gateway.vercel.sh/v1/models",
+      "kind": "aggregator",
+      "notes": "Reference for AI Gateway model/provider ids, pricing, and context windows."
+    }
+  ],
   "providerOrder": [
     "openai",
     "anthropic",
+    "google-ai",
+    "google-vertex",
+    "azure-openai",
+    "amazon-bedrock",
     "deepseek",
+    "qwen",
+    "z-ai",
+    "minimax",
+    "moonshot",
+    "xai",
+    "mistral",
+    "perplexity",
     "openrouter",
     "ollama",
     "custom-gateway"

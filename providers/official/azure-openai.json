@@ -1,0 +1,70 @@
+{
+  "id": "azure-openai",
+  "name": "Azure OpenAI",
+  "description": "Azure OpenAI v1-compatible endpoint. Replace {resource} with your Azure OpenAI resource name.",
+  "category": "official",
+  "iconProvider": "azure",
+  "modelOwner": "openai",
+  "modelOwnerLabel": "OpenAI on Azure",
+  "websiteUrl": "https://learn.microsoft.com/azure/ai-foundry/openai/",
+  "apiKeyUrl": "https://portal.azure.com",
+  "baseUrl": "https://{resource}.openai.azure.com/openai/v1",
+  "apiCompatibility": "openai",
+  "authType": "header-api-key",
+  "modelsListPath": "/models",
+  "models": [
+    {
+      "id": "gpt-5.5",
+      "displayName": "GPT-5.5 deployment",
+      "contextWindow": 1000000,
+      "maxTokens": 128000,
+      "status": "available",
+      "source": "openai-docs"
+    },
+    {
+      "id": "gpt-5.4",
+      "displayName": "GPT-5.4 deployment",
+      "contextWindow": 1000000,
+      "maxTokens": 128000,
+      "status": "available",
+      "source": "openai-docs"
+    },
+    {
+      "id": "gpt-4o-2024-08-06",
+      "displayName": "GPT-4o 2024-08-06 deployment",
+      "contextWindow": 128000,
+      "maxTokens": 16384,
+      "status": "shutdown",
+      "shutdownDate": "2026-02-27",
+      "fallbackModelId": "gpt-5.4",
+      "disabledByDefault": true,
+      "source": "litellm-model-catalog"
+    }
+  ],
+  "agentGateways": [
+    {
+      "id": "azure-codex-gpt-5-5",
+      "displayName": "Azure GPT-5.5 for Codex",
+      "target": "codex",
+      "routeMode": "config_only",
+      "baseUrl": "https://{resource}.openai.azure.com/openai/v1",
+      "apiCompatibility": "openai",
+      "modelId": "gpt-5.5",
+      "contextWindow": 1000000,
+      "maxTokens": 128000,
+      "effortLevel": "xhigh"
+    },
+    {
+      "id": "azure-opencode-gpt-5-4",
+      "displayName": "Azure GPT-5.4 for OpenCode",
+      "target": "opencode",
+      "routeMode": "config_only",
+      "baseUrl": "https://{resource}.openai.azure.com/openai/v1",
+      "apiCompatibility": "openai",
+      "modelId": "gpt-5.4",
+      "contextWindow": 1000000,
+      "maxTokens": 128000,
+      "effortLevel": "high"
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "id": "z-ai",
+  "name": "Z.AI / GLM",
+  "description": "Zhipu/Z.AI GLM models, including reasoning and coding models exposed through compatible gateway integrations.",
+  "category": "third_party",
+  "iconProvider": "zai",
+  "modelOwner": "zai",
+  "modelOwnerLabel": "Z.AI",
+  "websiteUrl": "https://docs.z.ai",
+  "apiKeyUrl": "https://docs.z.ai",
+  "baseUrl": "https://api.z.ai/api/paas/v4",
+  "apiCompatibility": "openai",
+  "authType": "bearer",
+  "modelsListPath": "/models",
+  "models": [
+    {
+      "id": "glm-5",
+      "displayName": "GLM 5",
+      "contextWindow": 200000,
+      "maxTokens": 128000,
+      "status": "available",
+      "source": "litellm-model-catalog"
+    },
+    {
+      "id": "glm-5-code",
+      "displayName": "GLM 5 Code",
+      "contextWindow": 200000,
+      "maxTokens": 128000,
+      "status": "available",
+      "source": "litellm-model-catalog"
+    },
+    {
+      "id": "glm-4.7",
+      "displayName": "GLM 4.7",
+      "contextWindow": 200000,
+      "maxTokens": 128000,
+      "status": "available",
+      "source": "litellm-model-catalog"
+    },
+    {
+      "id": "glm-4.6",
+      "displayName": "GLM 4.6",
+      "contextWindow": 200000,
+      "maxTokens": 128000,
+      "status": "available",
+      "source": "litellm-model-catalog"
+    },
+    {
+      "id": "glm-4.5",
+      "displayName": "GLM 4.5",
+      "contextWindow": 128000,
+      "maxTokens": 32000,
+      "status": "available",
+      "source": "litellm-model-catalog"
+    }
+  ],
+  "agentGateways": [
+    {
+      "id": "zai-codex-glm-5-code",
+      "displayName": "GLM 5 Code for Codex",
+      "target": "codex",
+      "routeMode": "config_only",
+      "baseUrl": "https://api.z.ai/api/paas/v4",
+      "apiCompatibility": "openai",
+      "modelId": "glm-5-code",
+      "contextWindow": 200000,
+      "maxTokens": 128000,
+      "effortLevel": "high",
+      "source": "litellm-model-catalog"
+    },
+    {
+      "id": "zai-opencode-glm-4-7",
+      "displayName": "GLM 4.7 for OpenCode",
+      "target": "opencode",
+      "routeMode": "config_only",
+      "baseUrl": "https://api.z.ai/api/paas/v4",
+      "apiCompatibility": "openai",
+      "modelId": "glm-4.7",
+      "contextWindow": 200000,
+      "maxTokens": 128000,
+      "effortLevel": "high",
+      "source": "litellm-model-catalog"
+    }
+  ]
+}

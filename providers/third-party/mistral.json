@@ -1,0 +1,59 @@
+{
+  "id": "mistral",
+  "name": "Mistral AI",
+  "description": "Mistral AI OpenAI-compatible chat models.",
+  "category": "third_party",
+  "iconProvider": "mistral",
+  "modelOwner": "mistral",
+  "modelOwnerLabel": "Mistral AI",
+  "websiteUrl": "https://docs.mistral.ai",
+  "apiKeyUrl": "https://console.mistral.ai",
+  "baseUrl": "https://api.mistral.ai/v1",
+  "apiCompatibility": "openai",
+  "authType": "bearer",
+  "modelsListPath": "/models",
+  "models": [
+    {
+      "id": "mistral-large-latest",
+      "displayName": "Mistral Large Latest",
+      "contextWindow": 128000,
+      "status": "available",
+      "source": "litellm-model-catalog"
+    },
+    {
+      "id": "codestral-latest",
+      "displayName": "Codestral Latest",
+      "contextWindow": 256000,
+      "status": "available",
+      "source": "litellm-model-catalog"
+    }
+  ],
+  "agentGateways": [
+    {
+      "id": "mistral-opencode-codestral",
+      "displayName": "Codestral for OpenCode",
+      "target": "opencode",
+      "routeMode": "config_only",
+      "baseUrl": "https://api.mistral.ai/v1",
+      "apiCompatibility": "openai",
+      "modelId": "codestral-latest",
+      "contextWindow": 256000,
+      "maxTokens": 65536,
+      "effortLevel": "high",
+      "source": "litellm-model-catalog"
+    },
+    {
+      "id": "mistral-codex-codestral",
+      "displayName": "Codestral for Codex",
+      "target": "codex",
+      "routeMode": "config_only",
+      "baseUrl": "https://api.mistral.ai/v1",
+      "apiCompatibility": "openai",
+      "modelId": "codestral-latest",
+      "contextWindow": 256000,
+      "maxTokens": 65536,
+      "effortLevel": "high",
+      "source": "litellm-model-catalog"
+    }
+  ]
+}

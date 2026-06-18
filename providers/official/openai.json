@@ -17,23 +17,39 @@
       "id": "gpt-5.5",
       "displayName": "GPT-5.5",
       "contextWindow": 1000000,
-      "maxTokens": 128000
+      "maxTokens": 128000,
+      "status": "available",
+      "source": "openai-docs"
     },
     {
       "id": "gpt-5.4",
       "displayName": "GPT-5.4",
       "contextWindow": 1000000,
-      "maxTokens": 128000
+      "maxTokens": 128000,
+      "status": "available",
+      "source": "openai-docs"
     },
     {
       "id": "gpt-5.4-mini",
       "displayName": "GPT-5.4 mini",
       "contextWindow": 400000,
-      "maxTokens": 128000
+      "maxTokens": 128000,
+      "status": "available",
+      "source": "openai-docs"
+    },
+    {
+      "id": "gpt-5.4-nano",
+      "displayName": "GPT-5.4 nano",
+      "contextWindow": 400000,
+      "maxTokens": 128000,
+      "status": "available",
+      "source": "openai-docs"
     }
   ],
   "agentGateways": [
     {
+      "id": "openai-codex-gpt-5.5",
+      "displayName": "OpenAI gpt-5.5 for Codex",
       "target": "codex",
       "routeMode": "config_only",
       "baseUrl": "https://api.openai.com/v1",
@@ -41,9 +57,38 @@
       "modelId": "gpt-5.5",
       "contextWindow": 1000000,
       "maxTokens": 128000,
-      "effortLevel": "high"
+      "effortLevel": "xhigh",
+      "source": "openai-docs"
     },
     {
+      "id": "openai-codex-gpt-5.4",
+      "displayName": "OpenAI gpt-5.4 for Codex",
+      "target": "codex",
+      "routeMode": "config_only",
+      "baseUrl": "https://api.openai.com/v1",
+      "apiCompatibility": "openai",
+      "modelId": "gpt-5.4",
+      "contextWindow": 1000000,
+      "maxTokens": 128000,
+      "effortLevel": "high",
+      "source": "openai-docs"
+    },
+    {
+      "id": "openai-codex-gpt-5.4-mini",
+      "displayName": "OpenAI gpt-5.4-mini for Codex",
+      "target": "codex",
+      "routeMode": "config_only",
+      "baseUrl": "https://api.openai.com/v1",
+      "apiCompatibility": "openai",
+      "modelId": "gpt-5.4-mini",
+      "contextWindow": 400000,
+      "maxTokens": 128000,
+      "effortLevel": "high",
+      "source": "openai-docs"
+    },
+    {
+      "id": "openai-copilot-gpt-5.5",
+      "displayName": "OpenAI gpt-5.5 for Copilot BYOK",
       "target": "copilot",
       "routeMode": "config_only",
       "baseUrl": "https://api.openai.com/v1",
@@ -51,7 +96,34 @@
       "modelId": "gpt-5.5",
       "contextWindow": 1000000,
       "maxTokens": 128000,
-      "effortLevel": "high"
+      "effortLevel": "xhigh",
+      "source": "openai-docs"
+    },
+    {
+      "id": "openai-copilot-gpt-5.4",
+      "displayName": "OpenAI gpt-5.4 for Copilot BYOK",
+      "target": "copilot",
+      "routeMode": "config_only",
+      "baseUrl": "https://api.openai.com/v1",
+      "apiCompatibility": "openai",
+      "modelId": "gpt-5.4",
+      "contextWindow": 1000000,
+      "maxTokens": 128000,
+      "effortLevel": "high",
+      "source": "openai-docs"
+    },
+    {
+      "id": "openai-copilot-gpt-5.4-mini",
+      "displayName": "OpenAI gpt-5.4-mini for Copilot BYOK",
+      "target": "copilot",
+      "routeMode": "config_only",
+      "baseUrl": "https://api.openai.com/v1",
+      "apiCompatibility": "openai",
+      "modelId": "gpt-5.4-mini",
+      "contextWindow": 400000,
+      "maxTokens": 128000,
+      "effortLevel": "high",
+      "source": "openai-docs"
     }
   ]
 }

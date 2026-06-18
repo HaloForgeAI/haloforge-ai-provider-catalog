@@ -1,0 +1,92 @@
+{
+  "id": "minimax",
+  "name": "MiniMax",
+  "description": "MiniMax OpenAI-compatible and Anthropic-compatible text models.",
+  "category": "third_party",
+  "iconProvider": "minimax",
+  "modelOwner": "minimax",
+  "modelOwnerLabel": "MiniMax",
+  "websiteUrl": "https://platform.minimax.io/docs",
+  "apiKeyUrl": "https://platform.minimax.io",
+  "baseUrl": "https://api.minimax.io/v1",
+  "apiCompatibility": "openai",
+  "authType": "bearer",
+  "modelsListPath": "/models",
+  "models": [
+    {
+      "id": "MiniMax-M3",
+      "displayName": "MiniMax M3",
+      "contextWindow": 1000000,
+      "status": "available",
+      "source": "minimax-docs"
+    },
+    {
+      "id": "MiniMax-M2.7",
+      "displayName": "MiniMax M2.7",
+      "contextWindow": 204800,
+      "status": "available",
+      "source": "minimax-docs"
+    },
+    {
+      "id": "MiniMax-M2.7-highspeed",
+      "displayName": "MiniMax M2.7 Highspeed",
+      "contextWindow": 204800,
+      "status": "available",
+      "source": "minimax-docs"
+    },
+    {
+      "id": "MiniMax-M2.5",
+      "displayName": "MiniMax M2.5",
+      "contextWindow": 204800,
+      "status": "available",
+      "source": "minimax-docs"
+    }
+  ],
+  "agentGateways": [
+    {
+      "id": "minimax-claude-code-m3",
+      "displayName": "MiniMax M3 for Claude Code",
+      "target": "claude_code",
+      "routeMode": "model_mapping",
+      "baseUrl": "https://api.minimax.io/v1/anthropic",
+      "apiCompatibility": "anthropic",
+      "modelId": "MiniMax-M3",
+      "contextWindow": 1000000,
+      "maxTokens": 128000,
+      "effortLevel": "high",
+      "roleModels": {
+        "haiku": "MiniMax-M2.7-highspeed",
+        "sonnet": "MiniMax-M3",
+        "opus": "MiniMax-M3",
+        "subagent": "MiniMax-M2.7-highspeed"
+      },
+      "source": "minimax-docs"
+    },
+    {
+      "id": "minimax-opencode-m3",
+      "displayName": "MiniMax M3 for OpenCode",
+      "target": "opencode",
+      "routeMode": "config_only",
+      "baseUrl": "https://api.minimax.io/v1",
+      "apiCompatibility": "openai",
+      "modelId": "MiniMax-M3",
+      "contextWindow": 1000000,
+      "maxTokens": 128000,
+      "effortLevel": "high",
+      "source": "minimax-docs"
+    },
+    {
+      "id": "minimax-codex-m3",
+      "displayName": "MiniMax M3 for Codex",
+      "target": "codex",
+      "routeMode": "config_only",
+      "baseUrl": "https://api.minimax.io/v1",
+      "apiCompatibility": "openai",
+      "modelId": "MiniMax-M3",
+      "contextWindow": 1000000,
+      "maxTokens": 128000,
+      "effortLevel": "high",
+      "source": "minimax-docs"
+    }
+  ]
+}

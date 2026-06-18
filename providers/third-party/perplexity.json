@@ -1,0 +1,46 @@
+{
+  "id": "perplexity",
+  "name": "Perplexity",
+  "description": "Perplexity Sonar models with OpenAI-compatible API.",
+  "category": "third_party",
+  "iconProvider": "perplexity",
+  "modelOwner": "perplexity",
+  "modelOwnerLabel": "Perplexity",
+  "websiteUrl": "https://docs.perplexity.ai",
+  "apiKeyUrl": "https://www.perplexity.ai/settings/api",
+  "baseUrl": "https://api.perplexity.ai",
+  "apiCompatibility": "openai",
+  "authType": "bearer",
+  "modelsListPath": "/models",
+  "models": [
+    {
+      "id": "sonar-pro",
+      "displayName": "Sonar Pro",
+      "contextWindow": 200000,
+      "status": "available",
+      "source": "litellm-model-catalog"
+    },
+    {
+      "id": "sonar-deep-research",
+      "displayName": "Sonar Deep Research",
+      "contextWindow": 200000,
+      "status": "available",
+      "source": "litellm-model-catalog"
+    }
+  ],
+  "agentGateways": [
+    {
+      "id": "perplexity-opencode-sonar-pro",
+      "displayName": "Sonar Pro for OpenCode",
+      "target": "opencode",
+      "routeMode": "config_only",
+      "baseUrl": "https://api.perplexity.ai",
+      "apiCompatibility": "openai",
+      "modelId": "sonar-pro",
+      "contextWindow": 200000,
+      "maxTokens": 65536,
+      "effortLevel": "medium",
+      "source": "litellm-model-catalog"
+    }
+  ]
+}

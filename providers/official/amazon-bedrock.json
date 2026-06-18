@@ -1,0 +1,51 @@
+{
+  "id": "amazon-bedrock",
+  "name": "Amazon Bedrock",
+  "description": "Amazon Bedrock catalog reference. Direct invocation requires SigV4/Bedrock transport or an enterprise gateway.",
+  "category": "official",
+  "iconProvider": "aws",
+  "modelOwner": "amazon-bedrock",
+  "modelOwnerLabel": "Amazon Bedrock",
+  "websiteUrl": "https://aws.amazon.com/bedrock/",
+  "baseUrl": "https://bedrock-runtime.{region}.amazonaws.com",
+  "apiCompatibility": "anthropic",
+  "authType": "bearer",
+  "modelsListPath": "/foundation-models",
+  "models": [
+    {
+      "id": "anthropic.claude-fable-5",
+      "displayName": "Claude Fable 5 on Bedrock",
+      "contextWindow": 1000000,
+      "maxTokens": 300000,
+      "status": "restricted",
+      "disabledByDefault": true,
+      "fallbackModelId": "anthropic.claude-opus-4-8",
+      "source": "anthropic-fable-access"
+    },
+    {
+      "id": "anthropic.claude-opus-4-8",
+      "displayName": "Claude Opus 4.8 on Bedrock",
+      "contextWindow": 200000,
+      "maxTokens": 300000,
+      "status": "restricted",
+      "disabledByDefault": true,
+      "source": "anthropic-docs"
+    }
+  ],
+  "agentGateways": [
+    {
+      "id": "bedrock-claude-enterprise-gateway",
+      "displayName": "Bedrock Claude via enterprise gateway",
+      "target": "claude_code",
+      "routeMode": "config_only",
+      "baseUrl": "https://enterprise.example.com/v1/agent/gateway/bedrock/anthropic",
+      "apiCompatibility": "anthropic",
+      "modelId": "anthropic.claude-opus-4-8",
+      "contextWindow": 200000,
+      "maxTokens": 300000,
+      "status": "restricted",
+      "disabledByDefault": true,
+      "source": "anthropic-docs"
+    }
+  ]
+}
