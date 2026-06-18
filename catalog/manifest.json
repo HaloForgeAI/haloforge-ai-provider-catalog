@@ -1,0 +1,15 @@
+{
+  "$schema": "../schema/model-provider-catalog.schema.json",
+  "schemaVersion": 1,
+  "updatedAt": "2026-06-18T00:00:00.000Z",
+  "source": "haloforge-ai-provider-catalog",
+  "repository": "https://github.com/HaloForgeAI/haloforge-ai-provider-catalog",
+  "providerOrder": [
+    "openai",
+    "anthropic",
+    "deepseek",
+    "openrouter",
+    "ollama",
+    "custom-gateway"
+  ]
+}

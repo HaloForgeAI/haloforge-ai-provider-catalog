@@ -1,0 +1,9 @@
+{
+  "name": "haloforge-ai-provider-catalog",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build-catalog.mjs",
+    "check": "node scripts/build-catalog.mjs --check"
+  }
+}

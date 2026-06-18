@@ -1,0 +1,53 @@
+{
+  "id": "anthropic",
+  "name": "Anthropic",
+  "description": "Anthropic Messages API with Claude model role defaults.",
+  "category": "official",
+  "iconProvider": "anthropic",
+  "modelOwner": "anthropic",
+  "modelOwnerLabel": "Anthropic",
+  "websiteUrl": "https://console.anthropic.com",
+  "apiKeyUrl": "https://console.anthropic.com/settings/keys",
+  "baseUrl": "https://api.anthropic.com/v1",
+  "apiCompatibility": "anthropic",
+  "authType": "api-key",
+  "modelsListPath": "/models",
+  "extraHeaders": {
+    "anthropic-version": "2023-06-01"
+  },
+  "models": [
+    {
+      "id": "claude-opus-4-6",
+      "displayName": "Claude Opus 4.6",
+      "contextWindow": 200000
+    },
+    {
+      "id": "claude-sonnet-4-6",
+      "displayName": "Claude Sonnet 4.6",
+      "contextWindow": 200000
+    },
+    {
+      "id": "claude-haiku-4-5-20251001",
+      "displayName": "Claude Haiku 4.5",
+      "contextWindow": 200000
+    }
+  ],
+  "agentGateways": [
+    {
+      "target": "claude_code",
+      "routeMode": "direct",
+      "baseUrl": "https://api.anthropic.com",
+      "apiCompatibility": "anthropic",
+      "modelId": "claude-sonnet-4-6",
+      "contextWindow": 200000,
+      "maxTokens": 64000,
+      "effortLevel": "high",
+      "roleModels": {
+        "haiku": "claude-haiku-4-5-20251001",
+        "sonnet": "claude-sonnet-4-6",
+        "opus": "claude-opus-4-6",
+        "subagent": "claude-haiku-4-5-20251001"
+      }
+    }
+  ]
+}

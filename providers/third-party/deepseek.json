@@ -1,0 +1,62 @@
+{
+  "id": "deepseek",
+  "name": "DeepSeek",
+  "description": "DeepSeek OpenAI-compatible chat plus Anthropic-compatible Agent gateway.",
+  "category": "third_party",
+  "iconProvider": "deepseek",
+  "modelOwner": "deepseek",
+  "modelOwnerLabel": "DeepSeek",
+  "websiteUrl": "https://platform.deepseek.com",
+  "apiKeyUrl": "https://platform.deepseek.com/api_keys",
+  "baseUrl": "https://api.deepseek.com",
+  "apiCompatibility": "openai",
+  "authType": "bearer",
+  "modelsListPath": "/models",
+  "models": [
+    {
+      "id": "deepseek-v4-flash",
+      "displayName": "DeepSeek V4 Fast",
+      "contextWindow": 128000
+    },
+    {
+      "id": "deepseek-v4-pro",
+      "displayName": "DeepSeek V4 Pro",
+      "contextWindow": 128000
+    },
+    {
+      "id": "deepseek-v4-pro[1m]",
+      "displayName": "DeepSeek V4 Pro 1M",
+      "contextWindow": 1000000
+    }
+  ],
+  "agentGateways": [
+    {
+      "target": "claude_code",
+      "routeMode": "model_mapping",
+      "baseUrl": "https://api.deepseek.com/anthropic",
+      "apiCompatibility": "anthropic",
+      "modelId": "deepseek-v4-pro[1m]",
+      "contextWindow": 1000000,
+      "maxTokens": 32000,
+      "temperature": 0.2,
+      "effortLevel": "max",
+      "roleModels": {
+        "haiku": "deepseek-v4-flash",
+        "sonnet": "deepseek-v4-pro[1m]",
+        "opus": "deepseek-v4-pro[1m]",
+        "subagent": "deepseek-v4-flash"
+      }
+    },
+    {
+      "target": "opencode",
+      "routeMode": "config_only",
+      "baseUrl": "https://api.deepseek.com",
+      "apiCompatibility": "openai",
+      "modelId": "deepseek-v4-pro",
+      "contextWindow": 128000,
+      "maxTokens": 32000,
+      "temperature": 0.2,
+      "effortLevel": "high"
+    }
+  ]
+}

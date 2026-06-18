@@ -1,0 +1,68 @@
+{
+  "id": "custom-gateway",
+  "name": "Custom Gateway",
+  "description": "Bring any OpenAI-compatible or Anthropic-compatible gateway.",
+  "category": "custom",
+  "iconProvider": "custom",
+  "modelOwner": "custom",
+  "modelOwnerLabel": "Custom",
+  "baseUrl": "https://api.example.com/v1",
+  "apiCompatibility": "openai",
+  "authType": "bearer",
+  "modelsListPath": "/models",
+  "models": [
+    {
+      "id": "custom-model",
+      "displayName": "Custom model",
+      "contextWindow": 128000
+    }
+  ],
+  "agentGateways": [
+    {
+      "target": "claude_code",
+      "routeMode": "model_mapping",
+      "baseUrl": "https://api.example.com/anthropic",
+      "apiCompatibility": "anthropic",
+      "modelId": "custom-model",
+      "contextWindow": 128000,
+      "maxTokens": 32000,
+      "effortLevel": "high",
+      "roleModels": {
+        "haiku": "custom-small-model",
+        "sonnet": "custom-model",
+        "opus": "custom-model",
+        "subagent": "custom-small-model"
+      }
+    },
+    {
+      "target": "codex",
+      "routeMode": "config_only",
+      "baseUrl": "https://api.example.com/v1",
+      "apiCompatibility": "openai",
+      "modelId": "custom-model",
+      "contextWindow": 128000,
+      "maxTokens": 32000,
+      "effortLevel": "high"
+    },
+    {
+      "target": "opencode",
+      "routeMode": "config_only",
+      "baseUrl": "https://api.example.com/v1",
+      "apiCompatibility": "openai",
+      "modelId": "custom-model",
+      "contextWindow": 128000,
+      "maxTokens": 32000,
+      "effortLevel": "high"
+    },
+    {
+      "target": "copilot",
+      "routeMode": "config_only",
+      "baseUrl": "https://api.example.com/v1",
+      "apiCompatibility": "openai",
+      "modelId": "custom-model",
+      "contextWindow": 128000,
+      "maxTokens": 32000,
+      "effortLevel": "high"
+    }
+  ]
+}

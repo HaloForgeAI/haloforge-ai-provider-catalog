@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://haloforge.dev/schema/model-provider-catalog.schema.json",
+  "title": "HaloForge AI model provider catalog",
+  "type": "object",
+  "required": ["schemaVersion", "updatedAt", "source", "repository", "providers"],
+  "properties": {
+    "schemaVersion": { "type": "integer", "minimum": 1 },
+    "updatedAt": { "type": "string" },
+    "source": { "type": "string" },
+    "repository": { "type": "string" },
+    "providers": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/provider" }
+    }
+  },
+  "$defs": {
+    "provider": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "category",
+        "iconProvider",
+        "apiCompatibility",
+        "authType",
+        "models",
+        "agentGateways"
+      ],
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "description": { "type": "string" },
+        "category": { "type": "string" },
+        "iconProvider": { "type": "string" },
+        "modelOwner": { "type": "string" },
+        "modelOwnerLabel": { "type": "string" },
+        "websiteUrl": { "type": "string" },
+        "apiKeyUrl": { "type": "string" },
+        "baseUrl": { "type": "string" },
+        "apiCompatibility": { "type": "string" },
+        "authType": { "type": "string" },
+        "modelsListPath": { "type": "string" },
+        "extraHeaders": { "type": "object" },
+        "models": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/model" }
+        },
+        "agentGateways": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/agentGateway" }
+        }
+      },
+      "additionalProperties": true
+    },
+    "model": {
+      "type": "object",
+      "required": ["id", "displayName"],
+      "properties": {
+        "id": { "type": "string" },
+        "displayName": { "type": "string" },
+        "contextWindow": { "type": "integer" },
+        "maxTokens": { "type": "integer" }
+      },
+      "additionalProperties": true
+    },
+    "agentGateway": {
+      "type": "object",
+      "required": ["target", "routeMode"],
+      "properties": {
+        "target": {
+          "enum": ["claude_code", "codex", "opencode", "copilot"]
+        },
+        "routeMode": {
+          "enum": ["direct", "model_mapping", "config_only"]
+        },
+        "baseUrl": { "type": "string" },
+        "apiCompatibility": { "type": "string" },
+        "modelId": { "type": "string" },
+        "contextWindow": { "type": "integer" },
+        "maxTokens": { "type": "integer" },
+        "temperature": { "type": "number" },
+        "effortLevel": { "type": "string" },
+        "roleModels": { "type": "object" }
+      },
+      "additionalProperties": true
+    }
+  }
+}

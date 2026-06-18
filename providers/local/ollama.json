@@ -1,0 +1,33 @@
+{
+  "id": "ollama",
+  "name": "Ollama",
+  "description": "Local OpenAI-compatible model serving.",
+  "category": "local",
+  "iconProvider": "ollama",
+  "modelOwner": "ollama",
+  "modelOwnerLabel": "Ollama",
+  "websiteUrl": "https://ollama.com",
+  "baseUrl": "http://localhost:11434/v1",
+  "apiCompatibility": "openai",
+  "authType": "bearer",
+  "modelsListPath": "/models",
+  "models": [
+    {
+      "id": "llama3.1:8b",
+      "displayName": "llama3.1:8b",
+      "contextWindow": 32768
+    }
+  ],
+  "agentGateways": [
+    {
+      "target": "copilot",
+      "routeMode": "config_only",
+      "baseUrl": "http://localhost:11434/v1",
+      "apiCompatibility": "openai",
+      "modelId": "llama3.1:8b",
+      "contextWindow": 32768,
+      "maxTokens": 8192,
+      "effortLevel": "medium"
+    }
+  ]
+}

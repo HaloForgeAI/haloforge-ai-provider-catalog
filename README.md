@@ -2,9 +2,17 @@
 
 Public model provider presets for HaloForge chat and Agent gateway configuration.
 
-The canonical catalog file is:
+The generated catalog file consumed by HaloForge is:
 
 - `catalog/model-provider-catalog.json`
+
+Human-edited provider templates live under:
+
+- `providers/official/*.json`
+- `providers/third-party/*.json`
+- `providers/aggregator/*.json`
+- `providers/local/*.json`
+- `providers/custom/*.json`
 
 HaloForge Community Cloud proxies this file through:
 
@@ -12,6 +20,15 @@ HaloForge Community Cloud proxies this file through:
 - `https://haloforge.dev/api/ai/model-provider-catalog.json`
 
 Use this repository for lightweight template updates when a provider ships a new model or a new Agent gateway preset. The desktop app should not need a full release for ordinary catalog changes.
+
+## Update Flow
+
+1. Edit or add one provider fragment under `providers/`.
+2. Keep `catalog/manifest.json` updated when the catalog timestamp or curated provider order changes.
+3. Run `npm run build`.
+4. Commit both the provider fragment and the generated `catalog/model-provider-catalog.json`.
+
+CI or maintainers can run `npm run check` to verify the generated aggregate is current.
 
 ## Catalog Contract
 

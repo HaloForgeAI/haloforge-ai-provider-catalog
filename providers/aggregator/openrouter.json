@@ -1,0 +1,49 @@
+{
+  "id": "openrouter",
+  "name": "OpenRouter",
+  "description": "Aggregator endpoint for many model providers.",
+  "category": "aggregator",
+  "iconProvider": "openrouter",
+  "modelOwner": "openrouter",
+  "modelOwnerLabel": "OpenRouter",
+  "websiteUrl": "https://openrouter.ai",
+  "apiKeyUrl": "https://openrouter.ai/settings/keys",
+  "baseUrl": "https://openrouter.ai/api/v1",
+  "apiCompatibility": "openai",
+  "authType": "bearer",
+  "modelsListPath": "/models",
+  "models": [
+    {
+      "id": "openai/gpt-5.4",
+      "displayName": "openai/gpt-5.4",
+      "contextWindow": 200000
+    },
+    {
+      "id": "anthropic/claude-sonnet-4.6",
+      "displayName": "anthropic/claude-sonnet-4.6",
+      "contextWindow": 200000
+    }
+  ],
+  "agentGateways": [
+    {
+      "target": "opencode",
+      "routeMode": "config_only",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "apiCompatibility": "openai",
+      "modelId": "openai/gpt-5.4",
+      "contextWindow": 200000,
+      "maxTokens": 64000,
+      "effortLevel": "high"
+    },
+    {
+      "target": "copilot",
+      "routeMode": "config_only",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "apiCompatibility": "openai",
+      "modelId": "openai/gpt-5.4",
+      "contextWindow": 200000,
+      "maxTokens": 64000,
+      "effortLevel": "high"
+    }
+  ]
+}

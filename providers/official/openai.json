@@ -1,0 +1,57 @@
+{
+  "id": "openai",
+  "name": "OpenAI",
+  "description": "OpenAI Responses API and Models API.",
+  "category": "official",
+  "iconProvider": "openai",
+  "modelOwner": "openai",
+  "modelOwnerLabel": "OpenAI",
+  "websiteUrl": "https://platform.openai.com",
+  "apiKeyUrl": "https://platform.openai.com/api-keys",
+  "baseUrl": "https://api.openai.com/v1",
+  "apiCompatibility": "openai",
+  "authType": "bearer",
+  "modelsListPath": "/models",
+  "models": [
+    {
+      "id": "gpt-5.5",
+      "displayName": "GPT-5.5",
+      "contextWindow": 1000000,
+      "maxTokens": 128000
+    },
+    {
+      "id": "gpt-5.4",
+      "displayName": "GPT-5.4",
+      "contextWindow": 1000000,
+      "maxTokens": 128000
+    },
+    {
+      "id": "gpt-5.4-mini",
+      "displayName": "GPT-5.4 mini",
+      "contextWindow": 400000,
+      "maxTokens": 128000
+    }
+  ],
+  "agentGateways": [
+    {
+      "target": "codex",
+      "routeMode": "config_only",
+      "baseUrl": "https://api.openai.com/v1",
+      "apiCompatibility": "openai",
+      "modelId": "gpt-5.5",
+      "contextWindow": 1000000,
+      "maxTokens": 128000,
+      "effortLevel": "high"
+    },
+    {
+      "target": "copilot",
+      "routeMode": "config_only",
+      "baseUrl": "https://api.openai.com/v1",
+      "apiCompatibility": "openai",
+      "modelId": "gpt-5.5",
+      "contextWindow": 1000000,
+      "maxTokens": 128000,
+      "effortLevel": "high"
+    }
+  ]
+}
