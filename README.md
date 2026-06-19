@@ -57,6 +57,19 @@ The workflow:
 
 The action should be reviewed before merge because provider docs can disagree with aggregators, especially for new releases, regional restrictions, preview models, and model shutdown dates.
 
+## Icon Metadata
+
+`iconProvider` should use the lowercase brand keys understood by the HaloForge desktop `@lobehub/icons` resolver. Prefer the most specific visible product icon instead of a generic company icon:
+
+- Amazon Bedrock: `bedrock`
+- MiniMax: `minimax`
+- Moonshot AI / Kimi: `kimi`
+- Z.AI / GLM: `zai`
+- Azure OpenAI: `azure`
+- Alibaba Cloud / Qwen: `qwen`
+
+If a provider has both a company brand and a model family brand, choose the user-facing model family for this catalog. For example, Moonshot API presets should show the Kimi icon because the model ids and gateway presets are Kimi-branded.
+
 ## Upstream Sources
 
 Machine-readable sources are configured in `sources/upstreams.json`:

@@ -3,7 +3,7 @@
   "name": "Moonshot AI / Kimi",
   "description": "Moonshot Kimi OpenAI-compatible and Anthropic-compatible API.",
   "category": "third_party",
-  "iconProvider": "moonshot",
+  "iconProvider": "kimi",
   "modelOwner": "moonshot",
   "modelOwnerLabel": "Moonshot AI",
   "websiteUrl": "https://platform.kimi.ai",

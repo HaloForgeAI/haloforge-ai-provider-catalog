@@ -3,7 +3,7 @@
   "name": "Amazon Bedrock",
   "description": "Amazon Bedrock catalog reference. Direct invocation requires SigV4/Bedrock transport or an enterprise gateway.",
   "category": "official",
-  "iconProvider": "aws",
+  "iconProvider": "bedrock",
   "modelOwner": "amazon-bedrock",
   "modelOwnerLabel": "Amazon Bedrock",
   "websiteUrl": "https://aws.amazon.com/bedrock/",
