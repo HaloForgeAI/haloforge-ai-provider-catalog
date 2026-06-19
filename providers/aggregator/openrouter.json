@@ -14,9 +14,10 @@
   "modelsListPath": "/models",
   "models": [
     {
-      "id": "openai/gpt-5.5-pro",
-      "displayName": "OpenAI GPT-5.5 Pro via OpenRouter",
-      "contextWindow": 1050000,
+      "id": "z-ai/glm-5.2",
+      "displayName": "z-ai/glm-5.2",
+      "contextWindow": 1048576,
+      "maxTokens": 131072,
       "status": "available",
       "source": "openrouter-models"
     },
@@ -37,9 +38,9 @@
       "source": "openrouter-models"
     },
     {
-      "id": "qwen/qwen3-max-thinking",
-      "displayName": "Qwen3 Max Thinking via OpenRouter",
-      "contextWindow": 262144,
+      "id": "minimax/minimax-m3",
+      "displayName": "MiniMax M3 via OpenRouter",
+      "contextWindow": 1048576,
       "status": "available",
       "source": "openrouter-models"
     },
@@ -51,25 +52,32 @@
       "source": "openrouter-models"
     },
     {
-      "id": "minimax/minimax-m3",
-      "displayName": "MiniMax M3 via OpenRouter",
-      "contextWindow": 1048576,
+      "id": "openai/gpt-5.5-pro",
+      "displayName": "OpenAI GPT-5.5 Pro via OpenRouter",
+      "contextWindow": 1050000,
+      "status": "available",
+      "source": "openrouter-models"
+    },
+    {
+      "id": "qwen/qwen3-max-thinking",
+      "displayName": "Qwen3 Max Thinking via OpenRouter",
+      "contextWindow": 262144,
       "status": "available",
       "source": "openrouter-models"
     }
   ],
   "agentGateways": [
     {
-      "id": "openrouter-opencode-gpt-5-5-pro",
-      "displayName": "OpenRouter GPT-5.5 Pro for OpenCode",
-      "target": "opencode",
+      "id": "openrouter-codex-glm-5-2",
+      "displayName": "OpenRouter GLM 5.2 for Codex",
+      "target": "codex",
       "routeMode": "config_only",
       "baseUrl": "https://openrouter.ai/api/v1",
       "apiCompatibility": "openai",
-      "modelId": "openai/gpt-5.5-pro",
-      "contextWindow": 1050000,
-      "maxTokens": 128000,
-      "effortLevel": "xhigh",
+      "modelId": "z-ai/glm-5.2",
+      "contextWindow": 1048576,
+      "maxTokens": 131072,
+      "effortLevel": "max",
       "source": "openrouter-models"
     },
     {
@@ -96,6 +104,19 @@
       "contextWindow": 262144,
       "maxTokens": 65536,
       "effortLevel": "high",
+      "source": "openrouter-models"
+    },
+    {
+      "id": "openrouter-opencode-gpt-5-5-pro",
+      "displayName": "OpenRouter GPT-5.5 Pro for OpenCode",
+      "target": "opencode",
+      "routeMode": "config_only",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "apiCompatibility": "openai",
+      "modelId": "openai/gpt-5.5-pro",
+      "contextWindow": 1050000,
+      "maxTokens": 128000,
+      "effortLevel": "xhigh",
       "source": "openrouter-models"
     }
   ]

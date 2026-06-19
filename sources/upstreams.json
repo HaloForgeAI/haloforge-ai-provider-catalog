@@ -1,0 +1,114 @@
+{
+  "machineSources": [
+    {
+      "id": "litellm-model-catalog",
+      "name": "LiteLLM model catalog",
+      "kind": "open_source",
+      "url": "https://api.litellm.ai/model_catalog",
+      "parser": "litellm",
+      "notes": "Paged machine-readable reference for context windows, pricing metadata, capabilities, and deprecation dates."
+    },
+    {
+      "id": "openrouter-models",
+      "name": "OpenRouter models API",
+      "kind": "aggregator",
+      "url": "https://openrouter.ai/api/v1/models",
+      "parser": "openrouter",
+      "notes": "Machine-readable reference for aggregator-visible model ids, context lengths, max output tokens, pricing, and lifecycle dates."
+    },
+    {
+      "id": "vercel-ai-gateway-models",
+      "name": "Vercel AI Gateway model endpoint",
+      "kind": "aggregator",
+      "url": "https://ai-gateway.vercel.sh/v1/models",
+      "parser": "vercel-ai-gateway",
+      "notes": "Machine-readable reference for AI Gateway model/provider ids, pricing, tags, and context windows."
+    }
+  ],
+  "documentationSources": [
+    {
+      "id": "openai-models-docs",
+      "name": "OpenAI models documentation",
+      "kind": "official",
+      "url": "https://developers.openai.com/api/docs/models",
+      "notes": "Official model names, context windows, output limits, and release guidance."
+    },
+    {
+      "id": "anthropic-models-docs",
+      "name": "Anthropic model documentation",
+      "kind": "official",
+      "url": "https://platform.claude.com/docs/en/about-claude/models/overview",
+      "notes": "Official Claude model list and model metadata behavior."
+    },
+    {
+      "id": "anthropic-fable-access-notice",
+      "name": "Anthropic Fable/Mythos access notice",
+      "kind": "official",
+      "url": "https://www.anthropic.com/news/fable-mythos-access",
+      "notes": "Official restriction notice for disabled/restricted Claude models."
+    },
+    {
+      "id": "deepseek-pricing-docs",
+      "name": "DeepSeek pricing and model docs",
+      "kind": "official",
+      "url": "https://api-docs.deepseek.com/quick_start/pricing",
+      "notes": "Official DeepSeek model ids, context windows, output limits, and deprecation dates."
+    },
+    {
+      "id": "zai-glm-5-2-docs",
+      "name": "Z.AI GLM-5.2 documentation",
+      "kind": "official",
+      "url": "https://docs.z.ai/guides/llm/glm-5.2",
+      "notes": "Official GLM-5.2 context, max output, reasoning, tool use, and OpenAI-compatible API usage."
+    },
+    {
+      "id": "zai-coding-plan-switch-docs",
+      "name": "Z.AI GLM Coding Plan model switching docs",
+      "kind": "official",
+      "url": "https://docs.z.ai/devpack/latest-model",
+      "notes": "Official Claude Code/OpenClaw/Cline model switch instructions for GLM-5.2, including 1M suffix and fallback guidance."
+    },
+    {
+      "id": "zai-claude-code-docs",
+      "name": "Z.AI Claude Code integration docs",
+      "kind": "official",
+      "url": "https://docs.z.ai/devpack/tool/claude",
+      "notes": "Official Anthropic-compatible base URL and Claude Code environment mapping for GLM Coding Plan."
+    },
+    {
+      "id": "gemini-models-docs",
+      "name": "Google Gemini model documentation",
+      "kind": "official",
+      "url": "https://ai.google.dev/gemini-api/docs/models",
+      "notes": "Official Gemini model lifecycle and model metadata docs."
+    },
+    {
+      "id": "qwen-dashscope-openai-compat-docs",
+      "name": "Alibaba Cloud Model Studio OpenAI compatibility docs",
+      "kind": "official",
+      "url": "https://www.alibabacloud.com/help/en/model-studio/compatibility-of-openai-with-dashscope",
+      "notes": "Official DashScope OpenAI-compatible endpoint and supported Qwen model references."
+    },
+    {
+      "id": "minimax-openai-compat-docs",
+      "name": "MiniMax OpenAI-compatible docs",
+      "kind": "official",
+      "url": "https://platform.minimax.io/docs/api-reference/text-openai-api",
+      "notes": "Official MiniMax OpenAI-compatible endpoint, model ids, context windows, and thinking controls."
+    },
+    {
+      "id": "moonshot-openai-compat-docs",
+      "name": "Moonshot/Kimi OpenAI compatibility docs",
+      "kind": "official",
+      "url": "https://platform.kimi.ai/docs/guide/migrating-from-openai-to-kimi",
+      "notes": "Official Moonshot/Kimi OpenAI-compatible endpoint and request behavior."
+    },
+    {
+      "id": "cloudflare-workers-ai-glm-5-2",
+      "name": "Cloudflare Workers AI GLM-5.2 changelog",
+      "kind": "official",
+      "url": "https://developers.cloudflare.com/changelog/post/2026-06-16-glm-52-workers-ai/",
+      "notes": "Official Workers AI launch note confirming GLM-5.2 function calling, reasoning support, and context-window details."
+    }
+  ]
+}

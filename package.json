@@ -3,6 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "sync:upstreams": "node scripts/sync-upstreams.mjs",
     "build": "node scripts/build-catalog.mjs",
     "check": "node scripts/build-catalog.mjs --check"
   }

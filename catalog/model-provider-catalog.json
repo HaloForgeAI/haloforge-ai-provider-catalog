@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-06-18T16:45:00.000Z",
+  "updatedAt": "2026-06-19T00:13:02.549Z",
   "source": "haloforge-ai-provider-catalog",
   "repository": "https://github.com/HaloForgeAI/haloforge-ai-provider-catalog",
   "upstreamSources": [
@@ -745,26 +745,58 @@
       "modelsListPath": "/models",
       "models": [
         {
+          "id": "glm-5.2",
+          "displayName": "GLM 5.2",
+          "contextWindow": 1000000,
+          "maxTokens": 131072,
+          "status": "available",
+          "source": "zai-glm-5-2-docs"
+        },
+        {
+          "id": "glm-5.1",
+          "displayName": "GLM 5.1",
+          "contextWindow": 200000,
+          "maxTokens": 64000,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
           "id": "glm-5",
           "displayName": "GLM 5",
           "contextWindow": 200000,
           "maxTokens": 128000,
           "status": "available",
-          "source": "litellm-model-catalog"
+          "source": "zai-glm-5-2-docs"
         },
         {
-          "id": "glm-5-code",
-          "displayName": "GLM 5 Code",
-          "contextWindow": 200000,
-          "maxTokens": 128000,
+          "id": "glm-5-turbo",
+          "displayName": "GLM 5 Turbo",
+          "contextWindow": 262144,
+          "maxTokens": 131072,
           "status": "available",
-          "source": "litellm-model-catalog"
+          "source": "openrouter-models"
         },
         {
           "id": "glm-4.7",
           "displayName": "GLM 4.7",
           "contextWindow": 200000,
-          "maxTokens": 128000,
+          "maxTokens": 131072,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "glm-4.7-flash",
+          "displayName": "GLM 4.7 Flash",
+          "contextWindow": 200000,
+          "maxTokens": 131072,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "glm-4.5",
+          "displayName": "GLM 4.5",
+          "contextWindow": 128000,
+          "maxTokens": 32000,
           "status": "available",
           "source": "litellm-model-catalog"
         },
@@ -777,15 +809,63 @@
           "source": "litellm-model-catalog"
         },
         {
-          "id": "glm-4.5",
-          "displayName": "GLM 4.5",
-          "contextWindow": 128000,
-          "maxTokens": 32000,
+          "id": "glm-5-code",
+          "displayName": "GLM 5 Code",
+          "contextWindow": 200000,
+          "maxTokens": 128000,
           "status": "available",
           "source": "litellm-model-catalog"
         }
       ],
       "agentGateways": [
+        {
+          "id": "zai-claude-code-glm-5-2",
+          "displayName": "GLM 5.2 1M for Claude Code",
+          "target": "claude_code",
+          "routeMode": "model_mapping",
+          "baseUrl": "https://api.z.ai/api/anthropic",
+          "apiCompatibility": "anthropic",
+          "modelId": "glm-5.2[1m]",
+          "contextWindow": 1000000,
+          "maxTokens": 131072,
+          "temperature": 0.6,
+          "effortLevel": "max",
+          "roleModels": {
+            "haiku": "glm-4.7",
+            "sonnet": "glm-5.2[1m]",
+            "opus": "glm-5.2[1m]",
+            "subagent": "glm-4.7"
+          },
+          "source": "zai-coding-plan-switch-docs"
+        },
+        {
+          "id": "zai-codex-glm-5-2",
+          "displayName": "GLM 5.2 for Codex",
+          "target": "codex",
+          "routeMode": "config_only",
+          "baseUrl": "https://api.z.ai/api/coding/paas/v4",
+          "apiCompatibility": "openai",
+          "modelId": "glm-5.2",
+          "contextWindow": 1000000,
+          "maxTokens": 131072,
+          "temperature": 0.6,
+          "effortLevel": "max",
+          "source": "zai-coding-plan-switch-docs"
+        },
+        {
+          "id": "zai-opencode-glm-5-2",
+          "displayName": "GLM 5.2 for OpenCode",
+          "target": "opencode",
+          "routeMode": "config_only",
+          "baseUrl": "https://api.z.ai/api/coding/paas/v4",
+          "apiCompatibility": "openai",
+          "modelId": "glm-5.2",
+          "contextWindow": 1000000,
+          "maxTokens": 131072,
+          "temperature": 0.6,
+          "effortLevel": "max",
+          "source": "zai-coding-plan-switch-docs"
+        },
         {
           "id": "zai-codex-glm-5-code",
           "displayName": "GLM 5 Code for Codex",
@@ -1177,9 +1257,10 @@
       "modelsListPath": "/models",
       "models": [
         {
-          "id": "openai/gpt-5.5-pro",
-          "displayName": "OpenAI GPT-5.5 Pro via OpenRouter",
-          "contextWindow": 1050000,
+          "id": "z-ai/glm-5.2",
+          "displayName": "z-ai/glm-5.2",
+          "contextWindow": 1048576,
+          "maxTokens": 131072,
           "status": "available",
           "source": "openrouter-models"
         },
@@ -1200,9 +1281,9 @@
           "source": "openrouter-models"
         },
         {
-          "id": "qwen/qwen3-max-thinking",
-          "displayName": "Qwen3 Max Thinking via OpenRouter",
-          "contextWindow": 262144,
+          "id": "minimax/minimax-m3",
+          "displayName": "MiniMax M3 via OpenRouter",
+          "contextWindow": 1048576,
           "status": "available",
           "source": "openrouter-models"
         },
@@ -1214,25 +1295,32 @@
           "source": "openrouter-models"
         },
         {
-          "id": "minimax/minimax-m3",
-          "displayName": "MiniMax M3 via OpenRouter",
-          "contextWindow": 1048576,
+          "id": "openai/gpt-5.5-pro",
+          "displayName": "OpenAI GPT-5.5 Pro via OpenRouter",
+          "contextWindow": 1050000,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "qwen/qwen3-max-thinking",
+          "displayName": "Qwen3 Max Thinking via OpenRouter",
+          "contextWindow": 262144,
           "status": "available",
           "source": "openrouter-models"
         }
       ],
       "agentGateways": [
         {
-          "id": "openrouter-opencode-gpt-5-5-pro",
-          "displayName": "OpenRouter GPT-5.5 Pro for OpenCode",
-          "target": "opencode",
+          "id": "openrouter-codex-glm-5-2",
+          "displayName": "OpenRouter GLM 5.2 for Codex",
+          "target": "codex",
           "routeMode": "config_only",
           "baseUrl": "https://openrouter.ai/api/v1",
           "apiCompatibility": "openai",
-          "modelId": "openai/gpt-5.5-pro",
-          "contextWindow": 1050000,
-          "maxTokens": 128000,
-          "effortLevel": "xhigh",
+          "modelId": "z-ai/glm-5.2",
+          "contextWindow": 1048576,
+          "maxTokens": 131072,
+          "effortLevel": "max",
           "source": "openrouter-models"
         },
         {
@@ -1259,6 +1347,19 @@
           "contextWindow": 262144,
           "maxTokens": 65536,
           "effortLevel": "high",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "openrouter-opencode-gpt-5-5-pro",
+          "displayName": "OpenRouter GPT-5.5 Pro for OpenCode",
+          "target": "opencode",
+          "routeMode": "config_only",
+          "baseUrl": "https://openrouter.ai/api/v1",
+          "apiCompatibility": "openai",
+          "modelId": "openai/gpt-5.5-pro",
+          "contextWindow": 1050000,
+          "maxTokens": 128000,
+          "effortLevel": "xhigh",
           "source": "openrouter-models"
         }
       ]

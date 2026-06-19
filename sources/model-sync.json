@@ -1,0 +1,162 @@
+{
+  "providers": [
+    {
+      "id": "z-ai",
+      "models": [
+        {
+          "id": "glm-5.2",
+          "displayName": "GLM 5.2",
+          "upstreamRefs": [
+            "vercel-ai-gateway-models:zai/glm-5.2",
+            "openrouter-models:z-ai/glm-5.2"
+          ],
+          "contextWindow": 1000000,
+          "maxTokens": 131072,
+          "status": "available",
+          "source": "zai-glm-5-2-docs"
+        },
+        {
+          "id": "glm-5.1",
+          "displayName": "GLM 5.1",
+          "upstreamRefs": [
+            "vercel-ai-gateway-models:zai/glm-5.1",
+            "openrouter-models:z-ai/glm-5.1"
+          ],
+          "contextWindow": 200000,
+          "maxTokens": 64000,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "glm-5",
+          "displayName": "GLM 5",
+          "upstreamRefs": [
+            "vercel-ai-gateway-models:zai/glm-5",
+            "openrouter-models:z-ai/glm-5"
+          ],
+          "contextWindow": 200000,
+          "maxTokens": 128000,
+          "status": "available",
+          "source": "zai-glm-5-2-docs"
+        },
+        {
+          "id": "glm-5-turbo",
+          "displayName": "GLM 5 Turbo",
+          "upstreamRefs": [
+            "vercel-ai-gateway-models:zai/glm-5-turbo",
+            "openrouter-models:z-ai/glm-5-turbo"
+          ],
+          "contextWindow": 262144,
+          "maxTokens": 131072,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "glm-4.7",
+          "displayName": "GLM 4.7",
+          "upstreamRefs": [
+            "vercel-ai-gateway-models:zai/glm-4.7",
+            "openrouter-models:z-ai/glm-4.7"
+          ],
+          "contextWindow": 200000,
+          "maxTokens": 131072,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "glm-4.7-flash",
+          "displayName": "GLM 4.7 Flash",
+          "upstreamRefs": [
+            "vercel-ai-gateway-models:zai/glm-4.7-flash",
+            "openrouter-models:z-ai/glm-4.7-flash"
+          ],
+          "contextWindow": 200000,
+          "maxTokens": 131072,
+          "status": "available",
+          "source": "openrouter-models"
+        }
+      ],
+      "agentGateways": [
+        {
+          "id": "zai-claude-code-glm-5-2",
+          "displayName": "GLM 5.2 1M for Claude Code",
+          "target": "claude_code",
+          "routeMode": "model_mapping",
+          "baseUrl": "https://api.z.ai/api/anthropic",
+          "apiCompatibility": "anthropic",
+          "modelId": "glm-5.2[1m]",
+          "contextWindow": 1000000,
+          "maxTokens": 131072,
+          "temperature": 0.6,
+          "effortLevel": "max",
+          "roleModels": {
+            "haiku": "glm-4.7",
+            "sonnet": "glm-5.2[1m]",
+            "opus": "glm-5.2[1m]",
+            "subagent": "glm-4.7"
+          },
+          "source": "zai-coding-plan-switch-docs"
+        },
+        {
+          "id": "zai-codex-glm-5-2",
+          "displayName": "GLM 5.2 for Codex",
+          "target": "codex",
+          "routeMode": "config_only",
+          "baseUrl": "https://api.z.ai/api/coding/paas/v4",
+          "apiCompatibility": "openai",
+          "modelId": "glm-5.2",
+          "contextWindow": 1000000,
+          "maxTokens": 131072,
+          "temperature": 0.6,
+          "effortLevel": "max",
+          "source": "zai-coding-plan-switch-docs"
+        },
+        {
+          "id": "zai-opencode-glm-5-2",
+          "displayName": "GLM 5.2 for OpenCode",
+          "target": "opencode",
+          "routeMode": "config_only",
+          "baseUrl": "https://api.z.ai/api/coding/paas/v4",
+          "apiCompatibility": "openai",
+          "modelId": "glm-5.2",
+          "contextWindow": 1000000,
+          "maxTokens": 131072,
+          "temperature": 0.6,
+          "effortLevel": "max",
+          "source": "zai-coding-plan-switch-docs"
+        }
+      ]
+    },
+    {
+      "id": "openrouter",
+      "models": [
+        {
+          "id": "z-ai/glm-5.2",
+          "displayName": "z-ai/glm-5.2",
+          "upstreamRefs": [
+            "openrouter-models:z-ai/glm-5.2"
+          ],
+          "contextWindow": 1048576,
+          "maxTokens": 131072,
+          "status": "available",
+          "source": "openrouter-models"
+        }
+      ],
+      "agentGateways": [
+        {
+          "id": "openrouter-codex-glm-5-2",
+          "displayName": "OpenRouter GLM 5.2 for Codex",
+          "target": "codex",
+          "routeMode": "config_only",
+          "baseUrl": "https://openrouter.ai/api/v1",
+          "apiCompatibility": "openai",
+          "modelId": "z-ai/glm-5.2",
+          "contextWindow": 1048576,
+          "maxTokens": 131072,
+          "effortLevel": "max",
+          "source": "openrouter-models"
+        }
+      ]
+    }
+  ]
+}
