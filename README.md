@@ -55,6 +55,8 @@ The workflow:
 4. Runs `npm run check`.
 5. If files changed, pushes `chore/sync-upstream-model-catalog` and opens or updates a pull request.
 
+If organization policy prevents `GITHUB_TOKEN` from creating pull requests, add a repository secret named `HF_PROVIDER_CATALOG_SYNC_TOKEN`. Use a fine-grained personal access token or GitHub App token scoped to this repository with `Contents: Read and write` and `Pull requests: Read and write`. Without that secret, the workflow still pushes the sync branch and prints a manual PR link.
+
 The action should be reviewed before merge because provider docs can disagree with aggregators, especially for new releases, regional restrictions, preview models, and model shutdown dates.
 
 ## Icon Metadata

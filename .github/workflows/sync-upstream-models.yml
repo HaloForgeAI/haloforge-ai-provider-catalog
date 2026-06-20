@@ -49,10 +49,17 @@ jobs:
       - name: Commit and open pull request
         if: steps.changes.outputs.changed == 'true'
         env:
-          GH_TOKEN: ${{ github.token }}
+          SYNC_PR_TOKEN: ${{ secrets.HF_PROVIDER_CATALOG_SYNC_TOKEN }}
+          GITHUB_TOKEN_FALLBACK: ${{ github.token }}
           BRANCH_NAME: chore/sync-upstream-model-catalog
         shell: bash
         run: |
+          if [ -n "${SYNC_PR_TOKEN:-}" ]; then
+            export GH_TOKEN="$SYNC_PR_TOKEN"
+          else
+            export GH_TOKEN="$GITHUB_TOKEN_FALLBACK"
+          fi
+
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git checkout -B "$BRANCH_NAME"
