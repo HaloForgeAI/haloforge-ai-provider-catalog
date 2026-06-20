@@ -59,7 +59,8 @@ jobs:
           git add catalog/manifest.json catalog/model-provider-catalog.json providers sources package.json scripts .github/workflows
           git commit -m "Sync upstream model catalog"
           git push --force-with-lease origin "$BRANCH_NAME"
-          if gh pr view "$BRANCH_NAME" --json number >/dev/null 2>&1; then
+          open_pr_count="$(gh pr list --base main --head "$BRANCH_NAME" --state open --json number --jq 'length')"
+          if [ "$open_pr_count" -gt 0 ]; then
             echo "A sync pull request already exists for $BRANCH_NAME."
           elif gh pr create \
             --base main \
