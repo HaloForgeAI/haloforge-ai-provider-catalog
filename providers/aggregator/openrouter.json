@@ -159,6 +159,32 @@
       "source": "openrouter-models"
     },
     {
+      "id": "openrouter-qwen-code-qwen3-max",
+      "displayName": "OpenRouter Qwen3 Max for Qwen Code",
+      "target": "qwen_code",
+      "routeMode": "config_only",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "apiCompatibility": "openai",
+      "modelId": "qwen/qwen3-max-thinking",
+      "contextWindow": 262144,
+      "maxTokens": 65536,
+      "effortLevel": "high",
+      "source": "openrouter-models"
+    },
+    {
+      "id": "openrouter-qwen-code-deepseek-v4-pro",
+      "displayName": "OpenRouter DeepSeek V4 Pro for Qwen Code",
+      "target": "qwen_code",
+      "routeMode": "config_only",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "apiCompatibility": "openai",
+      "modelId": "deepseek/deepseek-v4-pro",
+      "contextWindow": 1048576,
+      "maxTokens": 128000,
+      "effortLevel": "high",
+      "source": "openrouter-models"
+    },
+    {
       "id": "openrouter-opencode-glm-5-2",
       "displayName": "OpenRouter GLM 5.2 for OpenCode",
       "target": "opencode",

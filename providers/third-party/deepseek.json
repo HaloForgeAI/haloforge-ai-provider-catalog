@@ -122,6 +122,34 @@
       "source": "deepseek-docs"
     },
     {
+      "id": "deepseek-qwen-code-v4-pro",
+      "displayName": "DeepSeek V4 Pro for Qwen Code",
+      "target": "qwen_code",
+      "routeMode": "config_only",
+      "baseUrl": "https://api.deepseek.com",
+      "apiCompatibility": "openai",
+      "modelId": "deepseek-v4-pro",
+      "contextWindow": 1000000,
+      "maxTokens": 384000,
+      "temperature": 0.2,
+      "effortLevel": "high",
+      "source": "deepseek-docs"
+    },
+    {
+      "id": "deepseek-qwen-code-v4-flash",
+      "displayName": "DeepSeek V4 Flash for Qwen Code",
+      "target": "qwen_code",
+      "routeMode": "config_only",
+      "baseUrl": "https://api.deepseek.com",
+      "apiCompatibility": "openai",
+      "modelId": "deepseek-v4-flash",
+      "contextWindow": 1000000,
+      "maxTokens": 384000,
+      "temperature": 0.2,
+      "effortLevel": "medium",
+      "source": "deepseek-docs"
+    },
+    {
       "id": "deepseek-copilot-v4-pro",
       "displayName": "DeepSeek V4 Pro for Copilot BYOK",
       "target": "copilot",

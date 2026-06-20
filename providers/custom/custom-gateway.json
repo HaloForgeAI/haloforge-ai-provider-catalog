@@ -63,6 +63,16 @@
       "contextWindow": 128000,
       "maxTokens": 32000,
       "effortLevel": "high"
+    },
+    {
+      "target": "qwen_code",
+      "routeMode": "config_only",
+      "baseUrl": "https://api.example.com/v1",
+      "apiCompatibility": "openai",
+      "modelId": "custom-model",
+      "contextWindow": 128000,
+      "maxTokens": 32000,
+      "effortLevel": "high"
     }
   ]
 }

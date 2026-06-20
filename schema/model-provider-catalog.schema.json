@@ -98,7 +98,7 @@
         "displayName": { "type": "string" },
         "description": { "type": "string" },
         "target": {
-          "enum": ["claude_code", "codex", "opencode", "copilot"]
+          "enum": ["claude_code", "codex", "opencode", "copilot", "qwen_code"]
         },
         "routeMode": {
           "enum": ["direct", "model_mapping", "config_only"]

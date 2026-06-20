@@ -88,7 +88,7 @@ When a new model appears in official docs before every aggregator catches up, ad
 - `updatedAt`: ISO timestamp for cache/debug visibility.
 - `providers`: provider templates used by the chat settings page and Agent gateway settings.
 - `models`: chat model presets for a provider.
-- `agentGateways`: target-specific templates for `claude_code`, `codex`, `opencode`, and `copilot`.
+- `agentGateways`: target-specific templates for `claude_code`, `codex`, `opencode`, `copilot`, and `qwen_code`.
 - `status`, `shutdownDate`, `fallbackModelId`, and `disabledByDefault`: lifecycle metadata used by HaloForge to avoid enabling unavailable models by default and to guide users toward fallbacks.
 
 Gateway templates are presets only. HaloForge applies them to runtime agents only after a user explicitly adds or edits an Agent gateway config in the desktop app.

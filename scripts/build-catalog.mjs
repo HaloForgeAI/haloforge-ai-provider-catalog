@@ -7,7 +7,7 @@ const providersRoot = new URL("providers/", repoRoot);
 const manifestPath = new URL("catalog/manifest.json", repoRoot);
 const outputPath = new URL("catalog/model-provider-catalog.json", repoRoot);
 const checkOnly = process.argv.includes("--check");
-const gatewayTargets = new Set(["claude_code", "codex", "opencode", "copilot"]);
+const gatewayTargets = new Set(["claude_code", "codex", "opencode", "copilot", "qwen_code"]);
 const forbiddenSecretKeys = new Set([
   "apikey",
   "api_key",

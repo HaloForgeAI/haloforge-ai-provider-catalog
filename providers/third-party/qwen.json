@@ -71,6 +71,45 @@
       "source": "alibaba-docs"
     },
     {
+      "id": "qwen-qwen-code-qwen3-coder-plus",
+      "displayName": "Qwen3 Coder Plus for Qwen Code",
+      "target": "qwen_code",
+      "routeMode": "config_only",
+      "baseUrl": "https://dashscope-intl.aliyuncs.com/compatible-mode/v1",
+      "apiCompatibility": "openai",
+      "modelId": "qwen3-coder-plus",
+      "contextWindow": 262144,
+      "maxTokens": 65536,
+      "effortLevel": "high",
+      "source": "alibaba-docs"
+    },
+    {
+      "id": "qwen-qwen-code-qwen3-max",
+      "displayName": "Qwen3 Max for Qwen Code",
+      "target": "qwen_code",
+      "routeMode": "config_only",
+      "baseUrl": "https://dashscope-intl.aliyuncs.com/compatible-mode/v1",
+      "apiCompatibility": "openai",
+      "modelId": "qwen3-max",
+      "contextWindow": 262144,
+      "maxTokens": 65536,
+      "effortLevel": "high",
+      "source": "alibaba-docs"
+    },
+    {
+      "id": "qwen-qwen-code-haloforge-qwen3-6-code",
+      "displayName": "HaloForge Qwen3.6 Code for Qwen Code",
+      "target": "qwen_code",
+      "routeMode": "config_only",
+      "baseUrl": "https://macllama.haloforge.dev/v1",
+      "apiCompatibility": "openai",
+      "modelId": "haloforge-qwen3.6-code",
+      "contextWindow": 262144,
+      "maxTokens": 16000,
+      "effortLevel": "high",
+      "source": "haloforge-smoke-verified-2026-06-20"
+    },
+    {
       "id": "qwen-opencode-qwen3-coder-plus",
       "displayName": "Qwen3 Coder Plus for OpenCode",
       "target": "opencode",
