@@ -84,6 +84,32 @@
       "source": "alibaba-docs"
     },
     {
+      "id": "qwen-opencode-qwen3-max",
+      "displayName": "Qwen3 Max for OpenCode",
+      "target": "opencode",
+      "routeMode": "config_only",
+      "baseUrl": "https://dashscope-intl.aliyuncs.com/compatible-mode/v1",
+      "apiCompatibility": "openai",
+      "modelId": "qwen3-max",
+      "contextWindow": 262144,
+      "maxTokens": 65536,
+      "effortLevel": "high",
+      "source": "alibaba-docs"
+    },
+    {
+      "id": "qwen-opencode-qwen3-5-flash",
+      "displayName": "Qwen3.5 Flash for OpenCode",
+      "target": "opencode",
+      "routeMode": "config_only",
+      "baseUrl": "https://dashscope-intl.aliyuncs.com/compatible-mode/v1",
+      "apiCompatibility": "openai",
+      "modelId": "qwen3.5-flash",
+      "contextWindow": 240000,
+      "maxTokens": 65536,
+      "effortLevel": "medium",
+      "source": "alibaba-docs"
+    },
+    {
       "id": "qwen-copilot-qwen3-max",
       "displayName": "Qwen3 Max for Copilot BYOK",
       "target": "copilot",
@@ -94,6 +120,32 @@
       "contextWindow": 262144,
       "maxTokens": 65536,
       "effortLevel": "high",
+      "source": "alibaba-docs"
+    },
+    {
+      "id": "qwen-copilot-qwen3-coder-plus",
+      "displayName": "Qwen3 Coder Plus for Copilot BYOK",
+      "target": "copilot",
+      "routeMode": "config_only",
+      "baseUrl": "https://dashscope-intl.aliyuncs.com/compatible-mode/v1",
+      "apiCompatibility": "openai",
+      "modelId": "qwen3-coder-plus",
+      "contextWindow": 262144,
+      "maxTokens": 65536,
+      "effortLevel": "high",
+      "source": "alibaba-docs"
+    },
+    {
+      "id": "qwen-copilot-qwen3-5-flash",
+      "displayName": "Qwen3.5 Flash for Copilot BYOK",
+      "target": "copilot",
+      "routeMode": "config_only",
+      "baseUrl": "https://dashscope-intl.aliyuncs.com/compatible-mode/v1",
+      "apiCompatibility": "openai",
+      "modelId": "qwen3.5-flash",
+      "contextWindow": 240000,
+      "maxTokens": 65536,
+      "effortLevel": "medium",
       "source": "alibaba-docs"
     }
   ]

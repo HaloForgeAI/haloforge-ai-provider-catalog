@@ -54,6 +54,19 @@
       "maxTokens": 65536,
       "effortLevel": "high",
       "source": "vercel-ai-gateway-models"
+    },
+    {
+      "id": "xai-copilot-grok-code-fast-1",
+      "displayName": "Grok Code Fast 1 for Copilot BYOK",
+      "target": "copilot",
+      "routeMode": "config_only",
+      "baseUrl": "https://api.x.ai/v1",
+      "apiCompatibility": "openai",
+      "modelId": "grok-code-fast-1",
+      "contextWindow": 256000,
+      "maxTokens": 65536,
+      "effortLevel": "high",
+      "source": "vercel-ai-gateway-models"
     }
   ]
 }

@@ -108,6 +108,48 @@
       "source": "deepseek-docs"
     },
     {
+      "id": "deepseek-opencode-v4-flash",
+      "displayName": "DeepSeek V4 Flash for OpenCode",
+      "target": "opencode",
+      "routeMode": "config_only",
+      "baseUrl": "https://api.deepseek.com",
+      "apiCompatibility": "openai",
+      "modelId": "deepseek-v4-flash",
+      "contextWindow": 1000000,
+      "maxTokens": 384000,
+      "temperature": 0.2,
+      "effortLevel": "medium",
+      "source": "deepseek-docs"
+    },
+    {
+      "id": "deepseek-copilot-v4-pro",
+      "displayName": "DeepSeek V4 Pro for Copilot BYOK",
+      "target": "copilot",
+      "routeMode": "config_only",
+      "baseUrl": "https://api.deepseek.com",
+      "apiCompatibility": "openai",
+      "modelId": "deepseek-v4-pro",
+      "contextWindow": 1000000,
+      "maxTokens": 384000,
+      "temperature": 0.2,
+      "effortLevel": "high",
+      "source": "deepseek-docs"
+    },
+    {
+      "id": "deepseek-copilot-v4-flash",
+      "displayName": "DeepSeek V4 Flash for Copilot BYOK",
+      "target": "copilot",
+      "routeMode": "config_only",
+      "baseUrl": "https://api.deepseek.com",
+      "apiCompatibility": "openai",
+      "modelId": "deepseek-v4-flash",
+      "contextWindow": 1000000,
+      "maxTokens": 384000,
+      "temperature": 0.2,
+      "effortLevel": "medium",
+      "source": "deepseek-docs"
+    },
+    {
       "id": "deepseek-codex-v4-pro",
       "displayName": "DeepSeek V4 Pro for Codex",
       "target": "codex",

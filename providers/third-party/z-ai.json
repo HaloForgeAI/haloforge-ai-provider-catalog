@@ -136,9 +136,49 @@
       "source": "zai-coding-plan-switch-docs"
     },
     {
+      "id": "zai-copilot-glm-5-2",
+      "displayName": "GLM 5.2 for Copilot BYOK",
+      "target": "copilot",
+      "routeMode": "config_only",
+      "baseUrl": "https://api.z.ai/api/coding/paas/v4",
+      "apiCompatibility": "openai",
+      "modelId": "glm-5.2",
+      "contextWindow": 1000000,
+      "maxTokens": 131072,
+      "temperature": 0.6,
+      "effortLevel": "max",
+      "source": "zai-coding-plan-switch-docs"
+    },
+    {
       "id": "zai-codex-glm-5-code",
       "displayName": "GLM 5 Code for Codex",
       "target": "codex",
+      "routeMode": "config_only",
+      "baseUrl": "https://api.z.ai/api/paas/v4",
+      "apiCompatibility": "openai",
+      "modelId": "glm-5-code",
+      "contextWindow": 200000,
+      "maxTokens": 128000,
+      "effortLevel": "high",
+      "source": "litellm-model-catalog"
+    },
+    {
+      "id": "zai-opencode-glm-5-code",
+      "displayName": "GLM 5 Code for OpenCode",
+      "target": "opencode",
+      "routeMode": "config_only",
+      "baseUrl": "https://api.z.ai/api/paas/v4",
+      "apiCompatibility": "openai",
+      "modelId": "glm-5-code",
+      "contextWindow": 200000,
+      "maxTokens": 128000,
+      "effortLevel": "high",
+      "source": "litellm-model-catalog"
+    },
+    {
+      "id": "zai-copilot-glm-5-code",
+      "displayName": "GLM 5 Code for Copilot BYOK",
+      "target": "copilot",
       "routeMode": "config_only",
       "baseUrl": "https://api.z.ai/api/paas/v4",
       "apiCompatibility": "openai",
@@ -159,6 +199,19 @@
       "contextWindow": 200000,
       "maxTokens": 128000,
       "effortLevel": "high",
+      "source": "litellm-model-catalog"
+    },
+    {
+      "id": "zai-copilot-glm-4-7",
+      "displayName": "GLM 4.7 for Copilot BYOK",
+      "target": "copilot",
+      "routeMode": "config_only",
+      "baseUrl": "https://api.z.ai/api/paas/v4",
+      "apiCompatibility": "openai",
+      "modelId": "glm-4.7",
+      "contextWindow": 200000,
+      "maxTokens": 128000,
+      "effortLevel": "medium",
       "source": "litellm-model-catalog"
     }
   ]

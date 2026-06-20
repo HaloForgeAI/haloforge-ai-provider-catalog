@@ -43,6 +43,19 @@
       "source": "litellm-model-catalog"
     },
     {
+      "id": "mistral-copilot-codestral",
+      "displayName": "Codestral for Copilot BYOK",
+      "target": "copilot",
+      "routeMode": "config_only",
+      "baseUrl": "https://api.mistral.ai/v1",
+      "apiCompatibility": "openai",
+      "modelId": "codestral-latest",
+      "contextWindow": 256000,
+      "maxTokens": 65536,
+      "effortLevel": "high",
+      "source": "litellm-model-catalog"
+    },
+    {
       "id": "mistral-codex-codestral",
       "displayName": "Codestral for Codex",
       "target": "codex",

@@ -41,6 +41,32 @@
       "maxTokens": 65536,
       "effortLevel": "medium",
       "source": "litellm-model-catalog"
+    },
+    {
+      "id": "perplexity-opencode-sonar-deep-research",
+      "displayName": "Sonar Deep Research for OpenCode",
+      "target": "opencode",
+      "routeMode": "config_only",
+      "baseUrl": "https://api.perplexity.ai",
+      "apiCompatibility": "openai",
+      "modelId": "sonar-deep-research",
+      "contextWindow": 200000,
+      "maxTokens": 65536,
+      "effortLevel": "medium",
+      "source": "litellm-model-catalog"
+    },
+    {
+      "id": "perplexity-copilot-sonar-pro",
+      "displayName": "Sonar Pro for Copilot BYOK",
+      "target": "copilot",
+      "routeMode": "config_only",
+      "baseUrl": "https://api.perplexity.ai",
+      "apiCompatibility": "openai",
+      "modelId": "sonar-pro",
+      "contextWindow": 200000,
+      "maxTokens": 65536,
+      "effortLevel": "medium",
+      "source": "litellm-model-catalog"
     }
   ]
 }

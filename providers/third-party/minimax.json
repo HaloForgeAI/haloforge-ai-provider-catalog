@@ -76,6 +76,45 @@
       "source": "minimax-docs"
     },
     {
+      "id": "minimax-opencode-m2-7-highspeed",
+      "displayName": "MiniMax M2.7 Highspeed for OpenCode",
+      "target": "opencode",
+      "routeMode": "config_only",
+      "baseUrl": "https://api.minimax.io/v1",
+      "apiCompatibility": "openai",
+      "modelId": "MiniMax-M2.7-highspeed",
+      "contextWindow": 204800,
+      "maxTokens": 65536,
+      "effortLevel": "medium",
+      "source": "minimax-docs"
+    },
+    {
+      "id": "minimax-copilot-m3",
+      "displayName": "MiniMax M3 for Copilot BYOK",
+      "target": "copilot",
+      "routeMode": "config_only",
+      "baseUrl": "https://api.minimax.io/v1",
+      "apiCompatibility": "openai",
+      "modelId": "MiniMax-M3",
+      "contextWindow": 1000000,
+      "maxTokens": 128000,
+      "effortLevel": "high",
+      "source": "minimax-docs"
+    },
+    {
+      "id": "minimax-copilot-m2-7-highspeed",
+      "displayName": "MiniMax M2.7 Highspeed for Copilot BYOK",
+      "target": "copilot",
+      "routeMode": "config_only",
+      "baseUrl": "https://api.minimax.io/v1",
+      "apiCompatibility": "openai",
+      "modelId": "MiniMax-M2.7-highspeed",
+      "contextWindow": 204800,
+      "maxTokens": 65536,
+      "effortLevel": "medium",
+      "source": "minimax-docs"
+    },
+    {
       "id": "minimax-codex-m3",
       "displayName": "MiniMax M3 for Codex",
       "target": "codex",
