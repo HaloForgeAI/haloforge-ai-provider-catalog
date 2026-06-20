@@ -106,8 +106,16 @@
       "modelId": "haloforge-qwen3.6-code",
       "contextWindow": 262144,
       "maxTokens": 16000,
+      "generationConfig": {
+        "extra_body": {
+          "enable_thinking": false,
+          "chat_template_kwargs": {
+            "enable_thinking": false
+          }
+        }
+      },
       "effortLevel": "high",
-      "source": "haloforge-smoke-verified-2026-06-20"
+      "source": "haloforge-qwen-cli-smoke-verified-2026-06-20"
     },
     {
       "id": "qwen-opencode-qwen3-coder-plus",

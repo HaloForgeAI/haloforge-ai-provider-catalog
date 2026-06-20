@@ -111,6 +111,7 @@
         "temperature": { "type": "number" },
         "effortLevel": { "type": "string" },
         "roleModels": { "type": "object" },
+        "generationConfig": { "type": "object" },
         "status": { "$ref": "#/$defs/lifecycleStatus" },
         "deprecationDate": { "type": "string" },
         "shutdownDate": { "type": "string" },
