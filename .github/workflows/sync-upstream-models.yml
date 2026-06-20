@@ -59,8 +59,15 @@ jobs:
           git add catalog/manifest.json catalog/model-provider-catalog.json providers sources package.json scripts .github/workflows
           git commit -m "Sync upstream model catalog"
           git push --force-with-lease origin "$BRANCH_NAME"
-          gh pr view "$BRANCH_NAME" --json number >/dev/null 2>&1 || gh pr create \
+          if gh pr view "$BRANCH_NAME" --json number >/dev/null 2>&1; then
+            echo "A sync pull request already exists for $BRANCH_NAME."
+          elif gh pr create \
             --base main \
             --head "$BRANCH_NAME" \
             --title "Sync upstream model catalog" \
-            --body "Automated sync from configured machine-readable upstream sources and curated official-doc overrides. Review provider fragments, lifecycle metadata, and generated catalog before merging."
+            --body "Automated sync from configured machine-readable upstream sources and curated official-doc overrides. Review provider fragments, lifecycle metadata, and generated catalog before merging."; then
+            echo "Created sync pull request for $BRANCH_NAME."
+          else
+            echo "::warning::Unable to create a pull request from GitHub Actions. The sync branch was pushed successfully."
+            echo "::notice::Open the review PR manually: https://github.com/$GITHUB_REPOSITORY/pull/new/$BRANCH_NAME"
+          fi
