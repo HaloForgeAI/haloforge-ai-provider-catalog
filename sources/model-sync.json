@@ -74,6 +74,83 @@
           "maxTokens": 131072,
           "status": "available",
           "source": "openrouter-models"
+        },
+        {
+          "id": "glm-4.5-air",
+          "displayName": "GLM 4.5 Air",
+          "upstreamRefs": [
+            "vercel-ai-gateway-models:zai/glm-4.5-air"
+          ],
+          "contextWindow": 128000,
+          "maxTokens": 96000,
+          "status": "available",
+          "source": "vercel-ai-gateway-models"
+        },
+        {
+          "id": "glm-4.5v",
+          "displayName": "GLM 4.5V",
+          "upstreamRefs": [
+            "vercel-ai-gateway-models:zai/glm-4.5v"
+          ],
+          "contextWindow": 66000,
+          "maxTokens": 16000,
+          "status": "available",
+          "source": "vercel-ai-gateway-models"
+        },
+        {
+          "id": "glm-4.6v",
+          "displayName": "GLM-4.6V",
+          "upstreamRefs": [
+            "vercel-ai-gateway-models:zai/glm-4.6v"
+          ],
+          "contextWindow": 128000,
+          "maxTokens": 24000,
+          "status": "available",
+          "source": "vercel-ai-gateway-models"
+        },
+        {
+          "id": "glm-4.6v-flash",
+          "displayName": "GLM-4.6V-Flash",
+          "upstreamRefs": [
+            "vercel-ai-gateway-models:zai/glm-4.6v-flash"
+          ],
+          "contextWindow": 128000,
+          "maxTokens": 24000,
+          "status": "available",
+          "source": "vercel-ai-gateway-models"
+        },
+        {
+          "id": "glm-4.7-flashx",
+          "displayName": "GLM 4.7 FlashX",
+          "upstreamRefs": [
+            "vercel-ai-gateway-models:zai/glm-4.7-flashx"
+          ],
+          "contextWindow": 200000,
+          "maxTokens": 128000,
+          "status": "available",
+          "source": "vercel-ai-gateway-models"
+        },
+        {
+          "id": "glm-5.2-fast",
+          "displayName": "GLM 5.2 Fast",
+          "upstreamRefs": [
+            "vercel-ai-gateway-models:zai/glm-5.2-fast"
+          ],
+          "contextWindow": 1000000,
+          "maxTokens": 128000,
+          "status": "available",
+          "source": "vercel-ai-gateway-models"
+        },
+        {
+          "id": "glm-5v-turbo",
+          "displayName": "GLM 5V Turbo",
+          "upstreamRefs": [
+            "vercel-ai-gateway-models:zai/glm-5v-turbo"
+          ],
+          "contextWindow": 200000,
+          "maxTokens": 128000,
+          "status": "available",
+          "source": "vercel-ai-gateway-models"
         }
       ],
       "agentGateways": [
@@ -138,6 +215,921 @@
           ],
           "contextWindow": 1048576,
           "maxTokens": 131072,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "z-ai/glm-5.1",
+          "displayName": "GLM 5.1",
+          "upstreamRefs": [
+            "openrouter-models:z-ai/glm-5.1"
+          ],
+          "contextWindow": 200000,
+          "maxTokens": 128000,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "z-ai/glm-5v-turbo",
+          "displayName": "GLM 5V Turbo",
+          "upstreamRefs": [
+            "openrouter-models:z-ai/glm-5v-turbo"
+          ],
+          "contextWindow": 202752,
+          "maxTokens": 131072,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "z-ai/glm-5-turbo",
+          "displayName": "GLM 5 Turbo",
+          "upstreamRefs": [
+            "openrouter-models:z-ai/glm-5-turbo"
+          ],
+          "contextWindow": 262144,
+          "maxTokens": 131072,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "z-ai/glm-5",
+          "displayName": "GLM 5",
+          "upstreamRefs": [
+            "openrouter-models:z-ai/glm-5"
+          ],
+          "contextWindow": 202752,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "z-ai/glm-4.7-flash",
+          "displayName": "GLM 4.7 Flash",
+          "upstreamRefs": [
+            "openrouter-models:z-ai/glm-4.7-flash"
+          ],
+          "contextWindow": 202752,
+          "maxTokens": 16384,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "z-ai/glm-4.7",
+          "displayName": "GLM 4.7",
+          "upstreamRefs": [
+            "openrouter-models:z-ai/glm-4.7"
+          ],
+          "contextWindow": 202752,
+          "maxTokens": 131072,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "z-ai/glm-4.6v",
+          "displayName": "GLM 4.6V",
+          "upstreamRefs": [
+            "openrouter-models:z-ai/glm-4.6v"
+          ],
+          "contextWindow": 131072,
+          "maxTokens": 32768,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "z-ai/glm-4.6",
+          "displayName": "GLM 4.6",
+          "upstreamRefs": [
+            "openrouter-models:z-ai/glm-4.6"
+          ],
+          "contextWindow": 198000,
+          "maxTokens": 16384,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "z-ai/glm-4.5v",
+          "displayName": "GLM 4.5V",
+          "upstreamRefs": [
+            "openrouter-models:z-ai/glm-4.5v"
+          ],
+          "contextWindow": 65536,
+          "maxTokens": 16384,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "z-ai/glm-4.5",
+          "displayName": "GLM 4.5",
+          "upstreamRefs": [
+            "openrouter-models:z-ai/glm-4.5"
+          ],
+          "contextWindow": 131072,
+          "maxTokens": 98304,
+          "status": "deprecated",
+          "shutdownDate": "2026-12-31",
+          "disabledByDefault": true,
+          "source": "openrouter-models"
+        },
+        {
+          "id": "z-ai/glm-4.5-air",
+          "displayName": "GLM 4.5 Air",
+          "upstreamRefs": [
+            "openrouter-models:z-ai/glm-4.5-air"
+          ],
+          "contextWindow": 131072,
+          "maxTokens": 98304,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "deepseek/deepseek-v4-flash",
+          "displayName": "DeepSeek V4 Flash",
+          "upstreamRefs": [
+            "openrouter-models:deepseek/deepseek-v4-flash"
+          ],
+          "contextWindow": 1048576,
+          "maxTokens": 65536,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "deepseek/deepseek-v3.2",
+          "displayName": "DeepSeek V3.2",
+          "upstreamRefs": [
+            "openrouter-models:deepseek/deepseek-v3.2"
+          ],
+          "contextWindow": 128000,
+          "maxTokens": 64000,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "deepseek/deepseek-v3.2-exp",
+          "displayName": "DeepSeek V3.2 Exp",
+          "upstreamRefs": [
+            "openrouter-models:deepseek/deepseek-v3.2-exp"
+          ],
+          "contextWindow": 163840,
+          "maxTokens": 65536,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "deepseek/deepseek-v3.1-terminus",
+          "displayName": "DeepSeek V3.1 Terminus",
+          "upstreamRefs": [
+            "openrouter-models:deepseek/deepseek-v3.1-terminus"
+          ],
+          "contextWindow": 163840,
+          "maxTokens": 32768,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "deepseek/deepseek-chat-v3.1",
+          "displayName": "DeepSeek V3.1",
+          "upstreamRefs": [
+            "openrouter-models:deepseek/deepseek-chat-v3.1"
+          ],
+          "contextWindow": 163840,
+          "maxTokens": 32768,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "deepseek/deepseek-r1-0528",
+          "displayName": "R1 0528",
+          "upstreamRefs": [
+            "openrouter-models:deepseek/deepseek-r1-0528"
+          ],
+          "contextWindow": 163840,
+          "maxTokens": 32768,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "deepseek/deepseek-chat-v3-0324",
+          "displayName": "DeepSeek V3 0324",
+          "upstreamRefs": [
+            "openrouter-models:deepseek/deepseek-chat-v3-0324"
+          ],
+          "contextWindow": 163840,
+          "maxTokens": 16384,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "deepseek/deepseek-r1-distill-llama-70b",
+          "displayName": "R1 Distill Llama 70B",
+          "upstreamRefs": [
+            "openrouter-models:deepseek/deepseek-r1-distill-llama-70b"
+          ],
+          "contextWindow": 8192,
+          "maxTokens": 8192,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "deepseek/deepseek-r1",
+          "displayName": "R1",
+          "upstreamRefs": [
+            "openrouter-models:deepseek/deepseek-r1"
+          ],
+          "contextWindow": 64000,
+          "maxTokens": 16000,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "deepseek/deepseek-chat",
+          "displayName": "DeepSeek V3",
+          "upstreamRefs": [
+            "openrouter-models:deepseek/deepseek-chat"
+          ],
+          "contextWindow": 128000,
+          "maxTokens": 16000,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "minimax/minimax-m2.7",
+          "displayName": "MiniMax M2.7",
+          "upstreamRefs": [
+            "openrouter-models:minimax/minimax-m2.7"
+          ],
+          "contextWindow": 196608,
+          "maxTokens": 196608,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "minimax/minimax-m2.5",
+          "displayName": "MiniMax M2.5",
+          "upstreamRefs": [
+            "openrouter-models:minimax/minimax-m2.5"
+          ],
+          "contextWindow": 196608,
+          "maxTokens": 196608,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "minimax/minimax-m2-her",
+          "displayName": "MiniMax M2-her",
+          "upstreamRefs": [
+            "openrouter-models:minimax/minimax-m2-her"
+          ],
+          "contextWindow": 65536,
+          "maxTokens": 2048,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "minimax/minimax-m2.1",
+          "displayName": "MiniMax M2.1",
+          "upstreamRefs": [
+            "openrouter-models:minimax/minimax-m2.1"
+          ],
+          "contextWindow": 204800,
+          "maxTokens": 131072,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "minimax/minimax-m2",
+          "displayName": "MiniMax M2",
+          "upstreamRefs": [
+            "openrouter-models:minimax/minimax-m2"
+          ],
+          "contextWindow": 204800,
+          "maxTokens": 131072,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "minimax/minimax-m1",
+          "displayName": "MiniMax M1",
+          "upstreamRefs": [
+            "openrouter-models:minimax/minimax-m1"
+          ],
+          "contextWindow": 1000000,
+          "maxTokens": 40000,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "minimax/minimax-01",
+          "displayName": "MiniMax-01",
+          "upstreamRefs": [
+            "openrouter-models:minimax/minimax-01"
+          ],
+          "contextWindow": 1000192,
+          "maxTokens": 1000192,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "moonshotai/kimi-k2.7-code",
+          "displayName": "Kimi K2.7 Code",
+          "upstreamRefs": [
+            "openrouter-models:moonshotai/kimi-k2.7-code"
+          ],
+          "contextWindow": 262144,
+          "maxTokens": 262144,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "moonshotai/kimi-k2.6",
+          "displayName": "Kimi K2.6",
+          "upstreamRefs": [
+            "openrouter-models:moonshotai/kimi-k2.6"
+          ],
+          "contextWindow": 262144,
+          "maxTokens": 262144,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "moonshotai/kimi-k2-thinking",
+          "displayName": "Kimi K2 Thinking",
+          "upstreamRefs": [
+            "openrouter-models:moonshotai/kimi-k2-thinking"
+          ],
+          "contextWindow": 262144,
+          "maxTokens": 100352,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "moonshotai/kimi-k2-0905",
+          "displayName": "Kimi K2 0905",
+          "upstreamRefs": [
+            "openrouter-models:moonshotai/kimi-k2-0905"
+          ],
+          "contextWindow": 262144,
+          "maxTokens": 100352,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "moonshotai/kimi-k2",
+          "displayName": "Kimi K2 0711",
+          "upstreamRefs": [
+            "openrouter-models:moonshotai/kimi-k2"
+          ],
+          "contextWindow": 131072,
+          "maxTokens": 100352,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "openai/gpt-5.6-luna-pro",
+          "displayName": "GPT-5.6 Luna Pro",
+          "upstreamRefs": [
+            "openrouter-models:openai/gpt-5.6-luna-pro"
+          ],
+          "contextWindow": 1050000,
+          "maxTokens": 128000,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "openai/gpt-5.6-luna",
+          "displayName": "GPT-5.6 Luna",
+          "upstreamRefs": [
+            "openrouter-models:openai/gpt-5.6-luna"
+          ],
+          "contextWindow": 1050000,
+          "maxTokens": 128000,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "openai/gpt-5.6-terra-pro",
+          "displayName": "GPT-5.6 Terra Pro",
+          "upstreamRefs": [
+            "openrouter-models:openai/gpt-5.6-terra-pro"
+          ],
+          "contextWindow": 1050000,
+          "maxTokens": 128000,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "openai/gpt-5.6-terra",
+          "displayName": "GPT-5.6 Terra",
+          "upstreamRefs": [
+            "openrouter-models:openai/gpt-5.6-terra"
+          ],
+          "contextWindow": 1050000,
+          "maxTokens": 128000,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "openai/gpt-5.6-sol-pro",
+          "displayName": "GPT-5.6 Sol Pro",
+          "upstreamRefs": [
+            "openrouter-models:openai/gpt-5.6-sol-pro"
+          ],
+          "contextWindow": 1050000,
+          "maxTokens": 128000,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "openai/gpt-5.6-sol",
+          "displayName": "GPT-5.6 Sol",
+          "upstreamRefs": [
+            "openrouter-models:openai/gpt-5.6-sol"
+          ],
+          "contextWindow": 1050000,
+          "maxTokens": 128000,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "openai/gpt-chat-latest",
+          "displayName": "GPT Chat Latest",
+          "upstreamRefs": [
+            "openrouter-models:openai/gpt-chat-latest"
+          ],
+          "contextWindow": 400000,
+          "maxTokens": 128000,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "openai/gpt-5.5",
+          "displayName": "GPT-5.5",
+          "upstreamRefs": [
+            "openrouter-models:openai/gpt-5.5"
+          ],
+          "contextWindow": 1050000,
+          "maxTokens": 128000,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "openai/gpt-5.4-image-2",
+          "displayName": "GPT-5.4 Image 2",
+          "upstreamRefs": [
+            "openrouter-models:openai/gpt-5.4-image-2"
+          ],
+          "contextWindow": 272000,
+          "maxTokens": 128000,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "openai/gpt-5.4-nano",
+          "displayName": "GPT-5.4 Nano",
+          "upstreamRefs": [
+            "openrouter-models:openai/gpt-5.4-nano"
+          ],
+          "contextWindow": 400000,
+          "maxTokens": 128000,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "openai/gpt-5.4-mini",
+          "displayName": "GPT-5.4 Mini",
+          "upstreamRefs": [
+            "openrouter-models:openai/gpt-5.4-mini"
+          ],
+          "contextWindow": 400000,
+          "maxTokens": 128000,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "openai/gpt-5.4-pro",
+          "displayName": "GPT-5.4 Pro",
+          "upstreamRefs": [
+            "openrouter-models:openai/gpt-5.4-pro"
+          ],
+          "contextWindow": 1050000,
+          "maxTokens": 128000,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "openai/gpt-5.4",
+          "displayName": "GPT-5.4",
+          "upstreamRefs": [
+            "openrouter-models:openai/gpt-5.4"
+          ],
+          "contextWindow": 1050000,
+          "maxTokens": 128000,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "openai/gpt-5.3-chat",
+          "displayName": "GPT-5.3 Chat",
+          "upstreamRefs": [
+            "openrouter-models:openai/gpt-5.3-chat"
+          ],
+          "contextWindow": 128000,
+          "maxTokens": 16384,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "openai/gpt-5.3-codex",
+          "displayName": "GPT-5.3-Codex",
+          "upstreamRefs": [
+            "openrouter-models:openai/gpt-5.3-codex"
+          ],
+          "contextWindow": 400000,
+          "maxTokens": 128000,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "openai/gpt-audio",
+          "displayName": "GPT Audio",
+          "upstreamRefs": [
+            "openrouter-models:openai/gpt-audio"
+          ],
+          "contextWindow": 128000,
+          "maxTokens": 16384,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "openai/gpt-audio-mini",
+          "displayName": "GPT Audio Mini",
+          "upstreamRefs": [
+            "openrouter-models:openai/gpt-audio-mini"
+          ],
+          "contextWindow": 128000,
+          "maxTokens": 16384,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "openai/gpt-5.2-codex",
+          "displayName": "GPT-5.2-Codex",
+          "upstreamRefs": [
+            "openrouter-models:openai/gpt-5.2-codex"
+          ],
+          "contextWindow": 400000,
+          "maxTokens": 128000,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "openai/gpt-5.2-chat",
+          "displayName": "GPT-5.2 Chat",
+          "upstreamRefs": [
+            "openrouter-models:openai/gpt-5.2-chat"
+          ],
+          "contextWindow": 128000,
+          "maxTokens": 16384,
+          "status": "deprecated",
+          "shutdownDate": "2026-08-10",
+          "disabledByDefault": true,
+          "source": "openrouter-models"
+        },
+        {
+          "id": "openai/gpt-5.2-pro",
+          "displayName": "GPT-5.2 Pro",
+          "upstreamRefs": [
+            "openrouter-models:openai/gpt-5.2-pro"
+          ],
+          "contextWindow": 400000,
+          "maxTokens": 128000,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "openai/gpt-5.2",
+          "displayName": "GPT-5.2",
+          "upstreamRefs": [
+            "openrouter-models:openai/gpt-5.2"
+          ],
+          "contextWindow": 400000,
+          "maxTokens": 128000,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "openai/gpt-5.1-codex-max",
+          "displayName": "GPT-5.1-Codex-Max",
+          "upstreamRefs": [
+            "openrouter-models:openai/gpt-5.1-codex-max"
+          ],
+          "contextWindow": 400000,
+          "maxTokens": 128000,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "openai/gpt-5.1",
+          "displayName": "GPT-5.1",
+          "upstreamRefs": [
+            "openrouter-models:openai/gpt-5.1"
+          ],
+          "contextWindow": 400000,
+          "maxTokens": 128000,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "openai/gpt-5.1-chat",
+          "displayName": "GPT-5.1 Chat",
+          "upstreamRefs": [
+            "openrouter-models:openai/gpt-5.1-chat"
+          ],
+          "contextWindow": 128000,
+          "maxTokens": 32000,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "openai/gpt-5.1-codex",
+          "displayName": "GPT-5.1-Codex",
+          "upstreamRefs": [
+            "openrouter-models:openai/gpt-5.1-codex"
+          ],
+          "contextWindow": 400000,
+          "maxTokens": 128000,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "qwen/qwen3.7-plus",
+          "displayName": "Qwen3.7 Plus",
+          "upstreamRefs": [
+            "openrouter-models:qwen/qwen3.7-plus"
+          ],
+          "contextWindow": 1000000,
+          "maxTokens": 65536,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "qwen/qwen3.7-max",
+          "displayName": "Qwen3.7 Max",
+          "upstreamRefs": [
+            "openrouter-models:qwen/qwen3.7-max"
+          ],
+          "contextWindow": 1000000,
+          "maxTokens": 65536,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "qwen/qwen3.5-plus-20260420",
+          "displayName": "Qwen3.5 Plus 2026-04-20",
+          "upstreamRefs": [
+            "openrouter-models:qwen/qwen3.5-plus-20260420"
+          ],
+          "contextWindow": 1000000,
+          "maxTokens": 65536,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "qwen/qwen3.6-flash",
+          "displayName": "Qwen3.6 Flash",
+          "upstreamRefs": [
+            "openrouter-models:qwen/qwen3.6-flash"
+          ],
+          "contextWindow": 1000000,
+          "maxTokens": 65536,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "qwen/qwen3.6-35b-a3b",
+          "displayName": "Qwen3.6 35B A3B",
+          "upstreamRefs": [
+            "openrouter-models:qwen/qwen3.6-35b-a3b"
+          ],
+          "contextWindow": 262144,
+          "maxTokens": 262144,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "qwen/qwen3.6-max-preview",
+          "displayName": "Qwen3.6 Max Preview",
+          "upstreamRefs": [
+            "openrouter-models:qwen/qwen3.6-max-preview"
+          ],
+          "contextWindow": 262144,
+          "maxTokens": 65536,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "qwen/qwen3.6-27b",
+          "displayName": "Qwen3.6 27B",
+          "upstreamRefs": [
+            "openrouter-models:qwen/qwen3.6-27b"
+          ],
+          "contextWindow": 262140,
+          "maxTokens": 262140,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "qwen/qwen3.6-plus",
+          "displayName": "Qwen3.6 Plus",
+          "upstreamRefs": [
+            "openrouter-models:qwen/qwen3.6-plus"
+          ],
+          "contextWindow": 1000000,
+          "maxTokens": 65536,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "qwen/qwen3.5-9b",
+          "displayName": "Qwen3.5-9B",
+          "upstreamRefs": [
+            "openrouter-models:qwen/qwen3.5-9b"
+          ],
+          "contextWindow": 262144,
+          "maxTokens": 262144,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "qwen/qwen3.5-35b-a3b",
+          "displayName": "Qwen3.5-35B-A3B",
+          "upstreamRefs": [
+            "openrouter-models:qwen/qwen3.5-35b-a3b"
+          ],
+          "contextWindow": 262144,
+          "maxTokens": 81920,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "qwen/qwen3.5-27b",
+          "displayName": "Qwen3.5-27B",
+          "upstreamRefs": [
+            "openrouter-models:qwen/qwen3.5-27b"
+          ],
+          "contextWindow": 262144,
+          "maxTokens": 65536,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "qwen/qwen3.5-122b-a10b",
+          "displayName": "Qwen3.5-122B-A10B",
+          "upstreamRefs": [
+            "openrouter-models:qwen/qwen3.5-122b-a10b"
+          ],
+          "contextWindow": 262144,
+          "maxTokens": 262144,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "qwen/qwen3.5-flash-02-23",
+          "displayName": "Qwen3.5-Flash",
+          "upstreamRefs": [
+            "openrouter-models:qwen/qwen3.5-flash-02-23"
+          ],
+          "contextWindow": 1000000,
+          "maxTokens": 65536,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "qwen/qwen3.5-plus-02-15",
+          "displayName": "Qwen3.5 Plus 2026-02-15",
+          "upstreamRefs": [
+            "openrouter-models:qwen/qwen3.5-plus-02-15"
+          ],
+          "contextWindow": 1000000,
+          "maxTokens": 65536,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "qwen/qwen3.5-397b-a17b",
+          "displayName": "Qwen3.5 397B A17B",
+          "upstreamRefs": [
+            "openrouter-models:qwen/qwen3.5-397b-a17b"
+          ],
+          "contextWindow": 131072,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "qwen/qwen3-coder-next",
+          "displayName": "Qwen3 Coder Next",
+          "upstreamRefs": [
+            "openrouter-models:qwen/qwen3-coder-next"
+          ],
+          "contextWindow": 262144,
+          "maxTokens": 262144,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "qwen/qwen3-vl-32b-instruct",
+          "displayName": "Qwen3 VL 32B Instruct",
+          "upstreamRefs": [
+            "openrouter-models:qwen/qwen3-vl-32b-instruct"
+          ],
+          "contextWindow": 131072,
+          "maxTokens": 32768,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "qwen/qwen3-vl-8b-thinking",
+          "displayName": "Qwen3 VL 8B Thinking",
+          "upstreamRefs": [
+            "openrouter-models:qwen/qwen3-vl-8b-thinking"
+          ],
+          "contextWindow": 131072,
+          "maxTokens": 32768,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "qwen/qwen3-vl-8b-instruct",
+          "displayName": "Qwen3 VL 8B Instruct",
+          "upstreamRefs": [
+            "openrouter-models:qwen/qwen3-vl-8b-instruct"
+          ],
+          "contextWindow": 131072,
+          "maxTokens": 32768,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "qwen/qwen3-vl-30b-a3b-thinking",
+          "displayName": "Qwen3 VL 30B A3B Thinking",
+          "upstreamRefs": [
+            "openrouter-models:qwen/qwen3-vl-30b-a3b-thinking"
+          ],
+          "contextWindow": 131072,
+          "maxTokens": 32768,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "qwen/qwen3-vl-30b-a3b-instruct",
+          "displayName": "Qwen3 VL 30B A3B Instruct",
+          "upstreamRefs": [
+            "openrouter-models:qwen/qwen3-vl-30b-a3b-instruct"
+          ],
+          "contextWindow": 131072,
+          "maxTokens": 32768,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "qwen/qwen3-vl-235b-a22b-thinking",
+          "displayName": "Qwen3 VL 235B A22B Thinking",
+          "upstreamRefs": [
+            "openrouter-models:qwen/qwen3-vl-235b-a22b-thinking"
+          ],
+          "contextWindow": 131072,
+          "maxTokens": 32768,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "qwen/qwen3-vl-235b-a22b-instruct",
+          "displayName": "Qwen3 VL 235B A22B Instruct",
+          "upstreamRefs": [
+            "openrouter-models:qwen/qwen3-vl-235b-a22b-instruct"
+          ],
+          "contextWindow": 262144,
+          "maxTokens": 16384,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "qwen/qwen3-max",
+          "displayName": "Qwen3 Max",
+          "upstreamRefs": [
+            "openrouter-models:qwen/qwen3-max"
+          ],
+          "contextWindow": 262144,
+          "maxTokens": 32768,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "qwen/qwen3-coder-plus",
+          "displayName": "Qwen3 Coder Plus",
+          "upstreamRefs": [
+            "openrouter-models:qwen/qwen3-coder-plus"
+          ],
+          "contextWindow": 1000000,
+          "maxTokens": 65536,
           "status": "available",
           "source": "openrouter-models"
         }
