@@ -9,6 +9,7 @@ const upstreamsPath = new URL("sources/upstreams.json", repoRoot);
 const syncConfigPath = new URL("sources/model-sync.json", repoRoot);
 const maxLiteLlmPages = Number(process.env.LITELLM_MAX_PAGES ?? 80);
 const fetchTimeoutMs = Number(process.env.HF_SYNC_FETCH_TIMEOUT_MS ?? 20000);
+const maxDiscoveredPerGroup = Number(process.env.HF_SYNC_MAX_DISCOVERED_PER_GROUP ?? 25);
 
 async function main() {
   const upstreamConfig = await readJson(upstreamsPath);
@@ -16,6 +17,7 @@ async function main() {
   const sourceIndexes = await fetchSourceIndexes(upstreamConfig.machineSources ?? []);
   const providerFiles = await indexProviderFiles();
   let changed = false;
+  let syncConfigChanged = false;
 
   for (const providerSync of syncConfig.providers ?? []) {
     const providerFile = providerFiles.get(providerSync.id);
@@ -25,6 +27,18 @@ async function main() {
     }
     const provider = await readJson(providerFile);
     const before = stableJson(provider);
+
+    const discovered = discoverNewModels(provider, providerSync, sourceIndexes);
+    if (discovered.length > 0) {
+      providerSync.models = [...(providerSync.models ?? []), ...discovered];
+      syncConfigChanged = true;
+      console.log(
+        `Discovered ${discovered.length} new model(s) for ${providerSync.id}: ${discovered
+          .map((model) => model.id)
+          .join(", ")}`,
+      );
+    }
+
     upsertModels(provider, providerSync.models ?? [], sourceIndexes);
     upsertAgentGateways(provider, providerSync.agentGateways ?? []);
     const after = stableJson(provider);
@@ -35,6 +49,11 @@ async function main() {
     }
   }
 
+  if (syncConfigChanged) {
+    await writeJson(syncConfigPath, syncConfig);
+    console.log(`Updated ${pathLabel(syncConfigPath)} with newly discovered models.`);
+  }
+
   if (changed) {
     const manifest = await readJson(manifestPath);
     manifest.updatedAt = new Date().toISOString();
@@ -43,6 +62,88 @@ async function main() {
   } else {
     console.log("No upstream sync changes.");
   }
+}
+
+/**
+ * Find upstream models that share a namespace with a provider's already-tracked
+ * models but are not tracked yet (e.g. a new "zai/glm-6" appears on the Vercel
+ * AI Gateway alongside the already-tracked "zai/glm-5.2"). The namespace and
+ * whether the local model id keeps or strips the upstream vendor prefix are
+ * both inferred from existing examples — nothing here is hardcoded per
+ * provider, so it only ever proposes siblings of models a human already
+ * curated. Returns new model specs (in the `sources/model-sync.json` shape,
+ * including `upstreamRefs`) ready to be appended to `providerSync.models`.
+ */
+function discoverNewModels(provider, providerSync, sourceIndexes) {
+  const groups = new Map();
+  const trackedRefs = new Set();
+
+  const addGroup = (source, namespace, stripPrefix) => {
+    const key = `${source} ${namespace}`;
+    if (!groups.has(key)) {
+      groups.set(key, { source, namespace, stripPrefix });
+    }
+  };
+
+  for (const spec of providerSync.models ?? []) {
+    for (const ref of spec.upstreamRefs ?? []) {
+      trackedRefs.add(ref);
+      const sepIndex = ref.indexOf(":");
+      if (sepIndex < 0) continue;
+      const source = ref.slice(0, sepIndex);
+      const modelId = ref.slice(sepIndex + 1);
+      const namespace = modelId.includes("/") ? modelId.slice(0, modelId.lastIndexOf("/")) : "";
+      const suffix = namespace ? modelId.slice(namespace.length + 1) : modelId;
+      addGroup(source, namespace, namespace !== "" && spec.id === suffix);
+    }
+  }
+
+  // Also learn namespace groups straight from the real provider file's
+  // existing aggregator-style entries (local id already equals the full
+  // upstream id), so a provider like "openrouter" keeps discovering sibling
+  // vendors even for namespaces that were hand-added before any sync spec
+  // existed for them.
+  for (const model of provider.models ?? []) {
+    if (!model.source || !sourceIndexes.has(model.source) || !model.id?.includes("/")) continue;
+    addGroup(model.source, model.id.slice(0, model.id.lastIndexOf("/")), false);
+  }
+
+  const existingIds = new Set([
+    ...(providerSync.models ?? []).map((spec) => spec.id),
+    ...(provider.models ?? []).map((model) => model.id),
+  ]);
+
+  const discovered = [];
+  for (const { source, namespace, stripPrefix } of groups.values()) {
+    const index = sourceIndexes.get(source);
+    if (!index) continue;
+    let addedFromGroup = 0;
+    for (const [upstreamId, model] of index) {
+      if (addedFromGroup >= maxDiscoveredPerGroup) break;
+      const modelNamespace = upstreamId.includes("/") ? upstreamId.slice(0, upstreamId.lastIndexOf("/")) : "";
+      if (modelNamespace !== namespace) continue;
+      const ref = `${source}:${upstreamId}`;
+      if (trackedRefs.has(ref)) continue;
+      const localId = stripPrefix ? upstreamId.slice(namespace.length + 1) : upstreamId;
+      if (existingIds.has(localId)) continue;
+      discovered.push({
+        id: localId,
+        displayName: model.displayName ?? localId,
+        upstreamRefs: [ref],
+        contextWindow: model.contextWindow,
+        maxTokens: model.maxTokens,
+        status: model.lifecycle?.status ?? "available",
+        shutdownDate: model.lifecycle?.shutdownDate,
+        disabledByDefault: model.lifecycle?.disabledByDefault,
+        source,
+      });
+      existingIds.add(localId);
+      trackedRefs.add(ref);
+      addedFromGroup += 1;
+    }
+  }
+
+  return discovered;
 }
 
 async function fetchSourceIndexes(machineSources) {
