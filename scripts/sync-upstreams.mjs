@@ -254,6 +254,8 @@ function cleanOpenRouterName(name) {
   return name.replace(/^[^:]+:\s*/, "").trim();
 }
 
+const deprecationHorizonMs = 2 * 365 * 24 * 3600 * 1000;
+
 function lifecycleFromDate(value) {
   if (value === null || value === undefined || value === "") return null;
   const date = typeof value === "number" ? new Date(value * 1000) : new Date(value);
@@ -261,6 +263,12 @@ function lifecycleFromDate(value) {
   const isoDate = date.toISOString().replace(/T.*$/, "");
   if (date.getTime() <= Date.now()) {
     return { status: "shutdown", shutdownDate: isoDate, disabledByDefault: true };
+  }
+  if (date.getTime() - Date.now() > deprecationHorizonMs) {
+    // Some upstreams attach a far-future placeholder expiration date to
+    // otherwise-current models; treat those as "no known lifecycle" rather
+    // than flagging a model as deprecated decades in advance.
+    return null;
   }
   return { status: "deprecated", shutdownDate: isoDate, disabledByDefault: true };
 }
