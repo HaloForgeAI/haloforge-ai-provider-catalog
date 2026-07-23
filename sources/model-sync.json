@@ -1661,6 +1661,192 @@
           "maxTokens": 16384,
           "status": "available",
           "source": "openrouter-models"
+        },
+        {
+          "id": "moonshotai/kimi-k3",
+          "displayName": "Kimi K3",
+          "upstreamRefs": [
+            "openrouter-models:moonshotai/kimi-k3"
+          ],
+          "contextWindow": 1048576,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "openai/o3-mini-high",
+          "displayName": "o3 Mini High",
+          "upstreamRefs": [
+            "openrouter-models:openai/o3-mini-high"
+          ],
+          "contextWindow": 200000,
+          "maxTokens": 100000,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "openai/o3-mini",
+          "displayName": "o3 Mini",
+          "upstreamRefs": [
+            "openrouter-models:openai/o3-mini"
+          ],
+          "contextWindow": 200000,
+          "maxTokens": 100000,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "openai/o1",
+          "displayName": "o1",
+          "upstreamRefs": [
+            "openrouter-models:openai/o1"
+          ],
+          "contextWindow": 200000,
+          "maxTokens": 100000,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "openai/gpt-4o-2024-11-20",
+          "displayName": "GPT-4o (2024-11-20)",
+          "upstreamRefs": [
+            "openrouter-models:openai/gpt-4o-2024-11-20"
+          ],
+          "contextWindow": 128000,
+          "maxTokens": 16384,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "openai/gpt-4o-2024-08-06",
+          "displayName": "GPT-4o (2024-08-06)",
+          "upstreamRefs": [
+            "openrouter-models:openai/gpt-4o-2024-08-06"
+          ],
+          "contextWindow": 128000,
+          "maxTokens": 16384,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "openai/gpt-4o-mini",
+          "displayName": "GPT-4o-mini",
+          "upstreamRefs": [
+            "openrouter-models:openai/gpt-4o-mini"
+          ],
+          "contextWindow": 128000,
+          "maxTokens": 16384,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "openai/gpt-4o-mini-2024-07-18",
+          "displayName": "GPT-4o-mini (2024-07-18)",
+          "upstreamRefs": [
+            "openrouter-models:openai/gpt-4o-mini-2024-07-18"
+          ],
+          "contextWindow": 128000,
+          "maxTokens": 16384,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "openai/gpt-4o",
+          "displayName": "GPT-4o",
+          "upstreamRefs": [
+            "openrouter-models:openai/gpt-4o"
+          ],
+          "contextWindow": 128000,
+          "maxTokens": 16384,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "openai/gpt-4o-2024-05-13",
+          "displayName": "GPT-4o (2024-05-13)",
+          "upstreamRefs": [
+            "openrouter-models:openai/gpt-4o-2024-05-13"
+          ],
+          "contextWindow": 128000,
+          "maxTokens": 4096,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "openai/gpt-4-turbo",
+          "displayName": "GPT-4 Turbo",
+          "upstreamRefs": [
+            "openrouter-models:openai/gpt-4-turbo"
+          ],
+          "contextWindow": 128000,
+          "maxTokens": 4096,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "openai/gpt-3.5-turbo-0613",
+          "displayName": "GPT-3.5 Turbo (older v0613)",
+          "upstreamRefs": [
+            "openrouter-models:openai/gpt-3.5-turbo-0613"
+          ],
+          "contextWindow": 4095,
+          "maxTokens": 4096,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "openai/gpt-4-turbo-preview",
+          "displayName": "GPT-4 Turbo Preview",
+          "upstreamRefs": [
+            "openrouter-models:openai/gpt-4-turbo-preview"
+          ],
+          "contextWindow": 128000,
+          "maxTokens": 4096,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "openai/gpt-3.5-turbo-instruct",
+          "displayName": "GPT-3.5 Turbo Instruct",
+          "upstreamRefs": [
+            "openrouter-models:openai/gpt-3.5-turbo-instruct"
+          ],
+          "contextWindow": 4095,
+          "maxTokens": 4096,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "openai/gpt-3.5-turbo-16k",
+          "displayName": "GPT-3.5 Turbo 16k",
+          "upstreamRefs": [
+            "openrouter-models:openai/gpt-3.5-turbo-16k"
+          ],
+          "contextWindow": 16385,
+          "maxTokens": 4096,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "openai/gpt-3.5-turbo",
+          "displayName": "GPT-3.5 Turbo",
+          "upstreamRefs": [
+            "openrouter-models:openai/gpt-3.5-turbo"
+          ],
+          "contextWindow": 16385,
+          "maxTokens": 4096,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "openai/gpt-4",
+          "displayName": "GPT-4",
+          "upstreamRefs": [
+            "openrouter-models:openai/gpt-4"
+          ],
+          "contextWindow": 8191,
+          "maxTokens": 4096,
+          "status": "available",
+          "source": "openrouter-models"
         }
       ],
       "agentGateways": [
