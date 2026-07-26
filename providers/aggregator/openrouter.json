@@ -961,7 +961,8 @@
       "displayName": "Qwen3 30B A3B Instruct 2507",
       "contextWindow": 262144,
       "status": "available",
-      "source": "openrouter-models"
+      "source": "openrouter-models",
+      "maxTokens": 32000
     },
     {
       "id": "qwen/qwen3-235b-a22b-thinking-2507",
