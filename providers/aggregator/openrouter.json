@@ -656,8 +656,8 @@
     {
       "id": "qwen/qwen3-vl-30b-a3b-instruct",
       "displayName": "Qwen3 VL 30B A3B Instruct",
-      "contextWindow": 262144,
-      "maxTokens": 16384,
+      "contextWindow": 131072,
+      "maxTokens": 32768,
       "status": "available",
       "source": "openrouter-models"
     },

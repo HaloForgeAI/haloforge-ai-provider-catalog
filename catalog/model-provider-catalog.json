@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-07-29T16:19:23.561Z",
+  "updatedAt": "2026-07-29T19:47:52.340Z",
   "source": "haloforge-ai-provider-catalog",
   "repository": "https://github.com/HaloForgeAI/haloforge-ai-provider-catalog",
   "upstreamSources": [
@@ -2919,8 +2919,8 @@
         {
           "id": "qwen/qwen3-vl-30b-a3b-instruct",
           "displayName": "Qwen3 VL 30B A3B Instruct",
-          "contextWindow": 262144,
-          "maxTokens": 16384,
+          "contextWindow": 131072,
+          "maxTokens": 32768,
           "status": "available",
           "source": "openrouter-models"
         },
