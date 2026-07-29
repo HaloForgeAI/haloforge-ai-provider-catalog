@@ -40,7 +40,7 @@
     {
       "id": "z-ai/glm-5-turbo",
       "displayName": "GLM 5 Turbo",
-      "contextWindow": 262144,
+      "contextWindow": 202752,
       "maxTokens": 131072,
       "status": "available",
       "source": "openrouter-models"
@@ -48,7 +48,7 @@
     {
       "id": "z-ai/glm-5",
       "displayName": "GLM 5",
-      "contextWindow": 202752,
+      "contextWindow": 204800,
       "status": "available",
       "source": "openrouter-models",
       "maxTokens": 131072
@@ -80,8 +80,8 @@
     {
       "id": "z-ai/glm-4.6",
       "displayName": "GLM 4.6",
-      "contextWindow": 198000,
-      "maxTokens": 16384,
+      "contextWindow": 202752,
+      "maxTokens": 131072,
       "status": "available",
       "source": "openrouter-models"
     },
@@ -90,8 +90,10 @@
       "displayName": "GLM 4.5V",
       "contextWindow": 65536,
       "maxTokens": 16384,
-      "status": "available",
-      "source": "openrouter-models"
+      "status": "deprecated",
+      "source": "openrouter-models",
+      "shutdownDate": "2026-12-31",
+      "disabledByDefault": true
     },
     {
       "id": "z-ai/glm-4.5",
@@ -115,15 +117,15 @@
       "id": "deepseek/deepseek-v4-flash",
       "displayName": "DeepSeek V4 Flash",
       "contextWindow": 1048576,
-      "maxTokens": 65536,
+      "maxTokens": 393216,
       "status": "available",
       "source": "openrouter-models"
     },
     {
       "id": "deepseek/deepseek-v3.2",
       "displayName": "DeepSeek V3.2",
-      "contextWindow": 128000,
-      "maxTokens": 64000,
+      "contextWindow": 163840,
+      "maxTokens": 65536,
       "status": "available",
       "source": "openrouter-models"
     },
@@ -138,7 +140,7 @@
     {
       "id": "deepseek/deepseek-v3.1-terminus",
       "displayName": "DeepSeek V3.1 Terminus",
-      "contextWindow": 163840,
+      "contextWindow": 131072,
       "maxTokens": 32768,
       "status": "available",
       "source": "openrouter-models"
@@ -163,7 +165,7 @@
       "id": "deepseek/deepseek-chat-v3-0324",
       "displayName": "DeepSeek V3 0324",
       "contextWindow": 163840,
-      "maxTokens": 16384,
+      "maxTokens": 65536,
       "status": "available",
       "source": "openrouter-models"
     },
@@ -195,7 +197,7 @@
       "id": "minimax/minimax-m2.7",
       "displayName": "MiniMax M2.7",
       "contextWindow": 196608,
-      "maxTokens": 196608,
+      "maxTokens": 131072,
       "status": "available",
       "source": "openrouter-models"
     },
@@ -396,7 +398,7 @@
       "displayName": "GPT-5.3 Chat",
       "contextWindow": 128000,
       "maxTokens": 16384,
-      "status": "available",
+      "status": "deprecated",
       "source": "openrouter-models",
       "shutdownDate": "2026-08-10",
       "disabledByDefault": true
@@ -542,8 +544,8 @@
     {
       "id": "qwen/qwen3.6-27b",
       "displayName": "Qwen3.6 27B",
-      "contextWindow": 262140,
-      "maxTokens": 262140,
+      "contextWindow": 262144,
+      "maxTokens": 65536,
       "status": "available",
       "source": "openrouter-models"
     },
@@ -567,7 +569,7 @@
       "id": "qwen/qwen3.5-35b-a3b",
       "displayName": "Qwen3.5-35B-A3B",
       "contextWindow": 262144,
-      "maxTokens": 81920,
+      "maxTokens": 262144,
       "status": "available",
       "source": "openrouter-models"
     },
@@ -583,7 +585,7 @@
       "id": "qwen/qwen3.5-122b-a10b",
       "displayName": "Qwen3.5-122B-A10B",
       "contextWindow": 262144,
-      "maxTokens": 262144,
+      "maxTokens": 65536,
       "status": "available",
       "source": "openrouter-models"
     },
@@ -606,7 +608,7 @@
     {
       "id": "qwen/qwen3.5-397b-a17b",
       "displayName": "Qwen3.5 397B A17B",
-      "contextWindow": 131072,
+      "contextWindow": 262144,
       "status": "available",
       "source": "openrouter-models",
       "maxTokens": 65536
@@ -654,8 +656,8 @@
     {
       "id": "qwen/qwen3-vl-30b-a3b-instruct",
       "displayName": "Qwen3 VL 30B A3B Instruct",
-      "contextWindow": 131072,
-      "maxTokens": 32768,
+      "contextWindow": 262144,
+      "maxTokens": 16384,
       "status": "available",
       "source": "openrouter-models"
     },
@@ -670,8 +672,8 @@
     {
       "id": "qwen/qwen3-vl-235b-a22b-instruct",
       "displayName": "Qwen3 VL 235B A22B Instruct",
-      "contextWindow": 262144,
-      "maxTokens": 16384,
+      "contextWindow": 131072,
+      "maxTokens": 32768,
       "status": "available",
       "source": "openrouter-models"
     },
@@ -679,7 +681,7 @@
       "id": "qwen/qwen3-max",
       "displayName": "Qwen3 Max",
       "contextWindow": 262144,
-      "maxTokens": 32768,
+      "maxTokens": 65536,
       "status": "available",
       "source": "openrouter-models"
     },
@@ -695,7 +697,7 @@
       "id": "openai/gpt-5.1-codex-mini",
       "displayName": "GPT-5.1-Codex-Mini",
       "contextWindow": 400000,
-      "maxTokens": 100000,
+      "maxTokens": 128000,
       "status": "available",
       "source": "openrouter-models"
     },
@@ -959,7 +961,7 @@
     {
       "id": "qwen/qwen3-30b-a3b-instruct-2507",
       "displayName": "Qwen3 30B A3B Instruct 2507",
-      "contextWindow": 262144,
+      "contextWindow": 128000,
       "status": "available",
       "source": "openrouter-models",
       "maxTokens": 32000
@@ -1017,8 +1019,8 @@
     {
       "id": "qwen/qwen3-14b",
       "displayName": "Qwen3 14B",
-      "contextWindow": 40960,
-      "maxTokens": 40960,
+      "contextWindow": 131072,
+      "maxTokens": 8192,
       "status": "available",
       "source": "openrouter-models"
     },
@@ -1210,6 +1212,14 @@
       "displayName": "GPT-4",
       "contextWindow": 8191,
       "maxTokens": 4096,
+      "status": "available",
+      "source": "openrouter-models"
+    },
+    {
+      "id": "qwen/qwen3.7-flash",
+      "displayName": "Qwen3.7 Flash",
+      "contextWindow": 1000000,
+      "maxTokens": 65536,
       "status": "available",
       "source": "openrouter-models"
     },

@@ -29,12 +29,16 @@ jobs:
 
       - name: Sync upstream sources
         run: npm run sync:upstreams
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
 
       - name: Build aggregate catalog
         run: npm run build
 
       - name: Verify generated catalog
-        run: npm run check
+        run: |
+          npm run check
+          npm test
 
       - name: Detect changes
         id: changes
@@ -46,12 +50,19 @@ jobs:
             echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
 
+      - name: Classify sync change risk
+        if: steps.changes.outputs.changed == 'true'
+        id: risk
+        run: node scripts/classify-sync-change.mjs
+
       - name: Commit and open pull request
         if: steps.changes.outputs.changed == 'true'
         env:
           SYNC_PR_TOKEN: ${{ secrets.HF_PROVIDER_CATALOG_SYNC_TOKEN }}
           GITHUB_TOKEN_FALLBACK: ${{ github.token }}
           BRANCH_NAME: chore/sync-upstream-model-catalog
+          SAFE_TO_AUTO_MERGE: ${{ steps.risk.outputs.safe }}
+          SYNC_RISK_SUMMARY: ${{ steps.risk.outputs.summary }}
         shell: bash
         run: |
           if [ -n "${SYNC_PR_TOKEN:-}" ]; then
@@ -66,16 +77,33 @@ jobs:
           git add catalog/manifest.json catalog/model-provider-catalog.json providers sources package.json scripts .github/workflows
           git commit -m "Sync upstream model catalog"
           git push --force-with-lease origin "$BRANCH_NAME"
-          open_pr_count="$(gh pr list --base main --head "$BRANCH_NAME" --state open --json number --jq 'length')"
-          if [ "$open_pr_count" -gt 0 ]; then
+          pr_number="$(gh pr list --base main --head "$BRANCH_NAME" --state open --json number --jq '.[0].number // empty')"
+          pr_body="Automated sync from configured machine-readable upstream sources and curated official-doc overrides.
+
+          Risk classification: ${SYNC_RISK_SUMMARY}
+
+          Safe additions and upstream-owned metadata refreshes are eligible for auto-merge. Provider metadata, Agent gateway, lifecycle, removal, restricted/preview, and fallback changes require human review."
+          if [ -n "$pr_number" ]; then
             echo "A sync pull request already exists for $BRANCH_NAME."
+            gh pr edit "$pr_number" --body "$pr_body"
           elif gh pr create \
             --base main \
             --head "$BRANCH_NAME" \
             --title "Sync upstream model catalog" \
-            --body "Automated sync from configured machine-readable upstream sources and curated official-doc overrides. Review provider fragments, lifecycle metadata, and generated catalog before merging."; then
+            --body "$pr_body"; then
             echo "Created sync pull request for $BRANCH_NAME."
+            pr_number="$(gh pr list --base main --head "$BRANCH_NAME" --state open --json number --jq '.[0].number // empty')"
           else
             echo "::warning::Unable to create a pull request from GitHub Actions. The sync branch was pushed successfully."
             echo "::notice::Open the review PR manually: https://github.com/$GITHUB_REPOSITORY/pull/new/$BRANCH_NAME"
+          fi
+
+          if [ "$SAFE_TO_AUTO_MERGE" = "true" ] && [ -n "$pr_number" ]; then
+            if gh pr merge "$pr_number" --auto --squash; then
+              echo "Enabled auto-merge for safe sync pull request #$pr_number."
+            else
+              echo "::warning::Safe sync PR #$pr_number could not enable auto-merge. Confirm repository auto-merge is enabled."
+            fi
+          else
+            echo "Sync PR requires human review: ${SYNC_RISK_SUMMARY}"
           fi

@@ -5,6 +5,7 @@
   "scripts": {
     "sync:upstreams": "node scripts/sync-upstreams.mjs",
     "build": "node scripts/build-catalog.mjs",
-    "check": "node scripts/build-catalog.mjs --check"
+    "check": "node scripts/build-catalog.mjs --check",
+    "test": "node --test scripts/*.test.mjs"
   }
 }

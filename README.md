@@ -53,11 +53,55 @@ The workflow:
 2. Runs `npm run sync:upstreams`.
 3. Runs `npm run build`.
 4. Runs `npm run check`.
-5. If files changed, pushes `chore/sync-upstream-model-catalog` and opens or updates a pull request.
+5. If files changed, classifies the semantic catalog diff, pushes `chore/sync-upstream-model-catalog`, and opens or updates a pull request.
+6. Safe additions and upstream-owned metadata refreshes enable auto-merge. Provider metadata, Agent gateway, lifecycle, fallback, removal, restricted, and preview changes remain queued for human review.
 
 If organization policy prevents `GITHUB_TOKEN` from creating pull requests, add a repository secret named `HF_PROVIDER_CATALOG_SYNC_TOKEN`. Use a fine-grained personal access token or GitHub App token scoped to this repository with `Contents: Read and write` and `Pull requests: Read and write`. Without that secret, the workflow still pushes the sync branch and prints a manual PR link.
 
 The action should be reviewed before merge because provider docs can disagree with aggregators, especially for new releases, regional restrictions, preview models, and model shutdown dates.
+
+The Anthropic Models API source is authenticated. Configure the repository Actions secret `ANTHROPIC_API_KEY` to enable official Claude model discovery and metadata refresh. Without that secret, Anthropic keeps its reviewed snapshot while the other required machine sources continue syncing. The secret is used only as an HTTP request header and is never written to generated files or logs.
+
+### Credential Setup
+
+Create a dedicated Anthropic Workspace for catalog discovery, then create a standard API key in Claude Console under **Settings > Workspaces > API Keys**. A standard Workspace key is sufficient; do not use an Anthropic Admin API key. Give it a descriptive name such as `HaloForge provider catalog sync`, store it in a secret manager, and choose an expiration that matches the team's rotation policy.
+
+Add it to this repository without putting the value in shell history:
+
+```bash
+gh secret set ANTHROPIC_API_KEY \
+  --repo HaloForgeAI/haloforge-ai-provider-catalog
+```
+
+The GitHub CLI prompts for the value. Paste the key only at that prompt, never into an issue, pull request, workflow file, or chat message.
+
+For the sync pull-request credential, create a fine-grained GitHub personal access token with:
+
+- Resource owner: `HaloForgeAI`
+- Repository access: only `haloforge-ai-provider-catalog`
+- Repository permissions: `Contents: Read and write` and `Pull requests: Read and write`
+- A finite expiration with a scheduled rotation before expiry
+
+If the organization requires approval for fine-grained tokens, approve the pending token request before testing the workflow. Add the generated value as:
+
+```bash
+gh secret set HF_PROVIDER_CATALOG_SYNC_TOKEN \
+  --repo HaloForgeAI/haloforge-ai-provider-catalog
+```
+
+Confirm the secret names and trigger a test run:
+
+```bash
+gh secret list --repo HaloForgeAI/haloforge-ai-provider-catalog
+gh workflow run sync-upstream-models.yml \
+  --repo HaloForgeAI/haloforge-ai-provider-catalog
+```
+
+GitHub never returns stored secret values. Re-running `gh secret set` replaces a secret, which is the intended rotation procedure.
+
+Each machine source declares a minimum expected model count. Required source failures or suspiciously small responses fail the workflow instead of producing a green no-op run. Discovery rules can also exclude non-interactive variants such as OpenRouter `:batch` model ids.
+
+`managedFields` in `sources/model-sync.json` identifies fields owned by an upstream source. Those fields refresh on every run even though a last-known snapshot remains in the sync config. Use a model's `overrides` object only when a reviewed value must intentionally win over upstream metadata.
 
 ## Icon Metadata
 

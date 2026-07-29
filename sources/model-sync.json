@@ -1,6 +1,116 @@
 {
   "providers": [
     {
+      "id": "anthropic",
+      "managedFields": [
+        "displayName",
+        "contextWindow",
+        "maxTokens",
+        "source"
+      ],
+      "discovery": {
+        "includePatterns": [
+          "^claude-(fable|opus|sonnet|haiku)-"
+        ],
+        "excludePatterns": [
+          "-preview$"
+        ],
+        "maxPerGroup": 20
+      },
+      "models": [
+        {
+          "id": "claude-fable-5",
+          "displayName": "Claude Fable 5",
+          "upstreamRefs": [
+            "anthropic-models-api:claude-fable-5"
+          ],
+          "contextWindow": 1000000,
+          "maxTokens": 131072,
+          "status": "available",
+          "fallbackModelId": "claude-opus-5",
+          "source": "anthropic-models-docs"
+        },
+        {
+          "id": "claude-opus-5",
+          "displayName": "Claude Opus 5",
+          "upstreamRefs": [
+            "anthropic-models-api:claude-opus-5"
+          ],
+          "contextWindow": 1000000,
+          "maxTokens": 131072,
+          "status": "available",
+          "source": "anthropic-models-docs"
+        },
+        {
+          "id": "claude-sonnet-5",
+          "displayName": "Claude Sonnet 5",
+          "upstreamRefs": [
+            "anthropic-models-api:claude-sonnet-5"
+          ],
+          "contextWindow": 1000000,
+          "maxTokens": 131072,
+          "status": "available",
+          "source": "anthropic-models-docs"
+        },
+        {
+          "id": "claude-opus-4-8",
+          "displayName": "Claude Opus 4.8",
+          "upstreamRefs": [
+            "anthropic-models-api:claude-opus-4-8"
+          ],
+          "contextWindow": 200000,
+          "maxTokens": 131072,
+          "status": "available",
+          "source": "anthropic-models-docs"
+        },
+        {
+          "id": "claude-opus-4-7",
+          "displayName": "Claude Opus 4.7",
+          "upstreamRefs": [
+            "anthropic-models-api:claude-opus-4-7"
+          ],
+          "contextWindow": 200000,
+          "maxTokens": 131072,
+          "status": "available",
+          "source": "anthropic-models-docs"
+        },
+        {
+          "id": "claude-opus-4-6",
+          "displayName": "Claude Opus 4.6",
+          "upstreamRefs": [
+            "anthropic-models-api:claude-opus-4-6"
+          ],
+          "contextWindow": 200000,
+          "maxTokens": 131072,
+          "status": "available",
+          "source": "anthropic-models-docs"
+        },
+        {
+          "id": "claude-sonnet-4-6",
+          "displayName": "Claude Sonnet 4.6",
+          "upstreamRefs": [
+            "anthropic-models-api:claude-sonnet-4-6"
+          ],
+          "contextWindow": 200000,
+          "maxTokens": 131072,
+          "status": "available",
+          "source": "anthropic-models-docs"
+        },
+        {
+          "id": "claude-haiku-4-5-20251001",
+          "displayName": "Claude Haiku 4.5",
+          "upstreamRefs": [
+            "anthropic-models-api:claude-haiku-4-5-20251001"
+          ],
+          "contextWindow": 200000,
+          "maxTokens": 64000,
+          "status": "available",
+          "source": "anthropic-models-docs"
+        }
+      ],
+      "agentGateways": []
+    },
+    {
       "id": "z-ai",
       "models": [
         {
@@ -206,6 +316,21 @@
     },
     {
       "id": "openrouter",
+      "managedFields": [
+        "contextWindow",
+        "maxTokens",
+        "status",
+        "deprecationDate",
+        "shutdownDate",
+        "disabledByDefault",
+        "source"
+      ],
+      "discovery": {
+        "excludePatterns": [
+          ":batch$"
+        ],
+        "maxPerGroup": 25
+      },
       "models": [
         {
           "id": "z-ai/glm-5.2",
@@ -1845,6 +1970,17 @@
           ],
           "contextWindow": 8191,
           "maxTokens": 4096,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "qwen/qwen3.7-flash",
+          "displayName": "Qwen3.7 Flash",
+          "upstreamRefs": [
+            "openrouter-models:qwen/qwen3.7-flash"
+          ],
+          "contextWindow": 1000000,
+          "maxTokens": 65536,
           "status": "available",
           "source": "openrouter-models"
         }

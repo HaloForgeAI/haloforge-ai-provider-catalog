@@ -6,6 +6,8 @@
       "kind": "open_source",
       "url": "https://api.litellm.ai/model_catalog",
       "parser": "litellm",
+      "required": true,
+      "minimumModels": 1000,
       "notes": "Paged machine-readable reference for context windows, pricing metadata, capabilities, and deprecation dates."
     },
     {
@@ -14,6 +16,8 @@
       "kind": "aggregator",
       "url": "https://openrouter.ai/api/v1/models",
       "parser": "openrouter",
+      "required": true,
+      "minimumModels": 100,
       "notes": "Machine-readable reference for aggregator-visible model ids, context lengths, max output tokens, pricing, and lifecycle dates."
     },
     {
@@ -22,7 +26,24 @@
       "kind": "aggregator",
       "url": "https://ai-gateway.vercel.sh/v1/models",
       "parser": "vercel-ai-gateway",
+      "required": true,
+      "minimumModels": 100,
       "notes": "Machine-readable reference for AI Gateway model/provider ids, pricing, tags, and context windows."
+    },
+    {
+      "id": "anthropic-models-api",
+      "name": "Anthropic Models API",
+      "kind": "official",
+      "url": "https://api.anthropic.com/v1/models",
+      "parser": "anthropic",
+      "required": false,
+      "minimumModels": 1,
+      "authEnv": "ANTHROPIC_API_KEY",
+      "authHeader": "x-api-key",
+      "headers": {
+        "anthropic-version": "2023-06-01"
+      },
+      "notes": "Authenticated official source for available Claude model ids, context windows, output limits, and capability metadata."
     }
   ],
   "documentationSources": [

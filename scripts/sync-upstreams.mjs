@@ -1,5 +1,5 @@
 import { readdir, readFile, writeFile } from "node:fs/promises";
-import { relative } from "node:path";
+import { relative, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const repoRoot = new URL("../", import.meta.url);
@@ -39,7 +39,7 @@ async function main() {
       );
     }
 
-    upsertModels(provider, providerSync.models ?? [], sourceIndexes);
+    upsertModels(provider, providerSync.models ?? [], sourceIndexes, providerSync);
     upsertAgentGateways(provider, providerSync.agentGateways ?? []);
     const after = stableJson(provider);
     if (before !== after) {
@@ -74,7 +74,7 @@ async function main() {
  * curated. Returns new model specs (in the `sources/model-sync.json` shape,
  * including `upstreamRefs`) ready to be appended to `providerSync.models`.
  */
-function discoverNewModels(provider, providerSync, sourceIndexes) {
+export function discoverNewModels(provider, providerSync, sourceIndexes) {
   const groups = new Map();
   const trackedRefs = new Set();
 
@@ -118,10 +118,12 @@ function discoverNewModels(provider, providerSync, sourceIndexes) {
     const index = sourceIndexes.get(source);
     if (!index) continue;
     let addedFromGroup = 0;
+    const groupLimit = Number(providerSync.discovery?.maxPerGroup ?? maxDiscoveredPerGroup);
     for (const [upstreamId, model] of index) {
-      if (addedFromGroup >= maxDiscoveredPerGroup) break;
+      if (addedFromGroup >= groupLimit) break;
       const modelNamespace = upstreamId.includes("/") ? upstreamId.slice(0, upstreamId.lastIndexOf("/")) : "";
       if (modelNamespace !== namespace) continue;
+      if (!matchesDiscoveryPolicy(upstreamId, providerSync.discovery)) continue;
       const ref = `${source}:${upstreamId}`;
       if (trackedRefs.has(ref)) continue;
       const localId = stripPrefix ? upstreamId.slice(namespace.length + 1) : upstreamId;
@@ -146,27 +148,69 @@ function discoverNewModels(provider, providerSync, sourceIndexes) {
   return discovered;
 }
 
+export function matchesDiscoveryPolicy(modelId, discovery = {}) {
+  const includePatterns = compilePatterns(discovery?.includePatterns);
+  const excludePatterns = compilePatterns(discovery?.excludePatterns);
+  if (includePatterns.length > 0 && !includePatterns.some((pattern) => pattern.test(modelId))) {
+    return false;
+  }
+  return !excludePatterns.some((pattern) => pattern.test(modelId));
+}
+
+function compilePatterns(values) {
+  return (Array.isArray(values) ? values : [])
+    .filter(nonEmpty)
+    .map((value) => new RegExp(value));
+}
+
 async function fetchSourceIndexes(machineSources) {
   const indexes = new Map();
+  const requiredFailures = [];
   for (const source of machineSources) {
+    const secret = source.authEnv ? process.env[source.authEnv]?.trim() : "";
+    if (source.authEnv && !secret) {
+      const message = `Skipping ${source.id}: environment variable ${source.authEnv} is not configured.`;
+      if (source.required !== false) {
+        requiredFailures.push(message);
+      } else {
+        console.warn(message);
+      }
+      indexes.set(source.id, new Map());
+      continue;
+    }
     try {
-      const models = await fetchSourceModels(source);
+      const models = await fetchSourceModels(source, secret);
+      const minimumModels = Number(source.minimumModels ?? 1);
+      if (models.length < minimumModels) {
+        throw new Error(`expected at least ${minimumModels} models, received ${models.length}`);
+      }
       const byId = new Map(models.map((model) => [model.id, model]));
       indexes.set(source.id, byId);
       console.log(`Fetched ${models.length} models from ${source.id}.`);
     } catch (error) {
-      console.warn(`Failed to fetch ${source.id}: ${error.message}`);
+      const message = `Failed to fetch ${source.id}: ${error.message}`;
+      if (source.required !== false || Boolean(secret)) {
+        requiredFailures.push(message);
+      } else {
+        console.warn(message);
+      }
       indexes.set(source.id, new Map());
     }
+  }
+  if (requiredFailures.length > 0) {
+    throw new Error(`Required upstream source checks failed:\n${requiredFailures.join("\n")}`);
   }
   return indexes;
 }
 
-async function fetchSourceModels(source) {
+async function fetchSourceModels(source, secret = "") {
   if (source.parser === "litellm") {
     return fetchLiteLlmModels(source);
   }
-  const json = await fetchJson(source.url);
+  if (source.parser === "anthropic") {
+    return fetchAnthropicModels(source, secret);
+  }
+  const json = await fetchJson(source.url, sourceHeaders(source, secret));
   const rows = Array.isArray(json?.data) ? json.data : Array.isArray(json) ? json : [];
   if (source.parser === "openrouter") {
     return rows.map((item) => normalizeOpenRouterModel(source.id, item)).filter(Boolean);
@@ -175,6 +219,30 @@ async function fetchSourceModels(source) {
     return rows.map((item) => normalizeVercelModel(source.id, item)).filter(Boolean);
   }
   return [];
+}
+
+async function fetchAnthropicModels(source, secret) {
+  const models = [];
+  let afterId = "";
+  for (let page = 0; page < 20; page += 1) {
+    const url = new URL(source.url);
+    url.searchParams.set("limit", "1000");
+    if (afterId) url.searchParams.set("after_id", afterId);
+    const json = await fetchJson(url.toString(), sourceHeaders(source, secret));
+    const rows = Array.isArray(json?.data) ? json.data : [];
+    models.push(...rows.map((item) => normalizeAnthropicModel(source.id, item)).filter(Boolean));
+    if (!json?.has_more || !nonEmpty(json?.last_id) || rows.length === 0) break;
+    afterId = json.last_id.trim();
+  }
+  return models;
+}
+
+function sourceHeaders(source, secret) {
+  const headers = { ...(source.headers ?? {}) };
+  if (secret && nonEmpty(source.authHeader)) {
+    headers[source.authHeader] = secret;
+  }
+  return headers;
 }
 
 async function fetchLiteLlmModels(source) {
@@ -193,7 +261,7 @@ async function fetchLiteLlmModels(source) {
   return models;
 }
 
-async function fetchJson(url) {
+async function fetchJson(url, extraHeaders = {}) {
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), fetchTimeoutMs);
   try {
@@ -202,6 +270,7 @@ async function fetchJson(url) {
       headers: {
         accept: "application/json",
         "user-agent": "HaloForgeAI/ai-provider-catalog-sync",
+        ...extraHeaders,
       },
     });
     if (!response.ok) {
@@ -249,6 +318,18 @@ function normalizeVercelModel(sourceId, item) {
   };
 }
 
+export function normalizeAnthropicModel(sourceId, item) {
+  if (!nonEmpty(item?.id)) return null;
+  return {
+    id: item.id.trim(),
+    displayName: nonEmpty(item.display_name) ? item.display_name.trim() : item.id.trim(),
+    contextWindow: positiveIntegerValue(item.max_input_tokens),
+    maxTokens: positiveIntegerValue(item.max_tokens),
+    lifecycle: null,
+    source: sourceId,
+  };
+}
+
 function cleanOpenRouterName(name) {
   if (!nonEmpty(name)) return null;
   return name.replace(/^[^:]+:\s*/, "").trim();
@@ -285,7 +366,7 @@ async function indexProviderFiles() {
   return byId;
 }
 
-function upsertModels(provider, modelSpecs, sourceIndexes) {
+export function upsertModels(provider, modelSpecs, sourceIndexes, providerSync = {}) {
   if (!Array.isArray(provider.models)) {
     provider.models = [];
   }
@@ -296,21 +377,28 @@ function upsertModels(provider, modelSpecs, sourceIndexes) {
     preferredOrder.push(spec.id);
     const upstream = firstUpstreamModel(spec.upstreamRefs ?? [], sourceIndexes);
     const existing = byId.get(spec.id) ?? {};
+    const managedFields = new Set(providerSync.managedFields ?? []);
+    const overrides = spec.overrides ?? {};
+    const choose = (field, upstreamValue, fallbackValue = existing[field]) => {
+      if (Object.hasOwn(overrides, field)) return overrides[field];
+      if (managedFields.has(field)) return upstreamValue ?? spec[field] ?? fallbackValue;
+      return spec[field] ?? upstreamValue ?? fallbackValue;
+    };
     const next = {
       ...existing,
       id: spec.id,
-      displayName: spec.displayName ?? existing.displayName ?? upstream?.displayName ?? spec.id,
+      displayName: choose("displayName", upstream?.displayName, spec.id),
     };
     applyDefined(next, {
-      description: spec.description ?? existing.description,
-      contextWindow: spec.contextWindow ?? upstream?.contextWindow ?? existing.contextWindow,
-      maxTokens: spec.maxTokens ?? upstream?.maxTokens ?? existing.maxTokens,
-      status: spec.status ?? upstream?.lifecycle?.status ?? existing.status,
-      deprecationDate: spec.deprecationDate ?? upstream?.lifecycle?.deprecationDate ?? existing.deprecationDate,
-      shutdownDate: spec.shutdownDate ?? upstream?.lifecycle?.shutdownDate ?? existing.shutdownDate,
-      fallbackModelId: spec.fallbackModelId ?? existing.fallbackModelId,
-      disabledByDefault: spec.disabledByDefault ?? upstream?.lifecycle?.disabledByDefault ?? existing.disabledByDefault,
-      source: spec.source ?? upstream?.source ?? existing.source,
+      description: choose("description", upstream?.description),
+      contextWindow: choose("contextWindow", upstream?.contextWindow),
+      maxTokens: choose("maxTokens", upstream?.maxTokens),
+      status: choose("status", upstream?.lifecycle?.status),
+      deprecationDate: choose("deprecationDate", upstream?.lifecycle?.deprecationDate),
+      shutdownDate: choose("shutdownDate", upstream?.lifecycle?.shutdownDate),
+      fallbackModelId: choose("fallbackModelId", upstream?.fallbackModelId),
+      disabledByDefault: choose("disabledByDefault", upstream?.lifecycle?.disabledByDefault),
+      source: choose("source", upstream?.source),
     });
     byId.set(spec.id, next);
   }
@@ -406,11 +494,18 @@ function numberValue(value) {
   return typeof value === "number" && Number.isFinite(value) ? value : undefined;
 }
 
+function positiveIntegerValue(value) {
+  return Number.isInteger(value) && value > 0 ? value : undefined;
+}
+
 function pathLabel(url) {
   return relative(fileURLToPath(repoRoot), fileURLToPath(url)).replaceAll("\\", "/");
 }
 
-main().catch((error) => {
-  console.error(error.message);
-  process.exitCode = 1;
-});
+const entryPath = process.argv[1] ? resolve(process.argv[1]) : "";
+if (entryPath === fileURLToPath(import.meta.url)) {
+  main().catch((error) => {
+    console.error(error.message);
+    process.exitCode = 1;
+  });
+}

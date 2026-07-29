@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-07-26T13:56:57.371Z",
+  "updatedAt": "2026-07-29T14:42:40.378Z",
   "source": "haloforge-ai-provider-catalog",
   "repository": "https://github.com/HaloForgeAI/haloforge-ai-provider-catalog",
   "upstreamSources": [
@@ -24,6 +24,13 @@
       "url": "https://ai-gateway.vercel.sh/v1/models",
       "kind": "aggregator",
       "notes": "Reference for AI Gateway model/provider ids, pricing, and context windows."
+    },
+    {
+      "id": "anthropic-models-api",
+      "name": "Anthropic Models API",
+      "url": "https://api.anthropic.com/v1/models",
+      "kind": "official",
+      "notes": "Authenticated official source for available Claude model ids, context windows, output limits, and capability metadata."
     }
   ],
   "providers": [
@@ -178,43 +185,58 @@
           "id": "claude-fable-5",
           "displayName": "Claude Fable 5",
           "contextWindow": 1000000,
-          "maxTokens": 300000,
-          "status": "disabled",
-          "disabledByDefault": true,
-          "fallbackModelId": "claude-opus-4-8",
-          "source": "anthropic-fable-access"
+          "maxTokens": 131072,
+          "status": "available",
+          "fallbackModelId": "claude-opus-5",
+          "source": "anthropic-models-docs"
+        },
+        {
+          "id": "claude-opus-5",
+          "displayName": "Claude Opus 5",
+          "contextWindow": 1000000,
+          "maxTokens": 131072,
+          "status": "available",
+          "source": "anthropic-models-docs"
+        },
+        {
+          "id": "claude-sonnet-5",
+          "displayName": "Claude Sonnet 5",
+          "contextWindow": 1000000,
+          "maxTokens": 131072,
+          "status": "available",
+          "source": "anthropic-models-docs"
         },
         {
           "id": "claude-opus-4-8",
           "displayName": "Claude Opus 4.8",
           "contextWindow": 200000,
-          "maxTokens": 300000,
+          "maxTokens": 131072,
           "status": "available",
-          "source": "anthropic-docs"
+          "source": "anthropic-models-docs"
         },
         {
           "id": "claude-opus-4-7",
           "displayName": "Claude Opus 4.7",
           "contextWindow": 200000,
-          "maxTokens": 300000,
+          "maxTokens": 131072,
           "status": "available",
-          "source": "anthropic-docs"
+          "source": "anthropic-models-docs"
         },
         {
           "id": "claude-opus-4-6",
           "displayName": "Claude Opus 4.6",
           "contextWindow": 200000,
-          "maxTokens": 300000,
+          "maxTokens": 131072,
           "status": "available",
-          "source": "anthropic-docs"
+          "source": "anthropic-models-docs"
         },
         {
           "id": "claude-sonnet-4-6",
           "displayName": "Claude Sonnet 4.6",
           "contextWindow": 200000,
-          "maxTokens": 300000,
+          "maxTokens": 131072,
           "status": "available",
-          "source": "anthropic-docs"
+          "source": "anthropic-models-docs"
         },
         {
           "id": "claude-haiku-4-5-20251001",
@@ -222,28 +244,30 @@
           "contextWindow": 200000,
           "maxTokens": 64000,
           "status": "available",
-          "source": "anthropic-docs"
+          "source": "anthropic-models-docs"
         }
       ],
       "agentGateways": [
         {
-          "id": "anthropic-claude-code-sonnet-4-6",
-          "displayName": "Claude Sonnet 4.6 for Claude Code",
+          "id": "anthropic-claude-code-fable-5",
+          "displayName": "Claude Fable 5 for Claude Code",
           "target": "claude_code",
           "routeMode": "direct",
           "baseUrl": "https://api.anthropic.com",
           "apiCompatibility": "anthropic",
-          "modelId": "claude-sonnet-4-6",
-          "contextWindow": 200000,
-          "maxTokens": 300000,
-          "effortLevel": "high",
+          "modelId": "claude-fable-5",
+          "contextWindow": 1000000,
+          "maxTokens": 131072,
+          "effortLevel": "xhigh",
+          "status": "available",
+          "fallbackModelId": "claude-opus-5",
           "roleModels": {
             "haiku": "claude-haiku-4-5-20251001",
-            "sonnet": "claude-sonnet-4-6",
-            "opus": "claude-opus-4-8",
+            "sonnet": "claude-sonnet-5",
+            "opus": "claude-opus-5",
             "subagent": "claude-haiku-4-5-20251001"
           },
-          "source": "anthropic-docs"
+          "source": "anthropic-models-docs"
         },
         {
           "id": "anthropic-claude-code-opus-4-8",
@@ -254,7 +278,7 @@
           "apiCompatibility": "anthropic",
           "modelId": "claude-opus-4-8",
           "contextWindow": 200000,
-          "maxTokens": 300000,
+          "maxTokens": 131072,
           "effortLevel": "xhigh",
           "roleModels": {
             "haiku": "claude-haiku-4-5-20251001",
@@ -262,29 +286,64 @@
             "opus": "claude-opus-4-8",
             "subagent": "claude-haiku-4-5-20251001"
           },
-          "source": "anthropic-docs"
+          "source": "anthropic-models-docs"
         },
         {
-          "id": "anthropic-claude-code-fable-5",
-          "displayName": "Claude Fable 5 for Claude Code (restricted)",
+          "id": "anthropic-claude-code-opus-5",
+          "displayName": "Claude Opus 5 for Claude Code",
           "target": "claude_code",
           "routeMode": "direct",
           "baseUrl": "https://api.anthropic.com",
           "apiCompatibility": "anthropic",
-          "modelId": "claude-fable-5",
+          "modelId": "claude-opus-5",
           "contextWindow": 1000000,
-          "maxTokens": 300000,
+          "maxTokens": 131072,
           "effortLevel": "xhigh",
-          "status": "disabled",
-          "disabledByDefault": true,
-          "fallbackModelId": "claude-opus-4-8",
+          "roleModels": {
+            "haiku": "claude-haiku-4-5-20251001",
+            "sonnet": "claude-sonnet-5",
+            "opus": "claude-opus-5",
+            "subagent": "claude-haiku-4-5-20251001"
+          },
+          "source": "anthropic-models-docs"
+        },
+        {
+          "id": "anthropic-claude-code-sonnet-4-6",
+          "displayName": "Claude Sonnet 4.6 for Claude Code",
+          "target": "claude_code",
+          "routeMode": "direct",
+          "baseUrl": "https://api.anthropic.com",
+          "apiCompatibility": "anthropic",
+          "modelId": "claude-sonnet-4-6",
+          "contextWindow": 200000,
+          "maxTokens": 131072,
+          "effortLevel": "high",
           "roleModels": {
             "haiku": "claude-haiku-4-5-20251001",
             "sonnet": "claude-sonnet-4-6",
             "opus": "claude-opus-4-8",
             "subagent": "claude-haiku-4-5-20251001"
           },
-          "source": "anthropic-fable-access"
+          "source": "anthropic-models-docs"
+        },
+        {
+          "id": "anthropic-claude-code-sonnet-5",
+          "displayName": "Claude Sonnet 5 for Claude Code",
+          "target": "claude_code",
+          "routeMode": "direct",
+          "baseUrl": "https://api.anthropic.com",
+          "apiCompatibility": "anthropic",
+          "modelId": "claude-sonnet-5",
+          "contextWindow": 1000000,
+          "maxTokens": 131072,
+          "effortLevel": "high",
+          "roleModels": {
+            "haiku": "claude-haiku-4-5-20251001",
+            "sonnet": "claude-sonnet-5",
+            "opus": "claude-opus-5",
+            "subagent": "claude-haiku-4-5-20251001"
+          },
+          "source": "anthropic-models-docs"
         }
       ]
     },
@@ -1691,7 +1750,7 @@
         {
           "id": "z-ai/glm-5-turbo",
           "displayName": "GLM 5 Turbo",
-          "contextWindow": 262144,
+          "contextWindow": 202752,
           "maxTokens": 131072,
           "status": "available",
           "source": "openrouter-models"
@@ -1699,7 +1758,7 @@
         {
           "id": "z-ai/glm-5",
           "displayName": "GLM 5",
-          "contextWindow": 202752,
+          "contextWindow": 204800,
           "status": "available",
           "source": "openrouter-models",
           "maxTokens": 131072
@@ -1731,8 +1790,8 @@
         {
           "id": "z-ai/glm-4.6",
           "displayName": "GLM 4.6",
-          "contextWindow": 198000,
-          "maxTokens": 16384,
+          "contextWindow": 202752,
+          "maxTokens": 131072,
           "status": "available",
           "source": "openrouter-models"
         },
@@ -1741,8 +1800,10 @@
           "displayName": "GLM 4.5V",
           "contextWindow": 65536,
           "maxTokens": 16384,
-          "status": "available",
-          "source": "openrouter-models"
+          "status": "deprecated",
+          "source": "openrouter-models",
+          "shutdownDate": "2026-12-31",
+          "disabledByDefault": true
         },
         {
           "id": "z-ai/glm-4.5",
@@ -1766,15 +1827,15 @@
           "id": "deepseek/deepseek-v4-flash",
           "displayName": "DeepSeek V4 Flash",
           "contextWindow": 1048576,
-          "maxTokens": 65536,
+          "maxTokens": 393216,
           "status": "available",
           "source": "openrouter-models"
         },
         {
           "id": "deepseek/deepseek-v3.2",
           "displayName": "DeepSeek V3.2",
-          "contextWindow": 128000,
-          "maxTokens": 64000,
+          "contextWindow": 163840,
+          "maxTokens": 65536,
           "status": "available",
           "source": "openrouter-models"
         },
@@ -1789,7 +1850,7 @@
         {
           "id": "deepseek/deepseek-v3.1-terminus",
           "displayName": "DeepSeek V3.1 Terminus",
-          "contextWindow": 163840,
+          "contextWindow": 131072,
           "maxTokens": 32768,
           "status": "available",
           "source": "openrouter-models"
@@ -1814,7 +1875,7 @@
           "id": "deepseek/deepseek-chat-v3-0324",
           "displayName": "DeepSeek V3 0324",
           "contextWindow": 163840,
-          "maxTokens": 16384,
+          "maxTokens": 65536,
           "status": "available",
           "source": "openrouter-models"
         },
@@ -1846,7 +1907,7 @@
           "id": "minimax/minimax-m2.7",
           "displayName": "MiniMax M2.7",
           "contextWindow": 196608,
-          "maxTokens": 196608,
+          "maxTokens": 131072,
           "status": "available",
           "source": "openrouter-models"
         },
@@ -2047,7 +2108,7 @@
           "displayName": "GPT-5.3 Chat",
           "contextWindow": 128000,
           "maxTokens": 16384,
-          "status": "available",
+          "status": "deprecated",
           "source": "openrouter-models",
           "shutdownDate": "2026-08-10",
           "disabledByDefault": true
@@ -2193,8 +2254,8 @@
         {
           "id": "qwen/qwen3.6-27b",
           "displayName": "Qwen3.6 27B",
-          "contextWindow": 262140,
-          "maxTokens": 262140,
+          "contextWindow": 262144,
+          "maxTokens": 65536,
           "status": "available",
           "source": "openrouter-models"
         },
@@ -2218,7 +2279,7 @@
           "id": "qwen/qwen3.5-35b-a3b",
           "displayName": "Qwen3.5-35B-A3B",
           "contextWindow": 262144,
-          "maxTokens": 81920,
+          "maxTokens": 262144,
           "status": "available",
           "source": "openrouter-models"
         },
@@ -2234,7 +2295,7 @@
           "id": "qwen/qwen3.5-122b-a10b",
           "displayName": "Qwen3.5-122B-A10B",
           "contextWindow": 262144,
-          "maxTokens": 262144,
+          "maxTokens": 65536,
           "status": "available",
           "source": "openrouter-models"
         },
@@ -2257,7 +2318,7 @@
         {
           "id": "qwen/qwen3.5-397b-a17b",
           "displayName": "Qwen3.5 397B A17B",
-          "contextWindow": 131072,
+          "contextWindow": 262144,
           "status": "available",
           "source": "openrouter-models",
           "maxTokens": 65536
@@ -2305,8 +2366,8 @@
         {
           "id": "qwen/qwen3-vl-30b-a3b-instruct",
           "displayName": "Qwen3 VL 30B A3B Instruct",
-          "contextWindow": 131072,
-          "maxTokens": 32768,
+          "contextWindow": 262144,
+          "maxTokens": 16384,
           "status": "available",
           "source": "openrouter-models"
         },
@@ -2321,8 +2382,8 @@
         {
           "id": "qwen/qwen3-vl-235b-a22b-instruct",
           "displayName": "Qwen3 VL 235B A22B Instruct",
-          "contextWindow": 262144,
-          "maxTokens": 16384,
+          "contextWindow": 131072,
+          "maxTokens": 32768,
           "status": "available",
           "source": "openrouter-models"
         },
@@ -2330,7 +2391,7 @@
           "id": "qwen/qwen3-max",
           "displayName": "Qwen3 Max",
           "contextWindow": 262144,
-          "maxTokens": 32768,
+          "maxTokens": 65536,
           "status": "available",
           "source": "openrouter-models"
         },
@@ -2346,7 +2407,7 @@
           "id": "openai/gpt-5.1-codex-mini",
           "displayName": "GPT-5.1-Codex-Mini",
           "contextWindow": 400000,
-          "maxTokens": 100000,
+          "maxTokens": 128000,
           "status": "available",
           "source": "openrouter-models"
         },
@@ -2610,7 +2671,7 @@
         {
           "id": "qwen/qwen3-30b-a3b-instruct-2507",
           "displayName": "Qwen3 30B A3B Instruct 2507",
-          "contextWindow": 262144,
+          "contextWindow": 128000,
           "status": "available",
           "source": "openrouter-models",
           "maxTokens": 32000
@@ -2668,8 +2729,8 @@
         {
           "id": "qwen/qwen3-14b",
           "displayName": "Qwen3 14B",
-          "contextWindow": 40960,
-          "maxTokens": 40960,
+          "contextWindow": 131072,
+          "maxTokens": 8192,
           "status": "available",
           "source": "openrouter-models"
         },
@@ -2861,6 +2922,14 @@
           "displayName": "GPT-4",
           "contextWindow": 8191,
           "maxTokens": 4096,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "qwen/qwen3.7-flash",
+          "displayName": "Qwen3.7 Flash",
+          "contextWindow": 1000000,
+          "maxTokens": 65536,
           "status": "available",
           "source": "openrouter-models"
         },

@@ -8,6 +8,16 @@ const manifestPath = new URL("catalog/manifest.json", repoRoot);
 const outputPath = new URL("catalog/model-provider-catalog.json", repoRoot);
 const checkOnly = process.argv.includes("--check");
 const gatewayTargets = new Set(["claude_code", "codex", "opencode", "copilot", "qwen_code"]);
+const gatewayRouteModes = new Set(["direct", "model_mapping", "config_only"]);
+const lifecycleStatuses = new Set([
+  "available",
+  "preview",
+  "experimental",
+  "deprecated",
+  "shutdown",
+  "restricted",
+  "disabled",
+]);
 const forbiddenSecretKeys = new Set([
   "apikey",
   "api_key",
@@ -107,23 +117,48 @@ function validateProvider(provider, file, providerIds) {
   if (!Array.isArray(provider.models)) {
     throw new Error(`${label} must define models[].`);
   }
+  const modelIds = new Set();
   for (const [index, model] of provider.models.entries()) {
     if (!nonEmpty(model?.id) || !nonEmpty(model?.displayName)) {
       throw new Error(`${label} models[${index}] must define id and displayName.`);
     }
+    if (modelIds.has(model.id)) {
+      throw new Error(`${label} contains duplicate model id: ${model.id}`);
+    }
+    modelIds.add(model.id);
+    validateLifecycleFields(model, `${label} models[${index}]`);
   }
   if (!Array.isArray(provider.agentGateways)) {
     throw new Error(`${label} must define agentGateways[].`);
   }
+  const gatewayIds = new Set();
   for (const [index, gateway] of provider.agentGateways.entries()) {
     if (!gatewayTargets.has(gateway?.target)) {
       throw new Error(`${label} agentGateways[${index}] has unsupported target.`);
     }
-    if (!nonEmpty(gateway.routeMode)) {
-      throw new Error(`${label} agentGateways[${index}] is missing routeMode.`);
+    if (!gatewayRouteModes.has(gateway.routeMode)) {
+      throw new Error(`${label} agentGateways[${index}] has unsupported routeMode.`);
     }
+    if (nonEmpty(gateway.id)) {
+      if (gatewayIds.has(gateway.id)) {
+        throw new Error(`${label} contains duplicate Agent gateway id: ${gateway.id}`);
+      }
+      gatewayIds.add(gateway.id);
+    }
+    validateLifecycleFields(gateway, `${label} agentGateways[${index}]`);
   }
   assertNoEmbeddedSecrets(provider, label);
+}
+
+function validateLifecycleFields(value, label) {
+  if (value.status !== undefined && !lifecycleStatuses.has(value.status)) {
+    throw new Error(`${label} has unsupported lifecycle status: ${value.status}`);
+  }
+  for (const field of ["contextWindow", "maxTokens"]) {
+    if (value[field] !== undefined && (!Number.isInteger(value[field]) || value[field] <= 0)) {
+      throw new Error(`${label} has invalid ${field}.`);
+    }
+  }
 }
 
 function assertNoEmbeddedSecrets(value, label, path = []) {
