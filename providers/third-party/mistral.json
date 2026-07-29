@@ -30,9 +30,9 @@
   ],
   "agentGateways": [
     {
-      "id": "mistral-opencode-codestral",
-      "displayName": "Codestral for OpenCode",
-      "target": "opencode",
+      "id": "mistral-codex-codestral",
+      "displayName": "Codestral for Codex",
+      "target": "codex",
       "routeMode": "config_only",
       "baseUrl": "https://api.mistral.ai/v1",
       "apiCompatibility": "openai",
@@ -56,9 +56,9 @@
       "source": "litellm-model-catalog"
     },
     {
-      "id": "mistral-codex-codestral",
-      "displayName": "Codestral for Codex",
-      "target": "codex",
+      "id": "mistral-opencode-codestral",
+      "displayName": "Codestral for OpenCode",
+      "target": "opencode",
       "routeMode": "config_only",
       "baseUrl": "https://api.mistral.ai/v1",
       "apiCompatibility": "openai",

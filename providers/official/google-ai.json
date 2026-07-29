@@ -16,8 +16,8 @@
     {
       "id": "gemini-3.5-flash",
       "displayName": "Gemini 3.5 Flash",
-      "contextWindow": 1048576,
-      "maxTokens": 65535,
+      "contextWindow": 1000000,
+      "maxTokens": 64000,
       "status": "available",
       "source": "gemini-docs"
     },
@@ -40,8 +40,8 @@
     {
       "id": "gemini-2.5-flash",
       "displayName": "Gemini 2.5 Flash",
-      "contextWindow": 1048576,
-      "maxTokens": 65535,
+      "contextWindow": 1000000,
+      "maxTokens": 65536,
       "status": "available",
       "source": "litellm-model-catalog"
     },

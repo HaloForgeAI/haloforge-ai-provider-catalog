@@ -43,9 +43,9 @@
       "source": "vercel-ai-gateway-models"
     },
     {
-      "id": "xai-opencode-grok-code-fast-1",
-      "displayName": "Grok Code Fast 1 for OpenCode",
-      "target": "opencode",
+      "id": "xai-copilot-grok-code-fast-1",
+      "displayName": "Grok Code Fast 1 for Copilot BYOK",
+      "target": "copilot",
       "routeMode": "config_only",
       "baseUrl": "https://api.x.ai/v1",
       "apiCompatibility": "openai",
@@ -56,9 +56,9 @@
       "source": "vercel-ai-gateway-models"
     },
     {
-      "id": "xai-copilot-grok-code-fast-1",
-      "displayName": "Grok Code Fast 1 for Copilot BYOK",
-      "target": "copilot",
+      "id": "xai-opencode-grok-code-fast-1",
+      "displayName": "Grok Code Fast 1 for OpenCode",
+      "target": "opencode",
       "routeMode": "config_only",
       "baseUrl": "https://api.x.ai/v1",
       "apiCompatibility": "openai",

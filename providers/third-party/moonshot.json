@@ -16,16 +16,16 @@
     {
       "id": "kimi-k2.6",
       "displayName": "Kimi K2.6",
-      "contextWindow": 262144,
-      "maxTokens": 262144,
+      "contextWindow": 262000,
+      "maxTokens": 262000,
       "status": "available",
       "source": "litellm-model-catalog"
     },
     {
       "id": "kimi-k2.5",
       "displayName": "Kimi K2.5",
-      "contextWindow": 262144,
-      "maxTokens": 262144,
+      "contextWindow": 262114,
+      "maxTokens": 262114,
       "status": "available",
       "source": "litellm-model-catalog"
     },
@@ -62,35 +62,9 @@
       "source": "moonshot-kimi-k2"
     },
     {
-      "id": "moonshot-opencode-kimi-k2-6",
-      "displayName": "Kimi K2.6 for OpenCode",
-      "target": "opencode",
-      "routeMode": "config_only",
-      "baseUrl": "https://api.moonshot.ai/v1",
-      "apiCompatibility": "openai",
-      "modelId": "kimi-k2.6",
-      "contextWindow": 262144,
-      "maxTokens": 262144,
-      "effortLevel": "high",
-      "source": "litellm-model-catalog"
-    },
-    {
-      "id": "moonshot-opencode-kimi-k2-5",
-      "displayName": "Kimi K2.5 for OpenCode",
-      "target": "opencode",
-      "routeMode": "config_only",
-      "baseUrl": "https://api.moonshot.ai/v1",
-      "apiCompatibility": "openai",
-      "modelId": "kimi-k2.5",
-      "contextWindow": 262144,
-      "maxTokens": 262144,
-      "effortLevel": "medium",
-      "source": "litellm-model-catalog"
-    },
-    {
-      "id": "moonshot-copilot-kimi-k2-6",
-      "displayName": "Kimi K2.6 for Copilot BYOK",
-      "target": "copilot",
+      "id": "moonshot-codex-kimi-k2-6",
+      "displayName": "Kimi K2.6 for Codex",
+      "target": "codex",
       "routeMode": "config_only",
       "baseUrl": "https://api.moonshot.ai/v1",
       "apiCompatibility": "openai",
@@ -114,9 +88,35 @@
       "source": "litellm-model-catalog"
     },
     {
-      "id": "moonshot-codex-kimi-k2-6",
-      "displayName": "Kimi K2.6 for Codex",
-      "target": "codex",
+      "id": "moonshot-copilot-kimi-k2-6",
+      "displayName": "Kimi K2.6 for Copilot BYOK",
+      "target": "copilot",
+      "routeMode": "config_only",
+      "baseUrl": "https://api.moonshot.ai/v1",
+      "apiCompatibility": "openai",
+      "modelId": "kimi-k2.6",
+      "contextWindow": 262144,
+      "maxTokens": 262144,
+      "effortLevel": "high",
+      "source": "litellm-model-catalog"
+    },
+    {
+      "id": "moonshot-opencode-kimi-k2-5",
+      "displayName": "Kimi K2.5 for OpenCode",
+      "target": "opencode",
+      "routeMode": "config_only",
+      "baseUrl": "https://api.moonshot.ai/v1",
+      "apiCompatibility": "openai",
+      "modelId": "kimi-k2.5",
+      "contextWindow": 262144,
+      "maxTokens": 262144,
+      "effortLevel": "medium",
+      "source": "litellm-model-catalog"
+    },
+    {
+      "id": "moonshot-opencode-kimi-k2-6",
+      "displayName": "Kimi K2.6 for OpenCode",
+      "target": "opencode",
       "routeMode": "config_only",
       "baseUrl": "https://api.moonshot.ai/v1",
       "apiCompatibility": "openai",

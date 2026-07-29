@@ -1,7 +1,7 @@
 {
   "$schema": "../schema/model-provider-catalog.schema.json",
   "schemaVersion": 1,
-  "updatedAt": "2026-07-29T15:05:56.758Z",
+  "updatedAt": "2026-07-29T15:35:33.647Z",
   "source": "haloforge-ai-provider-catalog",
   "repository": "https://github.com/HaloForgeAI/haloforge-ai-provider-catalog",
   "upstreamSources": [
@@ -10,21 +10,21 @@
       "name": "LiteLLM model catalog",
       "url": "https://api.litellm.ai/model_catalog",
       "kind": "open_source",
-      "notes": "Reference for context windows, pricing metadata, capabilities, and deprecation dates."
+      "notes": "Paged machine-readable reference for context windows, pricing metadata, capabilities, and deprecation dates."
     },
     {
       "id": "openrouter-models",
       "name": "OpenRouter models API",
       "url": "https://openrouter.ai/api/v1/models",
       "kind": "aggregator",
-      "notes": "Reference for aggregator-visible model ids and context lengths."
+      "notes": "Machine-readable reference for aggregator-visible model ids, context lengths, max output tokens, pricing, and lifecycle dates."
     },
     {
       "id": "vercel-ai-gateway-models",
       "name": "Vercel AI Gateway model endpoint",
       "url": "https://ai-gateway.vercel.sh/v1/models",
       "kind": "aggregator",
-      "notes": "Reference for AI Gateway model/provider ids, pricing, and context windows."
+      "notes": "Machine-readable reference for AI Gateway model/provider ids, pricing, tags, and context windows."
     },
     {
       "id": "anthropic-models-api",
@@ -32,6 +32,76 @@
       "url": "https://api.anthropic.com/v1/models",
       "kind": "official",
       "notes": "Authenticated official source for available Claude model ids, context windows, output limits, and capability metadata."
+    },
+    {
+      "id": "openai-models-api",
+      "name": "OpenAI Models API",
+      "url": "https://api.openai.com/v1/models",
+      "kind": "official",
+      "notes": "Authenticated official source for model ids available to the configured OpenAI project."
+    },
+    {
+      "id": "google-models-api",
+      "name": "Google Gemini Models API",
+      "url": "https://generativelanguage.googleapis.com/v1beta/models",
+      "kind": "official",
+      "notes": "Authenticated official source for Gemini model ids, descriptions, supported generation methods, and token limits."
+    },
+    {
+      "id": "zai-models-api",
+      "name": "Z.AI Models API",
+      "url": "https://api.z.ai/api/paas/v4/models",
+      "kind": "official",
+      "notes": "Authenticated official source for GLM model ids available to the configured Z.AI account."
+    },
+    {
+      "id": "minimax-models-api",
+      "name": "MiniMax Models API",
+      "url": "https://api.minimax.io/v1/models",
+      "kind": "official",
+      "notes": "Authenticated official OpenAI-compatible source for MiniMax model ids."
+    },
+    {
+      "id": "moonshot-models-api",
+      "name": "Moonshot/Kimi Models API",
+      "url": "https://api.moonshot.ai/v1/models",
+      "kind": "official",
+      "notes": "Authenticated official OpenAI-compatible source for Moonshot/Kimi model ids."
+    },
+    {
+      "id": "deepseek-models-api",
+      "name": "DeepSeek Models API",
+      "url": "https://api.deepseek.com/models",
+      "kind": "official",
+      "notes": "Authenticated official source for currently available DeepSeek model ids."
+    },
+    {
+      "id": "qwen-models-api",
+      "name": "Alibaba Cloud Model Studio Models API",
+      "url": "https://dashscope-intl.aliyuncs.com/compatible-mode/v1/models",
+      "kind": "official",
+      "notes": "Authenticated official OpenAI-compatible source for Qwen model ids in the international region."
+    },
+    {
+      "id": "mistral-models-api",
+      "name": "Mistral Models API",
+      "url": "https://api.mistral.ai/v1/models",
+      "kind": "official",
+      "notes": "Authenticated official source for Mistral model ids and model metadata."
+    },
+    {
+      "id": "xai-models-api",
+      "name": "xAI Models API",
+      "url": "https://api.x.ai/v1/models",
+      "kind": "official",
+      "notes": "Authenticated official source for xAI model ids and model metadata."
+    },
+    {
+      "id": "perplexity-models-api",
+      "name": "Perplexity Models API",
+      "url": "https://api.perplexity.ai/models",
+      "kind": "official",
+      "notes": "Authenticated official source for Perplexity model ids available to the configured account."
     }
   ],
   "providerOrder": [

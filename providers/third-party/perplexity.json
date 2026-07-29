@@ -18,21 +18,22 @@
       "displayName": "Sonar Pro",
       "contextWindow": 200000,
       "status": "available",
-      "source": "litellm-model-catalog"
+      "source": "litellm-model-catalog",
+      "maxTokens": 8000
     },
     {
       "id": "sonar-deep-research",
       "displayName": "Sonar Deep Research",
-      "contextWindow": 200000,
+      "contextWindow": 128000,
       "status": "available",
       "source": "litellm-model-catalog"
     }
   ],
   "agentGateways": [
     {
-      "id": "perplexity-opencode-sonar-pro",
-      "displayName": "Sonar Pro for OpenCode",
-      "target": "opencode",
+      "id": "perplexity-copilot-sonar-pro",
+      "displayName": "Sonar Pro for Copilot BYOK",
+      "target": "copilot",
       "routeMode": "config_only",
       "baseUrl": "https://api.perplexity.ai",
       "apiCompatibility": "openai",
@@ -56,9 +57,9 @@
       "source": "litellm-model-catalog"
     },
     {
-      "id": "perplexity-copilot-sonar-pro",
-      "displayName": "Sonar Pro for Copilot BYOK",
-      "target": "copilot",
+      "id": "perplexity-opencode-sonar-pro",
+      "displayName": "Sonar Pro for OpenCode",
+      "target": "opencode",
       "routeMode": "config_only",
       "baseUrl": "https://api.perplexity.ai",
       "apiCompatibility": "openai",

@@ -16,32 +16,32 @@
     {
       "id": "glm-5.2",
       "displayName": "GLM 5.2",
-      "contextWindow": 1000000,
-      "maxTokens": 131072,
+      "contextWindow": 1040000,
+      "maxTokens": 128000,
       "status": "available",
       "source": "zai-glm-5-2-docs"
     },
     {
       "id": "glm-5.1",
       "displayName": "GLM 5.1",
-      "contextWindow": 200000,
-      "maxTokens": 64000,
+      "contextWindow": 202000,
+      "maxTokens": 202000,
       "status": "available",
       "source": "openrouter-models"
     },
     {
       "id": "glm-5",
       "displayName": "GLM 5",
-      "contextWindow": 200000,
-      "maxTokens": 128000,
+      "contextWindow": 202800,
+      "maxTokens": 131100,
       "status": "available",
       "source": "zai-glm-5-2-docs"
     },
     {
       "id": "glm-5-turbo",
       "displayName": "GLM 5 Turbo",
-      "contextWindow": 262144,
-      "maxTokens": 131072,
+      "contextWindow": 202800,
+      "maxTokens": 131100,
       "status": "available",
       "source": "openrouter-models"
     },
@@ -49,7 +49,7 @@
       "id": "glm-4.7",
       "displayName": "GLM 4.7",
       "contextWindow": 200000,
-      "maxTokens": 131072,
+      "maxTokens": 120000,
       "status": "available",
       "source": "openrouter-models"
     },
@@ -57,7 +57,7 @@
       "id": "glm-4.7-flash",
       "displayName": "GLM 4.7 Flash",
       "contextWindow": 200000,
-      "maxTokens": 131072,
+      "maxTokens": 131000,
       "status": "available",
       "source": "openrouter-models"
     },
@@ -74,8 +74,10 @@
       "displayName": "GLM 4.5V",
       "contextWindow": 66000,
       "maxTokens": 16000,
-      "status": "available",
-      "source": "vercel-ai-gateway-models"
+      "status": "deprecated",
+      "source": "vercel-ai-gateway-models",
+      "shutdownDate": "2026-12-31",
+      "disabledByDefault": true
     },
     {
       "id": "glm-4.6v",
@@ -121,15 +123,17 @@
       "id": "glm-4.5",
       "displayName": "GLM 4.5",
       "contextWindow": 128000,
-      "maxTokens": 32000,
-      "status": "available",
-      "source": "litellm-model-catalog"
+      "maxTokens": 96000,
+      "status": "deprecated",
+      "source": "litellm-model-catalog",
+      "shutdownDate": "2026-12-31",
+      "disabledByDefault": true
     },
     {
       "id": "glm-4.6",
       "displayName": "GLM 4.6",
       "contextWindow": 200000,
-      "maxTokens": 128000,
+      "maxTokens": 96000,
       "status": "available",
       "source": "litellm-model-catalog"
     },

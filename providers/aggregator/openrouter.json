@@ -134,7 +134,7 @@
       "displayName": "DeepSeek V3.2 Exp",
       "contextWindow": 163840,
       "maxTokens": 65536,
-      "status": "available",
+      "status": "experimental",
       "source": "openrouter-models"
     },
     {
@@ -538,7 +538,7 @@
       "displayName": "Qwen3.6 Max Preview",
       "contextWindow": 262144,
       "maxTokens": 65536,
-      "status": "available",
+      "status": "preview",
       "source": "openrouter-models"
     },
     {
@@ -1180,7 +1180,7 @@
       "displayName": "GPT-4 Turbo Preview",
       "contextWindow": 128000,
       "maxTokens": 4096,
-      "status": "available",
+      "status": "preview",
       "source": "openrouter-models"
     },
     {
