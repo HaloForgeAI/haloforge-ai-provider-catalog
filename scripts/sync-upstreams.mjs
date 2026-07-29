@@ -27,8 +27,10 @@ async function main() {
     }
     const provider = await readJson(providerFile);
     const before = stableJson(provider);
+    const expandedModelSpecs = expandModelSpecs(provider, providerSync);
+    const effectiveProviderSync = { ...providerSync, models: expandedModelSpecs };
 
-    const discovered = discoverNewModels(provider, providerSync, sourceIndexes);
+    const discovered = discoverNewModels(provider, effectiveProviderSync, sourceIndexes);
     if (discovered.length > 0) {
       providerSync.models = [...(providerSync.models ?? []), ...discovered];
       syncConfigChanged = true;
@@ -39,7 +41,7 @@ async function main() {
       );
     }
 
-    upsertModels(provider, providerSync.models ?? [], sourceIndexes, providerSync);
+    upsertModels(provider, [...expandedModelSpecs, ...discovered], sourceIndexes, providerSync);
     upsertAgentGateways(provider, providerSync.agentGateways ?? []);
     const after = stableJson(provider);
     if (before !== after) {
@@ -54,14 +56,27 @@ async function main() {
     console.log(`Updated ${pathLabel(syncConfigPath)} with newly discovered models.`);
   }
 
-  if (changed) {
-    const manifest = await readJson(manifestPath);
+  const manifest = await readJson(manifestPath);
+  const upstreamSources = upstreamConfig.machineSources.map(publicSourceMetadata);
+  const sourceMetadataChanged = stableJson(manifest.upstreamSources ?? []) !== stableJson(upstreamSources);
+  if (changed || sourceMetadataChanged) {
+    manifest.upstreamSources = upstreamSources;
     manifest.updatedAt = new Date().toISOString();
     await writeJson(manifestPath, manifest);
-    console.log(`Updated ${pathLabel(manifestPath)} timestamp.`);
+    console.log(`Updated ${pathLabel(manifestPath)} metadata and timestamp.`);
   } else {
     console.log("No upstream sync changes.");
   }
+}
+
+export function publicSourceMetadata(source) {
+  return {
+    id: source.id,
+    name: source.name,
+    url: source.url,
+    kind: source.kind,
+    notes: source.notes,
+  };
 }
 
 /**
@@ -115,6 +130,10 @@ export function discoverNewModels(provider, providerSync, sourceIndexes) {
 
   const discovered = [];
   for (const { source, namespace, stripPrefix } of groups.values()) {
+    const discoverySources = providerSync.discovery?.sources;
+    if (Array.isArray(discoverySources) && discoverySources.length > 0 && !discoverySources.includes(source)) {
+      continue;
+    }
     const index = sourceIndexes.get(source);
     if (!index) continue;
     let addedFromGroup = 0;
@@ -123,21 +142,23 @@ export function discoverNewModels(provider, providerSync, sourceIndexes) {
       if (addedFromGroup >= groupLimit) break;
       const modelNamespace = upstreamId.includes("/") ? upstreamId.slice(0, upstreamId.lastIndexOf("/")) : "";
       if (modelNamespace !== namespace) continue;
-      if (!matchesDiscoveryPolicy(upstreamId, providerSync.discovery)) continue;
+      const localId = stripPrefix ? upstreamId.slice(namespace.length + 1) : upstreamId;
+      if (!matchesDiscoveryPolicy(localId, providerSync.discovery)) continue;
       const ref = `${source}:${upstreamId}`;
       if (trackedRefs.has(ref)) continue;
-      const localId = stripPrefix ? upstreamId.slice(namespace.length + 1) : upstreamId;
       if (existingIds.has(localId)) continue;
+      const upstreamRefs = modelRefsForId(providerSync, localId, ref);
+      const enriched = mergeUpstreamModels(upstreamRefs, sourceIndexes) ?? model;
       discovered.push({
         id: localId,
-        displayName: model.displayName ?? localId,
-        upstreamRefs: [ref],
-        contextWindow: model.contextWindow,
-        maxTokens: model.maxTokens,
-        status: model.lifecycle?.status ?? "available",
-        shutdownDate: model.lifecycle?.shutdownDate,
-        disabledByDefault: model.lifecycle?.disabledByDefault,
-        source,
+        displayName: enriched.displayName ?? localId,
+        upstreamRefs,
+        contextWindow: enriched.contextWindow,
+        maxTokens: enriched.maxTokens,
+        status: enriched.lifecycle?.status ?? "available",
+        shutdownDate: enriched.lifecycle?.shutdownDate,
+        disabledByDefault: enriched.lifecycle?.disabledByDefault,
+        source: enriched.source ?? source,
       });
       existingIds.add(localId);
       trackedRefs.add(ref);
@@ -146,6 +167,34 @@ export function discoverNewModels(provider, providerSync, sourceIndexes) {
   }
 
   return discovered;
+}
+
+export function expandModelSpecs(provider, providerSync) {
+  const explicitSpecs = (providerSync.models ?? []).map((spec) => ({
+    ...spec,
+    upstreamRefs: modelRefsForId(providerSync, spec.id, spec.upstreamRefs ?? []),
+  }));
+  const byId = new Map(explicitSpecs.map((spec) => [spec.id, spec]));
+  const expanded = [...explicitSpecs];
+  for (const model of provider.models ?? []) {
+    if (!nonEmpty(model.id) || byId.has(model.id)) continue;
+    expanded.push({
+      ...model,
+      upstreamRefs: modelRefsForId(providerSync, model.id),
+    });
+  }
+  return expanded;
+}
+
+function modelRefsForId(providerSync, modelId, requiredRefs = []) {
+  const refs = (Array.isArray(requiredRefs) ? requiredRefs : [requiredRefs]).filter(nonEmpty);
+  for (const mapping of providerSync.upstreamModelRefs ?? []) {
+    if (!nonEmpty(mapping?.source)) continue;
+    const mappedId = mapping.lowercase === true ? modelId.toLowerCase() : modelId;
+    const ref = `${mapping.source}:${mapping.prefix ?? ""}${mappedId}${mapping.suffix ?? ""}`;
+    if (!refs.includes(ref)) refs.push(ref);
+  }
+  return refs;
 }
 
 export function matchesDiscoveryPolicy(modelId, discovery = {}) {
@@ -210,8 +259,14 @@ async function fetchSourceModels(source, secret = "") {
   if (source.parser === "anthropic") {
     return fetchAnthropicModels(source, secret);
   }
+  if (source.parser === "google-models") {
+    return fetchGoogleModels(source, secret);
+  }
   const json = await fetchJson(source.url, sourceHeaders(source, secret));
   const rows = Array.isArray(json?.data) ? json.data : Array.isArray(json) ? json : [];
+  if (source.parser === "openai-compatible") {
+    return rows.map((item) => normalizeOpenAiCompatibleModel(source.id, item)).filter(Boolean);
+  }
   if (source.parser === "openrouter") {
     return rows.map((item) => normalizeOpenRouterModel(source.id, item)).filter(Boolean);
   }
@@ -219,6 +274,22 @@ async function fetchSourceModels(source, secret = "") {
     return rows.map((item) => normalizeVercelModel(source.id, item)).filter(Boolean);
   }
   return [];
+}
+
+async function fetchGoogleModels(source, secret) {
+  const models = [];
+  let pageToken = "";
+  for (let page = 0; page < 20; page += 1) {
+    const url = sourceUrl(source, secret);
+    url.searchParams.set("pageSize", "1000");
+    if (pageToken) url.searchParams.set("pageToken", pageToken);
+    const json = await fetchJson(url.toString(), sourceHeaders(source, secret));
+    const rows = Array.isArray(json?.models) ? json.models : [];
+    models.push(...rows.map((item) => normalizeGoogleModel(source.id, item)).filter(Boolean));
+    if (!nonEmpty(json?.nextPageToken) || rows.length === 0) break;
+    pageToken = json.nextPageToken.trim();
+  }
+  return models;
 }
 
 async function fetchAnthropicModels(source, secret) {
@@ -240,9 +311,19 @@ async function fetchAnthropicModels(source, secret) {
 function sourceHeaders(source, secret) {
   const headers = { ...(source.headers ?? {}) };
   if (secret && nonEmpty(source.authHeader)) {
-    headers[source.authHeader] = secret;
+    headers[source.authHeader] = nonEmpty(source.authScheme)
+      ? `${source.authScheme.trim()} ${secret}`
+      : secret;
   }
   return headers;
+}
+
+function sourceUrl(source, secret) {
+  const url = new URL(source.url);
+  if (secret && nonEmpty(source.authQueryParam)) {
+    url.searchParams.set(source.authQueryParam, secret);
+  }
+  return url;
 }
 
 async function fetchLiteLlmModels(source) {
@@ -301,7 +382,7 @@ function normalizeOpenRouterModel(sourceId, item) {
     displayName: cleanOpenRouterName(item.name) ?? item.id.trim(),
     contextWindow: numberValue(item.top_provider?.context_length) ?? numberValue(item.context_length),
     maxTokens: numberValue(item.top_provider?.max_completion_tokens),
-    lifecycle: lifecycleFromDate(item.expiration_date),
+    lifecycle: lifecycleFromDate(item.expiration_date) ?? lifecycleFromModelId(item.id.trim()),
     source: sourceId,
   };
 }
@@ -313,7 +394,7 @@ function normalizeVercelModel(sourceId, item) {
     displayName: nonEmpty(item.name) ? item.name.trim() : item.id.trim(),
     contextWindow: numberValue(item.context_window),
     maxTokens: numberValue(item.max_tokens),
-    lifecycle: null,
+    lifecycle: lifecycleFromModelId(item.id.trim()),
     source: sourceId,
   };
 }
@@ -328,6 +409,59 @@ export function normalizeAnthropicModel(sourceId, item) {
     lifecycle: null,
     source: sourceId,
   };
+}
+
+export function normalizeOpenAiCompatibleModel(sourceId, item) {
+  if (!nonEmpty(item?.id)) return null;
+  const id = item.id.trim();
+  return {
+    id,
+    displayName: nonEmpty(item.display_name)
+      ? item.display_name.trim()
+      : nonEmpty(item.name)
+        ? item.name.trim()
+        : id,
+    description: nonEmpty(item.description) ? item.description.trim() : undefined,
+    contextWindow: positiveIntegerValue(item.context_window)
+      ?? positiveIntegerValue(item.context_length)
+      ?? positiveIntegerValue(item.max_input_tokens),
+    maxTokens: positiveIntegerValue(item.max_output_tokens)
+      ?? positiveIntegerValue(item.max_tokens),
+    lifecycle: lifecycleFromModelId(id),
+    source: sourceId,
+  };
+}
+
+export function normalizeGoogleModel(sourceId, item) {
+  const rawId = nonEmpty(item?.baseModelId)
+    ? item.baseModelId.trim()
+    : nonEmpty(item?.name)
+      ? item.name.trim().replace(/^models\//, "")
+      : "";
+  if (!rawId) return null;
+  const generationMethods = Array.isArray(item.supportedGenerationMethods)
+    ? item.supportedGenerationMethods
+    : [];
+  if (generationMethods.length > 0 && !generationMethods.includes("generateContent")) return null;
+  return {
+    id: rawId,
+    displayName: nonEmpty(item.displayName) ? item.displayName.trim() : rawId,
+    description: nonEmpty(item.description) ? item.description.trim() : undefined,
+    contextWindow: positiveIntegerValue(item.inputTokenLimit),
+    maxTokens: positiveIntegerValue(item.outputTokenLimit),
+    lifecycle: lifecycleFromModelId(rawId),
+    source: sourceId,
+  };
+}
+
+function lifecycleFromModelId(modelId) {
+  if (/(?:^|[-_.])preview(?:$|[-_.])/i.test(modelId)) {
+    return { status: "preview" };
+  }
+  if (/(?:^|[-_.])(?:exp|experimental)(?:$|[-_.])/i.test(modelId)) {
+    return { status: "experimental" };
+  }
+  return null;
 }
 
 function cleanOpenRouterName(name) {
@@ -375,14 +509,16 @@ export function upsertModels(provider, modelSpecs, sourceIndexes, providerSync =
   for (const spec of modelSpecs) {
     if (!nonEmpty(spec.id)) continue;
     preferredOrder.push(spec.id);
-    const upstream = firstUpstreamModel(spec.upstreamRefs ?? [], sourceIndexes);
+    const upstream = mergeUpstreamModels(spec.upstreamRefs ?? [], sourceIndexes);
     const existing = byId.get(spec.id) ?? {};
     const managedFields = new Set(providerSync.managedFields ?? []);
     const overrides = spec.overrides ?? {};
     const choose = (field, upstreamValue, fallbackValue = existing[field]) => {
       if (Object.hasOwn(overrides, field)) return overrides[field];
-      if (managedFields.has(field)) return upstreamValue ?? spec[field] ?? fallbackValue;
-      return spec[field] ?? upstreamValue ?? fallbackValue;
+      if (managedFields.has(field)) {
+        return upstreamValue ?? existing[field] ?? spec[field] ?? fallbackValue;
+      }
+      return spec[field] ?? upstreamValue ?? existing[field] ?? fallbackValue;
     };
     const next = {
       ...existing,
@@ -426,15 +562,26 @@ function upsertAgentGateways(provider, gatewaySpecs) {
   ];
 }
 
-function firstUpstreamModel(refs, sourceIndexes) {
+function mergeUpstreamModels(refs, sourceIndexes) {
+  let merged = null;
   for (const ref of refs) {
     const [sourceId, ...modelParts] = String(ref).split(":");
     const modelId = modelParts.join(":");
     if (!sourceId || !modelId) continue;
     const model = sourceIndexes.get(sourceId)?.get(modelId);
-    if (model) return model;
+    if (!model) continue;
+    if (!merged) {
+      merged = { ...model };
+      continue;
+    }
+    merged = {
+      ...model,
+      ...Object.fromEntries(Object.entries(merged).filter(([, value]) => value !== undefined && value !== null)),
+      lifecycle: merged.lifecycle ?? model.lifecycle,
+      source: merged.source ?? model.source,
+    };
   }
-  return null;
+  return merged;
 }
 
 function sortByPreferredOrder(items, preferredIds) {

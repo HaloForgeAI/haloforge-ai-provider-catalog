@@ -60,7 +60,7 @@ If organization policy prevents `GITHUB_TOKEN` from creating pull requests, add 
 
 The action should be reviewed before merge because provider docs can disagree with aggregators, especially for new releases, regional restrictions, preview models, and model shutdown dates.
 
-The Anthropic Models API source is authenticated. Configure the repository Actions secret `ANTHROPIC_API_KEY` to enable official Claude model discovery and metadata refresh. Without that secret, Anthropic keeps its reviewed snapshot while the other required machine sources continue syncing. The secret is used only as an HTTP request header and is never written to generated files or logs.
+Official provider model-list APIs are authenticated and optional. When a provider key is configured, a failure from that official source fails the workflow instead of silently trusting stale data. Without a provider key, the reviewed snapshot and required LiteLLM/OpenRouter/Vercel sources continue syncing. Keys are used only for authenticated model-list requests and are never written to generated files or logs.
 
 ### Credential Setup
 
@@ -74,6 +74,23 @@ gh secret set ANTHROPIC_API_KEY \
 ```
 
 The GitHub CLI prompts for the value. Paste the key only at that prompt, never into an issue, pull request, workflow file, or chat message.
+
+Add the other provider keys the same way. Each command prompts for that provider's key:
+
+```bash
+gh secret set OPENAI_API_KEY --repo HaloForgeAI/haloforge-ai-provider-catalog
+gh secret set GEMINI_API_KEY --repo HaloForgeAI/haloforge-ai-provider-catalog
+gh secret set ZAI_API_KEY --repo HaloForgeAI/haloforge-ai-provider-catalog
+gh secret set MINIMAX_API_KEY --repo HaloForgeAI/haloforge-ai-provider-catalog
+gh secret set MOONSHOT_API_KEY --repo HaloForgeAI/haloforge-ai-provider-catalog
+gh secret set DEEPSEEK_API_KEY --repo HaloForgeAI/haloforge-ai-provider-catalog
+gh secret set DASHSCOPE_API_KEY --repo HaloForgeAI/haloforge-ai-provider-catalog
+gh secret set MISTRAL_API_KEY --repo HaloForgeAI/haloforge-ai-provider-catalog
+gh secret set XAI_API_KEY --repo HaloForgeAI/haloforge-ai-provider-catalog
+gh secret set PERPLEXITY_API_KEY --repo HaloForgeAI/haloforge-ai-provider-catalog
+```
+
+The associated providers are OpenAI, Google Gemini, Z.AI/GLM, MiniMax, Moonshot/Kimi, DeepSeek, Alibaba Cloud/Qwen, Mistral, xAI, and Perplexity. Use standard inference API keys with access to `GET /models`; organization-admin keys are not required. Provider-specific availability can vary by account and region, so the sync never treats absence from one account-scoped response as an instruction to remove an existing catalog model.
 
 For the sync pull-request credential, create a fine-grained GitHub personal access token with:
 
@@ -123,6 +140,9 @@ Machine-readable sources are configured in `sources/upstreams.json`:
 - LiteLLM model catalog: `https://api.litellm.ai/model_catalog`
 - OpenRouter models API: `https://openrouter.ai/api/v1/models`
 - Vercel AI Gateway models endpoint: `https://ai-gateway.vercel.sh/v1/models`
+- Authenticated official model-list APIs for Anthropic, OpenAI, Google Gemini, Z.AI, MiniMax, Moonshot/Kimi, DeepSeek, Qwen/DashScope, Mistral, xAI, and Perplexity
+
+Official sources own model identity and availability. Google Gemini and Anthropic also provide authoritative token limits. For providers whose list endpoint returns only model ids, curated fields remain authoritative and aggregator metadata only fills missing capacity values. New preview or experimental ids always require human review, and synchronization never removes an existing model automatically.
 
 Official documentation sources are also recorded in `sources/upstreams.json` so a future maintainer can verify curated overrides quickly. Current official-doc references include OpenAI, Anthropic, DeepSeek, Z.AI/GLM, Gemini, Qwen/DashScope, MiniMax, Moonshot/Kimi, and Cloudflare Workers AI.
 

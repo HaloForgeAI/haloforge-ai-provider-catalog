@@ -9,6 +9,9 @@
         "source"
       ],
       "discovery": {
+        "sources": [
+          "anthropic-models-api"
+        ],
         "includePatterns": [
           "^claude-(fable|opus|sonnet|haiku)-"
         ],
@@ -144,7 +147,358 @@
       "agentGateways": []
     },
     {
+      "id": "openai",
+      "managedFields": [
+        "contextWindow",
+        "maxTokens",
+        "status"
+      ],
+      "upstreamModelRefs": [
+        {
+          "source": "openai-models-api"
+        },
+        {
+          "source": "vercel-ai-gateway-models",
+          "prefix": "openai/"
+        },
+        {
+          "source": "openrouter-models",
+          "prefix": "openai/"
+        }
+      ],
+      "discovery": {
+        "sources": [
+          "openai-models-api"
+        ],
+        "includePatterns": [
+          "^gpt-[0-9]+(?:\\.[0-9]+)*(?:-(?:mini|nano|pro|sol|terra|luna)(?:-pro)?)?$"
+        ],
+        "excludePatterns": [
+          "-[0-9]{4}-[0-9]{2}-[0-9]{2}$",
+          ":batch$"
+        ],
+        "maxPerGroup": 20
+      },
+      "models": [],
+      "agentGateways": []
+    },
+    {
+      "id": "google-ai",
+      "managedFields": [
+        "displayName",
+        "description",
+        "contextWindow",
+        "maxTokens",
+        "status"
+      ],
+      "upstreamModelRefs": [
+        {
+          "source": "google-models-api"
+        },
+        {
+          "source": "vercel-ai-gateway-models",
+          "prefix": "google/"
+        },
+        {
+          "source": "openrouter-models",
+          "prefix": "google/"
+        }
+      ],
+      "discovery": {
+        "sources": [
+          "google-models-api"
+        ],
+        "includePatterns": [
+          "^gemini-[0-9]+(?:\\.[0-9]+)?-(?:pro|flash)(?:-lite)?(?:-preview)?$"
+        ],
+        "excludePatterns": [
+          ":batch$"
+        ],
+        "maxPerGroup": 20
+      },
+      "models": [],
+      "agentGateways": []
+    },
+    {
+      "id": "minimax",
+      "managedFields": [
+        "contextWindow",
+        "maxTokens",
+        "status"
+      ],
+      "upstreamModelRefs": [
+        {
+          "source": "minimax-models-api"
+        },
+        {
+          "source": "vercel-ai-gateway-models",
+          "prefix": "minimax/",
+          "lowercase": true
+        },
+        {
+          "source": "openrouter-models",
+          "prefix": "minimax/",
+          "lowercase": true
+        }
+      ],
+      "discovery": {
+        "sources": [
+          "minimax-models-api"
+        ],
+        "includePatterns": [
+          "^MiniMax-M[0-9]+(?:\\.[0-9]+)?(?:-highspeed)?$"
+        ],
+        "excludePatterns": [
+          "-[0-9]{4}$",
+          ":batch$"
+        ],
+        "maxPerGroup": 20
+      },
+      "models": [],
+      "agentGateways": []
+    },
+    {
+      "id": "moonshot",
+      "managedFields": [
+        "contextWindow",
+        "maxTokens",
+        "status"
+      ],
+      "upstreamModelRefs": [
+        {
+          "source": "moonshot-models-api"
+        },
+        {
+          "source": "vercel-ai-gateway-models",
+          "prefix": "moonshotai/"
+        },
+        {
+          "source": "openrouter-models",
+          "prefix": "moonshotai/"
+        }
+      ],
+      "discovery": {
+        "sources": [
+          "moonshot-models-api"
+        ],
+        "includePatterns": [
+          "^kimi-k[0-9]+(?:\\.[0-9]+)?(?:-[a-z0-9.-]+)?$"
+        ],
+        "excludePatterns": [
+          ":batch$"
+        ],
+        "maxPerGroup": 20
+      },
+      "models": [],
+      "agentGateways": []
+    },
+    {
+      "id": "deepseek",
+      "managedFields": [
+        "contextWindow",
+        "maxTokens",
+        "status"
+      ],
+      "upstreamModelRefs": [
+        {
+          "source": "deepseek-models-api"
+        },
+        {
+          "source": "vercel-ai-gateway-models",
+          "prefix": "deepseek/"
+        },
+        {
+          "source": "openrouter-models",
+          "prefix": "deepseek/"
+        }
+      ],
+      "discovery": {
+        "sources": [
+          "deepseek-models-api"
+        ],
+        "includePatterns": [
+          "^deepseek-[a-z0-9.-]+$"
+        ],
+        "excludePatterns": [
+          ":batch$"
+        ],
+        "maxPerGroup": 20
+      },
+      "models": [],
+      "agentGateways": []
+    },
+    {
+      "id": "qwen",
+      "managedFields": [
+        "contextWindow",
+        "maxTokens",
+        "status"
+      ],
+      "upstreamModelRefs": [
+        {
+          "source": "qwen-models-api"
+        },
+        {
+          "source": "vercel-ai-gateway-models",
+          "prefix": "alibaba/"
+        },
+        {
+          "source": "openrouter-models",
+          "prefix": "qwen/"
+        }
+      ],
+      "discovery": {
+        "sources": [
+          "qwen-models-api"
+        ],
+        "includePatterns": [
+          "^qwen(?:[0-9]+(?:\\.[0-9]+)?|-[a-z])[a-z0-9.-]*$"
+        ],
+        "excludePatterns": [
+          "(?:audio|image|omni|tts|vl)",
+          ":batch$"
+        ],
+        "maxPerGroup": 20
+      },
+      "models": [],
+      "agentGateways": []
+    },
+    {
+      "id": "mistral",
+      "managedFields": [
+        "contextWindow",
+        "maxTokens",
+        "status"
+      ],
+      "upstreamModelRefs": [
+        {
+          "source": "mistral-models-api"
+        },
+        {
+          "source": "vercel-ai-gateway-models",
+          "prefix": "mistral/"
+        },
+        {
+          "source": "openrouter-models",
+          "prefix": "mistralai/"
+        }
+      ],
+      "discovery": {
+        "sources": [
+          "mistral-models-api"
+        ],
+        "includePatterns": [
+          "^(?:codestral|devstral|ministral|mistral|open-mistral|pixtral)-[a-z0-9.-]+$"
+        ],
+        "excludePatterns": [
+          "embed",
+          ":batch$"
+        ],
+        "maxPerGroup": 20
+      },
+      "models": [],
+      "agentGateways": []
+    },
+    {
+      "id": "xai",
+      "managedFields": [
+        "contextWindow",
+        "maxTokens",
+        "status"
+      ],
+      "upstreamModelRefs": [
+        {
+          "source": "xai-models-api"
+        },
+        {
+          "source": "vercel-ai-gateway-models",
+          "prefix": "xai/"
+        },
+        {
+          "source": "openrouter-models",
+          "prefix": "x-ai/"
+        }
+      ],
+      "discovery": {
+        "sources": [
+          "xai-models-api"
+        ],
+        "includePatterns": [
+          "^grok-[a-z0-9.-]+$"
+        ],
+        "excludePatterns": [
+          "(?:^|-)(?:imagine|stt|tts|voice)(?:$|-)",
+          "-[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+        ],
+        "maxPerGroup": 20
+      },
+      "models": [],
+      "agentGateways": []
+    },
+    {
+      "id": "perplexity",
+      "managedFields": [
+        "contextWindow",
+        "maxTokens",
+        "status"
+      ],
+      "upstreamModelRefs": [
+        {
+          "source": "perplexity-models-api"
+        },
+        {
+          "source": "vercel-ai-gateway-models",
+          "prefix": "perplexity/"
+        },
+        {
+          "source": "openrouter-models",
+          "prefix": "perplexity/"
+        }
+      ],
+      "discovery": {
+        "sources": [
+          "perplexity-models-api"
+        ],
+        "includePatterns": [
+          "^sonar-[a-z0-9.-]+$"
+        ],
+        "maxPerGroup": 20
+      },
+      "models": [],
+      "agentGateways": []
+    },
+    {
       "id": "z-ai",
+      "managedFields": [
+        "contextWindow",
+        "maxTokens",
+        "status"
+      ],
+      "upstreamModelRefs": [
+        {
+          "source": "zai-models-api"
+        },
+        {
+          "source": "vercel-ai-gateway-models",
+          "prefix": "zai/"
+        },
+        {
+          "source": "openrouter-models",
+          "prefix": "z-ai/"
+        }
+      ],
+      "discovery": {
+        "sources": [
+          "zai-models-api"
+        ],
+        "includePatterns": [
+          "^glm-[0-9]+(?:\\.[0-9]+)*(?:[-.][a-z0-9]+)*$"
+        ],
+        "excludePatterns": [
+          ":batch$"
+        ],
+        "maxPerGroup": 20
+      },
       "models": [
         {
           "id": "glm-5.2",

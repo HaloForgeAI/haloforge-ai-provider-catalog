@@ -3,8 +3,11 @@ import test from "node:test";
 
 import {
   discoverNewModels,
+  expandModelSpecs,
   matchesDiscoveryPolicy,
   normalizeAnthropicModel,
+  normalizeGoogleModel,
+  normalizeOpenAiCompatibleModel,
   upsertModels,
 } from "./sync-upstreams.mjs";
 
@@ -44,6 +47,33 @@ test("managed fields follow upstream while explicit overrides remain curated", (
   });
 });
 
+test("managed fields keep existing reviewed values when an optional source is unavailable", () => {
+  const provider = {
+    models: [{
+      id: "gpt-5",
+      displayName: "GPT-5",
+      contextWindow: 400_000,
+      source: "openai-models-docs",
+    }],
+  };
+
+  upsertModels(provider, [{
+    id: "gpt-5",
+    upstreamRefs: ["openai-models-api:gpt-5"],
+  }], new Map([
+    ["openai-models-api", new Map()],
+  ]), {
+    managedFields: ["displayName", "contextWindow", "source"],
+  });
+
+  assert.deepEqual(provider.models[0], {
+    id: "gpt-5",
+    displayName: "GPT-5",
+    contextWindow: 400_000,
+    source: "openai-models-docs",
+  });
+});
+
 test("discovery policy excludes non-interactive variants", () => {
   const policy = {
     includePatterns: ["^vendor/"],
@@ -76,6 +106,87 @@ test("discovery applies filters before adding namespace siblings", () => {
   ]);
 });
 
+test("provider discovery ignores aggregator-only models when an official source is required", () => {
+  const provider = {
+    models: [{ id: "gpt-5", displayName: "GPT-5" }],
+  };
+  const providerSync = {
+    upstreamModelRefs: [
+      { source: "openai-models-api" },
+      { source: "vercel-ai-gateway-models", prefix: "openai/" },
+    ],
+    discovery: {
+      sources: ["openai-models-api"],
+      includePatterns: ["^gpt-"],
+    },
+  };
+  const expanded = expandModelSpecs(provider, providerSync);
+  const sourceIndexes = new Map([
+    ["openai-models-api", new Map()],
+    ["vercel-ai-gateway-models", new Map([
+      ["openai/gpt-unreviewed", { id: "openai/gpt-unreviewed" }],
+    ])],
+  ]);
+
+  assert.deepEqual(discoverNewModels(
+    provider,
+    { ...providerSync, models: expanded },
+    sourceIndexes,
+  ), []);
+});
+
+test("provider ref mappings connect official ids to aggregator metadata", () => {
+  const provider = {
+    models: [{ id: "gpt-6", displayName: "GPT 6", contextWindow: 1_000_000 }],
+  };
+  const specs = expandModelSpecs(provider, {
+    upstreamModelRefs: [
+      { source: "openai-models-api" },
+      { source: "vercel-ai-gateway-models", prefix: "openai/" },
+    ],
+  });
+
+  assert.deepEqual(specs[0].upstreamRefs, [
+    "openai-models-api:gpt-6",
+    "vercel-ai-gateway-models:openai/gpt-6",
+  ]);
+});
+
+test("official identity and aggregator capacity metadata merge field by field", () => {
+  const provider = {
+    models: [{ id: "model-a", displayName: "Curated", contextWindow: 100, maxTokens: 10 }],
+  };
+  const sourceIndexes = new Map([
+    ["official", new Map([["model-a", {
+      id: "model-a",
+      displayName: "Official",
+      lifecycle: null,
+      source: "official",
+    }]])],
+    ["aggregator", new Map([["vendor/model-a", {
+      id: "vendor/model-a",
+      contextWindow: 200,
+      maxTokens: 20,
+      source: "aggregator",
+    }]])],
+  ]);
+
+  upsertModels(provider, [{
+    id: "model-a",
+    upstreamRefs: ["official:model-a", "aggregator:vendor/model-a"],
+  }], sourceIndexes, {
+    managedFields: ["displayName", "contextWindow", "maxTokens", "source"],
+  });
+
+  assert.deepEqual(provider.models[0], {
+    id: "model-a",
+    displayName: "Official",
+    contextWindow: 200,
+    maxTokens: 20,
+    source: "official",
+  });
+});
+
 test("Anthropic model metadata maps into the shared catalog shape", () => {
   assert.deepEqual(normalizeAnthropicModel("anthropic-models-api", {
     id: "claude-sonnet-5",
@@ -106,4 +217,43 @@ test("Anthropic placeholder token limits do not overwrite curated values", () =>
     lifecycle: null,
     source: "anthropic-models-api",
   });
+});
+
+test("OpenAI-compatible model lists mark preview ids for review", () => {
+  assert.deepEqual(normalizeOpenAiCompatibleModel("moonshot-models-api", {
+    id: "kimi-k4-preview",
+    owned_by: "moonshot",
+  }), {
+    id: "kimi-k4-preview",
+    displayName: "kimi-k4-preview",
+    description: undefined,
+    contextWindow: undefined,
+    maxTokens: undefined,
+    lifecycle: { status: "preview" },
+    source: "moonshot-models-api",
+  });
+});
+
+test("Google model metadata maps token limits and excludes embedding-only entries", () => {
+  assert.deepEqual(normalizeGoogleModel("google-models-api", {
+    name: "models/gemini-4-flash",
+    baseModelId: "gemini-4-flash",
+    displayName: "Gemini 4 Flash",
+    description: "General-purpose model",
+    inputTokenLimit: 1_048_576,
+    outputTokenLimit: 65_536,
+    supportedGenerationMethods: ["generateContent", "countTokens"],
+  }), {
+    id: "gemini-4-flash",
+    displayName: "Gemini 4 Flash",
+    description: "General-purpose model",
+    contextWindow: 1_048_576,
+    maxTokens: 65_536,
+    lifecycle: null,
+    source: "google-models-api",
+  });
+  assert.equal(normalizeGoogleModel("google-models-api", {
+    name: "models/text-embedding-next",
+    supportedGenerationMethods: ["embedContent"],
+  }), null);
 });
