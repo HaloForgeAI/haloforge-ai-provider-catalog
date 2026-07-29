@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-07-29T14:42:40.378Z",
+  "updatedAt": "2026-07-29T15:05:56.758Z",
   "source": "haloforge-ai-provider-catalog",
   "repository": "https://github.com/HaloForgeAI/haloforge-ai-provider-catalog",
   "upstreamSources": [
@@ -185,58 +185,58 @@
           "id": "claude-fable-5",
           "displayName": "Claude Fable 5",
           "contextWindow": 1000000,
-          "maxTokens": 131072,
+          "maxTokens": 128000,
           "status": "available",
           "fallbackModelId": "claude-opus-5",
-          "source": "anthropic-models-docs"
+          "source": "anthropic-models-api"
         },
         {
           "id": "claude-opus-5",
           "displayName": "Claude Opus 5",
           "contextWindow": 1000000,
-          "maxTokens": 131072,
+          "maxTokens": 128000,
           "status": "available",
-          "source": "anthropic-models-docs"
+          "source": "anthropic-models-api"
         },
         {
           "id": "claude-sonnet-5",
           "displayName": "Claude Sonnet 5",
           "contextWindow": 1000000,
-          "maxTokens": 131072,
+          "maxTokens": 128000,
           "status": "available",
-          "source": "anthropic-models-docs"
+          "source": "anthropic-models-api"
         },
         {
           "id": "claude-opus-4-8",
           "displayName": "Claude Opus 4.8",
-          "contextWindow": 200000,
-          "maxTokens": 131072,
+          "contextWindow": 1000000,
+          "maxTokens": 128000,
           "status": "available",
-          "source": "anthropic-models-docs"
+          "source": "anthropic-models-api"
         },
         {
           "id": "claude-opus-4-7",
           "displayName": "Claude Opus 4.7",
-          "contextWindow": 200000,
-          "maxTokens": 131072,
+          "contextWindow": 1000000,
+          "maxTokens": 128000,
           "status": "available",
-          "source": "anthropic-models-docs"
+          "source": "anthropic-models-api"
         },
         {
           "id": "claude-opus-4-6",
           "displayName": "Claude Opus 4.6",
-          "contextWindow": 200000,
-          "maxTokens": 131072,
+          "contextWindow": 1000000,
+          "maxTokens": 128000,
           "status": "available",
-          "source": "anthropic-models-docs"
+          "source": "anthropic-models-api"
         },
         {
           "id": "claude-sonnet-4-6",
           "displayName": "Claude Sonnet 4.6",
-          "contextWindow": 200000,
-          "maxTokens": 131072,
+          "contextWindow": 1000000,
+          "maxTokens": 128000,
           "status": "available",
-          "source": "anthropic-models-docs"
+          "source": "anthropic-models-api"
         },
         {
           "id": "claude-haiku-4-5-20251001",
@@ -244,7 +244,31 @@
           "contextWindow": 200000,
           "maxTokens": 64000,
           "status": "available",
-          "source": "anthropic-models-docs"
+          "source": "anthropic-models-api"
+        },
+        {
+          "id": "claude-opus-4-5-20251101",
+          "displayName": "Claude Opus 4.5",
+          "contextWindow": 200000,
+          "maxTokens": 64000,
+          "status": "available",
+          "source": "anthropic-models-api"
+        },
+        {
+          "id": "claude-sonnet-4-5-20250929",
+          "displayName": "Claude Sonnet 4.5",
+          "contextWindow": 1000000,
+          "maxTokens": 64000,
+          "status": "available",
+          "source": "anthropic-models-api"
+        },
+        {
+          "id": "claude-opus-4-1-20250805",
+          "displayName": "Claude Opus 4.1",
+          "contextWindow": 200000,
+          "maxTokens": 32000,
+          "status": "available",
+          "source": "anthropic-models-api"
         }
       ],
       "agentGateways": [

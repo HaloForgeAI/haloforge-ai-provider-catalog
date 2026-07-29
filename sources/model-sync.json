@@ -106,6 +106,39 @@
           "maxTokens": 64000,
           "status": "available",
           "source": "anthropic-models-docs"
+        },
+        {
+          "id": "claude-opus-4-5-20251101",
+          "displayName": "Claude Opus 4.5",
+          "upstreamRefs": [
+            "anthropic-models-api:claude-opus-4-5-20251101"
+          ],
+          "contextWindow": 200000,
+          "maxTokens": 64000,
+          "status": "available",
+          "source": "anthropic-models-api"
+        },
+        {
+          "id": "claude-sonnet-4-5-20250929",
+          "displayName": "Claude Sonnet 4.5",
+          "upstreamRefs": [
+            "anthropic-models-api:claude-sonnet-4-5-20250929"
+          ],
+          "contextWindow": 1000000,
+          "maxTokens": 64000,
+          "status": "available",
+          "source": "anthropic-models-api"
+        },
+        {
+          "id": "claude-opus-4-1-20250805",
+          "displayName": "Claude Opus 4.1",
+          "upstreamRefs": [
+            "anthropic-models-api:claude-opus-4-1-20250805"
+          ],
+          "contextWindow": 200000,
+          "maxTokens": 32000,
+          "status": "available",
+          "source": "anthropic-models-api"
         }
       ],
       "agentGateways": []
