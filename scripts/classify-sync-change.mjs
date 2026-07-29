@@ -16,7 +16,6 @@ const allowedGeneratedPaths = [
   /^providers\/.+\.json$/,
   /^sources\/model-sync\.json$/,
 ];
-const riskyModelIdPatterns = [/:batch$/, /(?:^|[-/:])preview(?:$|[-/:])/i];
 
 export function classifyCatalogChange(before, after, changedPaths = []) {
   const reasons = [];
@@ -70,10 +69,10 @@ export function classifyCatalogChange(before, after, changedPaths = []) {
   return { safe: reasons.length === 0, reasons };
 }
 
-function isSafeNewModel(model) {
-  if (riskyModelIdPatterns.some((pattern) => pattern.test(model.id))) return false;
-  if (model.disabledByDefault === true) return false;
-  return model.status === undefined || model.status === "available";
+function isSafeNewModel(_model) {
+  // Discovery proves that an ID exists, not that its first-party availability,
+  // lifecycle, endpoint compatibility, and metadata are ready to publish.
+  return false;
 }
 
 function changedObjectFields(before, after) {

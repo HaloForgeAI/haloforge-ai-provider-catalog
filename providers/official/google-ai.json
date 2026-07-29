@@ -14,34 +14,74 @@
   "modelsListPath": "/models",
   "models": [
     {
+      "id": "gemini-3.6-flash",
+      "displayName": "Gemini 3.6 Flash",
+      "contextWindow": 1048576,
+      "maxTokens": 65536,
+      "source": "gemini-latest-models-docs",
+      "status": "available"
+    },
+    {
+      "id": "gemini-3.5-flash-lite",
+      "displayName": "Gemini 3.5 Flash Lite",
+      "contextWindow": 1048576,
+      "maxTokens": 65536,
+      "source": "gemini-latest-models-docs",
+      "status": "available"
+    },
+    {
+      "id": "gemini-3.1-flash-lite",
+      "displayName": "Gemini 3.1 Flash Lite",
+      "contextWindow": 1048576,
+      "maxTokens": 65536,
+      "source": "gemini-models-docs",
+      "status": "available"
+    },
+    {
+      "id": "gemini-3.1-flash-lite-preview",
+      "displayName": "Gemini 3.1 Flash Lite Preview",
+      "contextWindow": 1048576,
+      "maxTokens": 65536,
+      "source": "models-dev-provider-catalog",
+      "status": "deprecated"
+    },
+    {
+      "id": "gemini-3.1-pro-preview",
+      "displayName": "Gemini 3.1 Pro Preview",
+      "contextWindow": 1048576,
+      "maxTokens": 65536,
+      "source": "gemini-models-docs",
+      "status": "preview"
+    },
+    {
       "id": "gemini-3.5-flash",
       "displayName": "Gemini 3.5 Flash",
       "contextWindow": 1048576,
-      "maxTokens": 65535,
+      "maxTokens": 65536,
       "status": "available",
-      "source": "gemini-docs"
+      "source": "gemini-models-docs"
     },
     {
       "id": "gemini-3-pro-preview",
       "displayName": "Gemini 3 Pro Preview",
       "contextWindow": 1048576,
-      "maxTokens": 65535,
-      "status": "preview",
+      "maxTokens": 65536,
+      "status": "deprecated",
       "source": "litellm-model-catalog"
     },
     {
       "id": "gemini-3-flash-preview",
       "displayName": "Gemini 3 Flash Preview",
       "contextWindow": 1048576,
-      "maxTokens": 65535,
+      "maxTokens": 65536,
       "status": "preview",
-      "source": "gemini-changelog"
+      "source": "google-gemini-changelog"
     },
     {
       "id": "gemini-2.5-flash",
       "displayName": "Gemini 2.5 Flash",
       "contextWindow": 1048576,
-      "maxTokens": 65535,
+      "maxTokens": 65536,
       "status": "available",
       "source": "litellm-model-catalog"
     },

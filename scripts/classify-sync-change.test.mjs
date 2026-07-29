@@ -17,7 +17,7 @@ function catalog(models, gateways = []) {
   };
 }
 
-test("safe additions and upstream metadata updates can auto-merge", () => {
+test("newly discovered models require review even when existing metadata refreshes are safe", () => {
   const before = catalog([{ id: "model-a", displayName: "A", contextWindow: 100 }]);
   const after = catalog([
     { id: "model-a", displayName: "A", contextWindow: 200 },
@@ -28,8 +28,8 @@ test("safe additions and upstream metadata updates can auto-merge", () => {
     "providers/official/provider.json",
     "sources/model-sync.json",
   ]);
-  assert.equal(result.safe, true);
-  assert.deepEqual(result.reasons, []);
+  assert.equal(result.safe, false);
+  assert.deepEqual(result.reasons, ["provider: new model requires review: model-b"]);
 });
 
 test("lifecycle and gateway changes require review", () => {

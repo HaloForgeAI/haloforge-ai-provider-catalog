@@ -2,7 +2,7 @@
   "id": "perplexity",
   "name": "Perplexity",
   "description": "Perplexity Sonar models with OpenAI-compatible API.",
-  "category": "third_party",
+  "category": "official",
   "iconProvider": "perplexity",
   "modelOwner": "perplexity",
   "modelOwnerLabel": "Perplexity",
@@ -18,14 +18,16 @@
       "displayName": "Sonar Pro",
       "contextWindow": 200000,
       "status": "available",
-      "source": "litellm-model-catalog"
+      "source": "perplexity-models-docs",
+      "maxTokens": 8192
     },
     {
       "id": "sonar-deep-research",
       "displayName": "Sonar Deep Research",
       "contextWindow": 200000,
       "status": "available",
-      "source": "litellm-model-catalog"
+      "source": "perplexity-models-docs",
+      "maxTokens": 32768
     }
   ],
   "agentGateways": [

@@ -45,7 +45,7 @@ CI or maintainers can run `npm run check` to verify the generated aggregate is c
 
 ## Automatic Upstream Sync
 
-`.github/workflows/sync-upstream-models.yml` runs every 12 hours and can also be triggered manually from GitHub Actions.
+`.github/workflows/sync-upstream-models.yml` runs every 6 hours and can also be triggered manually from GitHub Actions.
 
 The workflow:
 
@@ -54,11 +54,25 @@ The workflow:
 3. Runs `npm run build`.
 4. Runs `npm run check`.
 5. If files changed, classifies the semantic catalog diff, pushes `chore/sync-upstream-model-catalog`, and opens or updates a pull request.
-6. Safe additions and upstream-owned metadata refreshes are squash-merged after verification. The workflow uses protected-branch auto-merge when available and otherwise merges immediately after its tests pass. Provider metadata, Agent gateway, lifecycle, fallback, removal, restricted, and preview changes remain queued for human review.
+6. Only upstream-owned metadata refreshes to existing models are eligible for squash auto-merge after verification. Every newly discovered model, provider metadata change, Agent gateway change, lifecycle/fallback change, removal, restricted model, and preview model remains queued for human review.
 
 If organization policy prevents `GITHUB_TOKEN` from creating pull requests, add a repository secret named `HF_PROVIDER_CATALOG_SYNC_TOKEN`. Use a fine-grained personal access token or GitHub App token scoped to this repository with `Contents: Read and write` and `Pull requests: Read and write`. Without that secret, the workflow still pushes the sync branch and prints a manual PR link.
 
 The action should be reviewed before merge because provider docs can disagree with aggregators, especially for new releases, regional restrictions, preview models, and model shutdown dates.
+
+### Source Authority
+
+The catalog uses a hybrid sync model. No upstream is authoritative for every field:
+
+- Official provider model-list APIs establish account-visible model ids and update only fields actually returned by that API. Their responses can be account- and region-specific, so a missing id never removes a catalog model.
+- Official model, pricing, changelog, and lifecycle documentation is preferred for public availability, context/output limits, preview/deprecation state, and replacement guidance.
+- `models.dev/api.json` is a provider-offering candidate source. It is used instead of provider-agnostic `models.dev/models.json` so an underlying model is not confused with a model actually served by a specific provider.
+- LiteLLM, OpenRouter, and Vercel AI Gateway are cross-check and gap-filling sources. They never change provider ownership or replace a reviewed official lifecycle value.
+- Automated discovery never creates Agent gateway presets. Gateway endpoint compatibility, role mappings, generation options, and CLI behavior require explicit documentation and human review.
+
+Provider `category` describes who serves the configured API endpoint. DeepSeek, Moonshot, MiniMax, Alibaba Cloud/Qwen, Z.AI, xAI, Mistral, and Perplexity are `official` because these entries point to their own first-party APIs. OpenRouter remains an `aggregator`; Ollama remains `local`; user-supplied endpoints remain `custom`.
+
+Every non-local model and Agent gateway must reference an id registered in `sources/upstreams.json`. `npm run build` fails on missing or unknown source ids, which keeps provenance visible in the generated catalog.
 
 Official provider model-list APIs are authenticated and optional. When a provider key is configured, a failure from that official source fails the workflow instead of silently trusting stale data. Without a provider key, the reviewed snapshot and required LiteLLM/OpenRouter/Vercel sources continue syncing. Keys are used only for authenticated model-list requests and are never written to generated files or logs.
 

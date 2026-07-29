@@ -14,12 +14,60 @@
   "modelsListPath": "/models",
   "models": [
     {
+      "id": "gpt-5.6-terra",
+      "displayName": "GPT-5.6 Terra",
+      "contextWindow": 1050000,
+      "maxTokens": 128000,
+      "status": "available",
+      "source": "openai-models-docs"
+    },
+    {
+      "id": "gpt-5.6-sol",
+      "displayName": "GPT-5.6 Sol",
+      "contextWindow": 1050000,
+      "maxTokens": 128000,
+      "status": "available",
+      "source": "openai-models-docs"
+    },
+    {
+      "id": "gpt-5.6-luna",
+      "displayName": "GPT-5.6 Luna",
+      "contextWindow": 1050000,
+      "maxTokens": 128000,
+      "status": "available",
+      "source": "openai-models-docs"
+    },
+    {
+      "id": "gpt-5.5-pro",
+      "displayName": "GPT-5.5 Pro",
+      "contextWindow": 1050000,
+      "maxTokens": 128000,
+      "source": "openai-models-docs",
+      "status": "available"
+    },
+    {
+      "id": "gpt-5.4-pro",
+      "displayName": "GPT-5.4 Pro",
+      "contextWindow": 1050000,
+      "maxTokens": 128000,
+      "source": "openai-models-docs",
+      "status": "available"
+    },
+    {
+      "id": "gpt-5.6",
+      "displayName": "GPT-5.6",
+      "contextWindow": 1050000,
+      "maxTokens": 128000,
+      "source": "openai-models-docs",
+      "status": "available"
+    },
+    {
       "id": "gpt-5.5",
       "displayName": "GPT-5.5",
       "contextWindow": 1000000,
       "maxTokens": 128000,
       "status": "available",
-      "source": "openai-docs"
+      "source": "openai-models-docs"
     },
     {
       "id": "gpt-5.4",
@@ -27,7 +75,7 @@
       "contextWindow": 1000000,
       "maxTokens": 128000,
       "status": "available",
-      "source": "openai-docs"
+      "source": "openai-models-docs"
     },
     {
       "id": "gpt-5.4-mini",
@@ -35,7 +83,7 @@
       "contextWindow": 400000,
       "maxTokens": 128000,
       "status": "available",
-      "source": "openai-docs"
+      "source": "openai-models-docs"
     },
     {
       "id": "gpt-5.4-nano",
@@ -43,7 +91,7 @@
       "contextWindow": 400000,
       "maxTokens": 128000,
       "status": "available",
-      "source": "openai-docs"
+      "source": "openai-models-docs"
     }
   ],
   "agentGateways": [
@@ -58,7 +106,7 @@
       "contextWindow": 1000000,
       "maxTokens": 128000,
       "effortLevel": "xhigh",
-      "source": "openai-docs"
+      "source": "openai-models-docs"
     },
     {
       "id": "openai-codex-gpt-5.4",
@@ -71,7 +119,7 @@
       "contextWindow": 1000000,
       "maxTokens": 128000,
       "effortLevel": "high",
-      "source": "openai-docs"
+      "source": "openai-models-docs"
     },
     {
       "id": "openai-codex-gpt-5.4-mini",
@@ -84,7 +132,7 @@
       "contextWindow": 400000,
       "maxTokens": 128000,
       "effortLevel": "high",
-      "source": "openai-docs"
+      "source": "openai-models-docs"
     },
     {
       "id": "openai-copilot-gpt-5.5",
@@ -97,7 +145,7 @@
       "contextWindow": 1000000,
       "maxTokens": 128000,
       "effortLevel": "xhigh",
-      "source": "openai-docs"
+      "source": "openai-models-docs"
     },
     {
       "id": "openai-copilot-gpt-5.4",
@@ -110,7 +158,7 @@
       "contextWindow": 1000000,
       "maxTokens": 128000,
       "effortLevel": "high",
-      "source": "openai-docs"
+      "source": "openai-models-docs"
     },
     {
       "id": "openai-copilot-gpt-5.4-mini",
@@ -123,7 +171,7 @@
       "contextWindow": 400000,
       "maxTokens": 128000,
       "effortLevel": "high",
-      "source": "openai-docs"
+      "source": "openai-models-docs"
     }
   ]
 }

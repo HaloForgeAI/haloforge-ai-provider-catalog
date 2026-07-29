@@ -11,6 +11,16 @@
       "notes": "Paged machine-readable reference for context windows, pricing metadata, capabilities, and deprecation dates."
     },
     {
+      "id": "models-dev-provider-catalog",
+      "name": "models.dev provider offering catalog",
+      "kind": "community",
+      "url": "https://models.dev/api.json",
+      "parser": "models-dev-provider-catalog",
+      "required": true,
+      "minimumModels": 100,
+      "notes": "Open-source candidate discovery source organized by serving provider. Changes require review and do not by themselves prove first-party lifecycle."
+    },
+    {
       "id": "openrouter-models",
       "name": "OpenRouter models API",
       "kind": "aggregator",
@@ -184,6 +194,13 @@
       "notes": "Official model names, context windows, output limits, and release guidance."
     },
     {
+      "id": "azure-openai-api-docs",
+      "name": "Azure OpenAI v1 API documentation",
+      "kind": "official",
+      "url": "https://learn.microsoft.com/azure/ai-foundry/openai/latest",
+      "notes": "Official Azure OpenAI endpoint, authentication, deployment, and v1 API compatibility guidance."
+    },
+    {
       "id": "anthropic-models-docs",
       "name": "Anthropic model documentation",
       "kind": "official",
@@ -233,6 +250,27 @@
       "notes": "Official Gemini model lifecycle and model metadata docs."
     },
     {
+      "id": "gemini-latest-models-docs",
+      "name": "Google latest Gemini models guide",
+      "kind": "official",
+      "url": "https://ai.google.dev/gemini-api/docs/generate-content/latest-model",
+      "notes": "Official production guidance for the latest Gemini model ids and availability."
+    },
+    {
+      "id": "google-gemini-changelog",
+      "name": "Google Gemini API changelog",
+      "kind": "official",
+      "url": "https://ai.google.dev/gemini-api/docs/changelog",
+      "notes": "Official Gemini API model launch, update, and lifecycle notices."
+    },
+    {
+      "id": "qwen-models-docs",
+      "name": "Alibaba Cloud Model Studio model catalog",
+      "kind": "official",
+      "url": "https://www.alibabacloud.com/help/en/model-studio/models",
+      "notes": "Official Qwen model ids, regional availability, endpoint compatibility, and current recommendations."
+    },
+    {
       "id": "qwen-dashscope-openai-compat-docs",
       "name": "Alibaba Cloud Model Studio OpenAI compatibility docs",
       "kind": "official",
@@ -247,11 +285,53 @@
       "notes": "Official MiniMax OpenAI-compatible endpoint, model ids, context windows, and thinking controls."
     },
     {
+      "id": "minimax-models-docs",
+      "name": "MiniMax model documentation",
+      "kind": "official",
+      "url": "https://platform.minimax.io/docs/guides/models-intro",
+      "notes": "Official MiniMax model ids, capabilities, and token limits."
+    },
+    {
       "id": "moonshot-openai-compat-docs",
       "name": "Moonshot/Kimi OpenAI compatibility docs",
       "kind": "official",
       "url": "https://platform.kimi.ai/docs/guide/migrating-from-openai-to-kimi",
       "notes": "Official Moonshot/Kimi OpenAI-compatible endpoint and request behavior."
+    },
+    {
+      "id": "moonshot-kimi-k3-docs",
+      "name": "Moonshot Kimi K3 documentation",
+      "kind": "official",
+      "url": "https://platform.kimi.ai/docs/pricing/chat-k3",
+      "notes": "Official Kimi K3 serving and pricing documentation."
+    },
+    {
+      "id": "moonshot-kimi-k2-model-card",
+      "name": "Moonshot Kimi K2 model card",
+      "kind": "official",
+      "url": "https://huggingface.co/moonshotai/Kimi-K2.7-Code",
+      "notes": "Official Moonshot model card for Kimi K2.7 Code and its capabilities."
+    },
+    {
+      "id": "mistral-models-docs",
+      "name": "Mistral model documentation",
+      "kind": "official",
+      "url": "https://docs.mistral.ai/getting-started/models/models_overview/",
+      "notes": "Official Mistral model ids, aliases, capabilities, context windows, and lifecycle guidance."
+    },
+    {
+      "id": "xai-models-docs",
+      "name": "xAI model documentation",
+      "kind": "official",
+      "url": "https://docs.x.ai/developers/models",
+      "notes": "Official xAI model ids, aliases, capabilities, context windows, and availability."
+    },
+    {
+      "id": "perplexity-models-docs",
+      "name": "Perplexity Sonar model documentation",
+      "kind": "official",
+      "url": "https://docs.perplexity.ai/docs/sonar/models",
+      "notes": "Official Perplexity Sonar model ids, use cases, capabilities, and availability."
     },
     {
       "id": "cloudflare-workers-ai-glm-5-2",

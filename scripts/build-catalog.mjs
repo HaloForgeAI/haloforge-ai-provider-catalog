@@ -5,6 +5,7 @@ import { fileURLToPath } from "node:url";
 const repoRoot = new URL("../", import.meta.url);
 const providersRoot = new URL("providers/", repoRoot);
 const manifestPath = new URL("catalog/manifest.json", repoRoot);
+const upstreamsPath = new URL("sources/upstreams.json", repoRoot);
 const outputPath = new URL("catalog/model-provider-catalog.json", repoRoot);
 const checkOnly = process.argv.includes("--check");
 const gatewayTargets = new Set(["claude_code", "codex", "opencode", "copilot", "qwen_code"]);
@@ -29,6 +30,11 @@ const forbiddenSecretKeys = new Set([
 
 async function main() {
   const manifest = await readJson(manifestPath);
+  const upstreamConfig = await readJson(upstreamsPath);
+  const sourceIds = new Set([
+    ...(upstreamConfig.machineSources ?? []),
+    ...(upstreamConfig.documentationSources ?? []),
+  ].map((source) => source.id));
   const providerFiles = await listJsonFiles(providersRoot);
   if (providerFiles.length === 0) {
     throw new Error("No provider fragments found under providers/.");
@@ -43,7 +49,7 @@ async function main() {
   const providerIds = new Set();
   for (const file of providerFiles.sort((a, b) => pathLabel(a).localeCompare(pathLabel(b)))) {
     const provider = await readJson(file);
-    validateProvider(provider, file, providerIds);
+    validateProvider(provider, file, providerIds, sourceIds);
     providers.push(provider);
   }
   providers.sort((left, right) => {
@@ -97,8 +103,9 @@ async function readJson(url) {
   }
 }
 
-function validateProvider(provider, file, providerIds) {
+function validateProvider(provider, file, providerIds, sourceIds) {
   const label = pathLabel(file);
+  const allowsLocalSource = provider.category === "custom" || provider.category === "local";
   if (!provider || typeof provider !== "object" || Array.isArray(provider)) {
     throw new Error(`${label} must contain one provider object.`);
   }
@@ -127,6 +134,7 @@ function validateProvider(provider, file, providerIds) {
     }
     modelIds.add(model.id);
     validateLifecycleFields(model, `${label} models[${index}]`);
+    validateSourceReference(model, `${label} models[${index}]`, sourceIds, allowsLocalSource);
   }
   if (!Array.isArray(provider.agentGateways)) {
     throw new Error(`${label} must define agentGateways[].`);
@@ -146,8 +154,19 @@ function validateProvider(provider, file, providerIds) {
       gatewayIds.add(gateway.id);
     }
     validateLifecycleFields(gateway, `${label} agentGateways[${index}]`);
+    validateSourceReference(gateway, `${label} agentGateways[${index}]`, sourceIds, allowsLocalSource);
   }
   assertNoEmbeddedSecrets(provider, label);
+}
+
+function validateSourceReference(value, label, sourceIds, allowsMissing) {
+  if (!nonEmpty(value.source)) {
+    if (allowsMissing) return;
+    throw new Error(`${label} is missing a registered source.`);
+  }
+  if (!sourceIds.has(value.source)) {
+    throw new Error(`${label} references unknown source: ${value.source}`);
+  }
 }
 
 function validateLifecycleFields(value, label) {

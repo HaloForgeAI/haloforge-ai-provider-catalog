@@ -2,7 +2,7 @@
   "id": "deepseek",
   "name": "DeepSeek",
   "description": "DeepSeek OpenAI-compatible chat plus Anthropic-compatible Agent gateway.",
-  "category": "third_party",
+  "category": "official",
   "iconProvider": "deepseek",
   "modelOwner": "deepseek",
   "modelOwnerLabel": "DeepSeek",
@@ -19,7 +19,7 @@
       "contextWindow": 1000000,
       "maxTokens": 384000,
       "status": "available",
-      "source": "deepseek-docs"
+      "source": "deepseek-pricing-docs"
     },
     {
       "id": "deepseek-v4-pro",
@@ -27,7 +27,7 @@
       "contextWindow": 1000000,
       "maxTokens": 384000,
       "status": "available",
-      "source": "deepseek-docs"
+      "source": "deepseek-pricing-docs"
     },
     {
       "id": "deepseek-chat",
@@ -38,7 +38,7 @@
       "shutdownDate": "2026-07-24T15:59:00Z",
       "fallbackModelId": "deepseek-v4-flash",
       "disabledByDefault": true,
-      "source": "deepseek-docs"
+      "source": "deepseek-pricing-docs"
     },
     {
       "id": "deepseek-reasoner",
@@ -49,7 +49,7 @@
       "shutdownDate": "2026-07-24T15:59:00Z",
       "fallbackModelId": "deepseek-v4-pro",
       "disabledByDefault": true,
-      "source": "deepseek-docs"
+      "source": "deepseek-pricing-docs"
     }
   ],
   "agentGateways": [
@@ -71,7 +71,7 @@
         "opus": "deepseek-v4-pro",
         "subagent": "deepseek-v4-flash"
       },
-      "source": "deepseek-docs"
+      "source": "deepseek-pricing-docs"
     },
     {
       "id": "deepseek-claude-code-v4-flash",
@@ -91,7 +91,7 @@
         "opus": "deepseek-v4-pro",
         "subagent": "deepseek-v4-flash"
       },
-      "source": "deepseek-docs"
+      "source": "deepseek-pricing-docs"
     },
     {
       "id": "deepseek-opencode-v4-pro",
@@ -105,7 +105,7 @@
       "maxTokens": 384000,
       "temperature": 0.2,
       "effortLevel": "high",
-      "source": "deepseek-docs"
+      "source": "deepseek-pricing-docs"
     },
     {
       "id": "deepseek-opencode-v4-flash",
@@ -119,7 +119,7 @@
       "maxTokens": 384000,
       "temperature": 0.2,
       "effortLevel": "medium",
-      "source": "deepseek-docs"
+      "source": "deepseek-pricing-docs"
     },
     {
       "id": "deepseek-qwen-code-v4-pro",
@@ -133,7 +133,7 @@
       "maxTokens": 384000,
       "temperature": 0.2,
       "effortLevel": "high",
-      "source": "deepseek-docs"
+      "source": "deepseek-pricing-docs"
     },
     {
       "id": "deepseek-qwen-code-v4-flash",
@@ -147,7 +147,7 @@
       "maxTokens": 384000,
       "temperature": 0.2,
       "effortLevel": "medium",
-      "source": "deepseek-docs"
+      "source": "deepseek-pricing-docs"
     },
     {
       "id": "deepseek-copilot-v4-pro",
@@ -161,7 +161,7 @@
       "maxTokens": 384000,
       "temperature": 0.2,
       "effortLevel": "high",
-      "source": "deepseek-docs"
+      "source": "deepseek-pricing-docs"
     },
     {
       "id": "deepseek-copilot-v4-flash",
@@ -175,7 +175,7 @@
       "maxTokens": 384000,
       "temperature": 0.2,
       "effortLevel": "medium",
-      "source": "deepseek-docs"
+      "source": "deepseek-pricing-docs"
     },
     {
       "id": "deepseek-codex-v4-pro",
@@ -189,7 +189,7 @@
       "maxTokens": 384000,
       "temperature": 0.2,
       "effortLevel": "high",
-      "source": "deepseek-docs"
+      "source": "deepseek-pricing-docs"
     }
   ]
 }

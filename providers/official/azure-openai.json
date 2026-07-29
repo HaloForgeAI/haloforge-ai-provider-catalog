@@ -19,7 +19,7 @@
       "contextWindow": 1000000,
       "maxTokens": 128000,
       "status": "available",
-      "source": "openai-docs"
+      "source": "openai-models-docs"
     },
     {
       "id": "gpt-5.4",
@@ -27,7 +27,7 @@
       "contextWindow": 1000000,
       "maxTokens": 128000,
       "status": "available",
-      "source": "openai-docs"
+      "source": "openai-models-docs"
     },
     {
       "id": "gpt-4o-2024-08-06",
@@ -52,7 +52,8 @@
       "modelId": "gpt-5.5",
       "contextWindow": 1000000,
       "maxTokens": 128000,
-      "effortLevel": "xhigh"
+      "effortLevel": "xhigh",
+      "source": "azure-openai-api-docs"
     },
     {
       "id": "azure-opencode-gpt-5-4",
@@ -64,7 +65,8 @@
       "modelId": "gpt-5.4",
       "contextWindow": 1000000,
       "maxTokens": 128000,
-      "effortLevel": "high"
+      "effortLevel": "high",
+      "source": "azure-openai-api-docs"
     }
   ]
 }

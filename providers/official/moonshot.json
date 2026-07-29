@@ -2,7 +2,7 @@
   "id": "moonshot",
   "name": "Moonshot AI / Kimi",
   "description": "Moonshot Kimi OpenAI-compatible and Anthropic-compatible API.",
-  "category": "third_party",
+  "category": "official",
   "iconProvider": "kimi",
   "modelOwner": "moonshot",
   "modelOwnerLabel": "Moonshot AI",
@@ -13,6 +13,30 @@
   "authType": "bearer",
   "modelsListPath": "/models",
   "models": [
+    {
+      "id": "kimi-k3",
+      "displayName": "Kimi K3",
+      "contextWindow": 1048576,
+      "maxTokens": 131072,
+      "status": "available",
+      "source": "moonshot-kimi-k3-docs"
+    },
+    {
+      "id": "kimi-k2.7-code-highspeed",
+      "displayName": "Kimi K2.7 Code Highspeed",
+      "contextWindow": 262144,
+      "maxTokens": 262144,
+      "status": "available",
+      "source": "moonshot-kimi-k2-model-card"
+    },
+    {
+      "id": "kimi-k2.7-code",
+      "displayName": "Kimi K2.7 Code",
+      "contextWindow": 262144,
+      "maxTokens": 262144,
+      "status": "available",
+      "source": "moonshot-kimi-k2-model-card"
+    },
     {
       "id": "kimi-k2.6",
       "displayName": "Kimi K2.6",
@@ -59,7 +83,7 @@
         "opus": "kimi-k2.6",
         "subagent": "kimi-k2.5"
       },
-      "source": "moonshot-kimi-k2"
+      "source": "moonshot-kimi-k2-model-card"
     },
     {
       "id": "moonshot-opencode-kimi-k2-6",

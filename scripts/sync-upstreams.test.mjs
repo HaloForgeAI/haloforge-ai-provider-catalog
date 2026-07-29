@@ -7,7 +7,9 @@ import {
   matchesDiscoveryPolicy,
   normalizeAnthropicModel,
   normalizeGoogleModel,
+  normalizeModelsDevProviderModel,
   normalizeOpenAiCompatibleModel,
+  upsertAgentGateways,
   upsertModels,
 } from "./sync-upstreams.mjs";
 
@@ -72,6 +74,19 @@ test("managed fields keep existing reviewed values when an optional source is un
     contextWindow: 400_000,
     source: "openai-models-docs",
   });
+});
+
+test("providers without gateway sync specs keep their reviewed gateway order", () => {
+  const provider = {
+    agentGateways: [
+      { id: "z-last", modelId: "model-z" },
+      { id: "a-first", modelId: "model-a" },
+    ],
+  };
+
+  upsertAgentGateways(provider, []);
+
+  assert.deepEqual(provider.agentGateways.map((gateway) => gateway.id), ["z-last", "a-first"]);
 });
 
 test("discovery policy excludes non-interactive variants", () => {
@@ -187,6 +202,46 @@ test("official identity and aggregator capacity metadata merge field by field", 
   });
 });
 
+test("aggregator metadata fills gaps without replacing reviewed provider values", () => {
+  const provider = {
+    models: [{
+      id: "model-a",
+      displayName: "Reviewed",
+      contextWindow: 100,
+      source: "official-docs",
+    }],
+  };
+  const sourceIndexes = new Map([
+    ["aggregator", new Map([["vendor/model-a", {
+      id: "vendor/model-a",
+      displayName: "Aggregator name",
+      contextWindow: 200,
+      maxTokens: 20,
+      lifecycle: {
+        status: "shutdown",
+        shutdownDate: "2026-12-31",
+        disabledByDefault: true,
+      },
+      source: "aggregator",
+    }]])],
+  ]);
+
+  upsertModels(provider, [{
+    ...provider.models[0],
+    upstreamRefs: ["aggregator:vendor/model-a"],
+  }], sourceIndexes, {
+    fillMissingFields: ["contextWindow", "maxTokens"],
+  });
+
+  assert.deepEqual(provider.models[0], {
+    id: "model-a",
+    displayName: "Reviewed",
+    contextWindow: 100,
+    maxTokens: 20,
+    source: "official-docs",
+  });
+});
+
 test("Anthropic model metadata maps into the shared catalog shape", () => {
   assert.deepEqual(normalizeAnthropicModel("anthropic-models-api", {
     id: "claude-sonnet-5",
@@ -256,4 +311,33 @@ test("Google model metadata maps token limits and excludes embedding-only entrie
     name: "models/text-embedding-next",
     supportedGenerationMethods: ["embedContent"],
   }), null);
+});
+
+test("models.dev provider offerings map limits and current availability", () => {
+  assert.deepEqual(normalizeModelsDevProviderModel("models-dev-provider-catalog", "moonshotai", "kimi-k3", {
+    name: "Kimi K3",
+    description: "Moonshot Kimi K3",
+    release_date: "2026-07-16",
+    limit: { context: 1_048_576, output: 131_072 },
+  }), {
+    id: "moonshotai/kimi-k3",
+    displayName: "Kimi K3",
+    description: "Moonshot Kimi K3",
+    contextWindow: 1_048_576,
+    maxTokens: 131_072,
+    releaseDate: "2026-07-16",
+    lifecycle: { status: "available" },
+    source: "models-dev-provider-catalog",
+  });
+});
+
+test("models.dev provider offerings retain preview lifecycle for review", () => {
+  assert.deepEqual(
+    normalizeModelsDevProviderModel("models-dev-provider-catalog", "alibaba", "qwen4-preview", {
+      name: "Qwen 4 Preview",
+      release_date: "2026-08-01",
+      limit: { context: 1_000_000, output: 128_000 },
+    })?.lifecycle,
+    { status: "preview" },
+  );
 });

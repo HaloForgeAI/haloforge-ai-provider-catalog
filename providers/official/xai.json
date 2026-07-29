@@ -2,7 +2,7 @@
   "id": "xai",
   "name": "xAI",
   "description": "xAI OpenAI-compatible API for Grok models.",
-  "category": "third_party",
+  "category": "official",
   "iconProvider": "xai",
   "modelOwner": "xai",
   "modelOwnerLabel": "xAI",
@@ -13,6 +13,54 @@
   "authType": "bearer",
   "modelsListPath": "/models",
   "models": [
+    {
+      "id": "grok-4.5",
+      "displayName": "Grok 4.5",
+      "contextWindow": 500000,
+      "maxTokens": 500000,
+      "source": "xai-models-docs",
+      "status": "available"
+    },
+    {
+      "id": "grok-4.3",
+      "displayName": "Grok 4.3",
+      "contextWindow": 1000000,
+      "maxTokens": 30000,
+      "source": "xai-models-docs",
+      "status": "available"
+    },
+    {
+      "id": "grok-build-0.1",
+      "displayName": "Grok Build 0.1",
+      "contextWindow": 256000,
+      "maxTokens": 256000,
+      "source": "xai-models-docs",
+      "status": "available"
+    },
+    {
+      "id": "grok-4.20-0309-reasoning",
+      "displayName": "Grok 4.20 (Reasoning)",
+      "contextWindow": 1000000,
+      "maxTokens": 30000,
+      "source": "xai-models-docs",
+      "status": "available"
+    },
+    {
+      "id": "grok-4.20-0309-non-reasoning",
+      "displayName": "Grok 4.20 (Non-Reasoning)",
+      "contextWindow": 1000000,
+      "maxTokens": 30000,
+      "source": "xai-models-docs",
+      "status": "available"
+    },
+    {
+      "id": "grok-4.20-multi-agent-0309",
+      "displayName": "Grok 4.20 Multi-Agent",
+      "contextWindow": 1000000,
+      "maxTokens": 30000,
+      "source": "xai-models-docs",
+      "status": "preview"
+    },
     {
       "id": "grok-code-fast-1",
       "displayName": "Grok Code Fast 1",

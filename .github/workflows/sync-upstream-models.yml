@@ -3,7 +3,7 @@ name: Sync upstream model catalog
 on:
   workflow_dispatch:
   schedule:
-    - cron: "17 */12 * * *"
+    - cron: "17 */6 * * *"
 
 permissions:
   contents: write
@@ -92,7 +92,7 @@ jobs:
 
           Risk classification: ${SYNC_RISK_SUMMARY}
 
-          Safe additions and upstream-owned metadata refreshes are eligible for auto-merge. Provider metadata, Agent gateway, lifecycle, removal, restricted/preview, and fallback changes require human review."
+          Only verified metadata refreshes to existing models are eligible for auto-merge. Every new model, provider metadata change, Agent gateway, lifecycle, removal, restricted/preview, and fallback change requires human review."
           if [ -n "$pr_number" ]; then
             echo "A sync pull request already exists for $BRANCH_NAME."
             gh pr edit "$pr_number" --body "$pr_body"

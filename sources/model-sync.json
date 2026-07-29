@@ -148,14 +148,17 @@
     },
     {
       "id": "openai",
-      "managedFields": [
+      "fillMissingFields": [
         "contextWindow",
-        "maxTokens",
-        "status"
+        "maxTokens"
       ],
       "upstreamModelRefs": [
         {
           "source": "openai-models-api"
+        },
+        {
+          "source": "models-dev-provider-catalog",
+          "prefix": "openai/"
         },
         {
           "source": "vercel-ai-gateway-models",
@@ -168,8 +171,10 @@
       ],
       "discovery": {
         "sources": [
-          "openai-models-api"
+          "openai-models-api",
+          "models-dev-provider-catalog"
         ],
+        "minimumReleaseDate": "2026-01-01",
         "includePatterns": [
           "^gpt-[0-9]+(?:\\.[0-9]+)*(?:-(?:mini|nano|pro|sol|terra|luna)(?:-pro)?)?$"
         ],
@@ -179,35 +184,117 @@
         ],
         "maxPerGroup": 20
       },
-      "models": [],
+      "models": [
+        {
+          "id": "gpt-5.6-terra",
+          "displayName": "GPT-5.6 Terra",
+          "upstreamRefs": [
+            "models-dev-provider-catalog:openai/gpt-5.6-terra",
+            "openai-models-api:gpt-5.6-terra",
+            "vercel-ai-gateway-models:openai/gpt-5.6-terra",
+            "openrouter-models:openai/gpt-5.6-terra"
+          ],
+          "contextWindow": 1050000,
+          "maxTokens": 128000,
+          "status": "available",
+          "source": "openai-models-docs"
+        },
+        {
+          "id": "gpt-5.6-sol",
+          "displayName": "GPT-5.6 Sol",
+          "upstreamRefs": [
+            "models-dev-provider-catalog:openai/gpt-5.6-sol",
+            "openai-models-api:gpt-5.6-sol",
+            "vercel-ai-gateway-models:openai/gpt-5.6-sol",
+            "openrouter-models:openai/gpt-5.6-sol"
+          ],
+          "contextWindow": 1050000,
+          "maxTokens": 128000,
+          "status": "available",
+          "source": "openai-models-docs"
+        },
+        {
+          "id": "gpt-5.6-luna",
+          "displayName": "GPT-5.6 Luna",
+          "upstreamRefs": [
+            "models-dev-provider-catalog:openai/gpt-5.6-luna",
+            "openai-models-api:gpt-5.6-luna",
+            "vercel-ai-gateway-models:openai/gpt-5.6-luna",
+            "openrouter-models:openai/gpt-5.6-luna"
+          ],
+          "contextWindow": 1050000,
+          "maxTokens": 128000,
+          "status": "available",
+          "source": "openai-models-docs"
+        },
+        {
+          "id": "gpt-5.5-pro",
+          "displayName": "GPT-5.5 Pro",
+          "upstreamRefs": [
+            "models-dev-provider-catalog:openai/gpt-5.5-pro",
+            "openai-models-api:gpt-5.5-pro",
+            "vercel-ai-gateway-models:openai/gpt-5.5-pro",
+            "openrouter-models:openai/gpt-5.5-pro"
+          ],
+          "contextWindow": 1050000,
+          "maxTokens": 128000,
+          "source": "openai-models-docs",
+          "status": "available"
+        },
+        {
+          "id": "gpt-5.4-pro",
+          "displayName": "GPT-5.4 Pro",
+          "upstreamRefs": [
+            "models-dev-provider-catalog:openai/gpt-5.4-pro",
+            "openai-models-api:gpt-5.4-pro",
+            "vercel-ai-gateway-models:openai/gpt-5.4-pro",
+            "openrouter-models:openai/gpt-5.4-pro"
+          ],
+          "contextWindow": 1050000,
+          "maxTokens": 128000,
+          "source": "openai-models-docs",
+          "status": "available"
+        },
+        {
+          "id": "gpt-5.6",
+          "displayName": "GPT-5.6",
+          "upstreamRefs": [
+            "models-dev-provider-catalog:openai/gpt-5.6",
+            "openai-models-api:gpt-5.6",
+            "vercel-ai-gateway-models:openai/gpt-5.6",
+            "openrouter-models:openai/gpt-5.6"
+          ],
+          "contextWindow": 1050000,
+          "maxTokens": 128000,
+          "source": "openai-models-docs",
+          "status": "available"
+        }
+      ],
       "agentGateways": []
     },
     {
       "id": "google-ai",
       "managedFields": [
         "displayName",
-        "description",
         "contextWindow",
-        "maxTokens",
-        "status"
+        "maxTokens"
       ],
+      "fillMissingFields": [],
       "upstreamModelRefs": [
         {
           "source": "google-models-api"
         },
         {
-          "source": "vercel-ai-gateway-models",
-          "prefix": "google/"
-        },
-        {
-          "source": "openrouter-models",
+          "source": "models-dev-provider-catalog",
           "prefix": "google/"
         }
       ],
       "discovery": {
         "sources": [
-          "google-models-api"
+          "google-models-api",
+          "models-dev-provider-catalog"
         ],
+        "minimumReleaseDate": "2026-01-01",
         "includePatterns": [
           "^gemini-[0-9]+(?:\\.[0-9]+)?-(?:pro|flash)(?:-lite)?(?:-preview)?$"
         ],
@@ -216,19 +303,82 @@
         ],
         "maxPerGroup": 20
       },
-      "models": [],
+      "models": [
+        {
+          "id": "gemini-3.6-flash",
+          "displayName": "Gemini 3.6 Flash",
+          "upstreamRefs": [
+            "models-dev-provider-catalog:google/gemini-3.6-flash",
+            "google-models-api:gemini-3.6-flash"
+          ],
+          "contextWindow": 1048576,
+          "maxTokens": 65536,
+          "source": "gemini-latest-models-docs",
+          "status": "available"
+        },
+        {
+          "id": "gemini-3.5-flash-lite",
+          "displayName": "Gemini 3.5 Flash Lite",
+          "upstreamRefs": [
+            "models-dev-provider-catalog:google/gemini-3.5-flash-lite",
+            "google-models-api:gemini-3.5-flash-lite"
+          ],
+          "contextWindow": 1048576,
+          "maxTokens": 65536,
+          "source": "gemini-latest-models-docs",
+          "status": "available"
+        },
+        {
+          "id": "gemini-3.1-flash-lite",
+          "displayName": "Gemini 3.1 Flash Lite",
+          "upstreamRefs": [
+            "models-dev-provider-catalog:google/gemini-3.1-flash-lite",
+            "google-models-api:gemini-3.1-flash-lite"
+          ],
+          "contextWindow": 1048576,
+          "maxTokens": 65536,
+          "source": "gemini-models-docs",
+          "status": "available"
+        },
+        {
+          "id": "gemini-3.1-flash-lite-preview",
+          "displayName": "Gemini 3.1 Flash Lite Preview",
+          "upstreamRefs": [
+            "models-dev-provider-catalog:google/gemini-3.1-flash-lite-preview",
+            "google-models-api:gemini-3.1-flash-lite-preview"
+          ],
+          "contextWindow": 1048576,
+          "maxTokens": 65536,
+          "source": "models-dev-provider-catalog"
+        },
+        {
+          "id": "gemini-3.1-pro-preview",
+          "displayName": "Gemini 3.1 Pro Preview",
+          "upstreamRefs": [
+            "models-dev-provider-catalog:google/gemini-3.1-pro-preview",
+            "google-models-api:gemini-3.1-pro-preview"
+          ],
+          "contextWindow": 1048576,
+          "maxTokens": 65536,
+          "source": "gemini-models-docs",
+          "status": "preview"
+        }
+      ],
       "agentGateways": []
     },
     {
       "id": "minimax",
-      "managedFields": [
+      "fillMissingFields": [
         "contextWindow",
-        "maxTokens",
-        "status"
+        "maxTokens"
       ],
       "upstreamModelRefs": [
         {
           "source": "minimax-models-api"
+        },
+        {
+          "source": "models-dev-provider-catalog",
+          "prefix": "minimax/"
         },
         {
           "source": "vercel-ai-gateway-models",
@@ -243,8 +393,10 @@
       ],
       "discovery": {
         "sources": [
-          "minimax-models-api"
+          "minimax-models-api",
+          "models-dev-provider-catalog"
         ],
+        "minimumReleaseDate": "2026-01-01",
         "includePatterns": [
           "^MiniMax-M[0-9]+(?:\\.[0-9]+)?(?:-highspeed)?$"
         ],
@@ -254,19 +406,37 @@
         ],
         "maxPerGroup": 20
       },
-      "models": [],
+      "models": [
+        {
+          "id": "MiniMax-M2.5-highspeed",
+          "displayName": "MiniMax-M2.5-highspeed",
+          "upstreamRefs": [
+            "models-dev-provider-catalog:minimax/MiniMax-M2.5-highspeed",
+            "minimax-models-api:MiniMax-M2.5-highspeed",
+            "vercel-ai-gateway-models:minimax/minimax-m2.5-highspeed",
+            "openrouter-models:minimax/minimax-m2.5-highspeed"
+          ],
+          "contextWindow": 204800,
+          "maxTokens": 131072,
+          "source": "minimax-models-docs",
+          "status": "available"
+        }
+      ],
       "agentGateways": []
     },
     {
       "id": "moonshot",
-      "managedFields": [
+      "fillMissingFields": [
         "contextWindow",
-        "maxTokens",
-        "status"
+        "maxTokens"
       ],
       "upstreamModelRefs": [
         {
           "source": "moonshot-models-api"
+        },
+        {
+          "source": "models-dev-provider-catalog",
+          "prefix": "moonshotai/"
         },
         {
           "source": "vercel-ai-gateway-models",
@@ -279,8 +449,10 @@
       ],
       "discovery": {
         "sources": [
-          "moonshot-models-api"
+          "moonshot-models-api",
+          "models-dev-provider-catalog"
         ],
+        "minimumReleaseDate": "2026-01-01",
         "includePatterns": [
           "^kimi-k[0-9]+(?:\\.[0-9]+)?(?:-[a-z0-9.-]+)?$"
         ],
@@ -289,19 +461,65 @@
         ],
         "maxPerGroup": 20
       },
-      "models": [],
+      "models": [
+        {
+          "id": "kimi-k3",
+          "displayName": "Kimi K3",
+          "upstreamRefs": [
+            "models-dev-provider-catalog:moonshotai/kimi-k3",
+            "moonshot-models-api:kimi-k3",
+            "vercel-ai-gateway-models:moonshotai/kimi-k3",
+            "openrouter-models:moonshotai/kimi-k3"
+          ],
+          "contextWindow": 1048576,
+          "maxTokens": 131072,
+          "status": "available",
+          "source": "moonshot-kimi-k3-docs"
+        },
+        {
+          "id": "kimi-k2.7-code-highspeed",
+          "displayName": "Kimi K2.7 Code Highspeed",
+          "upstreamRefs": [
+            "models-dev-provider-catalog:moonshotai/kimi-k2.7-code-highspeed",
+            "moonshot-models-api:kimi-k2.7-code-highspeed",
+            "vercel-ai-gateway-models:moonshotai/kimi-k2.7-code-highspeed",
+            "openrouter-models:moonshotai/kimi-k2.7-code-highspeed"
+          ],
+          "contextWindow": 262144,
+          "maxTokens": 262144,
+          "status": "available",
+          "source": "moonshot-kimi-k2-model-card"
+        },
+        {
+          "id": "kimi-k2.7-code",
+          "displayName": "Kimi K2.7 Code",
+          "upstreamRefs": [
+            "models-dev-provider-catalog:moonshotai/kimi-k2.7-code",
+            "moonshot-models-api:kimi-k2.7-code",
+            "vercel-ai-gateway-models:moonshotai/kimi-k2.7-code",
+            "openrouter-models:moonshotai/kimi-k2.7-code"
+          ],
+          "contextWindow": 262144,
+          "maxTokens": 262144,
+          "status": "available",
+          "source": "moonshot-kimi-k2-model-card"
+        }
+      ],
       "agentGateways": []
     },
     {
       "id": "deepseek",
-      "managedFields": [
+      "fillMissingFields": [
         "contextWindow",
-        "maxTokens",
-        "status"
+        "maxTokens"
       ],
       "upstreamModelRefs": [
         {
           "source": "deepseek-models-api"
+        },
+        {
+          "source": "models-dev-provider-catalog",
+          "prefix": "deepseek/"
         },
         {
           "source": "vercel-ai-gateway-models",
@@ -314,8 +532,10 @@
       ],
       "discovery": {
         "sources": [
-          "deepseek-models-api"
+          "deepseek-models-api",
+          "models-dev-provider-catalog"
         ],
+        "minimumReleaseDate": "2026-01-01",
         "includePatterns": [
           "^deepseek-[a-z0-9.-]+$"
         ],
@@ -329,14 +549,17 @@
     },
     {
       "id": "qwen",
-      "managedFields": [
+      "fillMissingFields": [
         "contextWindow",
-        "maxTokens",
-        "status"
+        "maxTokens"
       ],
       "upstreamModelRefs": [
         {
           "source": "qwen-models-api"
+        },
+        {
+          "source": "models-dev-provider-catalog",
+          "prefix": "alibaba/"
         },
         {
           "source": "vercel-ai-gateway-models",
@@ -349,8 +572,10 @@
       ],
       "discovery": {
         "sources": [
-          "qwen-models-api"
+          "qwen-models-api",
+          "models-dev-provider-catalog"
         ],
+        "minimumReleaseDate": "2026-01-01",
         "includePatterns": [
           "^qwen(?:[0-9]+(?:\\.[0-9]+)?|-[a-z])[a-z0-9.-]*$"
         ],
@@ -360,19 +585,205 @@
         ],
         "maxPerGroup": 20
       },
-      "models": [],
+      "models": [
+        {
+          "id": "qwen3.8-max-preview",
+          "displayName": "Qwen3.8 Max Preview",
+          "upstreamRefs": [
+            "models-dev-provider-catalog:alibaba/qwen3.8-max-preview",
+            "qwen-models-api:qwen3.8-max-preview",
+            "vercel-ai-gateway-models:alibaba/qwen3.8-max-preview",
+            "openrouter-models:qwen/qwen3.8-max-preview"
+          ],
+          "contextWindow": 1000000,
+          "maxTokens": 131072,
+          "status": "preview",
+          "source": "models-dev-provider-catalog"
+        },
+        {
+          "id": "qwen3.7-plus",
+          "displayName": "Qwen3.7 Plus",
+          "upstreamRefs": [
+            "models-dev-provider-catalog:alibaba/qwen3.7-plus",
+            "qwen-models-api:qwen3.7-plus",
+            "vercel-ai-gateway-models:alibaba/qwen3.7-plus",
+            "openrouter-models:qwen/qwen3.7-plus"
+          ],
+          "contextWindow": 1000000,
+          "maxTokens": 64000,
+          "status": "available",
+          "source": "qwen-models-docs"
+        },
+        {
+          "id": "qwen3.7-max",
+          "displayName": "Qwen3.7 Max",
+          "upstreamRefs": [
+            "models-dev-provider-catalog:alibaba/qwen3.7-max",
+            "qwen-models-api:qwen3.7-max",
+            "vercel-ai-gateway-models:alibaba/qwen3.7-max",
+            "openrouter-models:qwen/qwen3.7-max"
+          ],
+          "contextWindow": 1000000,
+          "maxTokens": 65536,
+          "status": "available",
+          "source": "qwen-models-docs"
+        },
+        {
+          "id": "qwen3.6-flash",
+          "displayName": "Qwen3.6 Flash",
+          "upstreamRefs": [
+            "models-dev-provider-catalog:alibaba/qwen3.6-flash",
+            "qwen-models-api:qwen3.6-flash",
+            "vercel-ai-gateway-models:alibaba/qwen3.6-flash",
+            "openrouter-models:qwen/qwen3.6-flash"
+          ],
+          "contextWindow": 1000000,
+          "maxTokens": 65536,
+          "source": "qwen-models-docs",
+          "status": "available"
+        },
+        {
+          "id": "qwen3.6-27b",
+          "displayName": "Qwen3.6 27B",
+          "upstreamRefs": [
+            "models-dev-provider-catalog:alibaba/qwen3.6-27b",
+            "qwen-models-api:qwen3.6-27b",
+            "vercel-ai-gateway-models:alibaba/qwen3.6-27b",
+            "openrouter-models:qwen/qwen3.6-27b"
+          ],
+          "contextWindow": 262144,
+          "maxTokens": 65536,
+          "source": "qwen-models-docs",
+          "status": "available"
+        },
+        {
+          "id": "qwen3.6-max-preview",
+          "displayName": "Qwen3.6 Max Preview",
+          "upstreamRefs": [
+            "models-dev-provider-catalog:alibaba/qwen3.6-max-preview",
+            "qwen-models-api:qwen3.6-max-preview",
+            "vercel-ai-gateway-models:alibaba/qwen3.6-max-preview",
+            "openrouter-models:qwen/qwen3.6-max-preview"
+          ],
+          "contextWindow": 262144,
+          "maxTokens": 65536,
+          "status": "preview",
+          "source": "qwen-models-docs"
+        },
+        {
+          "id": "qwen3.6-35b-a3b",
+          "displayName": "Qwen3.6 35B-A3B",
+          "upstreamRefs": [
+            "models-dev-provider-catalog:alibaba/qwen3.6-35b-a3b",
+            "qwen-models-api:qwen3.6-35b-a3b",
+            "vercel-ai-gateway-models:alibaba/qwen3.6-35b-a3b",
+            "openrouter-models:qwen/qwen3.6-35b-a3b"
+          ],
+          "contextWindow": 262144,
+          "maxTokens": 65536,
+          "source": "qwen-models-docs",
+          "status": "available"
+        },
+        {
+          "id": "qwen3.6-plus",
+          "displayName": "Qwen3.6 Plus",
+          "upstreamRefs": [
+            "models-dev-provider-catalog:alibaba/qwen3.6-plus",
+            "qwen-models-api:qwen3.6-plus",
+            "vercel-ai-gateway-models:alibaba/qwen3.6-plus",
+            "openrouter-models:qwen/qwen3.6-plus"
+          ],
+          "contextWindow": 1000000,
+          "maxTokens": 65536,
+          "source": "qwen-models-docs",
+          "status": "available"
+        },
+        {
+          "id": "qwen3.5-122b-a10b",
+          "displayName": "Qwen3.5 122B-A10B",
+          "upstreamRefs": [
+            "models-dev-provider-catalog:alibaba/qwen3.5-122b-a10b",
+            "qwen-models-api:qwen3.5-122b-a10b",
+            "vercel-ai-gateway-models:alibaba/qwen3.5-122b-a10b",
+            "openrouter-models:qwen/qwen3.5-122b-a10b"
+          ],
+          "contextWindow": 262144,
+          "maxTokens": 65536,
+          "source": "qwen-models-docs",
+          "status": "available"
+        },
+        {
+          "id": "qwen3.5-35b-a3b",
+          "displayName": "Qwen3.5 35B-A3B",
+          "upstreamRefs": [
+            "models-dev-provider-catalog:alibaba/qwen3.5-35b-a3b",
+            "qwen-models-api:qwen3.5-35b-a3b",
+            "vercel-ai-gateway-models:alibaba/qwen3.5-35b-a3b",
+            "openrouter-models:qwen/qwen3.5-35b-a3b"
+          ],
+          "contextWindow": 262144,
+          "maxTokens": 65536,
+          "source": "qwen-models-docs",
+          "status": "available"
+        },
+        {
+          "id": "qwen3.5-27b",
+          "displayName": "Qwen3.5 27B",
+          "upstreamRefs": [
+            "models-dev-provider-catalog:alibaba/qwen3.5-27b",
+            "qwen-models-api:qwen3.5-27b",
+            "vercel-ai-gateway-models:alibaba/qwen3.5-27b",
+            "openrouter-models:qwen/qwen3.5-27b"
+          ],
+          "contextWindow": 262144,
+          "maxTokens": 65536,
+          "source": "qwen-models-docs",
+          "status": "available"
+        },
+        {
+          "id": "qwen3.5-9b",
+          "displayName": "Qwen3.5 9B",
+          "upstreamRefs": [
+            "models-dev-provider-catalog:alibaba/qwen3.5-9b",
+            "qwen-models-api:qwen3.5-9b",
+            "vercel-ai-gateway-models:alibaba/qwen3.5-9b",
+            "openrouter-models:qwen/qwen3.5-9b"
+          ],
+          "contextWindow": 262144,
+          "maxTokens": 65536,
+          "source": "qwen-models-docs",
+          "status": "available"
+        },
+        {
+          "id": "qwen3.5-397b-a17b",
+          "displayName": "Qwen3.5 397B-A17B",
+          "upstreamRefs": [
+            "models-dev-provider-catalog:alibaba/qwen3.5-397b-a17b",
+            "qwen-models-api:qwen3.5-397b-a17b",
+            "vercel-ai-gateway-models:alibaba/qwen3.5-397b-a17b",
+            "openrouter-models:qwen/qwen3.5-397b-a17b"
+          ],
+          "contextWindow": 262144,
+          "maxTokens": 65536,
+          "source": "qwen-models-docs",
+          "status": "available"
+        }
+      ],
       "agentGateways": []
     },
     {
       "id": "mistral",
-      "managedFields": [
+      "fillMissingFields": [
         "contextWindow",
-        "maxTokens",
-        "status"
+        "maxTokens"
       ],
       "upstreamModelRefs": [
         {
           "source": "mistral-models-api"
+        },
+        {
+          "source": "models-dev-provider-catalog",
+          "prefix": "mistral/"
         },
         {
           "source": "vercel-ai-gateway-models",
@@ -385,8 +796,10 @@
       ],
       "discovery": {
         "sources": [
-          "mistral-models-api"
+          "mistral-models-api",
+          "models-dev-provider-catalog"
         ],
+        "minimumReleaseDate": "2026-01-01",
         "includePatterns": [
           "^(?:codestral|devstral|ministral|mistral|open-mistral|pixtral)-[a-z0-9.-]+$"
         ],
@@ -396,19 +809,79 @@
         ],
         "maxPerGroup": 20
       },
-      "models": [],
+      "models": [
+        {
+          "id": "mistral-medium-latest",
+          "displayName": "Mistral Medium (latest)",
+          "upstreamRefs": [
+            "models-dev-provider-catalog:mistral/mistral-medium-latest",
+            "mistral-models-api:mistral-medium-latest",
+            "vercel-ai-gateway-models:mistral/mistral-medium-latest",
+            "openrouter-models:mistralai/mistral-medium-latest"
+          ],
+          "contextWindow": 262144,
+          "maxTokens": 262144,
+          "source": "mistral-models-docs",
+          "status": "available"
+        },
+        {
+          "id": "mistral-medium-2604",
+          "displayName": "Mistral Medium 3.5",
+          "upstreamRefs": [
+            "models-dev-provider-catalog:mistral/mistral-medium-2604",
+            "mistral-models-api:mistral-medium-2604",
+            "vercel-ai-gateway-models:mistral/mistral-medium-2604",
+            "openrouter-models:mistralai/mistral-medium-2604"
+          ],
+          "contextWindow": 262144,
+          "maxTokens": 262144,
+          "source": "mistral-models-docs",
+          "status": "available"
+        },
+        {
+          "id": "mistral-small-latest",
+          "displayName": "Mistral Small (latest)",
+          "upstreamRefs": [
+            "models-dev-provider-catalog:mistral/mistral-small-latest",
+            "mistral-models-api:mistral-small-latest",
+            "vercel-ai-gateway-models:mistral/mistral-small-latest",
+            "openrouter-models:mistralai/mistral-small-latest"
+          ],
+          "contextWindow": 256000,
+          "maxTokens": 256000,
+          "source": "mistral-models-docs",
+          "status": "available"
+        },
+        {
+          "id": "mistral-small-2603",
+          "displayName": "Mistral Small 4",
+          "upstreamRefs": [
+            "models-dev-provider-catalog:mistral/mistral-small-2603",
+            "mistral-models-api:mistral-small-2603",
+            "vercel-ai-gateway-models:mistral/mistral-small-2603",
+            "openrouter-models:mistralai/mistral-small-2603"
+          ],
+          "contextWindow": 256000,
+          "maxTokens": 256000,
+          "source": "mistral-models-docs",
+          "status": "available"
+        }
+      ],
       "agentGateways": []
     },
     {
       "id": "xai",
-      "managedFields": [
+      "fillMissingFields": [
         "contextWindow",
-        "maxTokens",
-        "status"
+        "maxTokens"
       ],
       "upstreamModelRefs": [
         {
           "source": "xai-models-api"
+        },
+        {
+          "source": "models-dev-provider-catalog",
+          "prefix": "xai/"
         },
         {
           "source": "vercel-ai-gateway-models",
@@ -421,8 +894,10 @@
       ],
       "discovery": {
         "sources": [
-          "xai-models-api"
+          "xai-models-api",
+          "models-dev-provider-catalog"
         ],
+        "minimumReleaseDate": "2026-01-01",
         "includePatterns": [
           "^grok-[a-z0-9.-]+$"
         ],
@@ -432,19 +907,107 @@
         ],
         "maxPerGroup": 20
       },
-      "models": [],
+      "models": [
+        {
+          "id": "grok-4.5",
+          "displayName": "Grok 4.5",
+          "upstreamRefs": [
+            "models-dev-provider-catalog:xai/grok-4.5",
+            "xai-models-api:grok-4.5",
+            "vercel-ai-gateway-models:xai/grok-4.5",
+            "openrouter-models:x-ai/grok-4.5"
+          ],
+          "contextWindow": 500000,
+          "maxTokens": 500000,
+          "source": "xai-models-docs",
+          "status": "available"
+        },
+        {
+          "id": "grok-4.3",
+          "displayName": "Grok 4.3",
+          "upstreamRefs": [
+            "models-dev-provider-catalog:xai/grok-4.3",
+            "xai-models-api:grok-4.3",
+            "vercel-ai-gateway-models:xai/grok-4.3",
+            "openrouter-models:x-ai/grok-4.3"
+          ],
+          "contextWindow": 1000000,
+          "maxTokens": 30000,
+          "source": "xai-models-docs",
+          "status": "available"
+        },
+        {
+          "id": "grok-build-0.1",
+          "displayName": "Grok Build 0.1",
+          "upstreamRefs": [
+            "models-dev-provider-catalog:xai/grok-build-0.1",
+            "xai-models-api:grok-build-0.1",
+            "vercel-ai-gateway-models:xai/grok-build-0.1",
+            "openrouter-models:x-ai/grok-build-0.1"
+          ],
+          "contextWindow": 256000,
+          "maxTokens": 256000,
+          "source": "xai-models-docs",
+          "status": "available"
+        },
+        {
+          "id": "grok-4.20-0309-reasoning",
+          "displayName": "Grok 4.20 (Reasoning)",
+          "upstreamRefs": [
+            "models-dev-provider-catalog:xai/grok-4.20-0309-reasoning",
+            "xai-models-api:grok-4.20-0309-reasoning",
+            "vercel-ai-gateway-models:xai/grok-4.20-0309-reasoning",
+            "openrouter-models:x-ai/grok-4.20-0309-reasoning"
+          ],
+          "contextWindow": 1000000,
+          "maxTokens": 30000,
+          "source": "xai-models-docs",
+          "status": "available"
+        },
+        {
+          "id": "grok-4.20-0309-non-reasoning",
+          "displayName": "Grok 4.20 (Non-Reasoning)",
+          "upstreamRefs": [
+            "models-dev-provider-catalog:xai/grok-4.20-0309-non-reasoning",
+            "xai-models-api:grok-4.20-0309-non-reasoning",
+            "vercel-ai-gateway-models:xai/grok-4.20-0309-non-reasoning",
+            "openrouter-models:x-ai/grok-4.20-0309-non-reasoning"
+          ],
+          "contextWindow": 1000000,
+          "maxTokens": 30000,
+          "source": "xai-models-docs",
+          "status": "available"
+        },
+        {
+          "id": "grok-4.20-multi-agent-0309",
+          "displayName": "Grok 4.20 Multi-Agent",
+          "upstreamRefs": [
+            "models-dev-provider-catalog:xai/grok-4.20-multi-agent-0309",
+            "xai-models-api:grok-4.20-multi-agent-0309",
+            "vercel-ai-gateway-models:xai/grok-4.20-multi-agent-0309",
+            "openrouter-models:x-ai/grok-4.20-multi-agent-0309"
+          ],
+          "contextWindow": 1000000,
+          "maxTokens": 30000,
+          "source": "xai-models-docs",
+          "status": "preview"
+        }
+      ],
       "agentGateways": []
     },
     {
       "id": "perplexity",
-      "managedFields": [
+      "fillMissingFields": [
         "contextWindow",
-        "maxTokens",
-        "status"
+        "maxTokens"
       ],
       "upstreamModelRefs": [
         {
           "source": "perplexity-models-api"
+        },
+        {
+          "source": "models-dev-provider-catalog",
+          "prefix": "perplexity/"
         },
         {
           "source": "vercel-ai-gateway-models",
@@ -457,8 +1020,10 @@
       ],
       "discovery": {
         "sources": [
-          "perplexity-models-api"
+          "perplexity-models-api",
+          "models-dev-provider-catalog"
         ],
+        "minimumReleaseDate": "2026-01-01",
         "includePatterns": [
           "^sonar-[a-z0-9.-]+$"
         ],
@@ -469,14 +1034,17 @@
     },
     {
       "id": "z-ai",
-      "managedFields": [
+      "fillMissingFields": [
         "contextWindow",
-        "maxTokens",
-        "status"
+        "maxTokens"
       ],
       "upstreamModelRefs": [
         {
           "source": "zai-models-api"
+        },
+        {
+          "source": "models-dev-provider-catalog",
+          "prefix": "zai/"
         },
         {
           "source": "vercel-ai-gateway-models",
@@ -489,8 +1057,10 @@
       ],
       "discovery": {
         "sources": [
-          "zai-models-api"
+          "zai-models-api",
+          "models-dev-provider-catalog"
         ],
+        "minimumReleaseDate": "2026-01-01",
         "includePatterns": [
           "^glm-[0-9]+(?:\\.[0-9]+)*(?:[-.][a-z0-9]+)*$"
         ],

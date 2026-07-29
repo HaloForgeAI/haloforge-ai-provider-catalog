@@ -20,7 +20,7 @@
       "status": "restricted",
       "disabledByDefault": true,
       "fallbackModelId": "anthropic.claude-opus-4-8",
-      "source": "anthropic-fable-access"
+      "source": "anthropic-fable-access-notice"
     },
     {
       "id": "anthropic.claude-opus-4-8",
@@ -29,7 +29,7 @@
       "maxTokens": 300000,
       "status": "restricted",
       "disabledByDefault": true,
-      "source": "anthropic-docs"
+      "source": "anthropic-models-docs"
     }
   ],
   "agentGateways": [
@@ -45,7 +45,7 @@
       "maxTokens": 300000,
       "status": "restricted",
       "disabledByDefault": true,
-      "source": "anthropic-docs"
+      "source": "anthropic-models-docs"
     }
   ]
 }

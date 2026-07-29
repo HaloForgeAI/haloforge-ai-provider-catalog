@@ -2,7 +2,7 @@
   "id": "z-ai",
   "name": "Z.AI / GLM",
   "description": "Zhipu/Z.AI GLM models, including reasoning and coding models exposed through compatible gateway integrations.",
-  "category": "third_party",
+  "category": "official",
   "iconProvider": "zai",
   "modelOwner": "zai",
   "modelOwnerLabel": "Z.AI",

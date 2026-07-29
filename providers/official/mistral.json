@@ -2,7 +2,7 @@
   "id": "mistral",
   "name": "Mistral AI",
   "description": "Mistral AI OpenAI-compatible chat models.",
-  "category": "third_party",
+  "category": "official",
   "iconProvider": "mistral",
   "modelOwner": "mistral",
   "modelOwnerLabel": "Mistral AI",
@@ -14,18 +14,52 @@
   "modelsListPath": "/models",
   "models": [
     {
+      "id": "mistral-medium-latest",
+      "displayName": "Mistral Medium (latest)",
+      "contextWindow": 262144,
+      "maxTokens": 262144,
+      "source": "mistral-models-docs",
+      "status": "available"
+    },
+    {
+      "id": "mistral-medium-2604",
+      "displayName": "Mistral Medium 3.5",
+      "contextWindow": 262144,
+      "maxTokens": 262144,
+      "source": "mistral-models-docs",
+      "status": "available"
+    },
+    {
+      "id": "mistral-small-latest",
+      "displayName": "Mistral Small (latest)",
+      "contextWindow": 256000,
+      "maxTokens": 256000,
+      "source": "mistral-models-docs",
+      "status": "available"
+    },
+    {
+      "id": "mistral-small-2603",
+      "displayName": "Mistral Small 4",
+      "contextWindow": 256000,
+      "maxTokens": 256000,
+      "source": "mistral-models-docs",
+      "status": "available"
+    },
+    {
       "id": "mistral-large-latest",
       "displayName": "Mistral Large Latest",
       "contextWindow": 128000,
       "status": "available",
-      "source": "litellm-model-catalog"
+      "source": "litellm-model-catalog",
+      "maxTokens": 262144
     },
     {
       "id": "codestral-latest",
       "displayName": "Codestral Latest",
       "contextWindow": 256000,
       "status": "available",
-      "source": "litellm-model-catalog"
+      "source": "litellm-model-catalog",
+      "maxTokens": 4096
     }
   ],
   "agentGateways": [

@@ -57,7 +57,10 @@ async function main() {
   }
 
   const manifest = await readJson(manifestPath);
-  const upstreamSources = upstreamConfig.machineSources.map(publicSourceMetadata);
+  const upstreamSources = [
+    ...(upstreamConfig.machineSources ?? []),
+    ...(upstreamConfig.documentationSources ?? []),
+  ].map(publicSourceMetadata);
   const sourceMetadataChanged = stableJson(manifest.upstreamSources ?? []) !== stableJson(upstreamSources);
   if (changed || sourceMetadataChanged) {
     manifest.upstreamSources = upstreamSources;
@@ -138,12 +141,17 @@ export function discoverNewModels(provider, providerSync, sourceIndexes) {
     if (!index) continue;
     let addedFromGroup = 0;
     const groupLimit = Number(providerSync.discovery?.maxPerGroup ?? maxDiscoveredPerGroup);
-    for (const [upstreamId, model] of index) {
+    const candidates = Array.from(index.entries())
+      .filter(([upstreamId]) => {
+        const modelNamespace = upstreamId.includes("/") ? upstreamId.slice(0, upstreamId.lastIndexOf("/")) : "";
+        return modelNamespace === namespace;
+      })
+      .sort((left, right) => compareDiscoveryCandidates(left[1], right[1]));
+    for (const [upstreamId, model] of candidates) {
       if (addedFromGroup >= groupLimit) break;
-      const modelNamespace = upstreamId.includes("/") ? upstreamId.slice(0, upstreamId.lastIndexOf("/")) : "";
-      if (modelNamespace !== namespace) continue;
       const localId = stripPrefix ? upstreamId.slice(namespace.length + 1) : upstreamId;
       if (!matchesDiscoveryPolicy(localId, providerSync.discovery)) continue;
+      if (!matchesDiscoveryReleaseDate(model, providerSync.discovery)) continue;
       const ref = `${source}:${upstreamId}`;
       if (trackedRefs.has(ref)) continue;
       if (existingIds.has(localId)) continue;
@@ -155,7 +163,7 @@ export function discoverNewModels(provider, providerSync, sourceIndexes) {
         upstreamRefs,
         contextWindow: enriched.contextWindow,
         maxTokens: enriched.maxTokens,
-        status: enriched.lifecycle?.status ?? "available",
+        status: enriched.lifecycle?.status,
         shutdownDate: enriched.lifecycle?.shutdownDate,
         disabledByDefault: enriched.lifecycle?.disabledByDefault,
         source: enriched.source ?? source,
@@ -167,6 +175,21 @@ export function discoverNewModels(provider, providerSync, sourceIndexes) {
   }
 
   return discovered;
+}
+
+function matchesDiscoveryReleaseDate(model, discovery = {}) {
+  if (!nonEmpty(discovery?.minimumReleaseDate) || !nonEmpty(model?.releaseDate)) return true;
+  const minimum = Date.parse(discovery.minimumReleaseDate);
+  const released = Date.parse(model.releaseDate);
+  if (!Number.isFinite(minimum) || !Number.isFinite(released)) return true;
+  return released >= minimum;
+}
+
+function compareDiscoveryCandidates(left, right) {
+  const leftDate = Date.parse(left.releaseDate ?? "") || 0;
+  const rightDate = Date.parse(right.releaseDate ?? "") || 0;
+  if (leftDate !== rightDate) return rightDate - leftDate;
+  return String(right.id).localeCompare(String(left.id), undefined, { numeric: true });
 }
 
 export function expandModelSpecs(provider, providerSync) {
@@ -263,6 +286,14 @@ async function fetchSourceModels(source, secret = "") {
     return fetchGoogleModels(source, secret);
   }
   const json = await fetchJson(source.url, sourceHeaders(source, secret));
+  if (source.parser === "models-dev-provider-catalog") {
+    return Object.entries(json ?? {}).flatMap(([providerId, provider]) => {
+      if (!provider || typeof provider !== "object" || Array.isArray(provider)) return [];
+      return Object.entries(provider.models ?? {})
+        .map(([modelId, item]) => normalizeModelsDevProviderModel(source.id, providerId, modelId, item))
+        .filter(Boolean);
+    });
+  }
   const rows = Array.isArray(json?.data) ? json.data : Array.isArray(json) ? json : [];
   if (source.parser === "openai-compatible") {
     return rows.map((item) => normalizeOpenAiCompatibleModel(source.id, item)).filter(Boolean);
@@ -399,6 +430,25 @@ function normalizeVercelModel(sourceId, item) {
   };
 }
 
+export function normalizeModelsDevProviderModel(sourceId, providerId, modelId, item) {
+  if (!nonEmpty(providerId) || !nonEmpty(modelId) || !item || typeof item !== "object" || Array.isArray(item)) {
+    return null;
+  }
+  const lifecycle = item.status === "deprecated"
+    ? { status: "deprecated" }
+    : lifecycleFromModelId(modelId) ?? { status: "available" };
+  return {
+    id: `${providerId.trim()}/${modelId.trim()}`,
+    displayName: nonEmpty(item.name) ? item.name.trim() : modelId.trim(),
+    description: nonEmpty(item.description) ? item.description.trim() : undefined,
+    contextWindow: positiveIntegerValue(item.limit?.context),
+    maxTokens: positiveIntegerValue(item.limit?.output),
+    releaseDate: nonEmpty(item.release_date) ? item.release_date.trim() : undefined,
+    lifecycle,
+    source: sourceId,
+  };
+}
+
 export function normalizeAnthropicModel(sourceId, item) {
   if (!nonEmpty(item?.id)) return null;
   return {
@@ -512,13 +562,19 @@ export function upsertModels(provider, modelSpecs, sourceIndexes, providerSync =
     const upstream = mergeUpstreamModels(spec.upstreamRefs ?? [], sourceIndexes);
     const existing = byId.get(spec.id) ?? {};
     const managedFields = new Set(providerSync.managedFields ?? []);
+    const fillMissingFields = Array.isArray(providerSync.fillMissingFields)
+      ? new Set(providerSync.fillMissingFields)
+      : null;
     const overrides = spec.overrides ?? {};
     const choose = (field, upstreamValue, fallbackValue = existing[field]) => {
       if (Object.hasOwn(overrides, field)) return overrides[field];
       if (managedFields.has(field)) {
         return upstreamValue ?? existing[field] ?? spec[field] ?? fallbackValue;
       }
-      return spec[field] ?? upstreamValue ?? existing[field] ?? fallbackValue;
+      const reviewedValue = spec[field] ?? existing[field];
+      if (reviewedValue !== undefined) return reviewedValue;
+      if (fillMissingFields && !fillMissingFields.has(field)) return fallbackValue;
+      return upstreamValue ?? fallbackValue;
     };
     const next = {
       ...existing,
@@ -541,7 +597,10 @@ export function upsertModels(provider, modelSpecs, sourceIndexes, providerSync =
   provider.models = sortByPreferredOrder(Array.from(byId.values()), preferredOrder);
 }
 
-function upsertAgentGateways(provider, gatewaySpecs) {
+export function upsertAgentGateways(provider, gatewaySpecs) {
+  if (!Array.isArray(gatewaySpecs) || gatewaySpecs.length === 0) {
+    return;
+  }
   if (!Array.isArray(provider.agentGateways)) {
     provider.agentGateways = [];
   }

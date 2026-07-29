@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-07-29T15:05:56.758Z",
+  "updatedAt": "2026-07-29T16:19:23.561Z",
   "source": "haloforge-ai-provider-catalog",
   "repository": "https://github.com/HaloForgeAI/haloforge-ai-provider-catalog",
   "upstreamSources": [
@@ -9,21 +9,28 @@
       "name": "LiteLLM model catalog",
       "url": "https://api.litellm.ai/model_catalog",
       "kind": "open_source",
-      "notes": "Reference for context windows, pricing metadata, capabilities, and deprecation dates."
+      "notes": "Paged machine-readable reference for context windows, pricing metadata, capabilities, and deprecation dates."
+    },
+    {
+      "id": "models-dev-provider-catalog",
+      "name": "models.dev provider offering catalog",
+      "url": "https://models.dev/api.json",
+      "kind": "community",
+      "notes": "Open-source candidate discovery source organized by serving provider. Changes require review and do not by themselves prove first-party lifecycle."
     },
     {
       "id": "openrouter-models",
       "name": "OpenRouter models API",
       "url": "https://openrouter.ai/api/v1/models",
       "kind": "aggregator",
-      "notes": "Reference for aggregator-visible model ids and context lengths."
+      "notes": "Machine-readable reference for aggregator-visible model ids, context lengths, max output tokens, pricing, and lifecycle dates."
     },
     {
       "id": "vercel-ai-gateway-models",
       "name": "Vercel AI Gateway model endpoint",
       "url": "https://ai-gateway.vercel.sh/v1/models",
       "kind": "aggregator",
-      "notes": "Reference for AI Gateway model/provider ids, pricing, and context windows."
+      "notes": "Machine-readable reference for AI Gateway model/provider ids, pricing, tags, and context windows."
     },
     {
       "id": "anthropic-models-api",
@@ -31,6 +38,230 @@
       "url": "https://api.anthropic.com/v1/models",
       "kind": "official",
       "notes": "Authenticated official source for available Claude model ids, context windows, output limits, and capability metadata."
+    },
+    {
+      "id": "openai-models-api",
+      "name": "OpenAI Models API",
+      "url": "https://api.openai.com/v1/models",
+      "kind": "official",
+      "notes": "Authenticated official source for model ids available to the configured OpenAI project."
+    },
+    {
+      "id": "google-models-api",
+      "name": "Google Gemini Models API",
+      "url": "https://generativelanguage.googleapis.com/v1beta/models",
+      "kind": "official",
+      "notes": "Authenticated official source for Gemini model ids, descriptions, supported generation methods, and token limits."
+    },
+    {
+      "id": "zai-models-api",
+      "name": "Z.AI Models API",
+      "url": "https://api.z.ai/api/paas/v4/models",
+      "kind": "official",
+      "notes": "Authenticated official source for GLM model ids available to the configured Z.AI account."
+    },
+    {
+      "id": "minimax-models-api",
+      "name": "MiniMax Models API",
+      "url": "https://api.minimax.io/v1/models",
+      "kind": "official",
+      "notes": "Authenticated official OpenAI-compatible source for MiniMax model ids."
+    },
+    {
+      "id": "moonshot-models-api",
+      "name": "Moonshot/Kimi Models API",
+      "url": "https://api.moonshot.ai/v1/models",
+      "kind": "official",
+      "notes": "Authenticated official OpenAI-compatible source for Moonshot/Kimi model ids."
+    },
+    {
+      "id": "deepseek-models-api",
+      "name": "DeepSeek Models API",
+      "url": "https://api.deepseek.com/models",
+      "kind": "official",
+      "notes": "Authenticated official source for currently available DeepSeek model ids."
+    },
+    {
+      "id": "qwen-models-api",
+      "name": "Alibaba Cloud Model Studio Models API",
+      "url": "https://dashscope-intl.aliyuncs.com/compatible-mode/v1/models",
+      "kind": "official",
+      "notes": "Authenticated official OpenAI-compatible source for Qwen model ids in the international region."
+    },
+    {
+      "id": "mistral-models-api",
+      "name": "Mistral Models API",
+      "url": "https://api.mistral.ai/v1/models",
+      "kind": "official",
+      "notes": "Authenticated official source for Mistral model ids and model metadata."
+    },
+    {
+      "id": "xai-models-api",
+      "name": "xAI Models API",
+      "url": "https://api.x.ai/v1/models",
+      "kind": "official",
+      "notes": "Authenticated official source for xAI model ids and model metadata."
+    },
+    {
+      "id": "perplexity-models-api",
+      "name": "Perplexity Models API",
+      "url": "https://api.perplexity.ai/models",
+      "kind": "official",
+      "notes": "Authenticated official source for Perplexity model ids available to the configured account."
+    },
+    {
+      "id": "openai-models-docs",
+      "name": "OpenAI models documentation",
+      "url": "https://developers.openai.com/api/docs/models",
+      "kind": "official",
+      "notes": "Official model names, context windows, output limits, and release guidance."
+    },
+    {
+      "id": "azure-openai-api-docs",
+      "name": "Azure OpenAI v1 API documentation",
+      "url": "https://learn.microsoft.com/azure/ai-foundry/openai/latest",
+      "kind": "official",
+      "notes": "Official Azure OpenAI endpoint, authentication, deployment, and v1 API compatibility guidance."
+    },
+    {
+      "id": "anthropic-models-docs",
+      "name": "Anthropic model documentation",
+      "url": "https://platform.claude.com/docs/en/about-claude/models/overview",
+      "kind": "official",
+      "notes": "Official Claude model list and model metadata behavior."
+    },
+    {
+      "id": "anthropic-fable-access-notice",
+      "name": "Anthropic Fable/Mythos access notice",
+      "url": "https://www.anthropic.com/news/fable-mythos-access",
+      "kind": "official",
+      "notes": "Official restriction notice for disabled/restricted Claude models."
+    },
+    {
+      "id": "deepseek-pricing-docs",
+      "name": "DeepSeek pricing and model docs",
+      "url": "https://api-docs.deepseek.com/quick_start/pricing",
+      "kind": "official",
+      "notes": "Official DeepSeek model ids, context windows, output limits, and deprecation dates."
+    },
+    {
+      "id": "zai-glm-5-2-docs",
+      "name": "Z.AI GLM-5.2 documentation",
+      "url": "https://docs.z.ai/guides/llm/glm-5.2",
+      "kind": "official",
+      "notes": "Official GLM-5.2 context, max output, reasoning, tool use, and OpenAI-compatible API usage."
+    },
+    {
+      "id": "zai-coding-plan-switch-docs",
+      "name": "Z.AI GLM Coding Plan model switching docs",
+      "url": "https://docs.z.ai/devpack/latest-model",
+      "kind": "official",
+      "notes": "Official Claude Code/OpenClaw/Cline model switch instructions for GLM-5.2, including 1M suffix and fallback guidance."
+    },
+    {
+      "id": "zai-claude-code-docs",
+      "name": "Z.AI Claude Code integration docs",
+      "url": "https://docs.z.ai/devpack/tool/claude",
+      "kind": "official",
+      "notes": "Official Anthropic-compatible base URL and Claude Code environment mapping for GLM Coding Plan."
+    },
+    {
+      "id": "gemini-models-docs",
+      "name": "Google Gemini model documentation",
+      "url": "https://ai.google.dev/gemini-api/docs/models",
+      "kind": "official",
+      "notes": "Official Gemini model lifecycle and model metadata docs."
+    },
+    {
+      "id": "gemini-latest-models-docs",
+      "name": "Google latest Gemini models guide",
+      "url": "https://ai.google.dev/gemini-api/docs/generate-content/latest-model",
+      "kind": "official",
+      "notes": "Official production guidance for the latest Gemini model ids and availability."
+    },
+    {
+      "id": "google-gemini-changelog",
+      "name": "Google Gemini API changelog",
+      "url": "https://ai.google.dev/gemini-api/docs/changelog",
+      "kind": "official",
+      "notes": "Official Gemini API model launch, update, and lifecycle notices."
+    },
+    {
+      "id": "qwen-models-docs",
+      "name": "Alibaba Cloud Model Studio model catalog",
+      "url": "https://www.alibabacloud.com/help/en/model-studio/models",
+      "kind": "official",
+      "notes": "Official Qwen model ids, regional availability, endpoint compatibility, and current recommendations."
+    },
+    {
+      "id": "qwen-dashscope-openai-compat-docs",
+      "name": "Alibaba Cloud Model Studio OpenAI compatibility docs",
+      "url": "https://www.alibabacloud.com/help/en/model-studio/compatibility-of-openai-with-dashscope",
+      "kind": "official",
+      "notes": "Official DashScope OpenAI-compatible endpoint and supported Qwen model references."
+    },
+    {
+      "id": "minimax-openai-compat-docs",
+      "name": "MiniMax OpenAI-compatible docs",
+      "url": "https://platform.minimax.io/docs/api-reference/text-openai-api",
+      "kind": "official",
+      "notes": "Official MiniMax OpenAI-compatible endpoint, model ids, context windows, and thinking controls."
+    },
+    {
+      "id": "minimax-models-docs",
+      "name": "MiniMax model documentation",
+      "url": "https://platform.minimax.io/docs/guides/models-intro",
+      "kind": "official",
+      "notes": "Official MiniMax model ids, capabilities, and token limits."
+    },
+    {
+      "id": "moonshot-openai-compat-docs",
+      "name": "Moonshot/Kimi OpenAI compatibility docs",
+      "url": "https://platform.kimi.ai/docs/guide/migrating-from-openai-to-kimi",
+      "kind": "official",
+      "notes": "Official Moonshot/Kimi OpenAI-compatible endpoint and request behavior."
+    },
+    {
+      "id": "moonshot-kimi-k3-docs",
+      "name": "Moonshot Kimi K3 documentation",
+      "url": "https://platform.kimi.ai/docs/pricing/chat-k3",
+      "kind": "official",
+      "notes": "Official Kimi K3 serving and pricing documentation."
+    },
+    {
+      "id": "moonshot-kimi-k2-model-card",
+      "name": "Moonshot Kimi K2 model card",
+      "url": "https://huggingface.co/moonshotai/Kimi-K2.7-Code",
+      "kind": "official",
+      "notes": "Official Moonshot model card for Kimi K2.7 Code and its capabilities."
+    },
+    {
+      "id": "mistral-models-docs",
+      "name": "Mistral model documentation",
+      "url": "https://docs.mistral.ai/getting-started/models/models_overview/",
+      "kind": "official",
+      "notes": "Official Mistral model ids, aliases, capabilities, context windows, and lifecycle guidance."
+    },
+    {
+      "id": "xai-models-docs",
+      "name": "xAI model documentation",
+      "url": "https://docs.x.ai/developers/models",
+      "kind": "official",
+      "notes": "Official xAI model ids, aliases, capabilities, context windows, and availability."
+    },
+    {
+      "id": "perplexity-models-docs",
+      "name": "Perplexity Sonar model documentation",
+      "url": "https://docs.perplexity.ai/docs/sonar/models",
+      "kind": "official",
+      "notes": "Official Perplexity Sonar model ids, use cases, capabilities, and availability."
+    },
+    {
+      "id": "cloudflare-workers-ai-glm-5-2",
+      "name": "Cloudflare Workers AI GLM-5.2 changelog",
+      "url": "https://developers.cloudflare.com/changelog/post/2026-06-16-glm-52-workers-ai/",
+      "kind": "official",
+      "notes": "Official Workers AI launch note confirming GLM-5.2 function calling, reasoning support, and context-window details."
     }
   ],
   "providers": [
@@ -50,12 +281,60 @@
       "modelsListPath": "/models",
       "models": [
         {
+          "id": "gpt-5.6-terra",
+          "displayName": "GPT-5.6 Terra",
+          "contextWindow": 1050000,
+          "maxTokens": 128000,
+          "status": "available",
+          "source": "openai-models-docs"
+        },
+        {
+          "id": "gpt-5.6-sol",
+          "displayName": "GPT-5.6 Sol",
+          "contextWindow": 1050000,
+          "maxTokens": 128000,
+          "status": "available",
+          "source": "openai-models-docs"
+        },
+        {
+          "id": "gpt-5.6-luna",
+          "displayName": "GPT-5.6 Luna",
+          "contextWindow": 1050000,
+          "maxTokens": 128000,
+          "status": "available",
+          "source": "openai-models-docs"
+        },
+        {
+          "id": "gpt-5.5-pro",
+          "displayName": "GPT-5.5 Pro",
+          "contextWindow": 1050000,
+          "maxTokens": 128000,
+          "source": "openai-models-docs",
+          "status": "available"
+        },
+        {
+          "id": "gpt-5.4-pro",
+          "displayName": "GPT-5.4 Pro",
+          "contextWindow": 1050000,
+          "maxTokens": 128000,
+          "source": "openai-models-docs",
+          "status": "available"
+        },
+        {
+          "id": "gpt-5.6",
+          "displayName": "GPT-5.6",
+          "contextWindow": 1050000,
+          "maxTokens": 128000,
+          "source": "openai-models-docs",
+          "status": "available"
+        },
+        {
           "id": "gpt-5.5",
           "displayName": "GPT-5.5",
           "contextWindow": 1000000,
           "maxTokens": 128000,
           "status": "available",
-          "source": "openai-docs"
+          "source": "openai-models-docs"
         },
         {
           "id": "gpt-5.4",
@@ -63,7 +342,7 @@
           "contextWindow": 1000000,
           "maxTokens": 128000,
           "status": "available",
-          "source": "openai-docs"
+          "source": "openai-models-docs"
         },
         {
           "id": "gpt-5.4-mini",
@@ -71,7 +350,7 @@
           "contextWindow": 400000,
           "maxTokens": 128000,
           "status": "available",
-          "source": "openai-docs"
+          "source": "openai-models-docs"
         },
         {
           "id": "gpt-5.4-nano",
@@ -79,7 +358,7 @@
           "contextWindow": 400000,
           "maxTokens": 128000,
           "status": "available",
-          "source": "openai-docs"
+          "source": "openai-models-docs"
         }
       ],
       "agentGateways": [
@@ -94,7 +373,7 @@
           "contextWindow": 1000000,
           "maxTokens": 128000,
           "effortLevel": "xhigh",
-          "source": "openai-docs"
+          "source": "openai-models-docs"
         },
         {
           "id": "openai-codex-gpt-5.4",
@@ -107,7 +386,7 @@
           "contextWindow": 1000000,
           "maxTokens": 128000,
           "effortLevel": "high",
-          "source": "openai-docs"
+          "source": "openai-models-docs"
         },
         {
           "id": "openai-codex-gpt-5.4-mini",
@@ -120,7 +399,7 @@
           "contextWindow": 400000,
           "maxTokens": 128000,
           "effortLevel": "high",
-          "source": "openai-docs"
+          "source": "openai-models-docs"
         },
         {
           "id": "openai-copilot-gpt-5.5",
@@ -133,7 +412,7 @@
           "contextWindow": 1000000,
           "maxTokens": 128000,
           "effortLevel": "xhigh",
-          "source": "openai-docs"
+          "source": "openai-models-docs"
         },
         {
           "id": "openai-copilot-gpt-5.4",
@@ -146,7 +425,7 @@
           "contextWindow": 1000000,
           "maxTokens": 128000,
           "effortLevel": "high",
-          "source": "openai-docs"
+          "source": "openai-models-docs"
         },
         {
           "id": "openai-copilot-gpt-5.4-mini",
@@ -159,7 +438,7 @@
           "contextWindow": 400000,
           "maxTokens": 128000,
           "effortLevel": "high",
-          "source": "openai-docs"
+          "source": "openai-models-docs"
         }
       ]
     },
@@ -387,34 +666,74 @@
       "modelsListPath": "/models",
       "models": [
         {
+          "id": "gemini-3.6-flash",
+          "displayName": "Gemini 3.6 Flash",
+          "contextWindow": 1048576,
+          "maxTokens": 65536,
+          "source": "gemini-latest-models-docs",
+          "status": "available"
+        },
+        {
+          "id": "gemini-3.5-flash-lite",
+          "displayName": "Gemini 3.5 Flash Lite",
+          "contextWindow": 1048576,
+          "maxTokens": 65536,
+          "source": "gemini-latest-models-docs",
+          "status": "available"
+        },
+        {
+          "id": "gemini-3.1-flash-lite",
+          "displayName": "Gemini 3.1 Flash Lite",
+          "contextWindow": 1048576,
+          "maxTokens": 65536,
+          "source": "gemini-models-docs",
+          "status": "available"
+        },
+        {
+          "id": "gemini-3.1-flash-lite-preview",
+          "displayName": "Gemini 3.1 Flash Lite Preview",
+          "contextWindow": 1048576,
+          "maxTokens": 65536,
+          "source": "models-dev-provider-catalog",
+          "status": "deprecated"
+        },
+        {
+          "id": "gemini-3.1-pro-preview",
+          "displayName": "Gemini 3.1 Pro Preview",
+          "contextWindow": 1048576,
+          "maxTokens": 65536,
+          "source": "gemini-models-docs",
+          "status": "preview"
+        },
+        {
           "id": "gemini-3.5-flash",
           "displayName": "Gemini 3.5 Flash",
           "contextWindow": 1048576,
-          "maxTokens": 65535,
+          "maxTokens": 65536,
           "status": "available",
-          "source": "gemini-docs"
+          "source": "gemini-models-docs"
         },
         {
           "id": "gemini-3-pro-preview",
           "displayName": "Gemini 3 Pro Preview",
           "contextWindow": 1048576,
-          "maxTokens": 65535,
-          "status": "preview",
+          "maxTokens": 65536,
+          "status": "deprecated",
           "source": "litellm-model-catalog"
         },
         {
           "id": "gemini-3-flash-preview",
           "displayName": "Gemini 3 Flash Preview",
           "contextWindow": 1048576,
-          "maxTokens": 65535,
+          "maxTokens": 65536,
           "status": "preview",
-          "source": "gemini-changelog"
+          "source": "google-gemini-changelog"
         },
         {
           "id": "gemini-2.5-flash",
           "displayName": "Gemini 2.5 Flash",
           "contextWindow": 1048576,
-          "maxTokens": 65535,
+          "maxTokens": 65536,
           "status": "available",
           "source": "litellm-model-catalog"
         },
@@ -487,7 +806,7 @@
           "contextWindow": 1000000,
           "maxTokens": 128000,
           "status": "available",
-          "source": "openai-docs"
+          "source": "openai-models-docs"
         },
         {
           "id": "gpt-5.4",
@@ -495,7 +814,7 @@
           "contextWindow": 1000000,
           "maxTokens": 128000,
           "status": "available",
-          "source": "openai-docs"
+          "source": "openai-models-docs"
         },
         {
           "id": "gpt-4o-2024-08-06",
@@ -520,7 +839,8 @@
           "modelId": "gpt-5.5",
           "contextWindow": 1000000,
           "maxTokens": 128000,
-          "effortLevel": "xhigh"
+          "effortLevel": "xhigh",
+          "source": "azure-openai-api-docs"
         },
         {
           "id": "azure-opencode-gpt-5-4",
@@ -532,7 +852,8 @@
           "modelId": "gpt-5.4",
           "contextWindow": 1000000,
           "maxTokens": 128000,
-          "effortLevel": "high"
+          "effortLevel": "high",
+          "source": "azure-openai-api-docs"
         }
       ]
     },
@@ -558,7 +879,7 @@
           "status": "restricted",
           "disabledByDefault": true,
           "fallbackModelId": "anthropic.claude-opus-4-8",
-          "source": "anthropic-fable-access"
+          "source": "anthropic-fable-access-notice"
         },
         {
           "id": "anthropic.claude-opus-4-8",
@@ -567,7 +888,7 @@
           "maxTokens": 300000,
           "status": "restricted",
           "disabledByDefault": true,
-          "source": "anthropic-docs"
+          "source": "anthropic-models-docs"
         }
       ],
       "agentGateways": [
@@ -583,7 +904,7 @@
           "maxTokens": 300000,
           "status": "restricted",
           "disabledByDefault": true,
-          "source": "anthropic-docs"
+          "source": "anthropic-models-docs"
         }
       ]
     },
@@ -591,7 +912,7 @@
       "id": "deepseek",
       "name": "DeepSeek",
       "description": "DeepSeek OpenAI-compatible chat plus Anthropic-compatible Agent gateway.",
-      "category": "third_party",
+      "category": "official",
       "iconProvider": "deepseek",
       "modelOwner": "deepseek",
       "modelOwnerLabel": "DeepSeek",
@@ -608,7 +929,7 @@
           "contextWindow": 1000000,
           "maxTokens": 384000,
           "status": "available",
-          "source": "deepseek-docs"
+          "source": "deepseek-pricing-docs"
         },
         {
           "id": "deepseek-v4-pro",
@@ -616,7 +937,7 @@
           "contextWindow": 1000000,
           "maxTokens": 384000,
           "status": "available",
-          "source": "deepseek-docs"
+          "source": "deepseek-pricing-docs"
         },
         {
           "id": "deepseek-chat",
@@ -627,7 +948,7 @@
           "shutdownDate": "2026-07-24T15:59:00Z",
           "fallbackModelId": "deepseek-v4-flash",
           "disabledByDefault": true,
-          "source": "deepseek-docs"
+          "source": "deepseek-pricing-docs"
         },
         {
           "id": "deepseek-reasoner",
@@ -638,7 +959,7 @@
           "shutdownDate": "2026-07-24T15:59:00Z",
           "fallbackModelId": "deepseek-v4-pro",
           "disabledByDefault": true,
-          "source": "deepseek-docs"
+          "source": "deepseek-pricing-docs"
         }
       ],
       "agentGateways": [
@@ -660,7 +981,7 @@
             "opus": "deepseek-v4-pro",
             "subagent": "deepseek-v4-flash"
           },
-          "source": "deepseek-docs"
+          "source": "deepseek-pricing-docs"
         },
         {
           "id": "deepseek-claude-code-v4-flash",
@@ -680,7 +1001,7 @@
             "opus": "deepseek-v4-pro",
             "subagent": "deepseek-v4-flash"
           },
-          "source": "deepseek-docs"
+          "source": "deepseek-pricing-docs"
         },
         {
           "id": "deepseek-opencode-v4-pro",
@@ -694,7 +1015,7 @@
           "maxTokens": 384000,
           "temperature": 0.2,
           "effortLevel": "high",
-          "source": "deepseek-docs"
+          "source": "deepseek-pricing-docs"
         },
         {
           "id": "deepseek-opencode-v4-flash",
@@ -708,7 +1029,7 @@
           "maxTokens": 384000,
           "temperature": 0.2,
           "effortLevel": "medium",
-          "source": "deepseek-docs"
+          "source": "deepseek-pricing-docs"
         },
         {
           "id": "deepseek-qwen-code-v4-pro",
@@ -722,7 +1043,7 @@
           "maxTokens": 384000,
           "temperature": 0.2,
           "effortLevel": "high",
-          "source": "deepseek-docs"
+          "source": "deepseek-pricing-docs"
         },
         {
           "id": "deepseek-qwen-code-v4-flash",
@@ -736,7 +1057,7 @@
           "maxTokens": 384000,
           "temperature": 0.2,
           "effortLevel": "medium",
-          "source": "deepseek-docs"
+          "source": "deepseek-pricing-docs"
         },
         {
           "id": "deepseek-copilot-v4-pro",
@@ -750,7 +1071,7 @@
           "maxTokens": 384000,
           "temperature": 0.2,
           "effortLevel": "high",
-          "source": "deepseek-docs"
+          "source": "deepseek-pricing-docs"
         },
         {
           "id": "deepseek-copilot-v4-flash",
@@ -764,7 +1085,7 @@
           "maxTokens": 384000,
           "temperature": 0.2,
           "effortLevel": "medium",
-          "source": "deepseek-docs"
+          "source": "deepseek-pricing-docs"
         },
         {
           "id": "deepseek-codex-v4-pro",
@@ -778,7 +1099,7 @@
           "maxTokens": 384000,
           "temperature": 0.2,
           "effortLevel": "high",
-          "source": "deepseek-docs"
+          "source": "deepseek-pricing-docs"
         }
       ]
     },
@@ -786,7 +1107,7 @@
       "id": "qwen",
       "name": "Alibaba Cloud Model Studio / Qwen",
       "description": "Qwen models through Alibaba Cloud Model Studio OpenAI-compatible endpoints.",
-      "category": "third_party",
+      "category": "official",
       "iconProvider": "qwen",
       "modelOwner": "qwen",
       "modelOwnerLabel": "Qwen",
@@ -798,46 +1119,155 @@
       "modelsListPath": "/models",
       "models": [
         {
+          "id": "qwen3.8-max-preview",
+          "displayName": "Qwen3.8 Max Preview",
+          "contextWindow": 1000000,
+          "maxTokens": 131072,
+          "status": "preview",
+          "source": "models-dev-provider-catalog"
+        },
+        {
+          "id": "qwen3.7-plus",
+          "displayName": "Qwen3.7 Plus",
+          "contextWindow": 1000000,
+          "maxTokens": 64000,
+          "status": "available",
+          "source": "qwen-models-docs"
+        },
+        {
+          "id": "qwen3.7-max",
+          "displayName": "Qwen3.7 Max",
+          "contextWindow": 1000000,
+          "maxTokens": 65536,
+          "status": "available",
+          "source": "qwen-models-docs"
+        },
+        {
+          "id": "qwen3.6-flash",
+          "displayName": "Qwen3.6 Flash",
+          "contextWindow": 1000000,
+          "maxTokens": 65536,
+          "source": "qwen-models-docs",
+          "status": "available"
+        },
+        {
+          "id": "qwen3.6-27b",
+          "displayName": "Qwen3.6 27B",
+          "contextWindow": 262144,
+          "maxTokens": 65536,
+          "source": "qwen-models-docs",
+          "status": "available"
+        },
+        {
+          "id": "qwen3.6-max-preview",
+          "displayName": "Qwen3.6 Max Preview",
+          "contextWindow": 262144,
+          "maxTokens": 65536,
+          "status": "preview",
+          "source": "qwen-models-docs"
+        },
+        {
+          "id": "qwen3.6-35b-a3b",
+          "displayName": "Qwen3.6 35B-A3B",
+          "contextWindow": 262144,
+          "maxTokens": 65536,
+          "source": "qwen-models-docs",
+          "status": "available"
+        },
+        {
+          "id": "qwen3.6-plus",
+          "displayName": "Qwen3.6 Plus",
+          "contextWindow": 1000000,
+          "maxTokens": 65536,
+          "source": "qwen-models-docs",
+          "status": "available"
+        },
+        {
+          "id": "qwen3.5-122b-a10b",
+          "displayName": "Qwen3.5 122B-A10B",
+          "contextWindow": 262144,
+          "maxTokens": 65536,
+          "source": "qwen-models-docs",
+          "status": "available"
+        },
+        {
+          "id": "qwen3.5-35b-a3b",
+          "displayName": "Qwen3.5 35B-A3B",
+          "contextWindow": 262144,
+          "maxTokens": 65536,
+          "source": "qwen-models-docs",
+          "status": "available"
+        },
+        {
+          "id": "qwen3.5-27b",
+          "displayName": "Qwen3.5 27B",
+          "contextWindow": 262144,
+          "maxTokens": 65536,
+          "source": "qwen-models-docs",
+          "status": "available"
+        },
+        {
+          "id": "qwen3.5-9b",
+          "displayName": "Qwen3.5 9B",
+          "contextWindow": 262144,
+          "maxTokens": 65536,
+          "source": "qwen-models-docs",
+          "status": "available"
+        },
+        {
+          "id": "qwen3.5-397b-a17b",
+          "displayName": "Qwen3.5 397B-A17B",
+          "contextWindow": 262144,
+          "maxTokens": 65536,
+          "source": "qwen-models-docs",
+          "status": "available"
+        },
+        {
           "id": "qwen3-max",
           "displayName": "Qwen3 Max",
           "contextWindow": 262144,
           "status": "available",
-          "source": "alibaba-docs"
+          "source": "qwen-models-docs",
+          "maxTokens": 65536
         },
         {
           "id": "qwen3-max-preview",
           "displayName": "Qwen3 Max Preview",
           "contextWindow": 262144,
           "status": "preview",
-          "source": "alibaba-docs"
+          "source": "qwen-models-docs",
+          "maxTokens": 32768
         },
         {
           "id": "qwen3-coder-plus",
           "displayName": "Qwen3 Coder Plus",
           "contextWindow": 262144,
           "status": "available",
-          "source": "alibaba-docs"
+          "source": "qwen-models-docs",
+          "maxTokens": 65536
         },
         {
           "id": "qwen3.5-plus",
           "displayName": "Qwen3.5 Plus",
           "contextWindow": 240000,
           "status": "available",
-          "source": "alibaba-docs"
+          "source": "qwen-models-docs",
+          "maxTokens": 65536
         },
         {
           "id": "qwen3.5-flash",
           "displayName": "Qwen3.5 Flash",
           "contextWindow": 240000,
           "status": "available",
-          "source": "alibaba-docs"
+          "source": "qwen-models-docs",
+          "maxTokens": 64000
         },
         {
           "id": "qwen2.5-14b-instruct-1m",
           "displayName": "Qwen2.5 14B Instruct 1M",
           "contextWindow": 1000000,
           "status": "available",
-          "source": "alibaba-docs"
+          "source": "qwen-models-docs"
         }
       ],
       "agentGateways": [
@@ -852,7 +1282,7 @@
           "contextWindow": 262144,
           "maxTokens": 65536,
           "effortLevel": "high",
-          "source": "alibaba-docs"
+          "source": "qwen-models-docs"
         },
         {
           "id": "qwen-qwen-code-qwen3-coder-plus",
@@ -865,7 +1295,7 @@
           "contextWindow": 262144,
           "maxTokens": 65536,
           "effortLevel": "high",
-          "source": "alibaba-docs"
+          "source": "qwen-models-docs"
         },
         {
           "id": "qwen-qwen-code-qwen3-max",
@@ -878,28 +1308,7 @@
           "contextWindow": 262144,
           "maxTokens": 65536,
           "effortLevel": "high",
-          "source": "alibaba-docs"
-        },
-        {
-          "id": "qwen-qwen-code-haloforge-qwen3-6-code",
-          "displayName": "HaloForge Qwen3.6 Code for Qwen Code",
-          "target": "qwen_code",
-          "routeMode": "config_only",
-          "baseUrl": "https://macllama.haloforge.dev/v1",
-          "apiCompatibility": "openai",
-          "modelId": "haloforge-qwen3.6-code",
-          "contextWindow": 262144,
-          "maxTokens": 16000,
-          "generationConfig": {
-            "extra_body": {
-              "enable_thinking": false,
-              "chat_template_kwargs": {
-                "enable_thinking": false
-              }
-            }
-          },
-          "effortLevel": "high",
-          "source": "haloforge-qwen-cli-smoke-verified-2026-06-20"
+          "source": "qwen-models-docs"
         },
         {
           "id": "qwen-opencode-qwen3-coder-plus",
@@ -912,7 +1321,7 @@
           "contextWindow": 262144,
           "maxTokens": 65536,
           "effortLevel": "high",
-          "source": "alibaba-docs"
+          "source": "qwen-models-docs"
         },
         {
           "id": "qwen-opencode-qwen3-max",
@@ -925,7 +1334,7 @@
           "contextWindow": 262144,
           "maxTokens": 65536,
           "effortLevel": "high",
-          "source": "alibaba-docs"
+          "source": "qwen-models-docs"
         },
         {
           "id": "qwen-opencode-qwen3-5-flash",
@@ -938,7 +1347,7 @@
           "contextWindow": 240000,
           "maxTokens": 65536,
           "effortLevel": "medium",
-          "source": "alibaba-docs"
+          "source": "qwen-models-docs"
         },
         {
           "id": "qwen-copilot-qwen3-max",
@@ -951,7 +1360,7 @@
           "contextWindow": 262144,
           "maxTokens": 65536,
           "effortLevel": "high",
-          "source": "alibaba-docs"
+          "source": "qwen-models-docs"
         },
         {
           "id": "qwen-copilot-qwen3-coder-plus",
@@ -964,7 +1373,7 @@
           "contextWindow": 262144,
           "maxTokens": 65536,
           "effortLevel": "high",
-          "source": "alibaba-docs"
+          "source": "qwen-models-docs"
         },
         {
           "id": "qwen-copilot-qwen3-5-flash",
@@ -977,7 +1386,7 @@
           "contextWindow": 240000,
           "maxTokens": 65536,
           "effortLevel": "medium",
-          "source": "alibaba-docs"
+          "source": "qwen-models-docs"
         }
       ]
     },
@@ -985,7 +1394,7 @@
       "id": "z-ai",
       "name": "Z.AI / GLM",
       "description": "Zhipu/Z.AI GLM models, including reasoning and coding models exposed through compatible gateway integrations.",
-      "category": "third_party",
+      "category": "official",
       "iconProvider": "zai",
       "modelOwner": "zai",
       "modelOwnerLabel": "Z.AI",
@@ -1259,7 +1668,7 @@
       "id": "minimax",
       "name": "MiniMax",
       "description": "MiniMax OpenAI-compatible and Anthropic-compatible text models.",
-      "category": "third_party",
+      "category": "official",
       "iconProvider": "minimax",
       "modelOwner": "minimax",
       "modelOwnerLabel": "MiniMax",
@@ -1271,32 +1680,44 @@
       "modelsListPath": "/models",
       "models": [
         {
+          "id": "MiniMax-M2.5-highspeed",
+          "displayName": "MiniMax-M2.5-highspeed",
+          "contextWindow": 204800,
+          "maxTokens": 131072,
+          "source": "minimax-models-docs",
+          "status": "available"
+        },
+        {
           "id": "MiniMax-M3",
           "displayName": "MiniMax M3",
           "contextWindow": 1000000,
           "status": "available",
-          "source": "minimax-docs"
+          "source": "minimax-models-docs",
+          "maxTokens": 128000
         },
         {
           "id": "MiniMax-M2.7",
           "displayName": "MiniMax M2.7",
           "contextWindow": 204800,
           "status": "available",
-          "source": "minimax-docs"
+          "source": "minimax-models-docs",
+          "maxTokens": 131072
         },
         {
           "id": "MiniMax-M2.7-highspeed",
           "displayName": "MiniMax M2.7 Highspeed",
           "contextWindow": 204800,
           "status": "available",
-          "source": "minimax-docs"
+          "source": "minimax-models-docs",
+          "maxTokens": 131072
         },
         {
           "id": "MiniMax-M2.5",
           "displayName": "MiniMax M2.5",
           "contextWindow": 204800,
           "status": "available",
-          "source": "minimax-docs"
+          "source": "minimax-models-docs",
+          "maxTokens": 131072
         }
       ],
       "agentGateways": [
@@ -1317,7 +1738,7 @@
             "opus": "MiniMax-M3",
             "subagent": "MiniMax-M2.7-highspeed"
           },
-          "source": "minimax-docs"
+          "source": "minimax-models-docs"
         },
         {
           "id": "minimax-opencode-m3",
@@ -1330,7 +1751,7 @@
           "contextWindow": 1000000,
           "maxTokens": 128000,
           "effortLevel": "high",
-          "source": "minimax-docs"
+          "source": "minimax-models-docs"
         },
         {
           "id": "minimax-opencode-m2-7-highspeed",
@@ -1343,7 +1764,7 @@
           "contextWindow": 204800,
           "maxTokens": 65536,
           "effortLevel": "medium",
-          "source": "minimax-docs"
+          "source": "minimax-models-docs"
         },
         {
           "id": "minimax-copilot-m3",
@@ -1356,7 +1777,7 @@
           "contextWindow": 1000000,
           "maxTokens": 128000,
           "effortLevel": "high",
-          "source": "minimax-docs"
+          "source": "minimax-models-docs"
         },
         {
           "id": "minimax-copilot-m2-7-highspeed",
@@ -1369,7 +1790,7 @@
           "contextWindow": 204800,
           "maxTokens": 65536,
           "effortLevel": "medium",
-          "source": "minimax-docs"
+          "source": "minimax-models-docs"
         },
         {
           "id": "minimax-codex-m3",
@@ -1382,7 +1803,7 @@
           "contextWindow": 1000000,
           "maxTokens": 128000,
           "effortLevel": "high",
-          "source": "minimax-docs"
+          "source": "minimax-models-docs"
         }
       ]
     },
@@ -1390,7 +1811,7 @@
       "id": "moonshot",
       "name": "Moonshot AI / Kimi",
       "description": "Moonshot Kimi OpenAI-compatible and Anthropic-compatible API.",
-      "category": "third_party",
+      "category": "official",
       "iconProvider": "kimi",
       "modelOwner": "moonshot",
       "modelOwnerLabel": "Moonshot AI",
@@ -1401,6 +1822,30 @@
       "authType": "bearer",
       "modelsListPath": "/models",
       "models": [
+        {
+          "id": "kimi-k3",
+          "displayName": "Kimi K3",
+          "contextWindow": 1048576,
+          "maxTokens": 131072,
+          "status": "available",
+          "source": "moonshot-kimi-k3-docs"
+        },
+        {
+          "id": "kimi-k2.7-code-highspeed",
+          "displayName": "Kimi K2.7 Code Highspeed",
+          "contextWindow": 262144,
+          "maxTokens": 262144,
+          "status": "available",
+          "source": "moonshot-kimi-k2-model-card"
+        },
+        {
+          "id": "kimi-k2.7-code",
+          "displayName": "Kimi K2.7 Code",
+          "contextWindow": 262144,
+          "maxTokens": 262144,
+          "status": "available",
+          "source": "moonshot-kimi-k2-model-card"
+        },
         {
           "id": "kimi-k2.6",
           "displayName": "Kimi K2.6",
@@ -1447,7 +1892,7 @@
             "opus": "kimi-k2.6",
             "subagent": "kimi-k2.5"
           },
-          "source": "moonshot-kimi-k2"
+          "source": "moonshot-kimi-k2-model-card"
         },
         {
           "id": "moonshot-opencode-kimi-k2-6",
@@ -1520,7 +1965,7 @@
       "id": "xai",
       "name": "xAI",
       "description": "xAI OpenAI-compatible API for Grok models.",
-      "category": "third_party",
+      "category": "official",
       "iconProvider": "xai",
       "modelOwner": "xai",
       "modelOwnerLabel": "xAI",
@@ -1531,6 +1976,54 @@
       "authType": "bearer",
       "modelsListPath": "/models",
       "models": [
+        {
+          "id": "grok-4.5",
+          "displayName": "Grok 4.5",
+          "contextWindow": 500000,
+          "maxTokens": 500000,
+          "source": "xai-models-docs",
+          "status": "available"
+        },
+        {
+          "id": "grok-4.3",
+          "displayName": "Grok 4.3",
+          "contextWindow": 1000000,
+          "maxTokens": 30000,
+          "source": "xai-models-docs",
+          "status": "available"
+        },
+        {
+          "id": "grok-build-0.1",
+          "displayName": "Grok Build 0.1",
+          "contextWindow": 256000,
+          "maxTokens": 256000,
+          "source": "xai-models-docs",
+          "status": "available"
+        },
+        {
+          "id": "grok-4.20-0309-reasoning",
+          "displayName": "Grok 4.20 (Reasoning)",
+          "contextWindow": 1000000,
+          "maxTokens": 30000,
+          "source": "xai-models-docs",
+          "status": "available"
+        },
+        {
+          "id": "grok-4.20-0309-non-reasoning",
+          "displayName": "Grok 4.20 (Non-Reasoning)",
+          "contextWindow": 1000000,
+          "maxTokens": 30000,
+          "source": "xai-models-docs",
+          "status": "available"
+        },
+        {
+          "id": "grok-4.20-multi-agent-0309",
+          "displayName": "Grok 4.20 Multi-Agent",
+          "contextWindow": 1000000,
+          "maxTokens": 30000,
+          "source": "xai-models-docs",
+          "status": "preview"
+        },
         {
           "id": "grok-code-fast-1",
           "displayName": "Grok Code Fast 1",
@@ -1592,7 +2085,7 @@
       "id": "mistral",
       "name": "Mistral AI",
       "description": "Mistral AI OpenAI-compatible chat models.",
-      "category": "third_party",
+      "category": "official",
       "iconProvider": "mistral",
       "modelOwner": "mistral",
       "modelOwnerLabel": "Mistral AI",
@@ -1604,18 +2097,52 @@
       "modelsListPath": "/models",
       "models": [
         {
+          "id": "mistral-medium-latest",
+          "displayName": "Mistral Medium (latest)",
+          "contextWindow": 262144,
+          "maxTokens": 262144,
+          "source": "mistral-models-docs",
+          "status": "available"
+        },
+        {
+          "id": "mistral-medium-2604",
+          "displayName": "Mistral Medium 3.5",
+          "contextWindow": 262144,
+          "maxTokens": 262144,
+          "source": "mistral-models-docs",
+          "status": "available"
+        },
+        {
+          "id": "mistral-small-latest",
+          "displayName": "Mistral Small (latest)",
+          "contextWindow": 256000,
+          "maxTokens": 256000,
+          "source": "mistral-models-docs",
+          "status": "available"
+        },
+        {
+          "id": "mistral-small-2603",
+          "displayName": "Mistral Small 4",
+          "contextWindow": 256000,
+          "maxTokens": 256000,
+          "source": "mistral-models-docs",
+          "status": "available"
+        },
+        {
           "id": "mistral-large-latest",
           "displayName": "Mistral Large Latest",
           "contextWindow": 128000,
           "status": "available",
-          "source": "litellm-model-catalog"
+          "source": "litellm-model-catalog",
+          "maxTokens": 262144
         },
         {
           "id": "codestral-latest",
           "displayName": "Codestral Latest",
           "contextWindow": 256000,
           "status": "available",
-          "source": "litellm-model-catalog"
+          "source": "litellm-model-catalog",
+          "maxTokens": 4096
         }
       ],
       "agentGateways": [
@@ -1664,7 +2191,7 @@
       "id": "perplexity",
       "name": "Perplexity",
       "description": "Perplexity Sonar models with OpenAI-compatible API.",
-      "category": "third_party",
+      "category": "official",
       "iconProvider": "perplexity",
       "modelOwner": "perplexity",
       "modelOwnerLabel": "Perplexity",
@@ -1680,14 +2207,16 @@
           "displayName": "Sonar Pro",
           "contextWindow": 200000,
           "status": "available",
-          "source": "litellm-model-catalog"
+          "source": "perplexity-models-docs",
+          "maxTokens": 8192
         },
         {
           "id": "sonar-deep-research",
           "displayName": "Sonar Deep Research",
           "contextWindow": 200000,
           "status": "available",
-          "source": "litellm-model-catalog"
+          "source": "perplexity-models-docs",
+          "maxTokens": 32768
         }
       ],
       "agentGateways": [
@@ -1868,7 +2397,7 @@
           "displayName": "DeepSeek V3.2 Exp",
           "contextWindow": 163840,
           "maxTokens": 65536,
-          "status": "available",
+          "status": "experimental",
           "source": "openrouter-models"
         },
         {
@@ -2272,7 +2801,7 @@
           "displayName": "Qwen3.6 Max Preview",
           "contextWindow": 262144,
           "maxTokens": 65536,
-          "status": "available",
+          "status": "preview",
           "source": "openrouter-models"
         },
         {
@@ -2914,7 +3443,7 @@
           "displayName": "GPT-4 Turbo Preview",
           "contextWindow": 128000,
           "maxTokens": 4096,
-          "status": "available",
+          "status": "preview",
           "source": "openrouter-models"
         },
         {
@@ -2964,7 +3493,7 @@
           "status": "disabled",
           "disabledByDefault": true,
           "fallbackModelId": "anthropic/claude-opus-4.8",
-          "source": "anthropic-fable-access"
+          "source": "anthropic-fable-access-notice"
         },
         {
           "id": "deepseek/deepseek-v4-pro",
