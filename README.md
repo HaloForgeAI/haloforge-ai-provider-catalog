@@ -54,7 +54,7 @@ The workflow:
 3. Runs `npm run build`.
 4. Runs `npm run check`.
 5. If files changed, classifies the semantic catalog diff, pushes `chore/sync-upstream-model-catalog`, and opens or updates a pull request.
-6. Safe additions and upstream-owned metadata refreshes enable auto-merge. Provider metadata, Agent gateway, lifecycle, fallback, removal, restricted, and preview changes remain queued for human review.
+6. Safe additions and upstream-owned metadata refreshes are squash-merged after verification. The workflow uses protected-branch auto-merge when available and otherwise merges immediately after its tests pass. Provider metadata, Agent gateway, lifecycle, fallback, removal, restricted, and preview changes remain queued for human review.
 
 If organization policy prevents `GITHUB_TOKEN` from creating pull requests, add a repository secret named `HF_PROVIDER_CATALOG_SYNC_TOKEN`. Use a fine-grained personal access token or GitHub App token scoped to this repository with `Contents: Read and write` and `Pull requests: Read and write`. Without that secret, the workflow still pushes the sync branch and prints a manual PR link.
 

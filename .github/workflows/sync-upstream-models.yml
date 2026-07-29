@@ -101,8 +101,10 @@ jobs:
           if [ "$SAFE_TO_AUTO_MERGE" = "true" ] && [ -n "$pr_number" ]; then
             if gh pr merge "$pr_number" --auto --squash; then
               echo "Enabled auto-merge for safe sync pull request #$pr_number."
+            elif gh pr merge "$pr_number" --squash; then
+              echo "Merged verified safe sync pull request #$pr_number immediately because protected-branch auto-merge is unavailable."
             else
-              echo "::warning::Safe sync PR #$pr_number could not enable auto-merge. Confirm repository auto-merge is enabled."
+              echo "::warning::Safe sync PR #$pr_number could not be merged. Check token permissions and repository merge policy."
             fi
           else
             echo "Sync PR requires human review: ${SYNC_RISK_SUMMARY}"
