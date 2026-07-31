@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-07-31T14:39:56.886Z",
+  "updatedAt": "2026-07-31T19:56:06.415Z",
   "source": "haloforge-ai-provider-catalog",
   "repository": "https://github.com/HaloForgeAI/haloforge-ai-provider-catalog",
   "upstreamSources": [
@@ -3487,6 +3487,13 @@
           "source": "openrouter-models"
         },
         {
+          "id": "deepseek/deepseek-v4-flash-0731",
+          "displayName": "DeepSeek V4 Flash 0731",
+          "contextWindow": 1048576,
+          "maxTokens": 384000,
+          "source": "openrouter-models"
+        },
+        {
           "id": "anthropic/claude-fable-5",
           "displayName": "Claude Fable 5 via OpenRouter",
           "contextWindow": 1000000,
@@ -3528,13 +3535,6 @@
           "displayName": "Qwen3 Max Thinking via OpenRouter",
           "contextWindow": 262144,
           "status": "available",
-          "source": "openrouter-models"
-        },
-        {
-          "id": "deepseek/deepseek-v4-flash-0731",
-          "displayName": "DeepSeek V4 Flash 0731",
-          "contextWindow": 1048576,
-          "maxTokens": 384000,
           "source": "openrouter-models"
         }
       ],
