@@ -17,7 +17,7 @@
       "id": "z-ai/glm-5.2",
       "displayName": "z-ai/glm-5.2",
       "contextWindow": 1048576,
-      "maxTokens": 262144,
+      "maxTokens": 131072,
       "status": "available",
       "source": "openrouter-models"
     },
@@ -544,8 +544,8 @@
     {
       "id": "qwen/qwen3.6-27b",
       "displayName": "Qwen3.6 27B",
-      "contextWindow": 262144,
-      "maxTokens": 65536,
+      "contextWindow": 131072,
+      "maxTokens": 131072,
       "status": "available",
       "source": "openrouter-models"
     },
