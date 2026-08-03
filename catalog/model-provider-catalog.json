@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-02T03:57:05.692Z",
+  "updatedAt": "2026-08-03T03:59:18.839Z",
   "source": "haloforge-ai-provider-catalog",
   "repository": "https://github.com/HaloForgeAI/haloforge-ai-provider-catalog",
   "upstreamSources": [
@@ -2280,7 +2280,7 @@
           "id": "z-ai/glm-5.2",
           "displayName": "z-ai/glm-5.2",
           "contextWindow": 1048576,
-          "maxTokens": 131072,
+          "maxTokens": 262144,
           "status": "available",
           "source": "openrouter-models"
         },
@@ -3258,8 +3258,8 @@
         {
           "id": "qwen/qwen3-235b-a22b-2507",
           "displayName": "Qwen3 235B A22B Instruct 2507",
-          "contextWindow": 262144,
-          "maxTokens": 16384,
+          "contextWindow": 131072,
+          "maxTokens": 32768,
           "status": "available",
           "source": "openrouter-models"
         },

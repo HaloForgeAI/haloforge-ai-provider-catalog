@@ -17,7 +17,7 @@
       "id": "z-ai/glm-5.2",
       "displayName": "z-ai/glm-5.2",
       "contextWindow": 1048576,
-      "maxTokens": 131072,
+      "maxTokens": 262144,
       "status": "available",
       "source": "openrouter-models"
     },
@@ -995,8 +995,8 @@
     {
       "id": "qwen/qwen3-235b-a22b-2507",
       "displayName": "Qwen3 235B A22B Instruct 2507",
-      "contextWindow": 262144,
-      "maxTokens": 16384,
+      "contextWindow": 131072,
+      "maxTokens": 32768,
       "status": "available",
       "source": "openrouter-models"
     },
