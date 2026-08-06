@@ -24,8 +24,8 @@
     {
       "id": "z-ai/glm-5.1",
       "displayName": "GLM 5.1",
-      "contextWindow": 200000,
-      "maxTokens": 128000,
+      "contextWindow": 202752,
+      "maxTokens": 131072,
       "status": "available",
       "source": "openrouter-models"
     },
@@ -117,7 +117,7 @@
       "id": "deepseek/deepseek-v4-flash",
       "displayName": "DeepSeek V4 Flash",
       "contextWindow": 1048576,
-      "maxTokens": 393216,
+      "maxTokens": 131072,
       "status": "available",
       "source": "openrouter-models"
     },
@@ -196,7 +196,7 @@
     {
       "id": "minimax/minimax-m2.7",
       "displayName": "MiniMax M2.7",
-      "contextWindow": 196608,
+      "contextWindow": 204800,
       "maxTokens": 131072,
       "status": "available",
       "source": "openrouter-models"
@@ -544,8 +544,8 @@
     {
       "id": "qwen/qwen3.6-27b",
       "displayName": "Qwen3.6 27B",
-      "contextWindow": 131072,
-      "maxTokens": 131072,
+      "contextWindow": 262144,
+      "maxTokens": 262144,
       "status": "available",
       "source": "openrouter-models"
     },
@@ -995,8 +995,8 @@
     {
       "id": "qwen/qwen3-235b-a22b-2507",
       "displayName": "Qwen3 235B A22B Instruct 2507",
-      "contextWindow": 131072,
-      "maxTokens": 32768,
+      "contextWindow": 262144,
+      "maxTokens": 16384,
       "status": "available",
       "source": "openrouter-models"
     },
@@ -1231,6 +1231,13 @@
       "source": "openrouter-models"
     },
     {
+      "id": "qwen/qwen3.8-max",
+      "displayName": "Qwen3.8 Max",
+      "contextWindow": 1000000,
+      "maxTokens": 131072,
+      "source": "openrouter-models"
+    },
+    {
       "id": "anthropic/claude-fable-5",
       "displayName": "Claude Fable 5 via OpenRouter",
       "contextWindow": 1000000,
@@ -1272,13 +1279,6 @@
       "displayName": "Qwen3 Max Thinking via OpenRouter",
       "contextWindow": 262144,
       "status": "available",
-      "source": "openrouter-models"
-    },
-    {
-      "id": "qwen/qwen3.8-max",
-      "displayName": "Qwen3.8 Max",
-      "contextWindow": 1000000,
-      "maxTokens": 131072,
       "source": "openrouter-models"
     }
   ],
