@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-06T09:10:06.305Z",
+  "updatedAt": "2026-08-06T14:38:16.870Z",
   "source": "haloforge-ai-provider-catalog",
   "repository": "https://github.com/HaloForgeAI/haloforge-ai-provider-catalog",
   "upstreamSources": [
@@ -1223,6 +1223,14 @@
           "status": "available"
         },
         {
+          "id": "qwen3.8-max",
+          "displayName": "Qwen3.8 Max",
+          "contextWindow": 1000000,
+          "maxTokens": 131072,
+          "status": "available",
+          "source": "models-dev-provider-catalog"
+        },
+        {
           "id": "qwen3-max",
           "displayName": "Qwen3 Max",
           "contextWindow": 262144,
@@ -1268,14 +1276,6 @@
           "contextWindow": 1000000,
           "status": "available",
           "source": "qwen-models-docs"
-        },
-        {
-          "id": "qwen3.8-max",
-          "displayName": "Qwen3.8 Max",
-          "contextWindow": 1000000,
-          "maxTokens": 131072,
-          "status": "available",
-          "source": "models-dev-provider-catalog"
         }
       ],
       "agentGateways": [
@@ -2287,8 +2287,8 @@
         {
           "id": "z-ai/glm-5.2",
           "displayName": "z-ai/glm-5.2",
-          "contextWindow": 262144,
-          "maxTokens": 262144,
+          "contextWindow": 1024000,
+          "maxTokens": 128000,
           "status": "available",
           "source": "openrouter-models"
         },

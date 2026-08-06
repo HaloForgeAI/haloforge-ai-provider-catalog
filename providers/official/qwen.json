@@ -118,6 +118,14 @@
       "status": "available"
     },
     {
+      "id": "qwen3.8-max",
+      "displayName": "Qwen3.8 Max",
+      "contextWindow": 1000000,
+      "maxTokens": 131072,
+      "status": "available",
+      "source": "models-dev-provider-catalog"
+    },
+    {
       "id": "qwen3-max",
       "displayName": "Qwen3 Max",
       "contextWindow": 262144,
@@ -163,14 +171,6 @@
       "contextWindow": 1000000,
       "status": "available",
       "source": "qwen-models-docs"
-    },
-    {
-      "id": "qwen3.8-max",
-      "displayName": "Qwen3.8 Max",
-      "contextWindow": 1000000,
-      "maxTokens": 131072,
-      "status": "available",
-      "source": "models-dev-provider-catalog"
     }
   ],
   "agentGateways": [
