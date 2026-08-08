@@ -125,7 +125,7 @@
       "id": "deepseek/deepseek-v3.2",
       "displayName": "DeepSeek V3.2",
       "contextWindow": 163840,
-      "maxTokens": 65536,
+      "maxTokens": 163840,
       "status": "available",
       "source": "openrouter-models"
     },
