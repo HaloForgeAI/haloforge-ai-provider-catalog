@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-08T02:24:03.364Z",
+  "updatedAt": "2026-08-08T07:18:09.264Z",
   "source": "haloforge-ai-provider-catalog",
   "repository": "https://github.com/HaloForgeAI/haloforge-ai-provider-catalog",
   "upstreamSources": [
@@ -2287,8 +2287,8 @@
         {
           "id": "z-ai/glm-5.2",
           "displayName": "z-ai/glm-5.2",
-          "contextWindow": 1048576,
-          "maxTokens": 131072,
+          "contextWindow": 1024000,
+          "maxTokens": 128000,
           "status": "available",
           "source": "openrouter-models"
         },
@@ -3498,7 +3498,7 @@
           "id": "deepseek/deepseek-v4-flash-0731",
           "displayName": "DeepSeek V4 Flash 0731",
           "contextWindow": 1048576,
-          "maxTokens": 65536,
+          "maxTokens": 384000,
           "source": "openrouter-models"
         },
         {
