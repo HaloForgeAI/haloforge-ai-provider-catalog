@@ -1,7 +1,7 @@
 {
   "$schema": "../schema/model-provider-catalog.schema.json",
   "schemaVersion": 1,
-  "updatedAt": "2026-08-11T02:30:45.717Z",
+  "updatedAt": "2026-08-11T13:46:16.650Z",
   "source": "haloforge-ai-provider-catalog",
   "repository": "https://github.com/HaloForgeAI/haloforge-ai-provider-catalog",
   "upstreamSources": [
