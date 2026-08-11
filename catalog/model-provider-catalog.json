@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-10T19:21:01.378Z",
+  "updatedAt": "2026-08-11T02:30:45.717Z",
   "source": "haloforge-ai-provider-catalog",
   "repository": "https://github.com/HaloForgeAI/haloforge-ai-provider-catalog",
   "upstreamSources": [
@@ -2287,8 +2287,8 @@
         {
           "id": "z-ai/glm-5.2",
           "displayName": "z-ai/glm-5.2",
-          "contextWindow": 1048576,
-          "maxTokens": 131072,
+          "contextWindow": 262144,
+          "maxTokens": 262144,
           "status": "available",
           "source": "openrouter-models"
         },
@@ -2882,7 +2882,7 @@
           "contextWindow": 262144,
           "status": "available",
           "source": "openrouter-models",
-          "maxTokens": 65536
+          "maxTokens": 262144
         },
         {
           "id": "qwen/qwen3-coder-next",
@@ -3175,8 +3175,8 @@
         {
           "id": "qwen/qwen3-next-80b-a3b-thinking",
           "displayName": "Qwen3 Next 80B A3B Thinking",
-          "contextWindow": 131072,
-          "maxTokens": 32768,
+          "contextWindow": 262144,
+          "maxTokens": 262144,
           "status": "available",
           "source": "openrouter-models"
         },
