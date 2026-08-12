@@ -17,7 +17,7 @@
       "id": "z-ai/glm-5.2",
       "displayName": "z-ai/glm-5.2",
       "contextWindow": 1048576,
-      "maxTokens": 131072,
+      "maxTokens": 1048576,
       "status": "available",
       "source": "openrouter-models"
     },
@@ -80,7 +80,7 @@
     {
       "id": "z-ai/glm-4.6",
       "displayName": "GLM 4.6",
-      "contextWindow": 202752,
+      "contextWindow": 204800,
       "maxTokens": 131072,
       "status": "available",
       "source": "openrouter-models"
@@ -140,7 +140,7 @@
     {
       "id": "deepseek/deepseek-v3.1-terminus",
       "displayName": "DeepSeek V3.1 Terminus",
-      "contextWindow": 131072,
+      "contextWindow": 163840,
       "maxTokens": 32768,
       "status": "available",
       "source": "openrouter-models"
