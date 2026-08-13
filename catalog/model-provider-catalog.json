@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-12T07:55:22.442Z",
+  "updatedAt": "2026-08-13T13:51:35.651Z",
   "source": "haloforge-ai-provider-catalog",
   "repository": "https://github.com/HaloForgeAI/haloforge-ai-provider-catalog",
   "upstreamSources": [
@@ -2045,6 +2045,14 @@
           "contextWindow": 256000,
           "status": "available",
           "source": "openrouter-models"
+        },
+        {
+          "id": "grok-4.6",
+          "displayName": "Grok 4.6",
+          "contextWindow": 500000,
+          "maxTokens": 500000,
+          "status": "available",
+          "source": "models-dev-provider-catalog"
         }
       ],
       "agentGateways": [
@@ -2351,7 +2359,7 @@
         {
           "id": "z-ai/glm-4.6",
           "displayName": "GLM 4.6",
-          "contextWindow": 204800,
+          "contextWindow": 202752,
           "maxTokens": 131072,
           "status": "available",
           "source": "openrouter-models"
@@ -3175,8 +3183,8 @@
         {
           "id": "qwen/qwen3-next-80b-a3b-thinking",
           "displayName": "Qwen3 Next 80B A3B Thinking",
-          "contextWindow": 262144,
-          "maxTokens": 262144,
+          "contextWindow": 131072,
+          "maxTokens": 32768,
           "status": "available",
           "source": "openrouter-models"
         },
@@ -3184,7 +3192,7 @@
           "id": "qwen/qwen3-next-80b-a3b-instruct",
           "displayName": "Qwen3 Next 80B A3B Instruct",
           "contextWindow": 262144,
-          "maxTokens": 16384,
+          "maxTokens": 262144,
           "status": "available",
           "source": "openrouter-models"
         },
@@ -3550,6 +3558,20 @@
           "displayName": "Qwen3 Max Thinking via OpenRouter",
           "contextWindow": 262144,
           "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "deepseek/deepseek-v4-pro-0813",
+          "displayName": "DeepSeek V4 Pro 0813",
+          "contextWindow": 1048576,
+          "maxTokens": 384000,
+          "source": "openrouter-models"
+        },
+        {
+          "id": "qwen/qwen3.8-2.4t-a95b",
+          "displayName": "Qwen3.8 2.4T A95B",
+          "contextWindow": 1000000,
+          "maxTokens": 262144,
           "source": "openrouter-models"
         }
       ],

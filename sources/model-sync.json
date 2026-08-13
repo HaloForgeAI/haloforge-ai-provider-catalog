@@ -1005,6 +1005,20 @@
           "maxTokens": 30000,
           "source": "xai-models-docs",
           "status": "preview"
+        },
+        {
+          "id": "grok-4.6",
+          "displayName": "Grok 4.6",
+          "upstreamRefs": [
+            "models-dev-provider-catalog:xai/grok-4.6",
+            "xai-models-api:grok-4.6",
+            "vercel-ai-gateway-models:xai/grok-4.6",
+            "openrouter-models:x-ai/grok-4.6"
+          ],
+          "contextWindow": 500000,
+          "maxTokens": 500000,
+          "status": "available",
+          "source": "models-dev-provider-catalog"
         }
       ],
       "agentGateways": []
@@ -2973,6 +2987,26 @@
           ],
           "contextWindow": 1000000,
           "maxTokens": 131072,
+          "source": "openrouter-models"
+        },
+        {
+          "id": "deepseek/deepseek-v4-pro-0813",
+          "displayName": "DeepSeek V4 Pro 0813",
+          "upstreamRefs": [
+            "openrouter-models:deepseek/deepseek-v4-pro-0813"
+          ],
+          "contextWindow": 1048576,
+          "maxTokens": 384000,
+          "source": "openrouter-models"
+        },
+        {
+          "id": "qwen/qwen3.8-2.4t-a95b",
+          "displayName": "Qwen3.8 2.4T A95B",
+          "upstreamRefs": [
+            "openrouter-models:qwen/qwen3.8-2.4t-a95b"
+          ],
+          "contextWindow": 1000000,
+          "maxTokens": 262144,
           "source": "openrouter-models"
         }
       ],
