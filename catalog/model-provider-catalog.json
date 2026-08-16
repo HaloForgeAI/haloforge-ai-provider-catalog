@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-16T07:02:41.069Z",
+  "updatedAt": "2026-08-16T13:03:15.033Z",
   "source": "haloforge-ai-provider-catalog",
   "repository": "https://github.com/HaloForgeAI/haloforge-ai-provider-catalog",
   "upstreamSources": [
@@ -706,6 +706,14 @@
           "status": "preview"
         },
         {
+          "id": "gemini-3.7-flash",
+          "displayName": "Gemini 3.7 Flash",
+          "contextWindow": 1048576,
+          "maxTokens": 65536,
+          "status": "available",
+          "source": "models-dev-provider-catalog"
+        },
+        {
           "id": "gemini-3.5-flash",
           "displayName": "Gemini 3.5 Flash",
           "contextWindow": 1048576,
@@ -746,14 +754,6 @@
           "deprecationDate": "2026-06-01",
           "fallbackModelId": "gemini-2.5-flash",
           "source": "litellm-model-catalog"
-        },
-        {
-          "id": "gemini-3.7-flash",
-          "displayName": "Gemini 3.7 Flash",
-          "contextWindow": 1048576,
-          "maxTokens": 65536,
-          "status": "available",
-          "source": "models-dev-provider-catalog"
         }
       ],
       "agentGateways": []
@@ -2834,7 +2834,7 @@
           "id": "qwen/qwen3.6-27b",
           "displayName": "Qwen3.6 27B",
           "contextWindow": 262144,
-          "maxTokens": 65536,
+          "maxTokens": 262144,
           "status": "available",
           "source": "openrouter-models"
         },
@@ -3541,6 +3541,13 @@
           "source": "openrouter-models"
         },
         {
+          "id": "qwen/qwen3.8-27b",
+          "displayName": "Qwen3.8 27B",
+          "contextWindow": 262144,
+          "maxTokens": 131072,
+          "source": "openrouter-models"
+        },
+        {
           "id": "anthropic/claude-fable-5",
           "displayName": "Claude Fable 5 via OpenRouter",
           "contextWindow": 1000000,
@@ -3582,13 +3589,6 @@
           "displayName": "Qwen3 Max Thinking via OpenRouter",
           "contextWindow": 262144,
           "status": "available",
-          "source": "openrouter-models"
-        },
-        {
-          "id": "qwen/qwen3.8-27b",
-          "displayName": "Qwen3.8 27B",
-          "contextWindow": 262144,
-          "maxTokens": 131072,
           "source": "openrouter-models"
         }
       ],
