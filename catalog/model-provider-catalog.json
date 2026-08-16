@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-16T13:03:15.033Z",
+  "updatedAt": "2026-08-16T18:49:21.798Z",
   "source": "haloforge-ai-provider-catalog",
   "repository": "https://github.com/HaloForgeAI/haloforge-ai-provider-catalog",
   "upstreamSources": [
@@ -2834,7 +2834,7 @@
           "id": "qwen/qwen3.6-27b",
           "displayName": "Qwen3.6 27B",
           "contextWindow": 262144,
-          "maxTokens": 262144,
+          "maxTokens": 65536,
           "status": "available",
           "source": "openrouter-models"
         },
@@ -3332,7 +3332,7 @@
         {
           "id": "qwen/qwen2.5-vl-72b-instruct",
           "displayName": "Qwen2.5 VL 72B Instruct",
-          "contextWindow": 32000,
+          "contextWindow": 128000,
           "maxTokens": 128000,
           "status": "available",
           "source": "openrouter-models"
