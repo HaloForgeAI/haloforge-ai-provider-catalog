@@ -362,6 +362,18 @@
           "maxTokens": 65536,
           "source": "gemini-models-docs",
           "status": "preview"
+        },
+        {
+          "id": "gemini-3.7-flash",
+          "displayName": "Gemini 3.7 Flash",
+          "upstreamRefs": [
+            "models-dev-provider-catalog:google/gemini-3.7-flash",
+            "google-models-api:gemini-3.7-flash"
+          ],
+          "contextWindow": 1048576,
+          "maxTokens": 65536,
+          "status": "available",
+          "source": "models-dev-provider-catalog"
         }
       ],
       "agentGateways": []
@@ -3007,6 +3019,16 @@
           ],
           "contextWindow": 1000000,
           "maxTokens": 262144,
+          "source": "openrouter-models"
+        },
+        {
+          "id": "qwen/qwen3.8-27b",
+          "displayName": "Qwen3.8 27B",
+          "upstreamRefs": [
+            "openrouter-models:qwen/qwen3.8-27b"
+          ],
+          "contextWindow": 262144,
+          "maxTokens": 131072,
           "source": "openrouter-models"
         }
       ],
