@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-16T18:49:21.798Z",
+  "updatedAt": "2026-08-18T07:07:38.901Z",
   "source": "haloforge-ai-provider-catalog",
   "repository": "https://github.com/HaloForgeAI/haloforge-ai-provider-catalog",
   "upstreamSources": [
@@ -2303,8 +2303,8 @@
         {
           "id": "z-ai/glm-5.2",
           "displayName": "z-ai/glm-5.2",
-          "contextWindow": 1024000,
-          "maxTokens": 128000,
+          "contextWindow": 1048576,
+          "maxTokens": 131072,
           "status": "available",
           "source": "openrouter-models"
         },
@@ -2367,7 +2367,7 @@
         {
           "id": "z-ai/glm-4.6",
           "displayName": "GLM 4.6",
-          "contextWindow": 204800,
+          "contextWindow": 202752,
           "maxTokens": 131072,
           "status": "available",
           "source": "openrouter-models"
@@ -2428,7 +2428,7 @@
           "id": "deepseek/deepseek-v3.1-terminus",
           "displayName": "DeepSeek V3.1 Terminus",
           "contextWindow": 163840,
-          "maxTokens": 32768,
+          "maxTokens": 163840,
           "status": "deprecated",
           "source": "openrouter-models",
           "shutdownDate": "2026-08-17",
@@ -2834,7 +2834,7 @@
           "id": "qwen/qwen3.6-27b",
           "displayName": "Qwen3.6 27B",
           "contextWindow": 262144,
-          "maxTokens": 65536,
+          "maxTokens": 262144,
           "status": "available",
           "source": "openrouter-models"
         },
@@ -3589,6 +3589,13 @@
           "displayName": "Qwen3 Max Thinking via OpenRouter",
           "contextWindow": 262144,
           "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "z-ai/glm-5.2:free",
+          "displayName": "GLM 5.2 (free)",
+          "contextWindow": 128000,
+          "maxTokens": 128000,
           "source": "openrouter-models"
         }
       ],

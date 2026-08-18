@@ -3030,6 +3030,16 @@
           "contextWindow": 262144,
           "maxTokens": 131072,
           "source": "openrouter-models"
+        },
+        {
+          "id": "z-ai/glm-5.2:free",
+          "displayName": "GLM 5.2 (free)",
+          "upstreamRefs": [
+            "openrouter-models:z-ai/glm-5.2:free"
+          ],
+          "contextWindow": 128000,
+          "maxTokens": 128000,
+          "source": "openrouter-models"
         }
       ],
       "agentGateways": [
