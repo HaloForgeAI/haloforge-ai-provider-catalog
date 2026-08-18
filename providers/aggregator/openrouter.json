@@ -17,7 +17,7 @@
       "id": "z-ai/glm-5.2",
       "displayName": "z-ai/glm-5.2",
       "contextWindow": 1048576,
-      "maxTokens": 131072,
+      "maxTokens": 262144,
       "status": "available",
       "source": "openrouter-models"
     },
@@ -546,8 +546,8 @@
     {
       "id": "qwen/qwen3.6-27b",
       "displayName": "Qwen3.6 27B",
-      "contextWindow": 262144,
-      "maxTokens": 262144,
+      "contextWindow": 131072,
+      "maxTokens": 131072,
       "status": "available",
       "source": "openrouter-models"
     },
@@ -1261,6 +1261,13 @@
       "source": "openrouter-models"
     },
     {
+      "id": "z-ai/glm-5.2:free",
+      "displayName": "GLM 5.2 (free)",
+      "contextWindow": 128000,
+      "maxTokens": 128000,
+      "source": "openrouter-models"
+    },
+    {
       "id": "anthropic/claude-fable-5",
       "displayName": "Claude Fable 5 via OpenRouter",
       "contextWindow": 1000000,
@@ -1302,13 +1309,6 @@
       "displayName": "Qwen3 Max Thinking via OpenRouter",
       "contextWindow": 262144,
       "status": "available",
-      "source": "openrouter-models"
-    },
-    {
-      "id": "z-ai/glm-5.2:free",
-      "displayName": "GLM 5.2 (free)",
-      "contextWindow": 128000,
-      "maxTokens": 128000,
       "source": "openrouter-models"
     }
   ],
