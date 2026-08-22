@@ -1268,6 +1268,21 @@
       "source": "openrouter-models"
     },
     {
+      "id": "z-ai/glm-5.3",
+      "displayName": "GLM 5.3",
+      "contextWindow": 1048576,
+      "maxTokens": 131072,
+      "source": "openrouter-models"
+    },
+    {
+      "id": "deepseek/deepseek-v4-flash-vision-exp",
+      "displayName": "DeepSeek V4 Flash Vision Exp",
+      "contextWindow": 1048576,
+      "maxTokens": 384000,
+      "status": "experimental",
+      "source": "openrouter-models"
+    },
+    {
       "id": "anthropic/claude-fable-5",
       "displayName": "Claude Fable 5 via OpenRouter",
       "contextWindow": 1000000,
@@ -1309,21 +1324,6 @@
       "displayName": "Qwen3 Max Thinking via OpenRouter",
       "contextWindow": 262144,
       "status": "available",
-      "source": "openrouter-models"
-    },
-    {
-      "id": "z-ai/glm-5.3",
-      "displayName": "GLM 5.3",
-      "contextWindow": 1048576,
-      "maxTokens": 131072,
-      "source": "openrouter-models"
-    },
-    {
-      "id": "deepseek/deepseek-v4-flash-vision-exp",
-      "displayName": "DeepSeek V4 Flash Vision Exp",
-      "contextWindow": 1048576,
-      "maxTokens": 384000,
-      "status": "experimental",
       "source": "openrouter-models"
     }
   ],
