@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-22T07:02:25.172Z",
+  "updatedAt": "2026-08-22T13:03:36.633Z",
   "source": "haloforge-ai-provider-catalog",
   "repository": "https://github.com/HaloForgeAI/haloforge-ai-provider-catalog",
   "upstreamSources": [
@@ -932,6 +932,14 @@
       "modelsListPath": "/models",
       "models": [
         {
+          "id": "deepseek-v4-flash-vision-exp",
+          "displayName": "DeepSeek V4 Flash Vision Exp",
+          "contextWindow": 1000000,
+          "maxTokens": 384000,
+          "status": "experimental",
+          "source": "models-dev-provider-catalog"
+        },
+        {
           "id": "deepseek-v4-flash",
           "displayName": "DeepSeek V4 Flash",
           "contextWindow": 1000000,
@@ -968,14 +976,6 @@
           "fallbackModelId": "deepseek-v4-pro",
           "disabledByDefault": true,
           "source": "deepseek-pricing-docs"
-        },
-        {
-          "id": "deepseek-v4-flash-vision-exp",
-          "displayName": "DeepSeek V4 Flash Vision Exp",
-          "contextWindow": 1000000,
-          "maxTokens": 384000,
-          "status": "experimental",
-          "source": "models-dev-provider-catalog"
         }
       ],
       "agentGateways": [
@@ -3563,6 +3563,21 @@
           "source": "openrouter-models"
         },
         {
+          "id": "z-ai/glm-5.3",
+          "displayName": "GLM 5.3",
+          "contextWindow": 1048576,
+          "maxTokens": 131072,
+          "source": "openrouter-models"
+        },
+        {
+          "id": "deepseek/deepseek-v4-flash-vision-exp",
+          "displayName": "DeepSeek V4 Flash Vision Exp",
+          "contextWindow": 1048576,
+          "maxTokens": 384000,
+          "status": "experimental",
+          "source": "openrouter-models"
+        },
+        {
           "id": "anthropic/claude-fable-5",
           "displayName": "Claude Fable 5 via OpenRouter",
           "contextWindow": 1000000,
@@ -3604,21 +3619,6 @@
           "displayName": "Qwen3 Max Thinking via OpenRouter",
           "contextWindow": 262144,
           "status": "available",
-          "source": "openrouter-models"
-        },
-        {
-          "id": "z-ai/glm-5.3",
-          "displayName": "GLM 5.3",
-          "contextWindow": 1048576,
-          "maxTokens": 131072,
-          "source": "openrouter-models"
-        },
-        {
-          "id": "deepseek/deepseek-v4-flash-vision-exp",
-          "displayName": "DeepSeek V4 Flash Vision Exp",
-          "contextWindow": 1048576,
-          "maxTokens": 384000,
-          "status": "experimental",
           "source": "openrouter-models"
         }
       ],
