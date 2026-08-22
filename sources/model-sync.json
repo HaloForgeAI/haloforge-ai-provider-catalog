@@ -556,7 +556,22 @@
         ],
         "maxPerGroup": 20
       },
-      "models": [],
+      "models": [
+        {
+          "id": "deepseek-v4-flash-vision-exp",
+          "displayName": "DeepSeek V4 Flash Vision Exp",
+          "upstreamRefs": [
+            "models-dev-provider-catalog:deepseek/deepseek-v4-flash-vision-exp",
+            "deepseek-models-api:deepseek-v4-flash-vision-exp",
+            "vercel-ai-gateway-models:deepseek/deepseek-v4-flash-vision-exp",
+            "openrouter-models:deepseek/deepseek-v4-flash-vision-exp"
+          ],
+          "contextWindow": 1000000,
+          "maxTokens": 384000,
+          "status": "experimental",
+          "source": "models-dev-provider-catalog"
+        }
+      ],
       "agentGateways": []
     },
     {
@@ -3039,6 +3054,27 @@
           ],
           "contextWindow": 128000,
           "maxTokens": 128000,
+          "source": "openrouter-models"
+        },
+        {
+          "id": "z-ai/glm-5.3",
+          "displayName": "GLM 5.3",
+          "upstreamRefs": [
+            "openrouter-models:z-ai/glm-5.3"
+          ],
+          "contextWindow": 1048576,
+          "maxTokens": 131072,
+          "source": "openrouter-models"
+        },
+        {
+          "id": "deepseek/deepseek-v4-flash-vision-exp",
+          "displayName": "DeepSeek V4 Flash Vision Exp",
+          "upstreamRefs": [
+            "openrouter-models:deepseek/deepseek-v4-flash-vision-exp"
+          ],
+          "contextWindow": 1048576,
+          "maxTokens": 384000,
+          "status": "experimental",
           "source": "openrouter-models"
         }
       ],
