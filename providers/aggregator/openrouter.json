@@ -198,7 +198,7 @@
     {
       "id": "minimax/minimax-m2.7",
       "displayName": "MiniMax M2.7",
-      "contextWindow": 204800,
+      "contextWindow": 196608,
       "maxTokens": 131072,
       "status": "available",
       "source": "openrouter-models"
