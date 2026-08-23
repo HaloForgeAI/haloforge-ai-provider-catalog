@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-23T02:02:32.323Z",
+  "updatedAt": "2026-08-23T13:05:23.527Z",
   "source": "haloforge-ai-provider-catalog",
   "repository": "https://github.com/HaloForgeAI/haloforge-ai-provider-catalog",
   "upstreamSources": [
@@ -2493,7 +2493,7 @@
         {
           "id": "minimax/minimax-m2.7",
           "displayName": "MiniMax M2.7",
-          "contextWindow": 204800,
+          "contextWindow": 196608,
           "maxTokens": 131072,
           "status": "available",
           "source": "openrouter-models"
