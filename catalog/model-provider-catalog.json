@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-23T18:51:06.081Z",
+  "updatedAt": "2026-08-24T02:00:14.792Z",
   "source": "haloforge-ai-provider-catalog",
   "repository": "https://github.com/HaloForgeAI/haloforge-ai-provider-catalog",
   "upstreamSources": [
@@ -2842,7 +2842,7 @@
           "id": "qwen/qwen3.6-27b",
           "displayName": "Qwen3.6 27B",
           "contextWindow": 262144,
-          "maxTokens": 262144,
+          "maxTokens": 81920,
           "status": "available",
           "source": "openrouter-models"
         },
@@ -2882,7 +2882,7 @@
           "id": "qwen/qwen3.5-122b-a10b",
           "displayName": "Qwen3.5-122B-A10B",
           "contextWindow": 262144,
-          "maxTokens": 65536,
+          "maxTokens": 262144,
           "status": "available",
           "source": "openrouter-models"
         },
@@ -2908,7 +2908,7 @@
           "contextWindow": 262144,
           "status": "available",
           "source": "openrouter-models",
-          "maxTokens": 65536
+          "maxTokens": 262144
         },
         {
           "id": "qwen/qwen3-coder-next",
@@ -3382,7 +3382,8 @@
           "displayName": "Kimi K3",
           "contextWindow": 1048576,
           "status": "available",
-          "source": "openrouter-models"
+          "source": "openrouter-models",
+          "maxTokens": 1048576
         },
         {
           "id": "openai/o3-mini-high",
@@ -3524,7 +3525,7 @@
           "id": "deepseek/deepseek-v4-flash-0731",
           "displayName": "DeepSeek V4 Flash 0731",
           "contextWindow": 1048576,
-          "maxTokens": 384000,
+          "maxTokens": 131072,
           "source": "openrouter-models"
         },
         {
