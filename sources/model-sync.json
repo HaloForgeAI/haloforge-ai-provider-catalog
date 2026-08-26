@@ -1273,6 +1273,20 @@
           "maxTokens": 128000,
           "status": "available",
           "source": "vercel-ai-gateway-models"
+        },
+        {
+          "id": "glm-5.3",
+          "displayName": "GLM-5.3",
+          "upstreamRefs": [
+            "models-dev-provider-catalog:zai/glm-5.3",
+            "zai-models-api:glm-5.3",
+            "vercel-ai-gateway-models:zai/glm-5.3",
+            "openrouter-models:z-ai/glm-5.3"
+          ],
+          "contextWindow": 1000000,
+          "maxTokens": 131072,
+          "status": "available",
+          "source": "models-dev-provider-catalog"
         }
       ],
       "agentGateways": [
@@ -3075,6 +3089,26 @@
           "contextWindow": 1048576,
           "maxTokens": 384000,
           "status": "experimental",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "minimax/minimax-m3:free",
+          "displayName": "MiniMax M3 (free)",
+          "upstreamRefs": [
+            "openrouter-models:minimax/minimax-m3:free"
+          ],
+          "contextWindow": 1048576,
+          "maxTokens": 943718,
+          "source": "openrouter-models"
+        },
+        {
+          "id": "minimax/minimax-m2.7:free",
+          "displayName": "MiniMax M2.7 (free)",
+          "upstreamRefs": [
+            "openrouter-models:minimax/minimax-m2.7:free"
+          ],
+          "contextWindow": 196608,
+          "maxTokens": 176947,
           "source": "openrouter-models"
         }
       ],

@@ -140,6 +140,14 @@
       "maxTokens": 128000,
       "status": "available",
       "source": "litellm-model-catalog"
+    },
+    {
+      "id": "glm-5.3",
+      "displayName": "GLM-5.3",
+      "contextWindow": 1000000,
+      "maxTokens": 131072,
+      "status": "available",
+      "source": "models-dev-provider-catalog"
     }
   ],
   "agentGateways": [
