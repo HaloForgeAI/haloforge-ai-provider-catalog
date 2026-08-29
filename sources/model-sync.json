@@ -808,6 +808,20 @@
           "maxTokens": 131072,
           "status": "available",
           "source": "models-dev-provider-catalog"
+        },
+        {
+          "id": "qwen3.8-flash",
+          "displayName": "Qwen3.8 Flash",
+          "upstreamRefs": [
+            "models-dev-provider-catalog:alibaba/qwen3.8-flash",
+            "qwen-models-api:qwen3.8-flash",
+            "vercel-ai-gateway-models:alibaba/qwen3.8-flash",
+            "openrouter-models:qwen/qwen3.8-flash"
+          ],
+          "contextWindow": 1000000,
+          "maxTokens": 131072,
+          "status": "available",
+          "source": "models-dev-provider-catalog"
         }
       ],
       "agentGateways": []
@@ -1282,6 +1296,20 @@
             "zai-models-api:glm-5.3",
             "vercel-ai-gateway-models:zai/glm-5.3",
             "openrouter-models:z-ai/glm-5.3"
+          ],
+          "contextWindow": 1000000,
+          "maxTokens": 131072,
+          "status": "available",
+          "source": "models-dev-provider-catalog"
+        },
+        {
+          "id": "glm-5.3-flash",
+          "displayName": "GLM-5.3-Flash",
+          "upstreamRefs": [
+            "models-dev-provider-catalog:zai/glm-5.3-flash",
+            "zai-models-api:glm-5.3-flash",
+            "vercel-ai-gateway-models:zai/glm-5.3-flash",
+            "openrouter-models:z-ai/glm-5.3-flash"
           ],
           "contextWindow": 1000000,
           "maxTokens": 131072,
@@ -3109,6 +3137,26 @@
           ],
           "contextWindow": 196608,
           "maxTokens": 176947,
+          "source": "openrouter-models"
+        },
+        {
+          "id": "z-ai/glm-5.3-flash",
+          "displayName": "GLM 5.3 Flash",
+          "upstreamRefs": [
+            "openrouter-models:z-ai/glm-5.3-flash"
+          ],
+          "contextWindow": 1048576,
+          "maxTokens": 131072,
+          "source": "openrouter-models"
+        },
+        {
+          "id": "qwen/qwen3.8-flash",
+          "displayName": "Qwen3.8 Flash",
+          "upstreamRefs": [
+            "openrouter-models:qwen/qwen3.8-flash"
+          ],
+          "contextWindow": 1000000,
+          "maxTokens": 131072,
           "source": "openrouter-models"
         }
       ],
