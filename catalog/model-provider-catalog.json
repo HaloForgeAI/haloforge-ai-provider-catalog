@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-30T05:30:20.144Z",
+  "updatedAt": "2026-08-30T21:12:04.717Z",
   "source": "haloforge-ai-provider-catalog",
   "repository": "https://github.com/HaloForgeAI/haloforge-ai-provider-catalog",
   "upstreamSources": [
@@ -3186,7 +3186,7 @@
           "id": "openai/gpt-4.1-nano",
           "displayName": "GPT-4.1 Nano",
           "contextWindow": 1047576,
-          "maxTokens": 942818,
+          "maxTokens": 32768,
           "status": "available",
           "source": "openrouter-models"
         },
