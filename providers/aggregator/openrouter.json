@@ -867,7 +867,7 @@
       "id": "openai/gpt-4.1-nano",
       "displayName": "GPT-4.1 Nano",
       "contextWindow": 1047576,
-      "maxTokens": 942818,
+      "maxTokens": 32768,
       "status": "available",
       "source": "openrouter-models"
     },
