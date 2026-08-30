@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-29T16:45:55.349Z",
+  "updatedAt": "2026-08-30T05:30:20.144Z",
   "source": "haloforge-ai-provider-catalog",
   "repository": "https://github.com/HaloForgeAI/haloforge-ai-provider-catalog",
   "upstreamSources": [
@@ -2343,8 +2343,8 @@
         {
           "id": "z-ai/glm-5.1",
           "displayName": "GLM 5.1",
-          "contextWindow": 202752,
-          "maxTokens": 182476,
+          "contextWindow": 200000,
+          "maxTokens": 128000,
           "status": "available",
           "source": "openrouter-models"
         },
@@ -3234,7 +3234,7 @@
           "id": "qwen/qwen3-next-80b-a3b-instruct",
           "displayName": "Qwen3 Next 80B A3B Instruct",
           "contextWindow": 262144,
-          "maxTokens": 235929,
+          "maxTokens": 16384,
           "status": "available",
           "source": "openrouter-models"
         },
