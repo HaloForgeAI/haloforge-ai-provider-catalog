@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-30T21:12:04.717Z",
+  "updatedAt": "2026-08-31T22:54:12.555Z",
   "source": "haloforge-ai-provider-catalog",
   "repository": "https://github.com/HaloForgeAI/haloforge-ai-provider-catalog",
   "upstreamSources": [
@@ -3234,7 +3234,7 @@
           "id": "qwen/qwen3-next-80b-a3b-instruct",
           "displayName": "Qwen3 Next 80B A3B Instruct",
           "contextWindow": 262144,
-          "maxTokens": 16384,
+          "maxTokens": 235929,
           "status": "available",
           "source": "openrouter-models"
         },
