@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-01T11:44:45.396Z",
+  "updatedAt": "2026-09-05T15:18:47.609Z",
   "source": "haloforge-ai-provider-catalog",
   "repository": "https://github.com/HaloForgeAI/haloforge-ai-provider-catalog",
   "upstreamSources": [
@@ -548,6 +548,13 @@
           "maxTokens": 32000,
           "status": "available",
           "source": "anthropic-models-api"
+        },
+        {
+          "id": "claude-fable-5-1",
+          "displayName": "Claude Fable 5.1",
+          "contextWindow": 1000000,
+          "maxTokens": 128000,
+          "source": "anthropic-models-api"
         }
       ],
       "agentGateways": [
@@ -754,6 +761,14 @@
           "deprecationDate": "2026-06-01",
           "fallbackModelId": "gemini-2.5-flash",
           "source": "litellm-model-catalog"
+        },
+        {
+          "id": "gemini-3.8-flash",
+          "displayName": "Gemini 3.8 Flash",
+          "contextWindow": 1048576,
+          "maxTokens": 65536,
+          "status": "available",
+          "source": "models-dev-provider-catalog"
         }
       ],
       "agentGateways": []
@@ -2336,7 +2351,7 @@
           "id": "z-ai/glm-5.2",
           "displayName": "z-ai/glm-5.2",
           "contextWindow": 1048576,
-          "maxTokens": 262144,
+          "maxTokens": 131072,
           "status": "available",
           "source": "openrouter-models"
         },
@@ -2377,8 +2392,10 @@
           "displayName": "GLM 4.7 Flash",
           "contextWindow": 202752,
           "maxTokens": 16384,
-          "status": "available",
-          "source": "openrouter-models"
+          "status": "deprecated",
+          "source": "openrouter-models",
+          "shutdownDate": "2026-09-10",
+          "disabledByDefault": true
         },
         {
           "id": "z-ai/glm-4.7",
@@ -2399,8 +2416,8 @@
         {
           "id": "z-ai/glm-4.6",
           "displayName": "GLM 4.6",
-          "contextWindow": 198000,
-          "maxTokens": 16384,
+          "contextWindow": 204800,
+          "maxTokens": 131072,
           "status": "available",
           "source": "openrouter-models"
         },
@@ -2509,8 +2526,8 @@
         {
           "id": "deepseek/deepseek-chat",
           "displayName": "DeepSeek V3",
-          "contextWindow": 128000,
-          "maxTokens": 16000,
+          "contextWindow": 163840,
+          "maxTokens": 16384,
           "status": "available",
           "source": "openrouter-models"
         },
@@ -2866,7 +2883,7 @@
           "id": "qwen/qwen3.6-27b",
           "displayName": "Qwen3.6 27B",
           "contextWindow": 262144,
-          "maxTokens": 235929,
+          "maxTokens": 65536,
           "status": "available",
           "source": "openrouter-models"
         },
@@ -2890,7 +2907,7 @@
           "id": "qwen/qwen3.5-35b-a3b",
           "displayName": "Qwen3.5-35B-A3B",
           "contextWindow": 262144,
-          "maxTokens": 235929,
+          "maxTokens": 16384,
           "status": "available",
           "source": "openrouter-models"
         },
@@ -2932,7 +2949,7 @@
           "contextWindow": 262144,
           "status": "available",
           "source": "openrouter-models",
-          "maxTokens": 65536
+          "maxTokens": 235929
         },
         {
           "id": "qwen/qwen3-coder-next",
@@ -3317,7 +3334,7 @@
           "id": "qwen/qwen3-235b-a22b-2507",
           "displayName": "Qwen3 235B A22B Instruct 2507",
           "contextWindow": 262144,
-          "maxTokens": 235929,
+          "maxTokens": 16384,
           "status": "available",
           "source": "openrouter-models"
         },
@@ -3364,8 +3381,8 @@
         {
           "id": "qwen/qwen2.5-vl-72b-instruct",
           "displayName": "Qwen2.5 VL 72B Instruct",
-          "contextWindow": 32000,
-          "maxTokens": 28800,
+          "contextWindow": 128000,
+          "maxTokens": 115200,
           "status": "available",
           "source": "openrouter-models"
         },
@@ -3562,7 +3579,7 @@
         {
           "id": "deepseek/deepseek-v4-pro-0813",
           "displayName": "DeepSeek V4 Pro 0813",
-          "contextWindow": 1048576,
+          "contextWindow": 1024000,
           "maxTokens": 384000,
           "source": "openrouter-models"
         },
@@ -3591,7 +3608,7 @@
           "id": "z-ai/glm-5.3",
           "displayName": "GLM 5.3",
           "contextWindow": 1048576,
-          "maxTokens": 131072,
+          "maxTokens": 262144,
           "source": "openrouter-models"
         },
         {
@@ -3672,6 +3689,27 @@
           "displayName": "Qwen3 Max Thinking via OpenRouter",
           "contextWindow": 262144,
           "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "openai/gpt-6-astra-pro",
+          "displayName": "GPT-6 Astra Pro",
+          "contextWindow": 1050000,
+          "maxTokens": 128000,
+          "source": "openrouter-models"
+        },
+        {
+          "id": "openai/gpt-6-astra",
+          "displayName": "GPT-6 Astra",
+          "contextWindow": 1050000,
+          "maxTokens": 128000,
+          "source": "openrouter-models"
+        },
+        {
+          "id": "qwen/qwen3.8-max-0902",
+          "displayName": "Qwen3.8 Max (0902)",
+          "contextWindow": 1000000,
+          "maxTokens": 131072,
           "source": "openrouter-models"
         }
       ],
