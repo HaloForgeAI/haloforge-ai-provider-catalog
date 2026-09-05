@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-05T15:18:47.609Z",
+  "updatedAt": "2026-09-05T20:27:20.229Z",
   "source": "haloforge-ai-provider-catalog",
   "repository": "https://github.com/HaloForgeAI/haloforge-ai-provider-catalog",
   "upstreamSources": [
@@ -721,6 +721,14 @@
           "source": "models-dev-provider-catalog"
         },
         {
+          "id": "gemini-3.8-flash",
+          "displayName": "Gemini 3.8 Flash",
+          "contextWindow": 1048576,
+          "maxTokens": 65536,
+          "status": "available",
+          "source": "models-dev-provider-catalog"
+        },
+        {
           "id": "gemini-3.5-flash",
           "displayName": "Gemini 3.5 Flash",
           "contextWindow": 1048576,
@@ -761,14 +769,6 @@
           "deprecationDate": "2026-06-01",
           "fallbackModelId": "gemini-2.5-flash",
           "source": "litellm-model-catalog"
-        },
-        {
-          "id": "gemini-3.8-flash",
-          "displayName": "Gemini 3.8 Flash",
-          "contextWindow": 1048576,
-          "maxTokens": 65536,
-          "status": "available",
-          "source": "models-dev-provider-catalog"
         }
       ],
       "agentGateways": []
@@ -2906,7 +2906,7 @@
         {
           "id": "qwen/qwen3.5-35b-a3b",
           "displayName": "Qwen3.5-35B-A3B",
-          "contextWindow": 262144,
+          "contextWindow": 256000,
           "maxTokens": 16384,
           "status": "available",
           "source": "openrouter-models"
@@ -3648,6 +3648,27 @@
           "source": "openrouter-models"
         },
         {
+          "id": "openai/gpt-6-astra-pro",
+          "displayName": "GPT-6 Astra Pro",
+          "contextWindow": 1050000,
+          "maxTokens": 128000,
+          "source": "openrouter-models"
+        },
+        {
+          "id": "openai/gpt-6-astra",
+          "displayName": "GPT-6 Astra",
+          "contextWindow": 1050000,
+          "maxTokens": 128000,
+          "source": "openrouter-models"
+        },
+        {
+          "id": "qwen/qwen3.8-max-0902",
+          "displayName": "Qwen3.8 Max (0902)",
+          "contextWindow": 1000000,
+          "maxTokens": 131072,
+          "source": "openrouter-models"
+        },
+        {
           "id": "anthropic/claude-fable-5",
           "displayName": "Claude Fable 5 via OpenRouter",
           "contextWindow": 1000000,
@@ -3689,27 +3710,6 @@
           "displayName": "Qwen3 Max Thinking via OpenRouter",
           "contextWindow": 262144,
           "status": "available",
-          "source": "openrouter-models"
-        },
-        {
-          "id": "openai/gpt-6-astra-pro",
-          "displayName": "GPT-6 Astra Pro",
-          "contextWindow": 1050000,
-          "maxTokens": 128000,
-          "source": "openrouter-models"
-        },
-        {
-          "id": "openai/gpt-6-astra",
-          "displayName": "GPT-6 Astra",
-          "contextWindow": 1050000,
-          "maxTokens": 128000,
-          "source": "openrouter-models"
-        },
-        {
-          "id": "qwen/qwen3.8-max-0902",
-          "displayName": "Qwen3.8 Max (0902)",
-          "contextWindow": 1000000,
-          "maxTokens": 131072,
           "source": "openrouter-models"
         }
       ],

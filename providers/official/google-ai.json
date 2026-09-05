@@ -62,6 +62,14 @@
       "source": "models-dev-provider-catalog"
     },
     {
+      "id": "gemini-3.8-flash",
+      "displayName": "Gemini 3.8 Flash",
+      "contextWindow": 1048576,
+      "maxTokens": 65536,
+      "status": "available",
+      "source": "models-dev-provider-catalog"
+    },
+    {
       "id": "gemini-3.5-flash",
       "displayName": "Gemini 3.5 Flash",
       "contextWindow": 1048576,
@@ -102,14 +110,6 @@
       "deprecationDate": "2026-06-01",
       "fallbackModelId": "gemini-2.5-flash",
       "source": "litellm-model-catalog"
-    },
-    {
-      "id": "gemini-3.8-flash",
-      "displayName": "Gemini 3.8 Flash",
-      "contextWindow": 1048576,
-      "maxTokens": 65536,
-      "status": "available",
-      "source": "models-dev-provider-catalog"
     }
   ],
   "agentGateways": []
