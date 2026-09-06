@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-05T20:27:20.229Z",
+  "updatedAt": "2026-09-06T04:46:37.123Z",
   "source": "haloforge-ai-provider-catalog",
   "repository": "https://github.com/HaloForgeAI/haloforge-ai-provider-catalog",
   "upstreamSources": [
@@ -2416,7 +2416,7 @@
         {
           "id": "z-ai/glm-4.6",
           "displayName": "GLM 4.6",
-          "contextWindow": 204800,
+          "contextWindow": 202752,
           "maxTokens": 131072,
           "status": "available",
           "source": "openrouter-models"
