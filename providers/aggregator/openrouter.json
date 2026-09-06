@@ -615,7 +615,7 @@
       "contextWindow": 262144,
       "status": "available",
       "source": "openrouter-models",
-      "maxTokens": 235929
+      "maxTokens": 65536
     },
     {
       "id": "qwen/qwen3-coder-next",
