@@ -56,8 +56,8 @@
     {
       "id": "z-ai/glm-4.7-flash",
       "displayName": "GLM 4.7 Flash",
-      "contextWindow": 202752,
-      "maxTokens": 16384,
+      "contextWindow": 131072,
+      "maxTokens": 117964,
       "status": "deprecated",
       "source": "openrouter-models",
       "shutdownDate": "2026-09-10",
@@ -82,8 +82,8 @@
     {
       "id": "z-ai/glm-4.6",
       "displayName": "GLM 4.6",
-      "contextWindow": 198000,
-      "maxTokens": 16384,
+      "contextWindow": 204800,
+      "maxTokens": 131072,
       "status": "available",
       "source": "openrouter-models"
     },
@@ -152,8 +152,8 @@
     {
       "id": "deepseek/deepseek-chat-v3.1",
       "displayName": "DeepSeek V3.1",
-      "contextWindow": 161000,
-      "maxTokens": 144900,
+      "contextWindow": 163840,
+      "maxTokens": 32768,
       "status": "available",
       "source": "openrouter-models"
     },
@@ -273,7 +273,7 @@
       "id": "moonshotai/kimi-k2-thinking",
       "displayName": "Kimi K2 Thinking",
       "contextWindow": 262144,
-      "maxTokens": 100352,
+      "maxTokens": 235929,
       "status": "available",
       "source": "openrouter-models"
     },
@@ -1023,8 +1023,8 @@
     {
       "id": "qwen/qwen3-14b",
       "displayName": "Qwen3 14B",
-      "contextWindow": 40960,
-      "maxTokens": 16384,
+      "contextWindow": 131072,
+      "maxTokens": 8192,
       "status": "available",
       "source": "openrouter-models"
     },
