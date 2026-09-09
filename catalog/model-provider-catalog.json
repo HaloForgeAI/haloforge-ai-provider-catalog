@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-08T16:42:10.246Z",
+  "updatedAt": "2026-09-09T04:49:34.504Z",
   "source": "haloforge-ai-provider-catalog",
   "repository": "https://github.com/HaloForgeAI/haloforge-ai-provider-catalog",
   "upstreamSources": [
@@ -2416,8 +2416,8 @@
         {
           "id": "z-ai/glm-4.6",
           "displayName": "GLM 4.6",
-          "contextWindow": 204800,
-          "maxTokens": 131072,
+          "contextWindow": 198000,
+          "maxTokens": 16384,
           "status": "available",
           "source": "openrouter-models"
         },
@@ -3251,7 +3251,7 @@
           "id": "qwen/qwen3-next-80b-a3b-instruct",
           "displayName": "Qwen3 Next 80B A3B Instruct",
           "contextWindow": 262144,
-          "maxTokens": 235929,
+          "maxTokens": 16384,
           "status": "available",
           "source": "openrouter-models"
         },
@@ -3587,7 +3587,7 @@
           "id": "qwen/qwen3.8-2.4t-a95b",
           "displayName": "Qwen3.8 2.4T A95B",
           "contextWindow": 1000000,
-          "maxTokens": 262144,
+          "maxTokens": 131072,
           "source": "openrouter-models"
         },
         {
@@ -3615,7 +3615,7 @@
           "id": "deepseek/deepseek-v4-flash-vision-exp",
           "displayName": "DeepSeek V4 Flash Vision Exp",
           "contextWindow": 1048576,
-          "maxTokens": 384000,
+          "maxTokens": 943718,
           "status": "experimental",
           "source": "openrouter-models"
         },
