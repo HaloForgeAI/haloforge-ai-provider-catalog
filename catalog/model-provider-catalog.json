@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-11T11:29:27.159Z",
+  "updatedAt": "2026-09-11T16:33:56.355Z",
   "source": "haloforge-ai-provider-catalog",
   "repository": "https://github.com/HaloForgeAI/haloforge-ai-provider-catalog",
   "upstreamSources": [
@@ -955,6 +955,14 @@
           "source": "models-dev-provider-catalog"
         },
         {
+          "id": "deepseek-flash",
+          "displayName": "DeepSeek V4.1 Flash",
+          "contextWindow": 1000000,
+          "maxTokens": 384000,
+          "status": "available",
+          "source": "models-dev-provider-catalog"
+        },
+        {
           "id": "deepseek-v4-flash",
           "displayName": "DeepSeek V4 Flash",
           "contextWindow": 1000000,
@@ -991,14 +999,6 @@
           "fallbackModelId": "deepseek-v4-pro",
           "disabledByDefault": true,
           "source": "deepseek-pricing-docs"
-        },
-        {
-          "id": "deepseek-flash",
-          "displayName": "DeepSeek V4.1 Flash",
-          "contextWindow": 1000000,
-          "maxTokens": 384000,
-          "status": "available",
-          "source": "models-dev-provider-catalog"
         }
       ],
       "agentGateways": [
@@ -2550,8 +2550,8 @@
         {
           "id": "minimax/minimax-m2.5",
           "displayName": "MiniMax M2.5",
-          "contextWindow": 204800,
-          "maxTokens": 131072,
+          "contextWindow": 200000,
+          "maxTokens": 128000,
           "status": "available",
           "source": "openrouter-models"
         },
@@ -3587,8 +3587,8 @@
         {
           "id": "deepseek/deepseek-v4-pro-0813",
           "displayName": "DeepSeek V4 Pro 0813",
-          "contextWindow": 1048576,
-          "maxTokens": 943718,
+          "contextWindow": 1024000,
+          "maxTokens": 384000,
           "source": "openrouter-models"
         },
         {
@@ -3677,6 +3677,13 @@
           "source": "openrouter-models"
         },
         {
+          "id": "deepseek/deepseek-v4.1-flash",
+          "displayName": "DeepSeek V4.1 Flash",
+          "contextWindow": 1048576,
+          "maxTokens": 384000,
+          "source": "openrouter-models"
+        },
+        {
           "id": "anthropic/claude-fable-5",
           "displayName": "Claude Fable 5 via OpenRouter",
           "contextWindow": 1000000,
@@ -3718,13 +3725,6 @@
           "displayName": "Qwen3 Max Thinking via OpenRouter",
           "contextWindow": 262144,
           "status": "available",
-          "source": "openrouter-models"
-        },
-        {
-          "id": "deepseek/deepseek-v4.1-flash",
-          "displayName": "DeepSeek V4.1 Flash",
-          "contextWindow": 1048576,
-          "maxTokens": 384000,
           "source": "openrouter-models"
         }
       ],
