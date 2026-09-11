@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-10T04:50:46.131Z",
+  "updatedAt": "2026-09-11T11:29:27.159Z",
   "source": "haloforge-ai-provider-catalog",
   "repository": "https://github.com/HaloForgeAI/haloforge-ai-provider-catalog",
   "upstreamSources": [
@@ -991,6 +991,14 @@
           "fallbackModelId": "deepseek-v4-pro",
           "disabledByDefault": true,
           "source": "deepseek-pricing-docs"
+        },
+        {
+          "id": "deepseek-flash",
+          "displayName": "DeepSeek V4.1 Flash",
+          "contextWindow": 1000000,
+          "maxTokens": 384000,
+          "status": "available",
+          "source": "models-dev-provider-catalog"
         }
       ],
       "agentGateways": [
@@ -3579,8 +3587,8 @@
         {
           "id": "deepseek/deepseek-v4-pro-0813",
           "displayName": "DeepSeek V4 Pro 0813",
-          "contextWindow": 1024000,
-          "maxTokens": 384000,
+          "contextWindow": 1048576,
+          "maxTokens": 943718,
           "source": "openrouter-models"
         },
         {
@@ -3710,6 +3718,13 @@
           "displayName": "Qwen3 Max Thinking via OpenRouter",
           "contextWindow": 262144,
           "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "deepseek/deepseek-v4.1-flash",
+          "displayName": "DeepSeek V4.1 Flash",
+          "contextWindow": 1048576,
+          "maxTokens": 384000,
           "source": "openrouter-models"
         }
       ],

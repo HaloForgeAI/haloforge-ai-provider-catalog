@@ -592,6 +592,20 @@
           "maxTokens": 384000,
           "status": "experimental",
           "source": "models-dev-provider-catalog"
+        },
+        {
+          "id": "deepseek-flash",
+          "displayName": "DeepSeek V4.1 Flash",
+          "upstreamRefs": [
+            "models-dev-provider-catalog:deepseek/deepseek-flash",
+            "deepseek-models-api:deepseek-flash",
+            "vercel-ai-gateway-models:deepseek/deepseek-flash",
+            "openrouter-models:deepseek/deepseek-flash"
+          ],
+          "contextWindow": 1000000,
+          "maxTokens": 384000,
+          "status": "available",
+          "source": "models-dev-provider-catalog"
         }
       ],
       "agentGateways": []
@@ -3209,6 +3223,16 @@
           ],
           "contextWindow": 1000000,
           "maxTokens": 131072,
+          "source": "openrouter-models"
+        },
+        {
+          "id": "deepseek/deepseek-v4.1-flash",
+          "displayName": "DeepSeek V4.1 Flash",
+          "upstreamRefs": [
+            "openrouter-models:deepseek/deepseek-v4.1-flash"
+          ],
+          "contextWindow": 1048576,
+          "maxTokens": 384000,
           "source": "openrouter-models"
         }
       ],

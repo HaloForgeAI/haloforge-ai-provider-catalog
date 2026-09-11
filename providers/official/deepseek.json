@@ -58,6 +58,14 @@
       "fallbackModelId": "deepseek-v4-pro",
       "disabledByDefault": true,
       "source": "deepseek-pricing-docs"
+    },
+    {
+      "id": "deepseek-flash",
+      "displayName": "DeepSeek V4.1 Flash",
+      "contextWindow": 1000000,
+      "maxTokens": 384000,
+      "status": "available",
+      "source": "models-dev-provider-catalog"
     }
   ],
   "agentGateways": [
