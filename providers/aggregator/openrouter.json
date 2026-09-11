@@ -208,8 +208,8 @@
     {
       "id": "minimax/minimax-m2.5",
       "displayName": "MiniMax M2.5",
-      "contextWindow": 204800,
-      "maxTokens": 131072,
+      "contextWindow": 200000,
+      "maxTokens": 128000,
       "status": "available",
       "source": "openrouter-models"
     },
@@ -1245,8 +1245,8 @@
     {
       "id": "deepseek/deepseek-v4-pro-0813",
       "displayName": "DeepSeek V4 Pro 0813",
-      "contextWindow": 1048576,
-      "maxTokens": 943718,
+      "contextWindow": 1024000,
+      "maxTokens": 384000,
       "source": "openrouter-models"
     },
     {
@@ -1335,6 +1335,13 @@
       "source": "openrouter-models"
     },
     {
+      "id": "deepseek/deepseek-v4.1-flash",
+      "displayName": "DeepSeek V4.1 Flash",
+      "contextWindow": 1048576,
+      "maxTokens": 384000,
+      "source": "openrouter-models"
+    },
+    {
       "id": "anthropic/claude-fable-5",
       "displayName": "Claude Fable 5 via OpenRouter",
       "contextWindow": 1000000,
@@ -1376,13 +1383,6 @@
       "displayName": "Qwen3 Max Thinking via OpenRouter",
       "contextWindow": 262144,
       "status": "available",
-      "source": "openrouter-models"
-    },
-    {
-      "id": "deepseek/deepseek-v4.1-flash",
-      "displayName": "DeepSeek V4.1 Flash",
-      "contextWindow": 1048576,
-      "maxTokens": 384000,
       "source": "openrouter-models"
     }
   ],
