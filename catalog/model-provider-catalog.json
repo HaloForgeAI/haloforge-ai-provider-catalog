@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-12T04:41:45.007Z",
+  "updatedAt": "2026-09-12T10:53:58.066Z",
   "source": "haloforge-ai-provider-catalog",
   "repository": "https://github.com/HaloForgeAI/haloforge-ai-provider-catalog",
   "upstreamSources": [
@@ -2550,8 +2550,8 @@
         {
           "id": "minimax/minimax-m2.5",
           "displayName": "MiniMax M2.5",
-          "contextWindow": 204800,
-          "maxTokens": 131072,
+          "contextWindow": 200000,
+          "maxTokens": 128000,
           "status": "available",
           "source": "openrouter-models"
         },
@@ -2615,7 +2615,7 @@
           "id": "moonshotai/kimi-k2-thinking",
           "displayName": "Kimi K2 Thinking",
           "contextWindow": 262144,
-          "maxTokens": 100352,
+          "maxTokens": 235929,
           "status": "available",
           "source": "openrouter-models"
         },
