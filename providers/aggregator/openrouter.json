@@ -273,7 +273,7 @@
       "id": "moonshotai/kimi-k2-thinking",
       "displayName": "Kimi K2 Thinking",
       "contextWindow": 262144,
-      "maxTokens": 235929,
+      "maxTokens": 98304,
       "status": "available",
       "source": "openrouter-models"
     },
@@ -281,7 +281,7 @@
       "id": "moonshotai/kimi-k2-0905",
       "displayName": "Kimi K2 0905",
       "contextWindow": 262144,
-      "maxTokens": 100352,
+      "maxTokens": 98304,
       "status": "available",
       "source": "openrouter-models"
     },
@@ -289,7 +289,7 @@
       "id": "moonshotai/kimi-k2",
       "displayName": "Kimi K2 0711",
       "contextWindow": 131072,
-      "maxTokens": 100352,
+      "maxTokens": 98304,
       "status": "available",
       "source": "openrouter-models"
     },
@@ -965,10 +965,10 @@
     {
       "id": "qwen/qwen3-30b-a3b-instruct-2507",
       "displayName": "Qwen3 30B A3B Instruct 2507",
-      "contextWindow": 262144,
+      "contextWindow": 128000,
       "status": "available",
       "source": "openrouter-models",
-      "maxTokens": 235929
+      "maxTokens": 32000
     },
     {
       "id": "qwen/qwen3-235b-a22b-thinking-2507",
@@ -999,8 +999,8 @@
     {
       "id": "qwen/qwen3-235b-a22b-2507",
       "displayName": "Qwen3 235B A22B Instruct 2507",
-      "contextWindow": 262144,
-      "maxTokens": 235929,
+      "contextWindow": 131072,
+      "maxTokens": 117964,
       "status": "available",
       "source": "openrouter-models"
     },
@@ -1245,8 +1245,8 @@
     {
       "id": "deepseek/deepseek-v4-pro-0813",
       "displayName": "DeepSeek V4 Pro 0813",
-      "contextWindow": 1024000,
-      "maxTokens": 384000,
+      "contextWindow": 1048576,
+      "maxTokens": 393216,
       "source": "openrouter-models"
     },
     {
@@ -1274,7 +1274,7 @@
       "id": "z-ai/glm-5.3",
       "displayName": "GLM 5.3",
       "contextWindow": 1048576,
-      "maxTokens": 943718,
+      "maxTokens": 131072,
       "source": "openrouter-models"
     },
     {
