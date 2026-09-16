@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-15T17:05:07.143Z",
+  "updatedAt": "2026-09-16T04:55:31.633Z",
   "source": "haloforge-ai-provider-catalog",
   "repository": "https://github.com/HaloForgeAI/haloforge-ai-provider-catalog",
   "upstreamSources": [
@@ -3002,8 +3002,8 @@
         {
           "id": "qwen/qwen3-vl-30b-a3b-instruct",
           "displayName": "Qwen3 VL 30B A3B Instruct",
-          "contextWindow": 262144,
-          "maxTokens": 16384,
+          "contextWindow": 131072,
+          "maxTokens": 32768,
           "status": "available",
           "source": "openrouter-models"
         },
@@ -3587,8 +3587,8 @@
         {
           "id": "deepseek/deepseek-v4-pro-0813",
           "displayName": "DeepSeek V4 Pro 0813",
-          "contextWindow": 1048576,
-          "maxTokens": 393216,
+          "contextWindow": 1024000,
+          "maxTokens": 384000,
           "source": "openrouter-models"
         },
         {
