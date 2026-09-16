@@ -660,8 +660,8 @@
     {
       "id": "qwen/qwen3-vl-30b-a3b-instruct",
       "displayName": "Qwen3 VL 30B A3B Instruct",
-      "contextWindow": 262144,
-      "maxTokens": 16384,
+      "contextWindow": 131072,
+      "maxTokens": 32768,
       "status": "available",
       "source": "openrouter-models"
     },
@@ -1245,8 +1245,8 @@
     {
       "id": "deepseek/deepseek-v4-pro-0813",
       "displayName": "DeepSeek V4 Pro 0813",
-      "contextWindow": 1024000,
-      "maxTokens": 384000,
+      "contextWindow": 1048576,
+      "maxTokens": 393216,
       "source": "openrouter-models"
     },
     {
