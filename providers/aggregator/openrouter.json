@@ -82,8 +82,8 @@
     {
       "id": "z-ai/glm-4.6",
       "displayName": "GLM 4.6",
-      "contextWindow": 198000,
-      "maxTokens": 16384,
+      "contextWindow": 202752,
+      "maxTokens": 131072,
       "status": "available",
       "source": "openrouter-models"
     },
