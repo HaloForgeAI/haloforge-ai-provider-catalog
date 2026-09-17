@@ -1246,7 +1246,7 @@
       "id": "deepseek/deepseek-v4-pro-0813",
       "displayName": "DeepSeek V4 Pro 0813",
       "contextWindow": 1048576,
-      "maxTokens": 393216,
+      "maxTokens": 384000,
       "source": "openrouter-models"
     },
     {

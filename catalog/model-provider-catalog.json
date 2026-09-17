@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-16T21:22:49.094Z",
+  "updatedAt": "2026-09-17T04:58:41.439Z",
   "source": "haloforge-ai-provider-catalog",
   "repository": "https://github.com/HaloForgeAI/haloforge-ai-provider-catalog",
   "upstreamSources": [
@@ -3588,7 +3588,7 @@
           "id": "deepseek/deepseek-v4-pro-0813",
           "displayName": "DeepSeek V4 Pro 0813",
           "contextWindow": 1048576,
-          "maxTokens": 393216,
+          "maxTokens": 384000,
           "source": "openrouter-models"
         },
         {
