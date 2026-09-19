@@ -82,8 +82,8 @@
     {
       "id": "z-ai/glm-4.6",
       "displayName": "GLM 4.6",
-      "contextWindow": 198000,
-      "maxTokens": 16384,
+      "contextWindow": 202752,
+      "maxTokens": 131072,
       "status": "available",
       "source": "openrouter-models"
     },
@@ -192,8 +192,8 @@
     {
       "id": "deepseek/deepseek-chat",
       "displayName": "DeepSeek V3",
-      "contextWindow": 128000,
-      "maxTokens": 16000,
+      "contextWindow": 163840,
+      "maxTokens": 16384,
       "status": "available",
       "source": "openrouter-models"
     },
@@ -797,7 +797,7 @@
       "id": "openai/gpt-oss-120b",
       "displayName": "gpt-oss-120b",
       "contextWindow": 131072,
-      "maxTokens": 117964,
+      "maxTokens": 65536,
       "status": "available",
       "source": "openrouter-models"
     },
@@ -1273,15 +1273,15 @@
     {
       "id": "z-ai/glm-5.3",
       "displayName": "GLM 5.3",
-      "contextWindow": 1048575,
-      "maxTokens": 943717,
+      "contextWindow": 1048576,
+      "maxTokens": 131072,
       "source": "openrouter-models"
     },
     {
       "id": "deepseek/deepseek-v4-flash-vision-exp",
       "displayName": "DeepSeek V4 Flash Vision Exp",
       "contextWindow": 1048576,
-      "maxTokens": 943718,
+      "maxTokens": 262144,
       "status": "experimental",
       "source": "openrouter-models"
     },
@@ -1383,6 +1383,27 @@
       "displayName": "Qwen3 Max Thinking via OpenRouter",
       "contextWindow": 262144,
       "status": "available",
+      "source": "openrouter-models"
+    },
+    {
+      "id": "z-ai/glm-5.3-flashx",
+      "displayName": "GLM 5.3 FlashX",
+      "contextWindow": 1048576,
+      "maxTokens": 131072,
+      "source": "openrouter-models"
+    },
+    {
+      "id": "deepseek/deepseek-v4-flash-0731:free",
+      "displayName": "DeepSeek V4 Flash 0731 (free)",
+      "contextWindow": 1048576,
+      "maxTokens": 393216,
+      "source": "openrouter-models"
+    },
+    {
+      "id": "qwen/qwen3.8-27b:free",
+      "displayName": "Qwen3.8 27B (free)",
+      "contextWindow": 262144,
+      "maxTokens": 235929,
       "source": "openrouter-models"
     }
   ],

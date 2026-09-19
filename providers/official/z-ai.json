@@ -156,6 +156,14 @@
       "maxTokens": 128000,
       "status": "available",
       "source": "litellm-model-catalog"
+    },
+    {
+      "id": "glm-5.3-flashx",
+      "displayName": "GLM-5.3-FlashX",
+      "contextWindow": 1000000,
+      "maxTokens": 131072,
+      "status": "available",
+      "source": "models-dev-provider-catalog"
     }
   ],
   "agentGateways": [
