@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-20T16:12:55.913Z",
+  "updatedAt": "2026-09-20T20:53:35.784Z",
   "source": "haloforge-ai-provider-catalog",
   "repository": "https://github.com/HaloForgeAI/haloforge-ai-provider-catalog",
   "upstreamSources": [
@@ -3603,8 +3603,8 @@
         {
           "id": "deepseek/deepseek-v4-pro-0813",
           "displayName": "DeepSeek V4 Pro 0813",
-          "contextWindow": 1048576,
-          "maxTokens": 393216,
+          "contextWindow": 1024000,
+          "maxTokens": 384000,
           "source": "openrouter-models"
         },
         {
@@ -3639,7 +3639,7 @@
           "id": "deepseek/deepseek-v4-flash-vision-exp",
           "displayName": "DeepSeek V4 Flash Vision Exp",
           "contextWindow": 1048576,
-          "maxTokens": 262144,
+          "maxTokens": 943718,
           "status": "experimental",
           "source": "openrouter-models"
         },
