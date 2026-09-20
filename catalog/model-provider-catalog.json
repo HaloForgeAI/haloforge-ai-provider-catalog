@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-20T11:32:22.410Z",
+  "updatedAt": "2026-09-20T16:12:55.913Z",
   "source": "haloforge-ai-provider-catalog",
   "repository": "https://github.com/HaloForgeAI/haloforge-ai-provider-catalog",
   "upstreamSources": [
@@ -1581,6 +1581,14 @@
           "source": "models-dev-provider-catalog"
         },
         {
+          "id": "glm-5.3-flashx",
+          "displayName": "GLM-5.3-FlashX",
+          "contextWindow": 1000000,
+          "maxTokens": 131072,
+          "status": "available",
+          "source": "models-dev-provider-catalog"
+        },
+        {
           "id": "glm-4.5",
           "displayName": "GLM 4.5",
           "contextWindow": 128000,
@@ -1603,14 +1611,6 @@
           "maxTokens": 128000,
           "status": "available",
           "source": "litellm-model-catalog"
-        },
-        {
-          "id": "glm-5.3-flashx",
-          "displayName": "GLM-5.3-FlashX",
-          "contextWindow": 1000000,
-          "maxTokens": 131072,
-          "status": "available",
-          "source": "models-dev-provider-catalog"
         }
       ],
       "agentGateways": [
@@ -3604,7 +3604,7 @@
           "id": "deepseek/deepseek-v4-pro-0813",
           "displayName": "DeepSeek V4 Pro 0813",
           "contextWindow": 1048576,
-          "maxTokens": 384000,
+          "maxTokens": 393216,
           "source": "openrouter-models"
         },
         {
@@ -3617,7 +3617,7 @@
         {
           "id": "qwen/qwen3.8-27b",
           "displayName": "Qwen3.8 27B",
-          "contextWindow": 1000000,
+          "contextWindow": 262144,
           "maxTokens": 131072,
           "source": "openrouter-models"
         },
@@ -3700,6 +3700,20 @@
           "source": "openrouter-models"
         },
         {
+          "id": "z-ai/glm-5.3-flashx",
+          "displayName": "GLM 5.3 FlashX",
+          "contextWindow": 1048576,
+          "maxTokens": 131072,
+          "source": "openrouter-models"
+        },
+        {
+          "id": "qwen/qwen3.8-27b:free",
+          "displayName": "Qwen3.8 27B (free)",
+          "contextWindow": 262144,
+          "maxTokens": 235929,
+          "source": "openrouter-models"
+        },
+        {
           "id": "anthropic/claude-fable-5",
           "displayName": "Claude Fable 5 via OpenRouter",
           "contextWindow": 1000000,
@@ -3741,20 +3755,6 @@
           "displayName": "Qwen3 Max Thinking via OpenRouter",
           "contextWindow": 262144,
           "status": "available",
-          "source": "openrouter-models"
-        },
-        {
-          "id": "z-ai/glm-5.3-flashx",
-          "displayName": "GLM 5.3 FlashX",
-          "contextWindow": 1048576,
-          "maxTokens": 131072,
-          "source": "openrouter-models"
-        },
-        {
-          "id": "qwen/qwen3.8-27b:free",
-          "displayName": "Qwen3.8 27B (free)",
-          "contextWindow": 262144,
-          "maxTokens": 235929,
           "source": "openrouter-models"
         }
       ],
