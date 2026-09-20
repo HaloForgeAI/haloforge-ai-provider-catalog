@@ -128,16 +128,20 @@
       "displayName": "DeepSeek V3.2",
       "contextWindow": 163840,
       "maxTokens": 65536,
-      "status": "available",
-      "source": "openrouter-models"
+      "status": "deprecated",
+      "source": "openrouter-models",
+      "shutdownDate": "2026-09-28",
+      "disabledByDefault": true
     },
     {
       "id": "deepseek/deepseek-v3.2-exp",
       "displayName": "DeepSeek V3.2 Exp",
       "contextWindow": 163840,
       "maxTokens": 65536,
-      "status": "experimental",
-      "source": "openrouter-models"
+      "status": "deprecated",
+      "source": "openrouter-models",
+      "shutdownDate": "2026-09-28",
+      "disabledByDefault": true
     },
     {
       "id": "deepseek/deepseek-v3.1-terminus",
@@ -146,7 +150,7 @@
       "maxTokens": 32768,
       "status": "deprecated",
       "source": "openrouter-models",
-      "shutdownDate": "2026-08-17",
+      "shutdownDate": "2026-09-28",
       "disabledByDefault": true
     },
     {
@@ -178,8 +182,10 @@
       "displayName": "R1 Distill Llama 70B",
       "contextWindow": 8192,
       "maxTokens": 7372,
-      "status": "available",
-      "source": "openrouter-models"
+      "status": "deprecated",
+      "source": "openrouter-models",
+      "shutdownDate": "2026-09-28",
+      "disabledByDefault": true
     },
     {
       "id": "deepseek/deepseek-r1",
@@ -192,8 +198,8 @@
     {
       "id": "deepseek/deepseek-chat",
       "displayName": "DeepSeek V3",
-      "contextWindow": 128000,
-      "maxTokens": 16000,
+      "contextWindow": 163840,
+      "maxTokens": 16384,
       "status": "available",
       "source": "openrouter-models"
     },
@@ -226,8 +232,10 @@
       "displayName": "MiniMax M2.1",
       "contextWindow": 204800,
       "maxTokens": 131072,
-      "status": "available",
-      "source": "openrouter-models"
+      "status": "deprecated",
+      "source": "openrouter-models",
+      "shutdownDate": "2026-10-08",
+      "disabledByDefault": true
     },
     {
       "id": "minimax/minimax-m2",
@@ -564,16 +572,16 @@
     {
       "id": "qwen/qwen3.5-9b",
       "displayName": "Qwen3.5-9B",
-      "contextWindow": 262144,
-      "maxTokens": 235929,
+      "contextWindow": 256000,
+      "maxTokens": 32768,
       "status": "available",
       "source": "openrouter-models"
     },
     {
       "id": "qwen/qwen3.5-35b-a3b",
       "displayName": "Qwen3.5-35B-A3B",
-      "contextWindow": 262144,
-      "maxTokens": 65536,
+      "contextWindow": 256000,
+      "maxTokens": 16384,
       "status": "available",
       "source": "openrouter-models"
     },
@@ -797,7 +805,7 @@
       "id": "openai/gpt-oss-120b",
       "displayName": "gpt-oss-120b",
       "contextWindow": 131072,
-      "maxTokens": 117964,
+      "maxTokens": 65536,
       "status": "available",
       "source": "openrouter-models"
     },
@@ -1246,7 +1254,7 @@
       "id": "deepseek/deepseek-v4-pro-0813",
       "displayName": "DeepSeek V4 Pro 0813",
       "contextWindow": 1048576,
-      "maxTokens": 393216,
+      "maxTokens": 384000,
       "source": "openrouter-models"
     },
     {
@@ -1259,7 +1267,7 @@
     {
       "id": "qwen/qwen3.8-27b",
       "displayName": "Qwen3.8 27B",
-      "contextWindow": 262144,
+      "contextWindow": 1000000,
       "maxTokens": 131072,
       "source": "openrouter-models"
     },
@@ -1273,15 +1281,15 @@
     {
       "id": "z-ai/glm-5.3",
       "displayName": "GLM 5.3",
-      "contextWindow": 1048575,
-      "maxTokens": 943717,
+      "contextWindow": 1048576,
+      "maxTokens": 131072,
       "source": "openrouter-models"
     },
     {
       "id": "deepseek/deepseek-v4-flash-vision-exp",
       "displayName": "DeepSeek V4 Flash Vision Exp",
       "contextWindow": 1048576,
-      "maxTokens": 943718,
+      "maxTokens": 262144,
       "status": "experimental",
       "source": "openrouter-models"
     },
@@ -1383,6 +1391,20 @@
       "displayName": "Qwen3 Max Thinking via OpenRouter",
       "contextWindow": 262144,
       "status": "available",
+      "source": "openrouter-models"
+    },
+    {
+      "id": "z-ai/glm-5.3-flashx",
+      "displayName": "GLM 5.3 FlashX",
+      "contextWindow": 1048576,
+      "maxTokens": 131072,
+      "source": "openrouter-models"
+    },
+    {
+      "id": "qwen/qwen3.8-27b:free",
+      "displayName": "Qwen3.8 27B (free)",
+      "contextWindow": 262144,
+      "maxTokens": 235929,
       "source": "openrouter-models"
     }
   ],
