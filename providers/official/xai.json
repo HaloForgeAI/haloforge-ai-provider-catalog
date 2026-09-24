@@ -70,6 +70,14 @@
       "source": "models-dev-provider-catalog"
     },
     {
+      "id": "grok-4.7",
+      "displayName": "Grok 4.7",
+      "contextWindow": 500000,
+      "maxTokens": 500000,
+      "status": "available",
+      "source": "models-dev-provider-catalog"
+    },
+    {
       "id": "grok-code-fast-1",
       "displayName": "Grok Code Fast 1",
       "contextWindow": 256000,
@@ -82,14 +90,6 @@
       "contextWindow": 256000,
       "status": "available",
       "source": "openrouter-models"
-    },
-    {
-      "id": "grok-4.7",
-      "displayName": "Grok 4.7",
-      "contextWindow": 500000,
-      "maxTokens": 500000,
-      "status": "available",
-      "source": "models-dev-provider-catalog"
     }
   ],
   "agentGateways": [
