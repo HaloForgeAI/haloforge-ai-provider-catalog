@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-24T17:17:05.524Z",
+  "updatedAt": "2026-09-24T21:34:42.108Z",
   "source": "haloforge-ai-provider-catalog",
   "repository": "https://github.com/HaloForgeAI/haloforge-ai-provider-catalog",
   "upstreamSources": [
@@ -3692,7 +3692,7 @@
           "id": "z-ai/glm-5.3-flash",
           "displayName": "GLM 5.3 Flash",
           "contextWindow": 1048576,
-          "maxTokens": 943718,
+          "maxTokens": 131072,
           "source": "openrouter-models"
         },
         {
