@@ -152,6 +152,16 @@
           "contextWindow": 1000000,
           "maxTokens": 128000,
           "source": "anthropic-models-api"
+        },
+        {
+          "id": "claude-opus-5-5",
+          "displayName": "Claude Opus 5.5",
+          "upstreamRefs": [
+            "anthropic-models-api:claude-opus-5-5"
+          ],
+          "contextWindow": 1000000,
+          "maxTokens": 128000,
+          "source": "anthropic-models-api"
         }
       ],
       "agentGateways": []
@@ -278,6 +288,34 @@
           "maxTokens": 128000,
           "source": "openai-models-docs",
           "status": "available"
+        },
+        {
+          "id": "gpt-6-sol",
+          "displayName": "GPT-6 Sol",
+          "upstreamRefs": [
+            "models-dev-provider-catalog:openai/gpt-6-sol",
+            "openai-models-api:gpt-6-sol",
+            "vercel-ai-gateway-models:openai/gpt-6-sol",
+            "openrouter-models:openai/gpt-6-sol"
+          ],
+          "contextWindow": 1050000,
+          "maxTokens": 128000,
+          "status": "available",
+          "source": "models-dev-provider-catalog"
+        },
+        {
+          "id": "gpt-6-luna",
+          "displayName": "GPT-6 Luna",
+          "upstreamRefs": [
+            "models-dev-provider-catalog:openai/gpt-6-luna",
+            "openai-models-api:gpt-6-luna",
+            "vercel-ai-gateway-models:openai/gpt-6-luna",
+            "openrouter-models:openai/gpt-6-luna"
+          ],
+          "contextWindow": 1050000,
+          "maxTokens": 128000,
+          "status": "available",
+          "source": "models-dev-provider-catalog"
         }
       ],
       "agentGateways": []
@@ -1091,6 +1129,20 @@
             "xai-models-api:grok-4.6",
             "vercel-ai-gateway-models:xai/grok-4.6",
             "openrouter-models:x-ai/grok-4.6"
+          ],
+          "contextWindow": 500000,
+          "maxTokens": 500000,
+          "status": "available",
+          "source": "models-dev-provider-catalog"
+        },
+        {
+          "id": "grok-4.7",
+          "displayName": "Grok 4.7",
+          "upstreamRefs": [
+            "models-dev-provider-catalog:xai/grok-4.7",
+            "xai-models-api:grok-4.7",
+            "vercel-ai-gateway-models:xai/grok-4.7",
+            "openrouter-models:x-ai/grok-4.7"
           ],
           "contextWindow": 500000,
           "maxTokens": 500000,
@@ -3267,6 +3319,76 @@
           ],
           "contextWindow": 262144,
           "maxTokens": 235929,
+          "source": "openrouter-models"
+        },
+        {
+          "id": "z-ai/glm-5.3-prime",
+          "displayName": "GLM 5.3 Prime",
+          "upstreamRefs": [
+            "openrouter-models:z-ai/glm-5.3-prime"
+          ],
+          "contextWindow": 1000000,
+          "maxTokens": 131072,
+          "source": "openrouter-models"
+        },
+        {
+          "id": "openai/gpt-6-sol-pro",
+          "displayName": "GPT-6 Sol Pro",
+          "upstreamRefs": [
+            "openrouter-models:openai/gpt-6-sol-pro"
+          ],
+          "contextWindow": 1050000,
+          "maxTokens": 128000,
+          "source": "openrouter-models"
+        },
+        {
+          "id": "openai/gpt-6-sol",
+          "displayName": "GPT-6 Sol",
+          "upstreamRefs": [
+            "openrouter-models:openai/gpt-6-sol"
+          ],
+          "contextWindow": 1050000,
+          "maxTokens": 128000,
+          "source": "openrouter-models"
+        },
+        {
+          "id": "openai/gpt-6-luna-pro",
+          "displayName": "GPT-6 Luna Pro",
+          "upstreamRefs": [
+            "openrouter-models:openai/gpt-6-luna-pro"
+          ],
+          "contextWindow": 1050000,
+          "maxTokens": 128000,
+          "source": "openrouter-models"
+        },
+        {
+          "id": "openai/gpt-6-luna",
+          "displayName": "GPT-6 Luna",
+          "upstreamRefs": [
+            "openrouter-models:openai/gpt-6-luna"
+          ],
+          "contextWindow": 1050000,
+          "maxTokens": 128000,
+          "source": "openrouter-models"
+        },
+        {
+          "id": "qwen/qwen3.8-omni-flash",
+          "displayName": "Qwen3.8 Omni Flash",
+          "upstreamRefs": [
+            "openrouter-models:qwen/qwen3.8-omni-flash"
+          ],
+          "contextWindow": 1000000,
+          "maxTokens": 131072,
+          "source": "openrouter-models"
+        },
+        {
+          "id": "qwen/qwen3.8-max-prime",
+          "displayName": "Qwen3.8 Max Prime",
+          "upstreamRefs": [
+            "openrouter-models:qwen/qwen3.8-max-prime"
+          ],
+          "contextWindow": 1000000,
+          "maxTokens": 131072,
           "source": "openrouter-models"
         }
       ],
