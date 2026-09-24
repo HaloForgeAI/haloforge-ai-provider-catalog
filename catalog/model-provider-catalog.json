@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-24T11:54:40.707Z",
+  "updatedAt": "2026-09-24T17:17:05.524Z",
   "source": "haloforge-ai-provider-catalog",
   "repository": "https://github.com/HaloForgeAI/haloforge-ai-provider-catalog",
   "upstreamSources": [
@@ -329,6 +329,22 @@
           "status": "available"
         },
         {
+          "id": "gpt-6-sol",
+          "displayName": "GPT-6 Sol",
+          "contextWindow": 1050000,
+          "maxTokens": 128000,
+          "status": "available",
+          "source": "models-dev-provider-catalog"
+        },
+        {
+          "id": "gpt-6-luna",
+          "displayName": "GPT-6 Luna",
+          "contextWindow": 1050000,
+          "maxTokens": 128000,
+          "status": "available",
+          "source": "models-dev-provider-catalog"
+        },
+        {
           "id": "gpt-5.5",
           "displayName": "GPT-5.5",
           "contextWindow": 1000000,
@@ -359,22 +375,6 @@
           "maxTokens": 128000,
           "status": "available",
           "source": "openai-models-docs"
-        },
-        {
-          "id": "gpt-6-sol",
-          "displayName": "GPT-6 Sol",
-          "contextWindow": 1050000,
-          "maxTokens": 128000,
-          "status": "available",
-          "source": "models-dev-provider-catalog"
-        },
-        {
-          "id": "gpt-6-luna",
-          "displayName": "GPT-6 Luna",
-          "contextWindow": 1050000,
-          "maxTokens": 128000,
-          "status": "available",
-          "source": "models-dev-provider-catalog"
         }
       ],
       "agentGateways": [
@@ -2135,6 +2135,14 @@
           "source": "models-dev-provider-catalog"
         },
         {
+          "id": "grok-4.7",
+          "displayName": "Grok 4.7",
+          "contextWindow": 500000,
+          "maxTokens": 500000,
+          "status": "available",
+          "source": "models-dev-provider-catalog"
+        },
+        {
           "id": "grok-code-fast-1",
           "displayName": "Grok Code Fast 1",
           "contextWindow": 256000,
@@ -2147,14 +2155,6 @@
           "contextWindow": 256000,
           "status": "available",
           "source": "openrouter-models"
-        },
-        {
-          "id": "grok-4.7",
-          "displayName": "Grok 4.7",
-          "contextWindow": 500000,
-          "maxTokens": 500000,
-          "status": "available",
-          "source": "models-dev-provider-catalog"
         }
       ],
       "agentGateways": [
@@ -3662,8 +3662,8 @@
         {
           "id": "z-ai/glm-5.3",
           "displayName": "GLM 5.3",
-          "contextWindow": 1048576,
-          "maxTokens": 131072,
+          "contextWindow": 1048575,
+          "maxTokens": 943717,
           "source": "openrouter-models"
         },
         {
@@ -3727,7 +3727,7 @@
           "id": "deepseek/deepseek-v4.1-flash",
           "displayName": "DeepSeek V4.1 Flash",
           "contextWindow": 1048576,
-          "maxTokens": 131072,
+          "maxTokens": 393216,
           "source": "openrouter-models"
         },
         {
@@ -3742,50 +3742,6 @@
           "displayName": "Qwen3.8 27B (free)",
           "contextWindow": 262144,
           "maxTokens": 235929,
-          "source": "openrouter-models"
-        },
-        {
-          "id": "anthropic/claude-fable-5",
-          "displayName": "Claude Fable 5 via OpenRouter",
-          "contextWindow": 1000000,
-          "status": "disabled",
-          "disabledByDefault": true,
-          "fallbackModelId": "anthropic/claude-opus-4.8",
-          "source": "anthropic-fable-access-notice"
-        },
-        {
-          "id": "deepseek/deepseek-v4-pro",
-          "displayName": "DeepSeek V4 Pro via OpenRouter",
-          "contextWindow": 1048576,
-          "status": "available",
-          "source": "openrouter-models"
-        },
-        {
-          "id": "minimax/minimax-m3",
-          "displayName": "MiniMax M3 via OpenRouter",
-          "contextWindow": 1048576,
-          "status": "available",
-          "source": "openrouter-models"
-        },
-        {
-          "id": "moonshotai/kimi-k2.5",
-          "displayName": "Kimi K2.5 via OpenRouter",
-          "contextWindow": 262144,
-          "status": "available",
-          "source": "openrouter-models"
-        },
-        {
-          "id": "openai/gpt-5.5-pro",
-          "displayName": "OpenAI GPT-5.5 Pro via OpenRouter",
-          "contextWindow": 1050000,
-          "status": "available",
-          "source": "openrouter-models"
-        },
-        {
-          "id": "qwen/qwen3-max-thinking",
-          "displayName": "Qwen3 Max Thinking via OpenRouter",
-          "contextWindow": 262144,
-          "status": "available",
           "source": "openrouter-models"
         },
         {
@@ -3835,6 +3791,50 @@
           "displayName": "Qwen3.8 Max Prime",
           "contextWindow": 1000000,
           "maxTokens": 131072,
+          "source": "openrouter-models"
+        },
+        {
+          "id": "anthropic/claude-fable-5",
+          "displayName": "Claude Fable 5 via OpenRouter",
+          "contextWindow": 1000000,
+          "status": "disabled",
+          "disabledByDefault": true,
+          "fallbackModelId": "anthropic/claude-opus-4.8",
+          "source": "anthropic-fable-access-notice"
+        },
+        {
+          "id": "deepseek/deepseek-v4-pro",
+          "displayName": "DeepSeek V4 Pro via OpenRouter",
+          "contextWindow": 1048576,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "minimax/minimax-m3",
+          "displayName": "MiniMax M3 via OpenRouter",
+          "contextWindow": 1048576,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "moonshotai/kimi-k2.5",
+          "displayName": "Kimi K2.5 via OpenRouter",
+          "contextWindow": 262144,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "openai/gpt-5.5-pro",
+          "displayName": "OpenAI GPT-5.5 Pro via OpenRouter",
+          "contextWindow": 1050000,
+          "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "qwen/qwen3-max-thinking",
+          "displayName": "Qwen3 Max Thinking via OpenRouter",
+          "contextWindow": 262144,
+          "status": "available",
           "source": "openrouter-models"
         }
       ],
