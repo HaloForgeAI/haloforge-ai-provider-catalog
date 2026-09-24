@@ -92,6 +92,22 @@
       "maxTokens": 128000,
       "status": "available",
       "source": "openai-models-docs"
+    },
+    {
+      "id": "gpt-6-sol",
+      "displayName": "GPT-6 Sol",
+      "contextWindow": 1050000,
+      "maxTokens": 128000,
+      "status": "available",
+      "source": "models-dev-provider-catalog"
+    },
+    {
+      "id": "gpt-6-luna",
+      "displayName": "GPT-6 Luna",
+      "contextWindow": 1050000,
+      "maxTokens": 128000,
+      "status": "available",
+      "source": "models-dev-provider-catalog"
     }
   ],
   "agentGateways": [
