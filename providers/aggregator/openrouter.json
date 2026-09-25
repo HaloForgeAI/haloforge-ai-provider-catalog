@@ -1311,7 +1311,7 @@
       "id": "z-ai/glm-5.3-flash",
       "displayName": "GLM 5.3 Flash",
       "contextWindow": 1048576,
-      "maxTokens": 131072,
+      "maxTokens": 128000,
       "source": "openrouter-models"
     },
     {
