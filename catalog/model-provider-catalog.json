@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-24T21:34:42.108Z",
+  "updatedAt": "2026-09-25T05:03:48.490Z",
   "source": "haloforge-ai-provider-catalog",
   "repository": "https://github.com/HaloForgeAI/haloforge-ai-provider-catalog",
   "upstreamSources": [
@@ -2405,8 +2405,8 @@
         {
           "id": "z-ai/glm-5.1",
           "displayName": "GLM 5.1",
-          "contextWindow": 200000,
-          "maxTokens": 128000,
+          "contextWindow": 202752,
+          "maxTokens": 131072,
           "status": "available",
           "source": "openrouter-models"
         },
@@ -3049,8 +3049,8 @@
         {
           "id": "qwen/qwen3-vl-30b-a3b-instruct",
           "displayName": "Qwen3 VL 30B A3B Instruct",
-          "contextWindow": 131072,
-          "maxTokens": 32768,
+          "contextWindow": 262144,
+          "maxTokens": 16384,
           "status": "available",
           "source": "openrouter-models"
         },

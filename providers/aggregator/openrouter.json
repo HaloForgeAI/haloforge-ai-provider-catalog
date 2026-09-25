@@ -24,8 +24,8 @@
     {
       "id": "z-ai/glm-5.1",
       "displayName": "GLM 5.1",
-      "contextWindow": 200000,
-      "maxTokens": 128000,
+      "contextWindow": 202752,
+      "maxTokens": 131072,
       "status": "available",
       "source": "openrouter-models"
     },
@@ -668,8 +668,8 @@
     {
       "id": "qwen/qwen3-vl-30b-a3b-instruct",
       "displayName": "Qwen3 VL 30B A3B Instruct",
-      "contextWindow": 131072,
-      "maxTokens": 32768,
+      "contextWindow": 262144,
+      "maxTokens": 16384,
       "status": "available",
       "source": "openrouter-models"
     },
