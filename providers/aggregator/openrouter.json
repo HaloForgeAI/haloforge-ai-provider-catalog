@@ -118,8 +118,8 @@
     {
       "id": "deepseek/deepseek-v4-flash",
       "displayName": "DeepSeek V4 Flash",
-      "contextWindow": 1024000,
-      "maxTokens": 384000,
+      "contextWindow": 1048576,
+      "maxTokens": 131072,
       "status": "available",
       "source": "openrouter-models"
     },
@@ -240,8 +240,8 @@
     {
       "id": "minimax/minimax-m2",
       "displayName": "MiniMax M2",
-      "contextWindow": 204800,
-      "maxTokens": 131072,
+      "contextWindow": 196608,
+      "maxTokens": 176947,
       "status": "available",
       "source": "openrouter-models"
     },
@@ -1307,8 +1307,8 @@
     {
       "id": "z-ai/glm-5.3",
       "displayName": "GLM 5.3",
-      "contextWindow": 1048576,
-      "maxTokens": 131072,
+      "contextWindow": 1048575,
+      "maxTokens": 943717,
       "source": "openrouter-models"
     },
     {
