@@ -198,8 +198,8 @@
     {
       "id": "deepseek/deepseek-chat",
       "displayName": "DeepSeek V3",
-      "contextWindow": 163840,
-      "maxTokens": 16384,
+      "contextWindow": 128000,
+      "maxTokens": 16000,
       "status": "available",
       "source": "openrouter-models"
     },
