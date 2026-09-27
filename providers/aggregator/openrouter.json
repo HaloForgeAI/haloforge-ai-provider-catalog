@@ -1307,8 +1307,8 @@
     {
       "id": "z-ai/glm-5.3",
       "displayName": "GLM 5.3",
-      "contextWindow": 1048575,
-      "maxTokens": 943717,
+      "contextWindow": 1048576,
+      "maxTokens": 131072,
       "source": "openrouter-models"
     },
     {
@@ -1371,8 +1371,8 @@
     {
       "id": "deepseek/deepseek-v4.1-flash",
       "displayName": "DeepSeek V4.1 Flash",
-      "contextWindow": 1040000,
-      "maxTokens": 384000,
+      "contextWindow": 1048576,
+      "maxTokens": 943718,
       "source": "openrouter-models"
     },
     {
