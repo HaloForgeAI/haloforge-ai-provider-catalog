@@ -896,6 +896,20 @@
           "maxTokens": 131072,
           "status": "available",
           "source": "models-dev-provider-catalog"
+        },
+        {
+          "id": "qwen3.7-flash",
+          "displayName": "Qwen3.7 Flash",
+          "upstreamRefs": [
+            "models-dev-provider-catalog:alibaba/qwen3.7-flash",
+            "qwen-models-api:qwen3.7-flash",
+            "vercel-ai-gateway-models:alibaba/qwen3.7-flash",
+            "openrouter-models:qwen/qwen3.7-flash"
+          ],
+          "contextWindow": 1000000,
+          "maxTokens": 131072,
+          "status": "available",
+          "source": "models-dev-provider-catalog"
         }
       ],
       "agentGateways": []

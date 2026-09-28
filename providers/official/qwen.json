@@ -179,6 +179,14 @@
       "contextWindow": 1000000,
       "status": "available",
       "source": "qwen-models-docs"
+    },
+    {
+      "id": "qwen3.7-flash",
+      "displayName": "Qwen3.7 Flash",
+      "contextWindow": 1000000,
+      "maxTokens": 131072,
+      "status": "available",
+      "source": "models-dev-provider-catalog"
     }
   ],
   "agentGateways": [
