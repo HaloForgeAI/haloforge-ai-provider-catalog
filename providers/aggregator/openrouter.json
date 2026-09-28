@@ -126,7 +126,7 @@
     {
       "id": "deepseek/deepseek-v3.2",
       "displayName": "DeepSeek V3.2",
-      "contextWindow": 163840,
+      "contextWindow": 131072,
       "maxTokens": 65536,
       "status": "deprecated",
       "source": "openrouter-models",
@@ -138,7 +138,7 @@
       "displayName": "DeepSeek V3.2 Exp",
       "contextWindow": 163840,
       "maxTokens": 65536,
-      "status": "deprecated",
+      "status": "shutdown",
       "source": "openrouter-models",
       "shutdownDate": "2026-09-28",
       "disabledByDefault": true
@@ -148,7 +148,7 @@
       "displayName": "DeepSeek V3.1 Terminus",
       "contextWindow": 131072,
       "maxTokens": 32768,
-      "status": "deprecated",
+      "status": "shutdown",
       "source": "openrouter-models",
       "shutdownDate": "2026-09-28",
       "disabledByDefault": true
@@ -182,7 +182,7 @@
       "displayName": "R1 Distill Llama 70B",
       "contextWindow": 8192,
       "maxTokens": 7372,
-      "status": "deprecated",
+      "status": "shutdown",
       "source": "openrouter-models",
       "shutdownDate": "2026-09-28",
       "disabledByDefault": true
@@ -206,8 +206,8 @@
     {
       "id": "minimax/minimax-m2.7",
       "displayName": "MiniMax M2.7",
-      "contextWindow": 196608,
-      "maxTokens": 176947,
+      "contextWindow": 204800,
+      "maxTokens": 131072,
       "status": "available",
       "source": "openrouter-models"
     },
@@ -582,8 +582,8 @@
     {
       "id": "qwen/qwen3.5-35b-a3b",
       "displayName": "Qwen3.5-35B-A3B",
-      "contextWindow": 256000,
-      "maxTokens": 16384,
+      "contextWindow": 262144,
+      "maxTokens": 65536,
       "status": "available",
       "source": "openrouter-models"
     },
@@ -1307,15 +1307,15 @@
     {
       "id": "z-ai/glm-5.3",
       "displayName": "GLM 5.3",
-      "contextWindow": 1048576,
-      "maxTokens": 131072,
+      "contextWindow": 1048575,
+      "maxTokens": 943717,
       "source": "openrouter-models"
     },
     {
       "id": "deepseek/deepseek-v4-flash-vision-exp",
       "displayName": "DeepSeek V4 Flash Vision Exp",
-      "contextWindow": 1048576,
-      "maxTokens": 262144,
+      "contextWindow": 1048575,
+      "maxTokens": 943717,
       "status": "experimental",
       "source": "openrouter-models"
     },
@@ -1336,8 +1336,8 @@
     {
       "id": "z-ai/glm-5.3-flash",
       "displayName": "GLM 5.3 Flash",
-      "contextWindow": 1048576,
-      "maxTokens": 128000,
+      "contextWindow": 1048575,
+      "maxTokens": 943717,
       "source": "openrouter-models"
     },
     {
@@ -1371,8 +1371,8 @@
     {
       "id": "deepseek/deepseek-v4.1-flash",
       "displayName": "DeepSeek V4.1 Flash",
-      "contextWindow": 1048576,
-      "maxTokens": 943718,
+      "contextWindow": 1040000,
+      "maxTokens": 384000,
       "source": "openrouter-models"
     },
     {
