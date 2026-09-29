@@ -17,7 +17,7 @@
       "id": "z-ai/glm-5.2",
       "displayName": "z-ai/glm-5.2",
       "contextWindow": 1048576,
-      "maxTokens": 131072,
+      "maxTokens": 943718,
       "status": "available",
       "source": "openrouter-models"
     },
@@ -146,8 +146,8 @@
     {
       "id": "deepseek/deepseek-v3.1-terminus",
       "displayName": "DeepSeek V3.1 Terminus",
-      "contextWindow": 163840,
-      "maxTokens": 147456,
+      "contextWindow": 131072,
+      "maxTokens": 65536,
       "status": "shutdown",
       "source": "openrouter-models",
       "shutdownDate": "2026-09-28",
@@ -206,8 +206,8 @@
     {
       "id": "minimax/minimax-m2.7",
       "displayName": "MiniMax M2.7",
-      "contextWindow": 204800,
-      "maxTokens": 131072,
+      "contextWindow": 196608,
+      "maxTokens": 176947,
       "status": "available",
       "source": "openrouter-models"
     },
@@ -599,7 +599,7 @@
       "id": "qwen/qwen3.5-122b-a10b",
       "displayName": "Qwen3.5-122B-A10B",
       "contextWindow": 262144,
-      "maxTokens": 235929,
+      "maxTokens": 65536,
       "status": "available",
       "source": "openrouter-models"
     },
@@ -821,7 +821,7 @@
       "id": "openai/gpt-oss-120b",
       "displayName": "gpt-oss-120b",
       "contextWindow": 131072,
-      "maxTokens": 65536,
+      "maxTokens": 117964,
       "status": "available",
       "source": "openrouter-models"
     },
@@ -993,10 +993,10 @@
     {
       "id": "qwen/qwen3-30b-a3b-instruct-2507",
       "displayName": "Qwen3 30B A3B Instruct 2507",
-      "contextWindow": 262144,
+      "contextWindow": 128000,
       "status": "available",
       "source": "openrouter-models",
-      "maxTokens": 235929
+      "maxTokens": 32000
     },
     {
       "id": "qwen/qwen3-235b-a22b-thinking-2507",
@@ -1293,8 +1293,8 @@
     {
       "id": "qwen/qwen3.8-27b",
       "displayName": "Qwen3.8 27B",
-      "contextWindow": 1000000,
-      "maxTokens": 131072,
+      "contextWindow": 262144,
+      "maxTokens": 235929,
       "source": "openrouter-models"
     },
     {
