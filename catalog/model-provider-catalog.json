@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-28T14:06:13.355Z",
+  "updatedAt": "2026-09-28T23:20:33.785Z",
   "source": "haloforge-ai-provider-catalog",
   "repository": "https://github.com/HaloForgeAI/haloforge-ai-provider-catalog",
   "upstreamSources": [
@@ -575,6 +575,13 @@
         {
           "id": "claude-opus-5-5",
           "displayName": "Claude Opus 5.5",
+          "contextWindow": 1000000,
+          "maxTokens": 128000,
+          "source": "anthropic-models-api"
+        },
+        {
+          "id": "claude-sonnet-5-5",
+          "displayName": "Claude Sonnet 5.5",
           "contextWindow": 1000000,
           "maxTokens": 128000,
           "source": "anthropic-models-api"
@@ -1301,6 +1308,14 @@
           "source": "models-dev-provider-catalog"
         },
         {
+          "id": "qwen3.7-flash",
+          "displayName": "Qwen3.7 Flash",
+          "contextWindow": 1000000,
+          "maxTokens": 131072,
+          "status": "available",
+          "source": "models-dev-provider-catalog"
+        },
+        {
           "id": "qwen3-max",
           "displayName": "Qwen3 Max",
           "contextWindow": 262144,
@@ -1346,14 +1361,6 @@
           "contextWindow": 1000000,
           "status": "available",
           "source": "qwen-models-docs"
-        },
-        {
-          "id": "qwen3.7-flash",
-          "displayName": "Qwen3.7 Flash",
-          "contextWindow": 1000000,
-          "maxTokens": 131072,
-          "status": "available",
-          "source": "models-dev-provider-catalog"
         }
       ],
       "agentGateways": [
@@ -2526,8 +2533,8 @@
           "id": "deepseek/deepseek-v3.2-exp",
           "displayName": "DeepSeek V3.2 Exp",
           "contextWindow": 163840,
-          "maxTokens": 65536,
-          "status": "shutdown",
+          "maxTokens": 147456,
+          "status": "experimental",
           "source": "openrouter-models",
           "shutdownDate": "2026-09-28",
           "disabledByDefault": true
@@ -2535,8 +2542,8 @@
         {
           "id": "deepseek/deepseek-v3.1-terminus",
           "displayName": "DeepSeek V3.1 Terminus",
-          "contextWindow": 131072,
-          "maxTokens": 32768,
+          "contextWindow": 163840,
+          "maxTokens": 147456,
           "status": "shutdown",
           "source": "openrouter-models",
           "shutdownDate": "2026-09-28",
@@ -3703,8 +3710,8 @@
         {
           "id": "deepseek/deepseek-v4-flash-vision-exp",
           "displayName": "DeepSeek V4 Flash Vision Exp",
-          "contextWindow": 1048575,
-          "maxTokens": 943717,
+          "contextWindow": 1048576,
+          "maxTokens": 262144,
           "status": "experimental",
           "source": "openrouter-models"
         },
@@ -3760,8 +3767,8 @@
         {
           "id": "deepseek/deepseek-v4.1-flash",
           "displayName": "DeepSeek V4.1 Flash",
-          "contextWindow": 1040000,
-          "maxTokens": 384000,
+          "contextWindow": 1048576,
+          "maxTokens": 943718,
           "source": "openrouter-models"
         },
         {

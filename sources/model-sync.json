@@ -162,6 +162,16 @@
           "contextWindow": 1000000,
           "maxTokens": 128000,
           "source": "anthropic-models-api"
+        },
+        {
+          "id": "claude-sonnet-5-5",
+          "displayName": "Claude Sonnet 5.5",
+          "upstreamRefs": [
+            "anthropic-models-api:claude-sonnet-5-5"
+          ],
+          "contextWindow": 1000000,
+          "maxTokens": 128000,
+          "source": "anthropic-models-api"
         }
       ],
       "agentGateways": []
