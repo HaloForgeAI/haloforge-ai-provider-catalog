@@ -108,6 +108,14 @@
       "maxTokens": 128000,
       "status": "available",
       "source": "openai-models-docs"
+    },
+    {
+      "id": "gpt-6.1-sol",
+      "displayName": "GPT-6.1 Sol",
+      "contextWindow": 1050000,
+      "maxTokens": 128000,
+      "status": "available",
+      "source": "models-dev-provider-catalog"
     }
   ],
   "agentGateways": [
