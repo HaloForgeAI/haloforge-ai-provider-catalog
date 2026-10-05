@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-05T05:50:07.692Z",
+  "updatedAt": "2026-10-05T14:51:52.795Z",
   "source": "haloforge-ai-provider-catalog",
   "repository": "https://github.com/HaloForgeAI/haloforge-ai-provider-catalog",
   "upstreamSources": [
@@ -345,6 +345,14 @@
           "source": "models-dev-provider-catalog"
         },
         {
+          "id": "gpt-6.1-sol",
+          "displayName": "GPT-6.1 Sol",
+          "contextWindow": 1050000,
+          "maxTokens": 128000,
+          "status": "available",
+          "source": "models-dev-provider-catalog"
+        },
+        {
           "id": "gpt-5.5",
           "displayName": "GPT-5.5",
           "contextWindow": 1000000,
@@ -375,14 +383,6 @@
           "maxTokens": 128000,
           "status": "available",
           "source": "openai-models-docs"
-        },
-        {
-          "id": "gpt-6.1-sol",
-          "displayName": "GPT-6.1 Sol",
-          "contextWindow": 1050000,
-          "maxTokens": 128000,
-          "status": "available",
-          "source": "models-dev-provider-catalog"
         }
       ],
       "agentGateways": [
@@ -3716,7 +3716,7 @@
           "id": "z-ai/glm-5.3",
           "displayName": "GLM 5.3",
           "contextWindow": 1048576,
-          "maxTokens": 131072,
+          "maxTokens": 943718,
           "source": "openrouter-models"
         },
         {
@@ -3847,6 +3847,20 @@
           "source": "openrouter-models"
         },
         {
+          "id": "openai/gpt-6.1-sol-pro",
+          "displayName": "GPT-6.1 Sol Pro",
+          "contextWindow": 1050000,
+          "maxTokens": 128000,
+          "source": "openrouter-models"
+        },
+        {
+          "id": "openai/gpt-6.1-sol",
+          "displayName": "GPT-6.1 Sol",
+          "contextWindow": 1050000,
+          "maxTokens": 128000,
+          "source": "openrouter-models"
+        },
+        {
           "id": "anthropic/claude-fable-5",
           "displayName": "Claude Fable 5 via OpenRouter",
           "contextWindow": 1000000,
@@ -3888,20 +3902,6 @@
           "displayName": "Qwen3 Max Thinking via OpenRouter",
           "contextWindow": 262144,
           "status": "available",
-          "source": "openrouter-models"
-        },
-        {
-          "id": "openai/gpt-6.1-sol-pro",
-          "displayName": "GPT-6.1 Sol Pro",
-          "contextWindow": 1050000,
-          "maxTokens": 128000,
-          "source": "openrouter-models"
-        },
-        {
-          "id": "openai/gpt-6.1-sol",
-          "displayName": "GPT-6.1 Sol",
-          "contextWindow": 1050000,
-          "maxTokens": 128000,
           "source": "openrouter-models"
         }
       ],
