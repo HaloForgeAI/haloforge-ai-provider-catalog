@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-29T13:01:25.698Z",
+  "updatedAt": "2026-10-05T05:50:07.692Z",
   "source": "haloforge-ai-provider-catalog",
   "repository": "https://github.com/HaloForgeAI/haloforge-ai-provider-catalog",
   "upstreamSources": [
@@ -375,6 +375,14 @@
           "maxTokens": 128000,
           "status": "available",
           "source": "openai-models-docs"
+        },
+        {
+          "id": "gpt-6.1-sol",
+          "displayName": "GPT-6.1 Sol",
+          "contextWindow": 1050000,
+          "maxTokens": 128000,
+          "status": "available",
+          "source": "models-dev-provider-catalog"
         }
       ],
       "agentGateways": [
@@ -2413,7 +2421,7 @@
           "id": "z-ai/glm-5.2",
           "displayName": "z-ai/glm-5.2",
           "contextWindow": 1048576,
-          "maxTokens": 943718,
+          "maxTokens": 131072,
           "status": "available",
           "source": "openrouter-models"
         },
@@ -2464,8 +2472,10 @@
           "displayName": "GLM 4.7",
           "contextWindow": 202752,
           "maxTokens": 131072,
-          "status": "available",
-          "source": "openrouter-models"
+          "status": "deprecated",
+          "source": "openrouter-models",
+          "shutdownDate": "2026-12-31",
+          "disabledByDefault": true
         },
         {
           "id": "z-ai/glm-4.6v",
@@ -2515,7 +2525,7 @@
           "id": "deepseek/deepseek-v4-flash",
           "displayName": "DeepSeek V4 Flash",
           "contextWindow": 1048576,
-          "maxTokens": 131072,
+          "maxTokens": 943718,
           "status": "available",
           "source": "openrouter-models"
         },
@@ -2542,8 +2552,8 @@
         {
           "id": "deepseek/deepseek-v3.1-terminus",
           "displayName": "DeepSeek V3.1 Terminus",
-          "contextWindow": 131072,
-          "maxTokens": 65536,
+          "contextWindow": 163840,
+          "maxTokens": 147456,
           "status": "shutdown",
           "source": "openrouter-models",
           "shutdownDate": "2026-09-28",
@@ -2568,8 +2578,8 @@
         {
           "id": "deepseek/deepseek-chat-v3-0324",
           "displayName": "DeepSeek V3 0324",
-          "contextWindow": 163840,
-          "maxTokens": 147456,
+          "contextWindow": 128000,
+          "maxTokens": 115200,
           "status": "available",
           "source": "openrouter-models"
         },
@@ -2677,7 +2687,7 @@
           "id": "moonshotai/kimi-k2-thinking",
           "displayName": "Kimi K2 Thinking",
           "contextWindow": 262144,
-          "maxTokens": 98304,
+          "maxTokens": 235929,
           "status": "available",
           "source": "openrouter-models"
         },
@@ -2955,7 +2965,7 @@
           "id": "qwen/qwen3.6-27b",
           "displayName": "Qwen3.6 27B",
           "contextWindow": 262144,
-          "maxTokens": 81920,
+          "maxTokens": 262140,
           "status": "available",
           "source": "openrouter-models"
         },
@@ -2979,7 +2989,7 @@
           "id": "qwen/qwen3.5-35b-a3b",
           "displayName": "Qwen3.5-35B-A3B",
           "contextWindow": 262144,
-          "maxTokens": 65536,
+          "maxTokens": 235929,
           "status": "available",
           "source": "openrouter-models"
         },
@@ -3328,10 +3338,12 @@
         {
           "id": "qwen/qwen3-next-80b-a3b-thinking",
           "displayName": "Qwen3 Next 80B A3B Thinking",
-          "contextWindow": 262144,
-          "maxTokens": 235929,
-          "status": "available",
-          "source": "openrouter-models"
+          "contextWindow": 131072,
+          "maxTokens": 32768,
+          "status": "deprecated",
+          "source": "openrouter-models",
+          "shutdownDate": "2026-10-09",
+          "disabledByDefault": true
         },
         {
           "id": "qwen/qwen3-next-80b-a3b-instruct",
@@ -3689,8 +3701,8 @@
         {
           "id": "qwen/qwen3.8-27b",
           "displayName": "Qwen3.8 27B",
-          "contextWindow": 262144,
-          "maxTokens": 235929,
+          "contextWindow": 1000000,
+          "maxTokens": 131072,
           "source": "openrouter-models"
         },
         {
@@ -3703,8 +3715,8 @@
         {
           "id": "z-ai/glm-5.3",
           "displayName": "GLM 5.3",
-          "contextWindow": 1048575,
-          "maxTokens": 943717,
+          "contextWindow": 1048576,
+          "maxTokens": 131072,
           "source": "openrouter-models"
         },
         {
@@ -3876,6 +3888,20 @@
           "displayName": "Qwen3 Max Thinking via OpenRouter",
           "contextWindow": 262144,
           "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "openai/gpt-6.1-sol-pro",
+          "displayName": "GPT-6.1 Sol Pro",
+          "contextWindow": 1050000,
+          "maxTokens": 128000,
+          "source": "openrouter-models"
+        },
+        {
+          "id": "openai/gpt-6.1-sol",
+          "displayName": "GPT-6.1 Sol",
+          "contextWindow": 1050000,
+          "maxTokens": 128000,
           "source": "openrouter-models"
         }
       ],
