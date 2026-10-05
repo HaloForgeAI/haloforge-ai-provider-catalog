@@ -326,6 +326,20 @@
           "maxTokens": 128000,
           "status": "available",
           "source": "models-dev-provider-catalog"
+        },
+        {
+          "id": "gpt-6.1-sol",
+          "displayName": "GPT-6.1 Sol",
+          "upstreamRefs": [
+            "models-dev-provider-catalog:openai/gpt-6.1-sol",
+            "openai-models-api:gpt-6.1-sol",
+            "vercel-ai-gateway-models:openai/gpt-6.1-sol",
+            "openrouter-models:openai/gpt-6.1-sol"
+          ],
+          "contextWindow": 1050000,
+          "maxTokens": 128000,
+          "status": "available",
+          "source": "models-dev-provider-catalog"
         }
       ],
       "agentGateways": []
@@ -3413,6 +3427,26 @@
           ],
           "contextWindow": 1000000,
           "maxTokens": 131072,
+          "source": "openrouter-models"
+        },
+        {
+          "id": "openai/gpt-6.1-sol-pro",
+          "displayName": "GPT-6.1 Sol Pro",
+          "upstreamRefs": [
+            "openrouter-models:openai/gpt-6.1-sol-pro"
+          ],
+          "contextWindow": 1050000,
+          "maxTokens": 128000,
+          "source": "openrouter-models"
+        },
+        {
+          "id": "openai/gpt-6.1-sol",
+          "displayName": "GPT-6.1 Sol",
+          "upstreamRefs": [
+            "openrouter-models:openai/gpt-6.1-sol"
+          ],
+          "contextWindow": 1050000,
+          "maxTokens": 128000,
           "source": "openrouter-models"
         }
       ],
