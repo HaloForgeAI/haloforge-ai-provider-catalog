@@ -148,8 +148,8 @@
     {
       "id": "deepseek/deepseek-v3.1-terminus",
       "displayName": "DeepSeek V3.1 Terminus",
-      "contextWindow": 131072,
-      "maxTokens": 65536,
+      "contextWindow": 163840,
+      "maxTokens": 147456,
       "status": "shutdown",
       "source": "openrouter-models",
       "shutdownDate": "2026-09-28",
@@ -283,7 +283,7 @@
       "id": "moonshotai/kimi-k2-thinking",
       "displayName": "Kimi K2 Thinking",
       "contextWindow": 262144,
-      "maxTokens": 235929,
+      "maxTokens": 98304,
       "status": "available",
       "source": "openrouter-models"
     },
