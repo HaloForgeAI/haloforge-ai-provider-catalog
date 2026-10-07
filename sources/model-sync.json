@@ -172,6 +172,16 @@
           "contextWindow": 1000000,
           "maxTokens": 128000,
           "source": "anthropic-models-api"
+        },
+        {
+          "id": "claude-haiku-5-5",
+          "displayName": "Claude Haiku 5.5",
+          "upstreamRefs": [
+            "anthropic-models-api:claude-haiku-5-5"
+          ],
+          "contextWindow": 1000000,
+          "maxTokens": 128000,
+          "source": "anthropic-models-api"
         }
       ],
       "agentGateways": []
@@ -1032,6 +1042,20 @@
           "maxTokens": 256000,
           "source": "mistral-models-docs",
           "status": "available"
+        },
+        {
+          "id": "mistral-large-4",
+          "displayName": "Mistral Large 4",
+          "upstreamRefs": [
+            "models-dev-provider-catalog:mistral/mistral-large-4",
+            "mistral-models-api:mistral-large-4",
+            "vercel-ai-gateway-models:mistral/mistral-large-4",
+            "openrouter-models:mistralai/mistral-large-4"
+          ],
+          "contextWindow": 524288,
+          "maxTokens": 262144,
+          "status": "available",
+          "source": "models-dev-provider-catalog"
         }
       ],
       "agentGateways": []

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-06T06:29:12.824Z",
+  "updatedAt": "2026-10-07T23:09:47.901Z",
   "source": "haloforge-ai-provider-catalog",
   "repository": "https://github.com/HaloForgeAI/haloforge-ai-provider-catalog",
   "upstreamSources": [
@@ -560,7 +560,7 @@
         {
           "id": "claude-sonnet-4-5-20250929",
           "displayName": "Claude Sonnet 4.5",
-          "contextWindow": 1000000,
+          "contextWindow": 200000,
           "maxTokens": 64000,
           "status": "available",
           "source": "anthropic-models-api"
@@ -590,6 +590,13 @@
         {
           "id": "claude-sonnet-5-5",
           "displayName": "Claude Sonnet 5.5",
+          "contextWindow": 1000000,
+          "maxTokens": 128000,
+          "source": "anthropic-models-api"
+        },
+        {
+          "id": "claude-haiku-5-5",
+          "displayName": "Claude Haiku 5.5",
           "contextWindow": 1000000,
           "maxTokens": 128000,
           "source": "anthropic-models-api"
@@ -2284,6 +2291,14 @@
           "status": "available",
           "source": "litellm-model-catalog",
           "maxTokens": 4096
+        },
+        {
+          "id": "mistral-large-4",
+          "displayName": "Mistral Large 4",
+          "contextWindow": 524288,
+          "maxTokens": 262144,
+          "status": "available",
+          "source": "models-dev-provider-catalog"
         }
       ],
       "agentGateways": [
@@ -2428,8 +2443,8 @@
         {
           "id": "z-ai/glm-5.1",
           "displayName": "GLM 5.1",
-          "contextWindow": 202752,
-          "maxTokens": 131072,
+          "contextWindow": 200000,
+          "maxTokens": 128000,
           "status": "available",
           "source": "openrouter-models"
         },
@@ -2532,8 +2547,8 @@
         {
           "id": "deepseek/deepseek-v3.2",
           "displayName": "DeepSeek V3.2",
-          "contextWindow": 131072,
-          "maxTokens": 65536,
+          "contextWindow": 163840,
+          "maxTokens": 147456,
           "status": "deprecated",
           "source": "openrouter-models",
           "shutdownDate": "2026-09-28",
@@ -2687,7 +2702,7 @@
           "id": "moonshotai/kimi-k2-thinking",
           "displayName": "Kimi K2 Thinking",
           "contextWindow": 262144,
-          "maxTokens": 98304,
+          "maxTokens": 235929,
           "status": "available",
           "source": "openrouter-models"
         },
@@ -2965,7 +2980,7 @@
           "id": "qwen/qwen3.6-27b",
           "displayName": "Qwen3.6 27B",
           "contextWindow": 262144,
-          "maxTokens": 262140,
+          "maxTokens": 65536,
           "status": "available",
           "source": "openrouter-models"
         },
@@ -2982,8 +2997,10 @@
           "displayName": "Qwen3.5-9B",
           "contextWindow": 256000,
           "maxTokens": 32768,
-          "status": "available",
-          "source": "openrouter-models"
+          "status": "deprecated",
+          "source": "openrouter-models",
+          "shutdownDate": "2026-10-21",
+          "disabledByDefault": true
         },
         {
           "id": "qwen/qwen3.5-35b-a3b",
@@ -3694,7 +3711,7 @@
         {
           "id": "qwen/qwen3.8-2.4t-a95b",
           "displayName": "Qwen3.8 2.4T A95B",
-          "contextWindow": 1000000,
+          "contextWindow": 1048576,
           "maxTokens": 131072,
           "source": "openrouter-models"
         },

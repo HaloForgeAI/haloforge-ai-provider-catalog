@@ -60,6 +60,14 @@
       "status": "available",
       "source": "litellm-model-catalog",
       "maxTokens": 4096
+    },
+    {
+      "id": "mistral-large-4",
+      "displayName": "Mistral Large 4",
+      "contextWindow": 524288,
+      "maxTokens": 262144,
+      "status": "available",
+      "source": "models-dev-provider-catalog"
     }
   ],
   "agentGateways": [
