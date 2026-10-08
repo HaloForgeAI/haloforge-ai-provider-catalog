@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-07T23:09:47.901Z",
+  "updatedAt": "2026-10-08T23:25:15.649Z",
   "source": "haloforge-ai-provider-catalog",
   "repository": "https://github.com/HaloForgeAI/haloforge-ai-provider-catalog",
   "upstreamSources": [
@@ -2277,6 +2277,14 @@
           "status": "available"
         },
         {
+          "id": "mistral-large-4",
+          "displayName": "Mistral Large 4",
+          "contextWindow": 524288,
+          "maxTokens": 262144,
+          "status": "available",
+          "source": "models-dev-provider-catalog"
+        },
+        {
           "id": "mistral-large-latest",
           "displayName": "Mistral Large Latest",
           "contextWindow": 128000,
@@ -2291,14 +2299,6 @@
           "status": "available",
           "source": "litellm-model-catalog",
           "maxTokens": 4096
-        },
-        {
-          "id": "mistral-large-4",
-          "displayName": "Mistral Large 4",
-          "contextWindow": 524288,
-          "maxTokens": 262144,
-          "status": "available",
-          "source": "models-dev-provider-catalog"
         }
       ],
       "agentGateways": [
@@ -2436,7 +2436,7 @@
           "id": "z-ai/glm-5.2",
           "displayName": "z-ai/glm-5.2",
           "contextWindow": 1048576,
-          "maxTokens": 131072,
+          "maxTokens": 943718,
           "status": "available",
           "source": "openrouter-models"
         },
@@ -3014,7 +3014,7 @@
           "id": "qwen/qwen3.5-27b",
           "displayName": "Qwen3.5-27B",
           "contextWindow": 262144,
-          "maxTokens": 65536,
+          "maxTokens": 81920,
           "status": "available",
           "source": "openrouter-models"
         },
@@ -3048,7 +3048,7 @@
           "contextWindow": 262144,
           "status": "available",
           "source": "openrouter-models",
-          "maxTokens": 81920
+          "maxTokens": 235929
         },
         {
           "id": "qwen/qwen3-coder-next",
@@ -3366,7 +3366,7 @@
           "id": "qwen/qwen3-next-80b-a3b-instruct",
           "displayName": "Qwen3 Next 80B A3B Instruct",
           "contextWindow": 262144,
-          "maxTokens": 235929,
+          "maxTokens": 16384,
           "status": "available",
           "source": "openrouter-models"
         },

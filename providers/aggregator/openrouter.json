@@ -17,7 +17,7 @@
       "id": "z-ai/glm-5.2",
       "displayName": "z-ai/glm-5.2",
       "contextWindow": 1048576,
-      "maxTokens": 131072,
+      "maxTokens": 943718,
       "status": "available",
       "source": "openrouter-models"
     },
@@ -595,7 +595,7 @@
       "id": "qwen/qwen3.5-27b",
       "displayName": "Qwen3.5-27B",
       "contextWindow": 262144,
-      "maxTokens": 65536,
+      "maxTokens": 81920,
       "status": "available",
       "source": "openrouter-models"
     },
@@ -629,7 +629,7 @@
       "contextWindow": 262144,
       "status": "available",
       "source": "openrouter-models",
-      "maxTokens": 81920
+      "maxTokens": 235929
     },
     {
       "id": "qwen/qwen3-coder-next",
@@ -947,7 +947,7 @@
       "id": "qwen/qwen3-next-80b-a3b-instruct",
       "displayName": "Qwen3 Next 80B A3B Instruct",
       "contextWindow": 262144,
-      "maxTokens": 235929,
+      "maxTokens": 16384,
       "status": "available",
       "source": "openrouter-models"
     },
