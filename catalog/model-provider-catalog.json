@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-10T12:40:22.525Z",
+  "updatedAt": "2026-10-10T21:49:55.752Z",
   "source": "haloforge-ai-provider-catalog",
   "repository": "https://github.com/HaloForgeAI/haloforge-ai-provider-catalog",
   "upstreamSources": [
@@ -2962,7 +2962,7 @@
           "id": "qwen/qwen3.6-35b-a3b",
           "displayName": "Qwen3.6 35B A3B",
           "contextWindow": 262144,
-          "maxTokens": 235929,
+          "maxTokens": 65536,
           "status": "available",
           "source": "openrouter-models"
         },
