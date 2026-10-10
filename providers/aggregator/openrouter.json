@@ -1062,7 +1062,7 @@
       "id": "qwen/qwen3-14b",
       "displayName": "Qwen3 14B",
       "contextWindow": 40960,
-      "maxTokens": 16384,
+      "maxTokens": 36864,
       "status": "available",
       "source": "openrouter-models"
     },
