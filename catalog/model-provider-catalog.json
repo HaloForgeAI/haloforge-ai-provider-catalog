@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-09T22:43:37.452Z",
+  "updatedAt": "2026-10-10T06:00:16.487Z",
   "source": "haloforge-ai-provider-catalog",
   "repository": "https://github.com/HaloForgeAI/haloforge-ai-provider-catalog",
   "upstreamSources": [
@@ -3481,7 +3481,7 @@
           "id": "qwen/qwen3-14b",
           "displayName": "Qwen3 14B",
           "contextWindow": 40960,
-          "maxTokens": 16384,
+          "maxTokens": 36864,
           "status": "available",
           "source": "openrouter-models"
         },
