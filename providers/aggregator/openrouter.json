@@ -1299,8 +1299,8 @@
     {
       "id": "qwen/qwen3.8-27b",
       "displayName": "Qwen3.8 27B",
-      "contextWindow": 1000000,
-      "maxTokens": 131072,
+      "contextWindow": 262144,
+      "maxTokens": 235929,
       "source": "openrouter-models"
     },
     {
