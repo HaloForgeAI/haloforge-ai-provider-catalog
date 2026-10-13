@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-12T15:38:28.421Z",
+  "updatedAt": "2026-10-13T00:47:38.317Z",
   "source": "haloforge-ai-provider-catalog",
   "repository": "https://github.com/HaloForgeAI/haloforge-ai-provider-catalog",
   "upstreamSources": [
@@ -2627,8 +2627,8 @@
         {
           "id": "minimax/minimax-m2.7",
           "displayName": "MiniMax M2.7",
-          "contextWindow": 196608,
-          "maxTokens": 176947,
+          "contextWindow": 204800,
+          "maxTokens": 131072,
           "status": "available",
           "source": "openrouter-models"
         },
@@ -3244,7 +3244,7 @@
           "id": "openai/gpt-oss-120b",
           "displayName": "gpt-oss-120b",
           "contextWindow": 131072,
-          "maxTokens": 117964,
+          "maxTokens": 65536,
           "status": "available",
           "source": "openrouter-models"
         },
