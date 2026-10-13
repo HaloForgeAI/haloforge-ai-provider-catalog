@@ -120,8 +120,8 @@
     {
       "id": "deepseek/deepseek-v4-flash",
       "displayName": "DeepSeek V4 Flash",
-      "contextWindow": 1048576,
-      "maxTokens": 943718,
+      "contextWindow": 1048575,
+      "maxTokens": 943717,
       "status": "available",
       "source": "openrouter-models"
     },
@@ -586,8 +586,8 @@
     {
       "id": "qwen/qwen3.5-35b-a3b",
       "displayName": "Qwen3.5-35B-A3B",
-      "contextWindow": 262144,
-      "maxTokens": 32768,
+      "contextWindow": 256000,
+      "maxTokens": 16384,
       "status": "available",
       "source": "openrouter-models"
     },
