@@ -1378,7 +1378,7 @@
       "id": "deepseek/deepseek-v4.1-flash",
       "displayName": "DeepSeek V4.1 Flash",
       "contextWindow": 1048576,
-      "maxTokens": 393216,
+      "maxTokens": 943718,
       "source": "openrouter-models"
     },
     {
