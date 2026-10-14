@@ -24,8 +24,8 @@
     {
       "id": "z-ai/glm-5.1",
       "displayName": "GLM 5.1",
-      "contextWindow": 200000,
-      "maxTokens": 128000,
+      "contextWindow": 202745,
+      "maxTokens": 131072,
       "status": "available",
       "source": "openrouter-models"
     },
@@ -242,8 +242,8 @@
     {
       "id": "minimax/minimax-m2",
       "displayName": "MiniMax M2",
-      "contextWindow": 196608,
-      "maxTokens": 176947,
+      "contextWindow": 204800,
+      "maxTokens": 131072,
       "status": "available",
       "source": "openrouter-models"
     },
@@ -825,7 +825,7 @@
       "id": "openai/gpt-oss-120b",
       "displayName": "gpt-oss-120b",
       "contextWindow": 131072,
-      "maxTokens": 65536,
+      "maxTokens": 117964,
       "status": "available",
       "source": "openrouter-models"
     },
@@ -1292,7 +1292,7 @@
     {
       "id": "qwen/qwen3.8-2.4t-a95b",
       "displayName": "Qwen3.8 2.4T A95B",
-      "contextWindow": 1048576,
+      "contextWindow": 1000000,
       "maxTokens": 131072,
       "source": "openrouter-models"
     },
@@ -1342,8 +1342,8 @@
     {
       "id": "z-ai/glm-5.3-flash",
       "displayName": "GLM 5.3 Flash",
-      "contextWindow": 1048576,
-      "maxTokens": 943718,
+      "contextWindow": 1048575,
+      "maxTokens": 943717,
       "source": "openrouter-models"
     },
     {
