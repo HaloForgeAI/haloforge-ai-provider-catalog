@@ -6,9 +6,9 @@
       "kind": "open_source",
       "url": "https://api.litellm.ai/model_catalog",
       "parser": "litellm",
-      "required": true,
+      "required": false,
       "minimumModels": 1000,
-      "notes": "Paged machine-readable reference for context windows, pricing metadata, capabilities, and deprecation dates."
+      "notes": "Paged machine-readable reference for context windows, pricing metadata, capabilities, and deprecation dates. NOTE (2026-10-19): endpoint https://api.litellm.ai/model_catalog has been unresponsive since 2026-10-16; marked non-required so a single dead upstream no longer blocks the whole sync. Re-enable (required=true) once the endpoint recovers."
     },
     {
       "id": "models-dev-provider-catalog",
