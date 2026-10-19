@@ -1,7 +1,7 @@
 {
   "$schema": "../schema/model-provider-catalog.schema.json",
   "schemaVersion": 1,
-  "updatedAt": "2026-10-14T05:00:58.013Z",
+  "updatedAt": "2026-10-19T04:42:57.463Z",
   "source": "haloforge-ai-provider-catalog",
   "repository": "https://github.com/HaloForgeAI/haloforge-ai-provider-catalog",
   "upstreamSources": [
@@ -10,7 +10,7 @@
       "name": "LiteLLM model catalog",
       "url": "https://api.litellm.ai/model_catalog",
       "kind": "open_source",
-      "notes": "Paged machine-readable reference for context windows, pricing metadata, capabilities, and deprecation dates."
+      "notes": "Paged machine-readable reference for context windows, pricing metadata, capabilities, and deprecation dates. NOTE (2026-10-19): endpoint https://api.litellm.ai/model_catalog has been unresponsive since 2026-10-16; marked non-required so a single dead upstream no longer blocks the whole sync. Re-enable (required=true) once the endpoint recovers."
     },
     {
       "id": "models-dev-provider-catalog",
