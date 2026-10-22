@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-21T21:46:36.132Z",
+  "updatedAt": "2026-10-22T04:55:30.094Z",
   "source": "haloforge-ai-provider-catalog",
   "repository": "https://github.com/HaloForgeAI/haloforge-ai-provider-catalog",
   "upstreamSources": [
@@ -3048,7 +3048,7 @@
           "contextWindow": 262144,
           "status": "available",
           "source": "openrouter-models",
-          "maxTokens": 65536
+          "maxTokens": 235929
         },
         {
           "id": "qwen/qwen3-coder-next",
