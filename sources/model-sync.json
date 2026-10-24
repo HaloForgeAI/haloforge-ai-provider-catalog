@@ -609,6 +609,34 @@
           "maxTokens": 262144,
           "status": "available",
           "source": "moonshot-kimi-k2-model-card"
+        },
+        {
+          "id": "kimi-k3.1-pro-highspeed",
+          "displayName": "Kimi K3.1 Pro Highspeed",
+          "upstreamRefs": [
+            "models-dev-provider-catalog:moonshotai/kimi-k3.1-pro-highspeed",
+            "moonshot-models-api:kimi-k3.1-pro-highspeed",
+            "vercel-ai-gateway-models:moonshotai/kimi-k3.1-pro-highspeed",
+            "openrouter-models:moonshotai/kimi-k3.1-pro-highspeed"
+          ],
+          "contextWindow": 1048576,
+          "maxTokens": 1048576,
+          "status": "available",
+          "source": "models-dev-provider-catalog"
+        },
+        {
+          "id": "kimi-k3.1-pro",
+          "displayName": "Kimi K3.1 Pro",
+          "upstreamRefs": [
+            "models-dev-provider-catalog:moonshotai/kimi-k3.1-pro",
+            "moonshot-models-api:kimi-k3.1-pro",
+            "vercel-ai-gateway-models:moonshotai/kimi-k3.1-pro",
+            "openrouter-models:moonshotai/kimi-k3.1-pro"
+          ],
+          "contextWindow": 1048576,
+          "maxTokens": 1048576,
+          "status": "available",
+          "source": "models-dev-provider-catalog"
         }
       ],
       "agentGateways": []
@@ -3491,6 +3519,26 @@
           ],
           "contextWindow": 1000000,
           "maxTokens": 524288,
+          "source": "openrouter-models"
+        },
+        {
+          "id": "minimax/minimax-m3.1-flash",
+          "displayName": "MiniMax M3.1 Flash",
+          "upstreamRefs": [
+            "openrouter-models:minimax/minimax-m3.1-flash"
+          ],
+          "contextWindow": 1048576,
+          "maxTokens": 524288,
+          "source": "openrouter-models"
+        },
+        {
+          "id": "moonshotai/kimi-k3.1-pro",
+          "displayName": "Kimi K3.1 Pro",
+          "upstreamRefs": [
+            "openrouter-models:moonshotai/kimi-k3.1-pro"
+          ],
+          "contextWindow": 1048576,
+          "maxTokens": 943718,
           "source": "openrouter-models"
         }
       ],
