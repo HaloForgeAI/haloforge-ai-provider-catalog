@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-22T04:55:30.094Z",
+  "updatedAt": "2026-10-24T11:08:27.860Z",
   "source": "haloforge-ai-provider-catalog",
   "repository": "https://github.com/HaloForgeAI/haloforge-ai-provider-catalog",
   "upstreamSources": [
@@ -2004,6 +2004,22 @@
           "fallbackModelId": "kimi-k2.5",
           "disabledByDefault": true,
           "source": "litellm-model-catalog"
+        },
+        {
+          "id": "kimi-k3.1-pro-highspeed",
+          "displayName": "Kimi K3.1 Pro Highspeed",
+          "contextWindow": 1048576,
+          "maxTokens": 1048576,
+          "status": "available",
+          "source": "models-dev-provider-catalog"
+        },
+        {
+          "id": "kimi-k3.1-pro",
+          "displayName": "Kimi K3.1 Pro",
+          "contextWindow": 1048576,
+          "maxTokens": 1048576,
+          "status": "available",
+          "source": "models-dev-provider-catalog"
         }
       ],
       "agentGateways": [
@@ -2635,8 +2651,8 @@
         {
           "id": "minimax/minimax-m2.5",
           "displayName": "MiniMax M2.5",
-          "contextWindow": 198000,
-          "maxTokens": 32768,
+          "contextWindow": 204800,
+          "maxTokens": 131072,
           "status": "available",
           "source": "openrouter-models"
         },
@@ -2996,7 +3012,7 @@
           "id": "qwen/qwen3.5-9b",
           "displayName": "Qwen3.5-9B",
           "contextWindow": 262144,
-          "maxTokens": 65536,
+          "maxTokens": 235929,
           "status": "deprecated",
           "source": "openrouter-models",
           "shutdownDate": "2026-10-21",
@@ -3719,7 +3735,7 @@
           "id": "qwen/qwen3.8-27b",
           "displayName": "Qwen3.8 27B",
           "contextWindow": 262144,
-          "maxTokens": 65536,
+          "maxTokens": 235929,
           "source": "openrouter-models"
         },
         {
@@ -3761,8 +3777,8 @@
         {
           "id": "z-ai/glm-5.3-flash",
           "displayName": "GLM 5.3 Flash",
-          "contextWindow": 1048576,
-          "maxTokens": 943718,
+          "contextWindow": 1048575,
+          "maxTokens": 943717,
           "source": "openrouter-models"
         },
         {
@@ -3933,6 +3949,20 @@
           "displayName": "Qwen3 Max Thinking via OpenRouter",
           "contextWindow": 262144,
           "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "minimax/minimax-m3.1-flash",
+          "displayName": "MiniMax M3.1 Flash",
+          "contextWindow": 1048576,
+          "maxTokens": 524288,
+          "source": "openrouter-models"
+        },
+        {
+          "id": "moonshotai/kimi-k3.1-pro",
+          "displayName": "Kimi K3.1 Pro",
+          "contextWindow": 1048576,
+          "maxTokens": 943718,
           "source": "openrouter-models"
         }
       ],
