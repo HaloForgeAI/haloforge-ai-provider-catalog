@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-22T04:55:30.094Z",
+  "updatedAt": "2026-10-31T12:39:41.628Z",
   "source": "haloforge-ai-provider-catalog",
   "repository": "https://github.com/HaloForgeAI/haloforge-ai-provider-catalog",
   "upstreamSources": [
@@ -383,6 +383,14 @@
           "maxTokens": 128000,
           "status": "available",
           "source": "openai-models-docs"
+        },
+        {
+          "id": "gpt-6.1-terra",
+          "displayName": "GPT-6.1 Terra",
+          "contextWindow": 1050000,
+          "maxTokens": 128000,
+          "status": "available",
+          "source": "models-dev-provider-catalog"
         }
       ],
       "agentGateways": [
@@ -2004,6 +2012,22 @@
           "fallbackModelId": "kimi-k2.5",
           "disabledByDefault": true,
           "source": "litellm-model-catalog"
+        },
+        {
+          "id": "kimi-k3.1-pro-highspeed",
+          "displayName": "Kimi K3.1 Pro Highspeed",
+          "contextWindow": 1048576,
+          "maxTokens": 1048576,
+          "status": "available",
+          "source": "models-dev-provider-catalog"
+        },
+        {
+          "id": "kimi-k3.1-pro",
+          "displayName": "Kimi K3.1 Pro",
+          "contextWindow": 1048576,
+          "maxTokens": 1048576,
+          "status": "available",
+          "source": "models-dev-provider-catalog"
         }
       ],
       "agentGateways": [
@@ -2299,6 +2323,14 @@
           "status": "available",
           "source": "litellm-model-catalog",
           "maxTokens": 4096
+        },
+        {
+          "id": "mistral-large-4-0-8",
+          "displayName": "Mistral Large 4.0.8",
+          "contextWindow": 1048576,
+          "maxTokens": 262144,
+          "status": "available",
+          "source": "models-dev-provider-catalog"
         }
       ],
       "agentGateways": [
@@ -2503,7 +2535,7 @@
         {
           "id": "z-ai/glm-4.6",
           "displayName": "GLM 4.6",
-          "contextWindow": 204800,
+          "contextWindow": 202752,
           "maxTokens": 131072,
           "status": "available",
           "source": "openrouter-models"
@@ -2547,8 +2579,8 @@
         {
           "id": "deepseek/deepseek-v3.2",
           "displayName": "DeepSeek V3.2",
-          "contextWindow": 131072,
-          "maxTokens": 65536,
+          "contextWindow": 163840,
+          "maxTokens": 147456,
           "status": "deprecated",
           "source": "openrouter-models",
           "shutdownDate": "2026-09-28",
@@ -2578,7 +2610,7 @@
           "id": "deepseek/deepseek-chat-v3.1",
           "displayName": "DeepSeek V3.1",
           "contextWindow": 163840,
-          "maxTokens": 32768,
+          "maxTokens": 147456,
           "status": "available",
           "source": "openrouter-models"
         },
@@ -2996,7 +3028,7 @@
           "id": "qwen/qwen3.5-9b",
           "displayName": "Qwen3.5-9B",
           "contextWindow": 262144,
-          "maxTokens": 65536,
+          "maxTokens": 235929,
           "status": "deprecated",
           "source": "openrouter-models",
           "shutdownDate": "2026-10-21",
@@ -3014,7 +3046,7 @@
           "id": "qwen/qwen3.5-27b",
           "displayName": "Qwen3.5-27B",
           "contextWindow": 262144,
-          "maxTokens": 65536,
+          "maxTokens": 81920,
           "status": "available",
           "source": "openrouter-models"
         },
@@ -3316,7 +3348,7 @@
           "id": "openai/gpt-4.1-nano",
           "displayName": "GPT-4.1 Nano",
           "contextWindow": 1047576,
-          "maxTokens": 32768,
+          "maxTokens": 942818,
           "status": "available",
           "source": "openrouter-models"
         },
@@ -3691,7 +3723,7 @@
           "id": "deepseek/deepseek-v4-flash-0731",
           "displayName": "DeepSeek V4 Flash 0731",
           "contextWindow": 1048576,
-          "maxTokens": 131072,
+          "maxTokens": 943718,
           "source": "openrouter-models"
         },
         {
@@ -3711,15 +3743,15 @@
         {
           "id": "qwen/qwen3.8-2.4t-a95b",
           "displayName": "Qwen3.8 2.4T A95B",
-          "contextWindow": 1010000,
-          "maxTokens": 909000,
+          "contextWindow": 1000000,
+          "maxTokens": 131072,
           "source": "openrouter-models"
         },
         {
           "id": "qwen/qwen3.8-27b",
           "displayName": "Qwen3.8 27B",
           "contextWindow": 262144,
-          "maxTokens": 65536,
+          "maxTokens": 235929,
           "source": "openrouter-models"
         },
         {
@@ -3762,7 +3794,7 @@
           "id": "z-ai/glm-5.3-flash",
           "displayName": "GLM 5.3 Flash",
           "contextWindow": 1048576,
-          "maxTokens": 943718,
+          "maxTokens": 131072,
           "source": "openrouter-models"
         },
         {
@@ -3933,6 +3965,34 @@
           "displayName": "Qwen3 Max Thinking via OpenRouter",
           "contextWindow": 262144,
           "status": "available",
+          "source": "openrouter-models"
+        },
+        {
+          "id": "minimax/minimax-m3.1-flash",
+          "displayName": "MiniMax M3.1 Flash",
+          "contextWindow": 1048576,
+          "maxTokens": 524288,
+          "source": "openrouter-models"
+        },
+        {
+          "id": "moonshotai/kimi-k3.1-pro",
+          "displayName": "Kimi K3.1 Pro",
+          "contextWindow": 1048576,
+          "maxTokens": 943718,
+          "source": "openrouter-models"
+        },
+        {
+          "id": "openai/gpt-6.1-terra-pro",
+          "displayName": "GPT-6.1 Terra Pro",
+          "contextWindow": 1050000,
+          "maxTokens": 128000,
+          "source": "openrouter-models"
+        },
+        {
+          "id": "openai/gpt-6.1-terra",
+          "displayName": "GPT-6.1 Terra",
+          "contextWindow": 1050000,
+          "maxTokens": 128000,
           "source": "openrouter-models"
         }
       ],

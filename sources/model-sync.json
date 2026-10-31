@@ -350,6 +350,20 @@
           "maxTokens": 128000,
           "status": "available",
           "source": "models-dev-provider-catalog"
+        },
+        {
+          "id": "gpt-6.1-terra",
+          "displayName": "GPT-6.1 Terra",
+          "upstreamRefs": [
+            "models-dev-provider-catalog:openai/gpt-6.1-terra",
+            "openai-models-api:gpt-6.1-terra",
+            "vercel-ai-gateway-models:openai/gpt-6.1-terra",
+            "openrouter-models:openai/gpt-6.1-terra"
+          ],
+          "contextWindow": 1050000,
+          "maxTokens": 128000,
+          "status": "available",
+          "source": "models-dev-provider-catalog"
         }
       ],
       "agentGateways": []
@@ -609,6 +623,34 @@
           "maxTokens": 262144,
           "status": "available",
           "source": "moonshot-kimi-k2-model-card"
+        },
+        {
+          "id": "kimi-k3.1-pro-highspeed",
+          "displayName": "Kimi K3.1 Pro Highspeed",
+          "upstreamRefs": [
+            "models-dev-provider-catalog:moonshotai/kimi-k3.1-pro-highspeed",
+            "moonshot-models-api:kimi-k3.1-pro-highspeed",
+            "vercel-ai-gateway-models:moonshotai/kimi-k3.1-pro-highspeed",
+            "openrouter-models:moonshotai/kimi-k3.1-pro-highspeed"
+          ],
+          "contextWindow": 1048576,
+          "maxTokens": 1048576,
+          "status": "available",
+          "source": "models-dev-provider-catalog"
+        },
+        {
+          "id": "kimi-k3.1-pro",
+          "displayName": "Kimi K3.1 Pro",
+          "upstreamRefs": [
+            "models-dev-provider-catalog:moonshotai/kimi-k3.1-pro",
+            "moonshot-models-api:kimi-k3.1-pro",
+            "vercel-ai-gateway-models:moonshotai/kimi-k3.1-pro",
+            "openrouter-models:moonshotai/kimi-k3.1-pro"
+          ],
+          "contextWindow": 1048576,
+          "maxTokens": 1048576,
+          "status": "available",
+          "source": "models-dev-provider-catalog"
         }
       ],
       "agentGateways": []
@@ -1053,6 +1095,20 @@
             "openrouter-models:mistralai/mistral-large-4"
           ],
           "contextWindow": 524288,
+          "maxTokens": 262144,
+          "status": "available",
+          "source": "models-dev-provider-catalog"
+        },
+        {
+          "id": "mistral-large-4-0-8",
+          "displayName": "Mistral Large 4.0.8",
+          "upstreamRefs": [
+            "models-dev-provider-catalog:mistral/mistral-large-4-0-8",
+            "mistral-models-api:mistral-large-4-0-8",
+            "vercel-ai-gateway-models:mistral/mistral-large-4-0-8",
+            "openrouter-models:mistralai/mistral-large-4-0-8"
+          ],
+          "contextWindow": 1048576,
           "maxTokens": 262144,
           "status": "available",
           "source": "models-dev-provider-catalog"
@@ -3491,6 +3547,46 @@
           ],
           "contextWindow": 1000000,
           "maxTokens": 524288,
+          "source": "openrouter-models"
+        },
+        {
+          "id": "minimax/minimax-m3.1-flash",
+          "displayName": "MiniMax M3.1 Flash",
+          "upstreamRefs": [
+            "openrouter-models:minimax/minimax-m3.1-flash"
+          ],
+          "contextWindow": 1048576,
+          "maxTokens": 524288,
+          "source": "openrouter-models"
+        },
+        {
+          "id": "moonshotai/kimi-k3.1-pro",
+          "displayName": "Kimi K3.1 Pro",
+          "upstreamRefs": [
+            "openrouter-models:moonshotai/kimi-k3.1-pro"
+          ],
+          "contextWindow": 1048576,
+          "maxTokens": 943718,
+          "source": "openrouter-models"
+        },
+        {
+          "id": "openai/gpt-6.1-terra-pro",
+          "displayName": "GPT-6.1 Terra Pro",
+          "upstreamRefs": [
+            "openrouter-models:openai/gpt-6.1-terra-pro"
+          ],
+          "contextWindow": 1050000,
+          "maxTokens": 128000,
+          "source": "openrouter-models"
+        },
+        {
+          "id": "openai/gpt-6.1-terra",
+          "displayName": "GPT-6.1 Terra",
+          "upstreamRefs": [
+            "openrouter-models:openai/gpt-6.1-terra"
+          ],
+          "contextWindow": 1050000,
+          "maxTokens": 128000,
           "source": "openrouter-models"
         }
       ],
