@@ -132,6 +132,13 @@
       "contextWindow": 1000000,
       "maxTokens": 128000,
       "source": "anthropic-models-api"
+    },
+    {
+      "id": "claude-fable-5-2",
+      "displayName": "Claude Fable 5.2",
+      "contextWindow": 1000000,
+      "maxTokens": 128000,
+      "source": "anthropic-models-api"
     }
   ],
   "agentGateways": [
