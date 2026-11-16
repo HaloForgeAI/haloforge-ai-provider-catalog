@@ -86,6 +86,14 @@
       "source": "models-dev-provider-catalog"
     },
     {
+      "id": "gpt-6.1-terra",
+      "displayName": "GPT-6.1 Terra",
+      "contextWindow": 1050000,
+      "maxTokens": 128000,
+      "status": "available",
+      "source": "models-dev-provider-catalog"
+    },
+    {
       "id": "gpt-5.5",
       "displayName": "GPT-5.5",
       "contextWindow": 1000000,
@@ -116,14 +124,6 @@
       "maxTokens": 128000,
       "status": "available",
       "source": "openai-models-docs"
-    },
-    {
-      "id": "gpt-6.1-terra",
-      "displayName": "GPT-6.1 Terra",
-      "contextWindow": 1050000,
-      "maxTokens": 128000,
-      "status": "available",
-      "source": "models-dev-provider-catalog"
     }
   ],
   "agentGateways": [

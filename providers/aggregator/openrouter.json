@@ -1480,7 +1480,7 @@
       "id": "deepseek/deepseek-v4.1-flash-1017",
       "displayName": "DeepSeek V4.1 Flash 1017",
       "contextWindow": 1048576,
-      "maxTokens": 393216,
+      "maxTokens": 943718,
       "source": "openrouter-models"
     },
     {
@@ -1488,6 +1488,48 @@
       "displayName": "MiniMax M3.1 Flash (free)",
       "contextWindow": 1000000,
       "maxTokens": 524288,
+      "source": "openrouter-models"
+    },
+    {
+      "id": "z-ai/glm-5.3-flashx-legal",
+      "displayName": "GLM 5.3 FlashX Legal",
+      "contextWindow": 1048576,
+      "maxTokens": 131072,
+      "source": "openrouter-models"
+    },
+    {
+      "id": "minimax/minimax-m3.1-flash",
+      "displayName": "MiniMax M3.1 Flash",
+      "contextWindow": 1048576,
+      "maxTokens": 524288,
+      "source": "openrouter-models"
+    },
+    {
+      "id": "moonshotai/kimi-k3.1-pro",
+      "displayName": "Kimi K3.1 Pro",
+      "contextWindow": 1048576,
+      "maxTokens": 943718,
+      "source": "openrouter-models"
+    },
+    {
+      "id": "openai/gpt-6.1-terra-pro",
+      "displayName": "GPT-6.1 Terra Pro",
+      "contextWindow": 1050000,
+      "maxTokens": 128000,
+      "source": "openrouter-models"
+    },
+    {
+      "id": "openai/gpt-6.1-terra",
+      "displayName": "GPT-6.1 Terra",
+      "contextWindow": 1050000,
+      "maxTokens": 128000,
+      "source": "openrouter-models"
+    },
+    {
+      "id": "qwen/qwen4-max",
+      "displayName": "Qwen4 Max",
+      "contextWindow": 1000000,
+      "maxTokens": 131072,
       "source": "openrouter-models"
     },
     {
@@ -1532,48 +1574,6 @@
       "displayName": "Qwen3 Max Thinking via OpenRouter",
       "contextWindow": 262144,
       "status": "available",
-      "source": "openrouter-models"
-    },
-    {
-      "id": "z-ai/glm-5.3-flashx-legal",
-      "displayName": "GLM 5.3 FlashX Legal",
-      "contextWindow": 1048576,
-      "maxTokens": 131072,
-      "source": "openrouter-models"
-    },
-    {
-      "id": "minimax/minimax-m3.1-flash",
-      "displayName": "MiniMax M3.1 Flash",
-      "contextWindow": 1048576,
-      "maxTokens": 524288,
-      "source": "openrouter-models"
-    },
-    {
-      "id": "moonshotai/kimi-k3.1-pro",
-      "displayName": "Kimi K3.1 Pro",
-      "contextWindow": 1048576,
-      "maxTokens": 943718,
-      "source": "openrouter-models"
-    },
-    {
-      "id": "openai/gpt-6.1-terra-pro",
-      "displayName": "GPT-6.1 Terra Pro",
-      "contextWindow": 1050000,
-      "maxTokens": 128000,
-      "source": "openrouter-models"
-    },
-    {
-      "id": "openai/gpt-6.1-terra",
-      "displayName": "GPT-6.1 Terra",
-      "contextWindow": 1050000,
-      "maxTokens": 128000,
-      "source": "openrouter-models"
-    },
-    {
-      "id": "qwen/qwen4-max",
-      "displayName": "Qwen4 Max",
-      "contextWindow": 1000000,
-      "maxTokens": 393216,
       "source": "openrouter-models"
     }
   ],
