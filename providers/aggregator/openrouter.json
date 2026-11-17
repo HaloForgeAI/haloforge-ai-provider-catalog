@@ -847,7 +847,7 @@
       "id": "openai/gpt-oss-20b",
       "displayName": "gpt-oss-20b",
       "contextWindow": 131072,
-      "maxTokens": 65536,
+      "maxTokens": 117964,
       "status": "available",
       "source": "openrouter-models"
     },

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-16T22:10:55.962Z",
+  "updatedAt": "2026-11-17T07:59:25.739Z",
   "source": "haloforge-ai-provider-catalog",
   "repository": "https://github.com/HaloForgeAI/haloforge-ai-provider-catalog",
   "upstreamSources": [
@@ -3305,7 +3305,7 @@
           "id": "openai/gpt-oss-20b",
           "displayName": "gpt-oss-20b",
           "contextWindow": 131072,
-          "maxTokens": 65536,
+          "maxTokens": 117964,
           "status": "available",
           "source": "openrouter-models"
         },
