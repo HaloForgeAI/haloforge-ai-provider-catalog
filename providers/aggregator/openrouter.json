@@ -168,8 +168,8 @@
     {
       "id": "deepseek/deepseek-r1-0528",
       "displayName": "R1 0528",
-      "contextWindow": 163840,
-      "maxTokens": 32768,
+      "contextWindow": 128000,
+      "maxTokens": 32000,
       "status": "available",
       "source": "openrouter-models"
     },
@@ -1360,8 +1360,8 @@
     {
       "id": "z-ai/glm-5.3-flash",
       "displayName": "GLM 5.3 Flash",
-      "contextWindow": 1048576,
-      "maxTokens": 131072,
+      "contextWindow": 1048575,
+      "maxTokens": 943717,
       "source": "openrouter-models"
     },
     {
@@ -1396,7 +1396,7 @@
       "id": "deepseek/deepseek-v4.1-flash",
       "displayName": "DeepSeek V4.1 Flash",
       "contextWindow": 1048576,
-      "maxTokens": 943718,
+      "maxTokens": 393216,
       "source": "openrouter-models"
     },
     {
@@ -1480,7 +1480,7 @@
       "id": "deepseek/deepseek-v4.1-flash-1017",
       "displayName": "DeepSeek V4.1 Flash 1017",
       "contextWindow": 1048576,
-      "maxTokens": 943718,
+      "maxTokens": 393216,
       "source": "openrouter-models"
     },
     {
@@ -1533,6 +1533,34 @@
       "source": "openrouter-models"
     },
     {
+      "id": "openai/gpt-6.2-sol-pro",
+      "displayName": "GPT-6.2 Sol Pro",
+      "contextWindow": 1050000,
+      "maxTokens": 128000,
+      "source": "openrouter-models"
+    },
+    {
+      "id": "openai/gpt-6.2-sol",
+      "displayName": "GPT-6.2 Sol",
+      "contextWindow": 1050000,
+      "maxTokens": 128000,
+      "source": "openrouter-models"
+    },
+    {
+      "id": "openai/gpt-6.2-astra-pro",
+      "displayName": "GPT-6.2 Astra Pro",
+      "contextWindow": 1050000,
+      "maxTokens": 128000,
+      "source": "openrouter-models"
+    },
+    {
+      "id": "openai/gpt-6.2-astra",
+      "displayName": "GPT-6.2 Astra",
+      "contextWindow": 1050000,
+      "maxTokens": 128000,
+      "source": "openrouter-models"
+    },
+    {
       "id": "anthropic/claude-fable-5",
       "displayName": "Claude Fable 5 via OpenRouter",
       "contextWindow": 1000000,
@@ -1574,34 +1602,6 @@
       "displayName": "Qwen3 Max Thinking via OpenRouter",
       "contextWindow": 262144,
       "status": "available",
-      "source": "openrouter-models"
-    },
-    {
-      "id": "openai/gpt-6.2-sol-pro",
-      "displayName": "GPT-6.2 Sol Pro",
-      "contextWindow": 1050000,
-      "maxTokens": 128000,
-      "source": "openrouter-models"
-    },
-    {
-      "id": "openai/gpt-6.2-sol",
-      "displayName": "GPT-6.2 Sol",
-      "contextWindow": 1050000,
-      "maxTokens": 128000,
-      "source": "openrouter-models"
-    },
-    {
-      "id": "openai/gpt-6.2-astra-pro",
-      "displayName": "GPT-6.2 Astra Pro",
-      "contextWindow": 1050000,
-      "maxTokens": 128000,
-      "source": "openrouter-models"
-    },
-    {
-      "id": "openai/gpt-6.2-astra",
-      "displayName": "GPT-6.2 Astra",
-      "contextWindow": 1050000,
-      "maxTokens": 128000,
       "source": "openrouter-models"
     }
   ],
