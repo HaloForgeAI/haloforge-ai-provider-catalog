@@ -374,6 +374,20 @@
           "maxTokens": 128000,
           "status": "available",
           "source": "models-dev-provider-catalog"
+        },
+        {
+          "id": "gpt-6.2-sol",
+          "displayName": "GPT-6.2 Sol",
+          "upstreamRefs": [
+            "models-dev-provider-catalog:openai/gpt-6.2-sol",
+            "openai-models-api:gpt-6.2-sol",
+            "vercel-ai-gateway-models:openai/gpt-6.2-sol",
+            "openrouter-models:openai/gpt-6.2-sol"
+          ],
+          "contextWindow": 1050000,
+          "maxTokens": 128000,
+          "status": "available",
+          "source": "models-dev-provider-catalog"
         }
       ],
       "agentGateways": []
@@ -3617,6 +3631,46 @@
           ],
           "contextWindow": 1000000,
           "maxTokens": 393216,
+          "source": "openrouter-models"
+        },
+        {
+          "id": "openai/gpt-6.2-sol-pro",
+          "displayName": "GPT-6.2 Sol Pro",
+          "upstreamRefs": [
+            "openrouter-models:openai/gpt-6.2-sol-pro"
+          ],
+          "contextWindow": 1050000,
+          "maxTokens": 128000,
+          "source": "openrouter-models"
+        },
+        {
+          "id": "openai/gpt-6.2-sol",
+          "displayName": "GPT-6.2 Sol",
+          "upstreamRefs": [
+            "openrouter-models:openai/gpt-6.2-sol"
+          ],
+          "contextWindow": 1050000,
+          "maxTokens": 128000,
+          "source": "openrouter-models"
+        },
+        {
+          "id": "openai/gpt-6.2-astra-pro",
+          "displayName": "GPT-6.2 Astra Pro",
+          "upstreamRefs": [
+            "openrouter-models:openai/gpt-6.2-astra-pro"
+          ],
+          "contextWindow": 1050000,
+          "maxTokens": 128000,
+          "source": "openrouter-models"
+        },
+        {
+          "id": "openai/gpt-6.2-astra",
+          "displayName": "GPT-6.2 Astra",
+          "upstreamRefs": [
+            "openrouter-models:openai/gpt-6.2-astra"
+          ],
+          "contextWindow": 1050000,
+          "maxTokens": 128000,
           "source": "openrouter-models"
         }
       ],
