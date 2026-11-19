@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-19T07:31:36.359Z",
+  "updatedAt": "2026-11-19T20:42:17.713Z",
   "source": "haloforge-ai-provider-catalog",
   "repository": "https://github.com/HaloForgeAI/haloforge-ai-provider-catalog",
   "upstreamSources": [
@@ -3045,7 +3045,7 @@
           "id": "qwen/qwen3.5-9b",
           "displayName": "Qwen3.5-9B",
           "contextWindow": 262144,
-          "maxTokens": 40960,
+          "maxTokens": 235929,
           "status": "deprecated",
           "source": "openrouter-models",
           "shutdownDate": "2026-10-21",
@@ -3862,7 +3862,7 @@
           "id": "deepseek/deepseek-v4.1-flash",
           "displayName": "DeepSeek V4.1 Flash",
           "contextWindow": 1048576,
-          "maxTokens": 943718,
+          "maxTokens": 393216,
           "source": "openrouter-models"
         },
         {

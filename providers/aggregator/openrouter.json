@@ -579,7 +579,7 @@
       "id": "qwen/qwen3.5-9b",
       "displayName": "Qwen3.5-9B",
       "contextWindow": 262144,
-      "maxTokens": 40960,
+      "maxTokens": 235929,
       "status": "deprecated",
       "source": "openrouter-models",
       "shutdownDate": "2026-10-21",
@@ -1396,7 +1396,7 @@
       "id": "deepseek/deepseek-v4.1-flash",
       "displayName": "DeepSeek V4.1 Flash",
       "contextWindow": 1048576,
-      "maxTokens": 943718,
+      "maxTokens": 393216,
       "source": "openrouter-models"
     },
     {
