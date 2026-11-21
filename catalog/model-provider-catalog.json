@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-20T20:27:00.296Z",
+  "updatedAt": "2026-11-21T07:16:06.520Z",
   "source": "haloforge-ai-provider-catalog",
   "repository": "https://github.com/HaloForgeAI/haloforge-ai-provider-catalog",
   "upstreamSources": [
@@ -2684,8 +2684,8 @@
         {
           "id": "minimax/minimax-m2.5",
           "displayName": "MiniMax M2.5",
-          "contextWindow": 196608,
-          "maxTokens": 176947,
+          "contextWindow": 198000,
+          "maxTokens": 32768,
           "status": "available",
           "source": "openrouter-models"
         },
@@ -3862,7 +3862,7 @@
           "id": "deepseek/deepseek-v4.1-flash",
           "displayName": "DeepSeek V4.1 Flash",
           "contextWindow": 1048576,
-          "maxTokens": 943718,
+          "maxTokens": 393216,
           "source": "openrouter-models"
         },
         {
@@ -3946,7 +3946,7 @@
           "id": "deepseek/deepseek-v4.1-flash-1017",
           "displayName": "DeepSeek V4.1 Flash 1017",
           "contextWindow": 1048576,
-          "maxTokens": 943718,
+          "maxTokens": 393216,
           "source": "openrouter-models"
         },
         {
