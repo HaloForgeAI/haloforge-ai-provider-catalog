@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-21T07:16:06.520Z",
+  "updatedAt": "2026-11-21T19:21:15.108Z",
   "source": "haloforge-ai-provider-catalog",
   "repository": "https://github.com/HaloForgeAI/haloforge-ai-provider-catalog",
   "upstreamSources": [
@@ -2490,7 +2490,7 @@
         {
           "id": "z-ai/glm-5.1",
           "displayName": "GLM 5.1",
-          "contextWindow": 204800,
+          "contextWindow": 202752,
           "maxTokens": 131072,
           "status": "deprecated",
           "source": "openrouter-models",
@@ -3776,8 +3776,8 @@
         {
           "id": "qwen/qwen3.8-2.4t-a95b",
           "displayName": "Qwen3.8 2.4T A95B",
-          "contextWindow": 1000000,
-          "maxTokens": 131072,
+          "contextWindow": 262144,
+          "maxTokens": 65536,
           "source": "openrouter-models"
         },
         {
