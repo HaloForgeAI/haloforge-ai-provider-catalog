@@ -24,7 +24,7 @@
     {
       "id": "z-ai/glm-5.1",
       "displayName": "GLM 5.1",
-      "contextWindow": 202752,
+      "contextWindow": 204800,
       "maxTokens": 131072,
       "status": "deprecated",
       "source": "openrouter-models",
@@ -597,7 +597,7 @@
       "id": "qwen/qwen3.5-27b",
       "displayName": "Qwen3.5-27B",
       "contextWindow": 262144,
-      "maxTokens": 65536,
+      "maxTokens": 81920,
       "status": "available",
       "source": "openrouter-models"
     },
@@ -1318,7 +1318,7 @@
       "id": "qwen/qwen3.8-27b",
       "displayName": "Qwen3.8 27B",
       "contextWindow": 262144,
-      "maxTokens": 235929,
+      "maxTokens": 131072,
       "source": "openrouter-models"
     },
     {
