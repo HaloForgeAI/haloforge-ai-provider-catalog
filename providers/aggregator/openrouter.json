@@ -24,7 +24,7 @@
     {
       "id": "z-ai/glm-5.1",
       "displayName": "GLM 5.1",
-      "contextWindow": 204800,
+      "contextWindow": 202752,
       "maxTokens": 131072,
       "status": "deprecated",
       "source": "openrouter-models",
@@ -68,7 +68,7 @@
     {
       "id": "z-ai/glm-4.7",
       "displayName": "GLM 4.7",
-      "contextWindow": 202752,
+      "contextWindow": 204800,
       "maxTokens": 131072,
       "status": "deprecated",
       "source": "openrouter-models",
