@@ -1010,6 +1010,20 @@
           "maxTokens": 131072,
           "status": "available",
           "source": "models-dev-provider-catalog"
+        },
+        {
+          "id": "qwen4-max",
+          "displayName": "Qwen4 Max",
+          "upstreamRefs": [
+            "models-dev-provider-catalog:alibaba/qwen4-max",
+            "qwen-models-api:qwen4-max",
+            "vercel-ai-gateway-models:alibaba/qwen4-max",
+            "openrouter-models:qwen/qwen4-max"
+          ],
+          "contextWindow": 1000000,
+          "maxTokens": 262144,
+          "status": "available",
+          "source": "models-dev-provider-catalog"
         }
       ],
       "agentGateways": []
@@ -1554,6 +1568,20 @@
             "zai-models-api:glm-5.3-flashx",
             "vercel-ai-gateway-models:zai/glm-5.3-flashx",
             "openrouter-models:z-ai/glm-5.3-flashx"
+          ],
+          "contextWindow": 1000000,
+          "maxTokens": 131072,
+          "status": "available",
+          "source": "models-dev-provider-catalog"
+        },
+        {
+          "id": "glm-5.3-flashx-legal",
+          "displayName": "GLM-5.3-FlashX-Legal",
+          "upstreamRefs": [
+            "models-dev-provider-catalog:zai/glm-5.3-flashx-legal",
+            "zai-models-api:glm-5.3-flashx-legal",
+            "vercel-ai-gateway-models:zai/glm-5.3-flashx-legal",
+            "openrouter-models:z-ai/glm-5.3-flashx-legal"
           ],
           "contextWindow": 1000000,
           "maxTokens": 131072,
